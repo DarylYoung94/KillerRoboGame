@@ -29,8 +29,6 @@ public class EnemyAI : MonoBehaviour
         Attack1();
     }
 
-
-
     // Update is called once per frame
     void Update()
     {

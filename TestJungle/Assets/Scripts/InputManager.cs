@@ -5,23 +5,29 @@ using UnityEngine;
 public class InputManager : MonoBehaviour
 {
     public KeyCode[] abilityKeys;
-   public  List<KeyCode> abilityList = new List<KeyCode>(4);
+   public  List<KeyCode> keyCodeList = new List<KeyCode>(4);
 
     void Start()
     {
-        abilityList.Add(KeyCode.Q);
-        abilityList.Add(KeyCode.E);
-        abilityList.Add(KeyCode.R);
-        abilityList.Add(KeyCode.F);
+        keyCodeList.Add(KeyCode.Q);
+        keyCodeList.Add(KeyCode.E);
+        keyCodeList.Add(KeyCode.R);
+        keyCodeList.Add(KeyCode.F);
 
         abilityKeys = new KeyCode[] { KeyCode.Q, KeyCode.E, KeyCode.R, KeyCode.F };
        
     }
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.L))
-        {
-            abilityList.RemoveAt(0);
-        }
+    }
+
+    public KeyCode GetNextKeyCode ()
+    {
+        if (keyCodeList.Count == 0)
+            Debug.Log("No key bindings available");
+
+        KeyCode keyCode = keyCodeList[0];
+        keyCodeList.RemoveAt(0);
+        return keyCode;
     }
 }

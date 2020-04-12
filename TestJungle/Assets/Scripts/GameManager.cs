@@ -16,6 +16,7 @@ public class GameManager : MonoBehaviour
     public GameObject boss;
     public bool bossSpawned = false;
     public GameObject enemyMan;
+
     void Awake()
     {
         if (instance == null)
@@ -26,8 +27,6 @@ public class GameManager : MonoBehaviour
         {
             Destroy(gameObject);
         }
-
-        
     }
 
     public GameObject player;
@@ -35,11 +34,10 @@ public class GameManager : MonoBehaviour
     public void Update()
     {
         bossHealth = boss.GetComponent<Enemy>().health;
-       bossSpawned = boss.GetComponent<BigEnemyAbilities>().bossSpawn;
+        bossSpawned = boss.GetComponent<BigEnemyAbilities>().bossSpawn;
         if (bossHealth <=0 && bossSpawned == true)
         {
             //SceneManager.LoadScene(2);
         }
-
     }      
 }

@@ -4,52 +4,46 @@ using UnityEngine;
 
 public class Totem : MonoBehaviour
 {
-    public GameObject totem;
-    public float totemRange;
-    public float closestEnemy;
-    Transform bestTarget = null;
-    public GameObject bullet;
+    public GameObject totemPrefab;
+    public GameObject bulletPrefab;
     public GameObject totemFirePoint;
-    public Rigidbody bulletRB;
-    public float totemBulletSpeed;
-    public float timer;
-    public float totemAttackSpeed = 1f;
-    public bool shot;
-    public void Update()
-    {
 
-        if (Input.GetKeyDown(KeyCode.G))
-        {
-            FindClosestEnemy();
-            TurretShot();
-        }
+    Transform bestTarget = null;
+
+    public float totemRange;
+    public float totemBulletSpeed;
+
+    public void Initialise (GameObject bulletPrefab,
+                            GameObject totemPrefab,
+                            float totemRange,
+                            float totemBulletSpeed)
+    {
+        this.bulletPrefab = bulletPrefab;
+        this.totemPrefab = totemPrefab;
+        this.totemBulletSpeed = totemBulletSpeed;
+        this.totemRange = totemRange;
+
+        totemFirePoint = this.totemPrefab.transform.Find("TotemFirePoint").gameObject;
     }
 
     public void OnCollisionEnter(Collision collision)
     {
-        
-    
-    
-    
         if(collision.gameObject.tag == "Bullet")
         {
-            Debug.Log("totem hit1");
-            if (totem !=null)
+            if (totemPrefab !=null)
             {
-                Debug.Log("totem hit2");
                 FindClosestEnemy();
                 TurretShot();
             }
-           
         }
     }
 
     public void FindClosestEnemy()
     {
-
-        Vector3 totemPosition = totem.transform.position;
-        closestEnemy = Mathf.Infinity;
+        Vector3 totemPosition = totemPrefab.transform.position;
         Collider[] colliders = Physics.OverlapSphere(totemPosition, totemRange);
+
+        float closestEnemy = Mathf.Infinity;
 
         foreach (Collider hit in colliders)
         {
@@ -66,13 +60,14 @@ public class Totem : MonoBehaviour
         }
 
     }
+
     public void TurretShot()
     {
         GameObject turretBulletInstance;
-        turretBulletInstance = Instantiate(bullet, totemFirePoint.transform.position, Quaternion.identity);
-        bulletRB = turretBulletInstance.GetComponent<Rigidbody>();
+        turretBulletInstance = Instantiate(bulletPrefab, totemFirePoint.transform.position, Quaternion.identity);
+
+        Rigidbody bulletRB = turretBulletInstance.GetComponent<Rigidbody>();
         bulletRB.transform.LookAt(bestTarget);
         bulletRB.AddForce(bulletRB.transform.forward * totemBulletSpeed, ForceMode.Impulse);
-
     }
 }

@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
-    private float verticalVelocity;
     private float jumpForce = 200f;
     private float gravity = 2f;
     public float movespeed;
@@ -12,8 +11,6 @@ public class PlayerMovement : MonoBehaviour
     Vector3 inputVector;
     public GameObject cam;
     public bool flight = true;
-
-
 
     // Start is called before the first frame update
     void Start()
@@ -40,6 +37,7 @@ public class PlayerMovement : MonoBehaviour
                     rigid.AddForce(Vector3.up * jumpForce, ForceMode.Impulse);
                 }
             }
+
             transform.Rotate(new Vector3(0, 0, 0));
             inputVector = new Vector3(Input.GetAxis("Horizontal") * movespeed, 0, Input.GetAxis("Vertical") * movespeed);
             transform.LookAt(this.transform.position + GetCameraTurn() * inputVector);
@@ -59,9 +57,6 @@ public class PlayerMovement : MonoBehaviour
         {
             flight = false;
         }
-
-        //Debug.Log("ENTER " + collision.gameObject + " " + collision.gameObject.layer);
-        //Debug.Log("FLIGHT = " + flight);
     }
 
     private void OnCollisionExit(Collision collision)
@@ -70,8 +65,6 @@ public class PlayerMovement : MonoBehaviour
         {
             flight = true;
         }
-        //Debug.Log("EXIT " + collision.gameObject + " " + collision.gameObject.layer);
-        //Debug.Log("FLIGHT = " + flight);
     }
 
     private Quaternion GetCameraTurn()

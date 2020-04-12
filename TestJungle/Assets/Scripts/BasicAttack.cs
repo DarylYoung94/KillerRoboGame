@@ -8,50 +8,29 @@ public class BasicAttack : MonoBehaviour
     private GameObject basicShot;
     public GameObject basicBullet;
   
-    public float damage ;
-    public float range;
-    public float cooldownTime ;
+    public float cooldownTime;
     public float nextFireTime = 0;
+
     public GameObject firePoint;
     public Vector3 basicAtkAim;
     public float bulletSpeed ;
     public Rigidbody bulletRB;
-    Camera cam;
-    public bool attackSpeedBuff=false;
     public float playerLevel;
     public GameObject player;
-    public float atkSpeedMultiplier;
+    public float attackSpeedMultipler = 1.0f;
     // Start is called before the first frame update
     void Start()
     {
         Vector3 basicAtkAim = -Vector3.one;
-        cam = Camera.main;
         cooldownTime = 1f;
     }
 
     // Update is called once per frame
     void Update()
     {
-        attackSpeedBuff = player.GetComponent<AttackSpeedBuff>().triggered;
-        playerLevel = player.GetComponent<PlayerXP>().level;
-        if(playerLevel ==2 && attackSpeedBuff ==false)
-        {
-            cooldownTime = 0.9f;
-        }
-        if (playerLevel == 3 && attackSpeedBuff == false)
-        {
-            cooldownTime = 0.8f;
-        }
-        if (playerLevel == 4 && attackSpeedBuff == false)
-        {
-            cooldownTime = 0.7f;
-        }
-        if (playerLevel == 5 && attackSpeedBuff == false)
-        {
-            cooldownTime = 0.6f;
-        }
+        SetCooldownByLevel(player.GetComponent<PlayerXP>().level);
 
-        Ray ray = cam.ScreenPointToRay(Input.mousePosition);
+        Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
         RaycastHit hit;
 
         if (Physics.Raycast(ray, out hit))
@@ -72,38 +51,44 @@ public class BasicAttack : MonoBehaviour
         if (Input.GetMouseButton(0) && nextFireTime == 0)
         {
             RBShoot();
-            //Shoot();
-            nextFireTime = cooldownTime;
-           
-        }
-        //basicBullet.transform.Translate(Vector3.forward* bulletSpeed*Time.deltaTime);
-    }
-    void Shoot()
-    {
-        basicShot = Instantiate(basicBullet, firePoint.transform.position, Quaternion.identity) as GameObject;
-        basicShot.transform.LookAt(basicAtkAim);
-        
-        RaycastHit hit;
-        if (Physics.Raycast(firePoint.transform.position, (basicAtkAim -firePoint.transform.position ), out hit, range))
-        {
-
-            Enemy enemyHit = hit.transform.GetComponent<Enemy>();
-            if (enemyHit != null)
-            {
-                enemyHit.TakeDamage(damage);
-                Debug.Log("enemy hit");
-            }
-
+            nextFireTime = cooldownTime * (1.0f/attackSpeedMultipler);
         }
     }
+
     void RBShoot()
     {
-        GameObject basicBulletInstance;
-        basicBulletInstance = Instantiate(basicBulletPrefab, firePoint.transform.position, Quaternion.identity);
+        GameObject basicBulletInstance = Instantiate(basicBulletPrefab, firePoint.transform.position, Quaternion.identity);
         bulletRB = basicBulletInstance.GetComponent<Rigidbody>();
         bulletRB.transform.LookAt(basicAtkAim);
         bulletRB.AddForce(bulletRB.transform.forward * bulletSpeed, ForceMode.Impulse);
-
     }
-        
+
+    public void SetASMultipler (float speed)
+    {
+        attackSpeedMultipler = speed;
+    }
+
+    public void SetCooldownByLevel (int level)
+    {
+        if (playerLevel == 1)
+        {
+            cooldownTime = 10.0f;
+        }
+        else if(playerLevel == 2)
+        {
+            cooldownTime = 0.9f;
+        }
+        else if (playerLevel == 3)
+        {
+            cooldownTime = 0.8f;
+        }
+        else if (playerLevel == 4)
+        {
+            cooldownTime = 0.7f;
+        }
+        else if (playerLevel == 5)
+        {
+            cooldownTime = 0.6f;
+        }
+    }
 }
