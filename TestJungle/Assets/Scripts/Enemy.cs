@@ -44,7 +44,6 @@ public class Enemy : MonoBehaviour
     void Update()
     {
         player = GameManager.instance.player;
-        scriptObj = GetComponent<AbilityManager>();
         dropChance = Random.value;
 
         healthCanvas.transform.LookAt(cam.transform.position);
@@ -61,7 +60,6 @@ public class Enemy : MonoBehaviour
             ShowDamagePop();
         }
 
-        //show damage
         healthBar.fillAmount = health / healthness;
         if(health<=0f )
         {
@@ -74,7 +72,6 @@ public class Enemy : MonoBehaviour
             else
             {
                 if (dropChance < dropRate)
-                    //SpawnLoot();
                     Loot();
                 if (Loot1 != null)
                 {
@@ -86,27 +83,14 @@ public class Enemy : MonoBehaviour
     }
     
 
-    void SpawnLoot()
-    {
-        int random = Random.Range(0, AbilityManager.AbilityTriggers.Count);
-        GameObject lootDrop = AbilityManager.AbilityTriggers[itemIndex];
-        itemIndex = random;
-
-        Debug.Log(itemIndex);
-        lootDrop = Instantiate(AbilityManager.AbilityTriggers[itemIndex], enemy.transform.position, Quaternion.identity) as GameObject;
-        AbilityManager.AbilityTriggers.RemoveAt(itemIndex);
-    }
-
-//
-public void ShowDamagePop()
+    public void ShowDamagePop()
     {
         GameObject DMG = Instantiate(damagePop, transform.position + (dmgPopLoc)  , Quaternion.identity);
         if(DMG != null)
         {
             DMG.GetComponent<TextMesh>().text = damageTaken.ToString();
             Debug.Log(damageTaken + " damageTaken" );
-        }
-            
+        }      
     }
 
     void Die()
@@ -118,7 +102,5 @@ public void ShowDamagePop()
     {
         GameObject l;
         l = Instantiate(lootPrefab, enemy.transform.position, Quaternion.identity);
-
-
     }
 }

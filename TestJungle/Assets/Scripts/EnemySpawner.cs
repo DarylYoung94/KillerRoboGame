@@ -26,7 +26,6 @@ public class EnemySpawner : MonoBehaviour
     {
         SpawnWave();
         waveCountdown = timeBetweenWaves;
-     
     }
 
     // Update is called once per frame
@@ -37,7 +36,6 @@ public class EnemySpawner : MonoBehaviour
 
         if (enemies.Length == 0)
         {
-
             timer += Time.deltaTime;
             if (timer >= spawnTimer)
             {
@@ -51,13 +49,9 @@ public class EnemySpawner : MonoBehaviour
                 spawn = false;
                 waveLevel++;
             }
-
-
-
         }
-        enemyPrefab.GetComponent<Enemy>().enemyLevel = waveLevel;
 
-    
+        enemyPrefab.GetComponent<Enemy>().enemyLevel = waveLevel;
     }
 
     void SpawnWave()  

@@ -25,17 +25,9 @@ public class BulletCollider : MonoBehaviour
             if (bulletPrefab != null)
             {
                 Enemy enemyHit = collision.transform.GetComponent<Enemy>();
-                Totem totemHit = collision.transform.GetComponent<Totem>();
                 if (enemyHit != null)
                 {
                     enemyHit.TakeDamage(autoDamage);
-                }
-                if (totemHit != null)
-                {
-                    Debug.Log("Totem Hit1");
-                    collision.transform.GetComponent<Totem>().shot = true;
-                    
-                    collision.transform.GetComponent<Totem>().shot = false;
                 }
 
                 Destroy(this.gameObject);

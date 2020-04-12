@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class AbilityCollider :MonoBehaviour
 {
-   
     public GameObject explosionParticles;
     public float time = 3f;
     public float radius = 10f;
@@ -12,11 +11,7 @@ public class AbilityCollider :MonoBehaviour
     public float upForce = 2f;
     public Rigidbody BombPrefab;
     public float Damage = 10f;
-    // Start is called before the first frame update
-    private void Start()
-    {
-       
-    }
+
     IEnumerator ExecuteAfterTime(float time)
     {
         yield return new WaitForSeconds(time);
@@ -28,27 +23,23 @@ public class AbilityCollider :MonoBehaviour
     {
         if(collision.gameObject.tag == "Ability12")
         {
-            
-                Debug.Log("Wall hit with bomb.");
-                radius = 20f;
-                Detonate();
-                Destroy(this.gameObject);
-            
+            Debug.Log("Wall hit with bomb.");
+            radius = 20f;
+            Detonate();
+            Destroy(this.gameObject);
         }
 
         if (collision.gameObject.tag == "Terrain")
         {
             StartCoroutine(ExecuteAfterTime(time));
-           
         }
-         Enemy enemyHit = collision.transform.GetComponent<Enemy>();
+
+        Enemy enemyHit = collision.transform.GetComponent<Enemy>();
         if (enemyHit !=null)
         {
-       
             Detonate();
             Destroy(this.gameObject);            
         }
-
     }
 
     public void Detonate()
@@ -61,13 +52,11 @@ public class AbilityCollider :MonoBehaviour
             Vector3 explosionPosition = BombPrefab.transform.position;
             //instantiate particle effects
 
-
             Collider[] colliders = Physics.OverlapSphere(explosionPosition, radius);
                 
             foreach (Collider hit in colliders)
             {
-                
-                    Enemy enemyHit = hit.transform.GetComponent<Enemy>();
+                Enemy enemyHit = hit.transform.GetComponent<Enemy>();
                 if (enemyHit != null)
                 {
                     enemyHit.TakeDamage(Damage);
@@ -76,12 +65,8 @@ public class AbilityCollider :MonoBehaviour
                 Rigidbody rb = hit.GetComponent<Rigidbody>();
                 if (rb != null)
                 {
-                 
                     rb.AddExplosionForce(power, explosionPosition, radius, upForce, ForceMode.Impulse);
-                    
-                   
                 }
-                
             }
         }
     }

@@ -1680,15 +1680,12 @@ GameObject:
   - component: {fileID: 7294040209906256448}
   - component: {fileID: 7294040209906256449}
   - component: {fileID: 7294040209906256450}
-  - component: {fileID: 7294040209906256451}
   - component: {fileID: 7294040209906256452}
-  - component: {fileID: 239521953}
+  - component: {fileID: 7294040209906256451}
   - component: {fileID: 239521954}
-  - component: {fileID: 239521957}
-  - component: {fileID: 239521955}
   - component: {fileID: 239521956}
   - component: {fileID: 239521958}
-  - component: {fileID: 1227066128657655046}
+  - component: {fileID: 8126130896300004270}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -1782,6 +1779,22 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 2.2694283, z: 1}
   m_Center: {x: 0, y: 0.46971416, z: 0}
+--- !u!54 &7294040209906256452
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7294040209906256453}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.1
+  m_UseGravity: 0
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 80
+  m_CollisionDetection: 0
 --- !u!114 &7294040209906256451
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1805,56 +1818,6 @@ MonoBehaviour:
   flightGravity: 500
   lookat: {x: 0, y: 0, z: 0}
   player: {fileID: 0}
---- !u!54 &7294040209906256452
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7294040209906256453}
-  serializedVersion: 2
-  m_Mass: 1
-  m_Drag: 0
-  m_AngularDrag: 0.1
-  m_UseGravity: 0
-  m_IsKinematic: 0
-  m_Interpolate: 0
-  m_Constraints: 80
-  m_CollisionDetection: 0
---- !u!114 &239521953
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7294040209906256453}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0f3cba5a91ea75c43883a7dcea82a32d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  radius: 10
-  power: 5
-  upForce: 2
-  Damage: 25
-  Speed: 15
-  activated: 1
-  Firepoint: {fileID: 2096670918}
-  BombPrefab: {fileID: 5119310701056857973, guid: d4973d2d2e07f9d45b4644598d099922,
-    type: 3}
-  nextFire: 0
-  fireRate: 0
-  cooldownTime: 2
-  nextFireTime: 0
-  onCooldown: 0
-  surface:
-    serializedVersion: 2
-    m_Bits: 256
-  bombDirection: {x: 0, y: 0, z: 0}
-  distance: 100
-  bombRB: {fileID: 0}
-  Ability1TargetPrefab: {fileID: 5116073342621537223, guid: 69073c20f40f36841a6a7da36f685257,
-    type: 3}
 --- !u!114 &239521954
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1871,64 +1834,15 @@ MonoBehaviour:
     type: 3}
   basicBullet: {fileID: 8870351710216241504, guid: 4a0f40e51c86f4d459781710e06277cc,
     type: 3}
-  damage: 0
-  range: 100
   cooldownTime: 1
   nextFireTime: 0
   firePoint: {fileID: 2096670917}
   basicAtkAim: {x: 0, y: 0, z: 0}
   bulletSpeed: 50
   bulletRB: {fileID: 0}
-  attackSpeedBuff: 0
   playerLevel: 0
   player: {fileID: 7294040209906256453}
-  atkSpeedMultiplier: 0
---- !u!114 &239521957
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7294040209906256453}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e6af5d1c31eda154cb91ae7e60ab831b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  spawned: 0
-  player: {fileID: 7294040209906256453}
-  BuffLoc: {x: 0, y: 0, z: 0}
-  buffZone: {fileID: 1819252622954579800, guid: ab2c9fbfe47b2324eaf6d2ccc6dc3bbd,
-    type: 3}
-  cooldownTime: 10
-  nextFireTime: 0
-  atkspeed: 0
-  basicAttack: {fileID: 0}
-  buffDuration: 8
-  timer: 0
-  triggered: 0
-  time: 8
---- !u!114 &239521955
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7294040209906256453}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ee6341ff3da023d4a857fe30b5b2ae2d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  wallPrefab: {fileID: 3324169760153976963, guid: 60feca50bd1614741bdcaded5104b373,
-    type: 3}
-  cooldownTime: 5
-  nextFireTime: 0
-  range: 0
-  reqRange: 10
-  player: {fileID: 0}
-  inRange: 0
-  keycode2: 0
+  attackSpeedMultipler: 1
 --- !u!114 &239521956
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1955,8 +1869,12 @@ MonoBehaviour:
   expText: {fileID: 1501042659}
   levelText: {fileID: 1574366955}
   lvl: 0
-  unobtainableAbilities: 
-  totalLoots: 3
+  unobtainableAbilities:
+  - {fileID: 11400000, guid: 29fdb1ce416de4e458e8a5cecc4d4a73, type: 2}
+  - {fileID: 11400000, guid: 1506b20a70204eb4a8119b81c796abde, type: 2}
+  - {fileID: 11400000, guid: 9c6eb9f54c5b2b142801ec1dd3876f92, type: 2}
+  - {fileID: 11400000, guid: 5cfb42bd2257547449738ffa4c9583d0, type: 2}
+  canTakeDamage: 1
 --- !u!114 &239521958
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1972,7 +1890,7 @@ MonoBehaviour:
   level: 1
   exp: 0
   expToNextLevel: 0
---- !u!114 &1227066128657655046
+--- !u!114 &8126130896300004270
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1981,15 +1899,8 @@ MonoBehaviour:
   m_GameObject: {fileID: 7294040209906256453}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bc35b3e8464e64947836b5c14e01eac7, type: 3}
+  m_Script: {fileID: 11500000, guid: fa7a1093eb346bd428058155a9b7be5b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  turretPrefab: {fileID: 512516759530681207, guid: 0f0051f110df6194ca39d2ef6e090bf0,
-    type: 3}
-  cooldownTime: 5
-  nextFireTime: 0
-  range: 10
-  reqRange: 10
-  player: {fileID: 7294040209906256453}
-  inRange: 0
-  keycode2: 0
+  abilityKeys: 00000000000000000000000000000000
+  keyCodeList: 
