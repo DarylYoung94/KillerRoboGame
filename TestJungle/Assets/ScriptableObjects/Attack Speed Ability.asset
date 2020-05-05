@@ -21,4 +21,5 @@ MonoBehaviour:
   projectorPrefab: {fileID: 1819252622954579800, guid: ab2c9fbfe47b2324eaf6d2ccc6dc3bbd,
     type: 3}
   maxRange: 5
-  despawnTimer: 8
+  despawnTimer: 3
+  attackSpeedMultiplier: 20

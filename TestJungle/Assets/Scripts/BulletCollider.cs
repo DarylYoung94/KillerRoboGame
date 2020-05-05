@@ -33,23 +33,10 @@ public class BulletCollider : MonoBehaviour
                 Destroy(this.gameObject);
             }
         }
-        /* if (collision.gameObject.tag == ("Totem")) //why no work
-         {
-            if (bulletPrefab != null)
-            {
-                Totem totemHit = collision.transform.GetComponent<Totem>();
-                totemHit.FindClosestEnemy();
-                totemHit.TurretShot();
-                //collision.transform.GetComponent<Totem>().shot = true;
-                Debug.Log("Totem Hit2");
-                //collision.transform.GetComponent<Totem>().shot = false;
-             
-                
-
-            }
-    
+        else if (collision.gameObject.tag == "Bullet")
+        {
+            //do nothing
         }
-         */
         else
         {
             Destroy(this.gameObject);

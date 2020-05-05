@@ -34,7 +34,7 @@ public class Basicmovement : MonoBehaviour
         {
             if (flight)
             {
-                gravity = flightGravity *Time.deltaTime;
+                gravity = flightGravity * Time.deltaTime;
             }
             else
             {
@@ -60,11 +60,9 @@ public class Basicmovement : MonoBehaviour
             }
             transform.Rotate(new Vector3(0, 0, 0));
             inputVector = new Vector3(Input.GetAxisRaw("Horizontal") * movespeed, 0, Input.GetAxisRaw("Vertical") * movespeed);
-            verticalVelocity = gravity;// * Time.deltaTime;
+            verticalVelocity = gravity;
             rigid.velocity = GetCameraTurn() * inputVector - new Vector3(0, verticalVelocity, 0);
             transform.LookAt((this.transform.position + GetCameraTurn() * inputVector));
-            //lookat = player.GetComponent<BasicAttack>().basicAtkAim;
-            //transform.LookAt(lookat);
         }
 
         else

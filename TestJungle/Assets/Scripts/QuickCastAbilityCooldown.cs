@@ -9,6 +9,7 @@ using System.Collections;
 */
 public class QuickCastAbilityCooldown : AbstractAbilityCooldown {
 
+
     // Update is called once per frame
     protected override void Update() 
     {

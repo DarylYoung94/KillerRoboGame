@@ -1682,10 +1682,10 @@ GameObject:
   - component: {fileID: 7294040209906256450}
   - component: {fileID: 7294040209906256452}
   - component: {fileID: 7294040209906256451}
-  - component: {fileID: 239521954}
   - component: {fileID: 239521956}
   - component: {fileID: 239521958}
   - component: {fileID: 8126130896300004270}
+  - component: {fileID: 7377116499963237597}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -1818,31 +1818,6 @@ MonoBehaviour:
   flightGravity: 500
   lookat: {x: 0, y: 0, z: 0}
   player: {fileID: 0}
---- !u!114 &239521954
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7294040209906256453}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 236955b2f1fd2cc4c951a8aefe3e8505, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  basicBulletPrefab: {fileID: 1318197578036205983, guid: c7167629e20234e4fbf1ee3046ec5615,
-    type: 3}
-  basicBullet: {fileID: 8870351710216241504, guid: 4a0f40e51c86f4d459781710e06277cc,
-    type: 3}
-  cooldownTime: 1
-  nextFireTime: 0
-  firePoint: {fileID: 2096670917}
-  basicAtkAim: {x: 0, y: 0, z: 0}
-  bulletSpeed: 50
-  bulletRB: {fileID: 0}
-  playerLevel: 0
-  player: {fileID: 7294040209906256453}
-  attackSpeedMultipler: 1
 --- !u!114 &239521956
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1904,3 +1879,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   abilityKeys: 00000000000000000000000000000000
   keyCodeList: 
+--- !u!114 &7377116499963237597
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7294040209906256453}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0b7f6931f525c774aa39b0fde38c255f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ability: {fileID: 11400000, guid: bdc234fcfae0c5a4c9726e80c53d6745, type: 2}
+  abilityHolder: {fileID: 7294040209906256453}
+  abilityKeyCode: 323

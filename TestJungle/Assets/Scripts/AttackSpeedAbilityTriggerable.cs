@@ -9,7 +9,7 @@ public class AttackSpeedAbilityTriggerable : MonoBehaviour
 
     public float maxRange = 5f;
     public float despawnTimer = 8f;
-    public float projectileSpeed = 5f;
+    public float attackSpeedMultiplier = 1.0f;
 
     private GameObject projectorTarget;
     Vector3 buffAim = -Vector3.one;
@@ -33,17 +33,15 @@ public class AttackSpeedAbilityTriggerable : MonoBehaviour
         projectorTarget.SetActive(false);
 
         GameObject buffInstance = Instantiate(buffPrefab, buffAim, Quaternion.identity) as GameObject;
-        Destroy(buffInstance.gameObject, despawnTimer);
-        // OnTriggerExit doesnt trigger if the object is destroyed while you're in it.
-        // Fixed in Unity 5.6 apparently
-        this.gameObject.GetComponent<BasicAttack>().SetASMultipler(1.0f);
+        StartCoroutine(DestroyObject(buffInstance.gameObject));
     }
 
     public void OnTriggerEnter(Collider collision)
     {
         if (collision.gameObject.tag == "AtkSpd")
         {
-            this.gameObject.GetComponent<BasicAttack>().SetASMultipler(2.0f);
+            // Change GetFirstWeapon to apply attack speed to all weapons?
+            AbstractWeapon.GetWeaponCooldownHolder(this.gameObject).SetCooldownMultiplier(1.0f/attackSpeedMultiplier);
         }
     }
 
@@ -51,7 +49,7 @@ public class AttackSpeedAbilityTriggerable : MonoBehaviour
     {
         if (collision.gameObject.tag == "AtkSpd")
         {
-            this.gameObject.GetComponent<BasicAttack>().SetASMultipler(1.0f);
+            AbstractWeapon.GetWeaponCooldownHolder(this.gameObject).SetCooldownMultiplier(1.0f);
         }
     }
 
@@ -70,5 +68,15 @@ public class AttackSpeedAbilityTriggerable : MonoBehaviour
             
             projectorTarget.transform.position = buffAim;
         }
+    }
+
+    // Workaround for unity bug where OnTriggerExit is not called if the object tracking entry
+    // or exit is destroyed.
+    IEnumerator DestroyObject(GameObject gameObject)
+    {
+        yield return new WaitForSeconds(despawnTimer);
+        Destroy(gameObject);
+
+        AbstractWeapon.GetWeaponCooldownHolder(this.gameObject).SetCooldownMultiplier(1.0f);
     }
 }

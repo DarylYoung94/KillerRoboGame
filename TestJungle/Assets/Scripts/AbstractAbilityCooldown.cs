@@ -3,13 +3,21 @@ using System.Collections;
 
 public abstract class AbstractAbilityCooldown : MonoBehaviour {
 
-    [SerializeField] protected KeyCode abilityKeyCode;
     [SerializeField] protected AbstractAbility ability;
     [SerializeField] protected GameObject abilityHolder;
+    [SerializeField] protected KeyCode abilityKeyCode;
 
     protected float coolDownDuration;
     protected float nextReadyTime;
     protected float coolDownTimeLeft;
+
+    void Start()
+    {
+        if (ability != null && abilityHolder != null && abilityKeyCode != null)
+        {
+            Initialise(ability, abilityHolder, abilityKeyCode);
+        }
+    }
 
     public void Initialise(AbstractAbility selectedAbility, GameObject abilityHolder, KeyCode keyCode)
     {
@@ -31,4 +39,7 @@ public abstract class AbstractAbilityCooldown : MonoBehaviour {
         coolDownTimeLeft = coolDownDuration;
     }
 
+    public AbstractAbility GetAbility() { return ability; }
+
+    public void SetCooldownMultiplier(float multiplier) { coolDownDuration = ability.aBaseCoolDown * multiplier; }
 }

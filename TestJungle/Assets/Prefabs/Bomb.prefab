@@ -14,7 +14,6 @@ GameObject:
   - component: {fileID: 7763335359728380267}
   - component: {fileID: 3470140234725982075}
   - component: {fileID: 543676134314023120}
-  - component: {fileID: 8753328785909069127}
   m_Layer: 0
   m_Name: Bomb
   m_TagString: Untagged
@@ -131,22 +130,3 @@ MonoBehaviour:
   upForce: 2
   BombPrefab: {fileID: 3470140234725982075}
   Damage: 15
---- !u!114 &8753328785909069127
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5119310701056857973}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 479231adc0dc2fe4d8fb03da2ff33d78, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Damage: 10
-  radius: 10
-  power: 10
-  upForce: 2
-  time: 3
-  bombDuration: 3
-  hasExploded: 0

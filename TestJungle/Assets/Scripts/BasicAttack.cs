@@ -5,8 +5,6 @@ using UnityEngine;
 public class BasicAttack : MonoBehaviour
 {
     public GameObject basicBulletPrefab;
-    private GameObject basicShot;
-    public GameObject basicBullet;
   
     public float cooldownTime;
     public float nextFireTime = 0;
@@ -72,7 +70,7 @@ public class BasicAttack : MonoBehaviour
     {
         if (playerLevel == 1)
         {
-            cooldownTime = 10.0f;
+            cooldownTime = 1.0f;
         }
         else if(playerLevel == 2)
         {

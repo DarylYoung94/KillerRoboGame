@@ -9,6 +9,7 @@ public class AttackSpeedAbility : AbstractAbility {
 
     public float maxRange = 5f;
     public float despawnTimer = 8f;
+    public float attackSpeedMultiplier = 2.0f;
 
     private AttackSpeedAbilityTriggerable attackSpeedTrigger;
     
@@ -19,6 +20,7 @@ public class AttackSpeedAbility : AbstractAbility {
         attackSpeedTrigger.buffPrefab = buffPrefab;
         attackSpeedTrigger.projectorPrefab = projectorPrefab;
         attackSpeedTrigger.despawnTimer = despawnTimer;
+        attackSpeedTrigger.attackSpeedMultiplier = attackSpeedMultiplier;
     }
 
     public override void ButtonDown()
