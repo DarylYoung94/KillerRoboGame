@@ -1,12 +1,12 @@
 using System.Collections;
 using UnityEngine;
 
-[CreateAssetMenu (menuName = "Weapons/BasicWeapon")]
+[CreateAssetMenu (fileName = "BasicWeapon", menuName = "Weapons/BasicWeapon")]
 public class BasicWeapon : RBWeapon {
 
     public GameObject pelletPrefab;
     public float despawnTimer = 5f;
-    public Transform barrelExit;
+    private Transform barrelExit;
 
     private BasicAttackTriggerable basicAttackTrigger;
     

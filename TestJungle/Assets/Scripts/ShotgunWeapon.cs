@@ -1,7 +1,7 @@
 using System.Collections;
 using UnityEngine;
 
-[CreateAssetMenu (menuName = "Weapons/ShotgunWeapon")]
+[CreateAssetMenu (fileName = "ShotgunWeapon", menuName = "Weapons/ShotgunWeapon")]
 public class ShotgunWeapon : RBWeapon {
 
     public GameObject pelletPrefab;
