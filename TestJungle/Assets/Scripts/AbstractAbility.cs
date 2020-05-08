@@ -10,7 +10,7 @@ public abstract class AbstractAbility : ScriptableObject {
     public float aBaseCoolDown = 1f;
     
     // Private Members
-    [SerializeField ]private bool holding = false;
+    [SerializeField] private bool holding = false;
 
     // Public methods
     public abstract void Initialise(GameObject obj);

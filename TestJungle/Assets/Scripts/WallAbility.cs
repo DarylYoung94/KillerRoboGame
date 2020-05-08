@@ -1,7 +1,6 @@
 using System.Collections;
 using UnityEngine;
 
-[System.Serializable]
 [CreateAssetMenu (fileName = "WallAbility", menuName = "Abilities/WallAbility")]
 public class WallAbility : AbstractAbility {
 

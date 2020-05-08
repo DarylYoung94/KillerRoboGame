@@ -1,7 +1,6 @@
 using System.Collections;
 using UnityEngine;
 
-[System.Serializable]
 [CreateAssetMenu (fileName = "ShotgunWeapon", menuName = "Weapons/ShotgunWeapon")]
 public class ShotgunWeapon : RBWeapon {
 

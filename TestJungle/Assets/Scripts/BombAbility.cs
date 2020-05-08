@@ -1,7 +1,6 @@
 ﻿using System.Collections;
 using UnityEngine;
 
-[System.Serializable]
 [CreateAssetMenu (fileName = "BombAbility", menuName = "Abilities/BombAbility")]
 public class BombAbility : AbstractAbility {
 
