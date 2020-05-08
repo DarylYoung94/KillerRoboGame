@@ -9,7 +9,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9ab05e4f6161d1f478ff6ffb182c16a9, type: 3}
+  m_Script: {fileID: 11500000, guid: 54c2818cb84480e4684519da1ac26018, type: 3}
   m_Name: BasicWeapon
   m_EditorClassIdentifier: 
   aName: New Ability
@@ -17,7 +17,7 @@ MonoBehaviour:
   aBaseCoolDown: 1
   holding: 0
   damage: 1
-  force: 20
+  force: 5
   pelletPrefab: {fileID: 1318197578036205983, guid: c7167629e20234e4fbf1ee3046ec5615,
     type: 3}
   despawnTimer: 5
