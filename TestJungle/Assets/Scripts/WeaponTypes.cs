@@ -5,7 +5,6 @@ using UnityEngine;
 public abstract class AbstractWeapon : AbstractAbility {
 
     public float damage = 1.0f;
-    public GameObject weaponPrefab;
 
     public static AbstractAbilityCooldown GetWeaponCooldownHolder (GameObject player)
     {

@@ -9,7 +9,8 @@ public class ShotgunWeapon : RBWeapon {
     public int pelletCount;
     public float verticalSpread;
     public float horizontalSpread;
-    public Transform barrelExit;
+
+    private Transform barrelExit;
 
     private ShotgunTriggerable sgTrigger;
     

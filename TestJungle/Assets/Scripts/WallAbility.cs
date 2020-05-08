@@ -1,7 +1,7 @@
 using System.Collections;
 using UnityEngine;
 
-[CreateAssetMenu (menuName = "Abilities/WallAbility")]
+[CreateAssetMenu (fileName = "WallAbility", menuName = "Abilities/WallAbility")]
 public class WallAbility : AbstractAbility {
 
     public GameObject wallPrefab;

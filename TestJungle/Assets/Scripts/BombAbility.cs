@@ -1,7 +1,7 @@
 ﻿using System.Collections;
 using UnityEngine;
 
-[CreateAssetMenu (menuName = "Abilities/BombAbility")]
+[CreateAssetMenu (fileName = "BombAbility", menuName = "Abilities/BombAbility")]
 public class BombAbility : AbstractAbility {
 
     public GameObject bombPrefab;

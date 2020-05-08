@@ -1,7 +1,7 @@
 using System.Collections;
 using UnityEngine;
 
-[CreateAssetMenu (menuName = "Abilities/TotemAbility")]
+[CreateAssetMenu (fileName = "TotemAbility", menuName = "Abilities/TotemAbility")]
 public class TotemAbility : AbstractAbility {
 
     public GameObject totemPrefab;

@@ -1,7 +1,7 @@
 ﻿using System.Collections;
 using UnityEngine;
 
-[CreateAssetMenu (menuName = "Abilities/AttackSpeedAbility")]
+[CreateAssetMenu (fileName = "AttackSpeedAbility", menuName = "Abilities/AttackSpeedAbility")]
 public class AttackSpeedAbility : AbstractAbility {
 
     public GameObject buffPrefab;
