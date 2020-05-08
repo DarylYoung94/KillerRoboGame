@@ -9,18 +9,14 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e4e5387842d3cdf4cabac1389790c182, type: 3}
-  m_Name: ShotgunWeapon
+  m_Script: {fileID: 11500000, guid: 3833fb7f31b042f4a895c3b165f7f537, type: 3}
+  m_Name: WallAbility1
   m_EditorClassIdentifier: 
   aName: New Ability
   cdString: QuickCast
   aBaseCoolDown: 1
   holding: 0
-  damage: 1
-  force: 20
-  pelletPrefab: {fileID: 1318197578036205983, guid: c7167629e20234e4fbf1ee3046ec5615,
+  wallPrefab: {fileID: 1073486666521078983, guid: 0cfa3a3055959b44b9f6add4f1129e03,
     type: 3}
+  maxRange: 15
   despawnTimer: 5
-  pelletCount: 20
-  verticalSpread: 15
-  horizontalSpread: 15

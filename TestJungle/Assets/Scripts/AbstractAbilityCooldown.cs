@@ -1,5 +1,4 @@
 ﻿using UnityEngine;
-using System.Collections;
 
 public abstract class AbstractAbilityCooldown : MonoBehaviour {
 
@@ -13,7 +12,7 @@ public abstract class AbstractAbilityCooldown : MonoBehaviour {
 
     void Start()
     {
-        if (ability != null && abilityHolder != null && abilityKeyCode != null)
+        if (ability != null && abilityHolder != null)
         {
             Initialise(ability, abilityHolder, abilityKeyCode);
         }

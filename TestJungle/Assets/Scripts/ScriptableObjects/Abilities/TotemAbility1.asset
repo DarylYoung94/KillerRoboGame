@@ -9,17 +9,18 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2d9366a434059d847b38e3803a06ad11, type: 3}
-  m_Name: BombAbility
+  m_Script: {fileID: 11500000, guid: af61565092239704a9859dcdc6958792, type: 3}
+  m_Name: TotemAbility1
   m_EditorClassIdentifier: 
   aName: New Ability
-  cdString: OnHold
+  cdString: QuickCast
   aBaseCoolDown: 1
   holding: 0
-  bombPrefab: {fileID: 5119310701056857973, guid: d4973d2d2e07f9d45b4644598d099922,
+  totemPrefab: {fileID: 3219271229723910230, guid: a4203e5264bfde844b4f5d0b84a9cf43,
     type: 3}
-  projectorPrefab: {fileID: 5116073342621537223, guid: 69073c20f40f36841a6a7da36f685257,
+  bulletPrefab: {fileID: 2629439600449195228, guid: b8fee540b190d7b4da903c91855bc54c,
     type: 3}
-  maxRange: 5
+  placementRange: 20
+  totemRange: 20
+  totemBulletSpeed: 50
   despawnTimer: 5
-  projectileSpeed: 5

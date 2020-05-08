@@ -9,8 +9,8 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 562bc5abc10dc3c4eb4862a7bcad5fd6, type: 3}
-  m_Name: BasicWeapon
+  m_Script: {fileID: 11500000, guid: 1a377f6effc83674c84361876cccad68, type: 3}
+  m_Name: BasicWeapon1
   m_EditorClassIdentifier: 
   aName: New Ability
   cdString: QuickCast

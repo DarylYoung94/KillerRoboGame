@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using UnityEngine;
 
+[System.Serializable]
 [CreateAssetMenu (fileName = "AttackSpeedAbility", menuName = "Abilities/AttackSpeedAbility")]
 public class AttackSpeedAbility : AbstractAbility {
 

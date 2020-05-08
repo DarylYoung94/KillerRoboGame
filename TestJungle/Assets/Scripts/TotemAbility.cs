@@ -1,6 +1,7 @@
 using System.Collections;
 using UnityEngine;
 
+[System.Serializable]
 [CreateAssetMenu (fileName = "TotemAbility", menuName = "Abilities/TotemAbility")]
 public class TotemAbility : AbstractAbility {
 
