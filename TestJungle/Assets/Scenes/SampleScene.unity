@@ -881,10 +881,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 239521946}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6a1b3fe14e31c984aa6b1f8648e1860d, type: 3}
+  m_Script: {fileID: 11500000, guid: 1ba58e05576a7a8418f51dbd1e355731, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ability: {fileID: 11400000, guid: 9e19241a18c7e1b4f89a2cd2ff8b2431, type: 2}
+  ability: {fileID: 11400000, guid: d6c911e695b52d6409a897651aa1d3cd, type: 2}
   abilityHolder: {fileID: 239521946}
   abilityKeyCode: 323
 --- !u!4 &239521952 stripped
@@ -1492,7 +1492,7 @@ Light:
   m_BounceIntensity: 1
   m_ColorTemperature: 6570
   m_UseColorTemperature: 0
-  m_BoundingSphereOverride: {x: 0, y: 1.5941e-41, z: 0, w: 0}
+  m_BoundingSphereOverride: {x: 0, y: 9.316e-42, z: 0, w: 0}
   m_UseBoundingSphereOverride: 0
   m_ShadowRadius: 0
   m_ShadowAngle: 0
@@ -3706,28 +3706,37 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 239521956, guid: c951d5a19754f3643a6aa2b94dea7399, type: 3}
+      propertyPath: unobtainableAbilities.Array.size
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 239521956, guid: c951d5a19754f3643a6aa2b94dea7399, type: 3}
       propertyPath: totalLoots
       value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 239521956, guid: c951d5a19754f3643a6aa2b94dea7399, type: 3}
       propertyPath: unobtainableAbilities.Array.data[0]
       value: 
-      objectReference: {fileID: 11400000, guid: 6571d517265cb1c4f931346f8dbc9e4b,
+      objectReference: {fileID: 11400000, guid: b361288e4594de04aac797cecf5a57a7,
         type: 2}
     - target: {fileID: 239521956, guid: c951d5a19754f3643a6aa2b94dea7399, type: 3}
       propertyPath: unobtainableAbilities.Array.data[1]
       value: 
-      objectReference: {fileID: 11400000, guid: b2cb3c418f5661b45887ca02667fd0dc,
+      objectReference: {fileID: 11400000, guid: be5fd92f213efc9498662d533a2084d1,
         type: 2}
     - target: {fileID: 239521956, guid: c951d5a19754f3643a6aa2b94dea7399, type: 3}
       propertyPath: unobtainableAbilities.Array.data[2]
       value: 
-      objectReference: {fileID: 11400000, guid: 7b7af32d22f587246b3b71bd354068bc,
+      objectReference: {fileID: 11400000, guid: 1e688373cd769bb4993ec8efb5ac2666,
         type: 2}
     - target: {fileID: 239521956, guid: c951d5a19754f3643a6aa2b94dea7399, type: 3}
       propertyPath: unobtainableAbilities.Array.data[3]
       value: 
-      objectReference: {fileID: 11400000, guid: 304509d153a607d4083e8763ee5087c2,
+      objectReference: {fileID: 11400000, guid: b67f4f003853fa949bf9e571e7dce2c9,
+        type: 2}
+    - target: {fileID: 239521956, guid: c951d5a19754f3643a6aa2b94dea7399, type: 3}
+      propertyPath: unobtainableAbilities.Array.data[4]
+      value: 
+      objectReference: {fileID: 11400000, guid: 1e688373cd769bb4993ec8efb5ac2666,
         type: 2}
     - target: {fileID: 267254721, guid: c951d5a19754f3643a6aa2b94dea7399, type: 3}
       propertyPath: m_LocalPosition.z
