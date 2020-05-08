@@ -9,15 +9,18 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4928a85db47dd3d40979deca49560c42, type: 3}
-  m_Name: BasicWeapon
+  m_Script: {fileID: 11500000, guid: e4e5387842d3cdf4cabac1389790c182, type: 3}
+  m_Name: ShotgunWeapon
   m_EditorClassIdentifier: 
   aName: New Ability
   cdString: QuickCast
   aBaseCoolDown: 1
   holding: 0
   damage: 1
-  force: 5
+  force: 20
   pelletPrefab: {fileID: 1318197578036205983, guid: c7167629e20234e4fbf1ee3046ec5615,
     type: 3}
   despawnTimer: 5
+  pelletCount: 20
+  verticalSpread: 15
+  horizontalSpread: 15

@@ -9,18 +9,14 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9fa9082a1bee9e74ea525b277a402bbf, type: 3}
-  m_Name: TotemAbility
+  m_Script: {fileID: 11500000, guid: f56009e55edaf0e45808c1d6de8fdce4, type: 3}
+  m_Name: WallAbility
   m_EditorClassIdentifier: 
   aName: New Ability
   cdString: QuickCast
   aBaseCoolDown: 1
   holding: 0
-  totemPrefab: {fileID: 3219271229723910230, guid: a4203e5264bfde844b4f5d0b84a9cf43,
+  wallPrefab: {fileID: 1073486666521078983, guid: 0cfa3a3055959b44b9f6add4f1129e03,
     type: 3}
-  bulletPrefab: {fileID: 2629439600449195228, guid: b8fee540b190d7b4da903c91855bc54c,
-    type: 3}
-  placementRange: 20
-  totemRange: 20
-  totemBulletSpeed: 50
+  maxRange: 5
   despawnTimer: 5

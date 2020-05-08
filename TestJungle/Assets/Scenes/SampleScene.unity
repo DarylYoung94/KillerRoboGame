@@ -872,6 +872,21 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 7294040209868856031}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &239521947
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 239521946}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cda7d220708b0174cb2915230e9382b8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ability: {fileID: 11400000, guid: 38642b5770a8a1345a99cbba3d8749c2, type: 2}
+  abilityHolder: {fileID: 239521946}
+  abilityKeyCode: 323
 --- !u!4 &239521952 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7294040209906256511, guid: c951d5a19754f3643a6aa2b94dea7399,
@@ -1477,7 +1492,7 @@ Light:
   m_BounceIntensity: 1
   m_ColorTemperature: 6570
   m_UseColorTemperature: 0
-  m_BoundingSphereOverride: {x: 0, y: 0, z: 0, w: 0}
+  m_BoundingSphereOverride: {x: 0, y: 1.5941e-41, z: 0, w: 0}
   m_UseBoundingSphereOverride: 0
   m_ShadowRadius: 0
   m_ShadowAngle: 0
@@ -3691,6 +3706,10 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 239521956, guid: c951d5a19754f3643a6aa2b94dea7399, type: 3}
+      propertyPath: unobtainableAbilities.Array.size
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 239521956, guid: c951d5a19754f3643a6aa2b94dea7399, type: 3}
       propertyPath: totalLoots
       value: 5
       objectReference: {fileID: 0}
@@ -3707,12 +3726,32 @@ PrefabInstance:
     - target: {fileID: 239521956, guid: c951d5a19754f3643a6aa2b94dea7399, type: 3}
       propertyPath: unobtainableAbilities.Array.data[2]
       value: 
-      objectReference: {fileID: 11400000, guid: 76249bbe092d5d44fa8d5ce51e5e41a9,
+      objectReference: {fileID: 11400000, guid: eac02a3ba4544dc409da5e1715fa9bc0,
         type: 2}
     - target: {fileID: 239521956, guid: c951d5a19754f3643a6aa2b94dea7399, type: 3}
       propertyPath: unobtainableAbilities.Array.data[3]
       value: 
-      objectReference: {fileID: 11400000, guid: eac02a3ba4544dc409da5e1715fa9bc0,
+      objectReference: {fileID: 11400000, guid: 76249bbe092d5d44fa8d5ce51e5e41a9,
+        type: 2}
+    - target: {fileID: 239521956, guid: c951d5a19754f3643a6aa2b94dea7399, type: 3}
+      propertyPath: unobtainableAbilities.Array.data[4]
+      value: 
+      objectReference: {fileID: 11400000, guid: 76249bbe092d5d44fa8d5ce51e5e41a9,
+        type: 2}
+    - target: {fileID: 239521956, guid: c951d5a19754f3643a6aa2b94dea7399, type: 3}
+      propertyPath: unobtainableAbilities.Array.data[5]
+      value: 
+      objectReference: {fileID: 11400000, guid: 76249bbe092d5d44fa8d5ce51e5e41a9,
+        type: 2}
+    - target: {fileID: 239521956, guid: c951d5a19754f3643a6aa2b94dea7399, type: 3}
+      propertyPath: unobtainableAbilities.Array.data[6]
+      value: 
+      objectReference: {fileID: 11400000, guid: 76249bbe092d5d44fa8d5ce51e5e41a9,
+        type: 2}
+    - target: {fileID: 239521956, guid: c951d5a19754f3643a6aa2b94dea7399, type: 3}
+      propertyPath: unobtainableAbilities.Array.data[7]
+      value: 
+      objectReference: {fileID: 11400000, guid: 76249bbe092d5d44fa8d5ce51e5e41a9,
         type: 2}
     - target: {fileID: 267254721, guid: c951d5a19754f3643a6aa2b94dea7399, type: 3}
       propertyPath: m_LocalPosition.z
@@ -3807,9 +3846,9 @@ PrefabInstance:
         type: 3}
       propertyPath: ability
       value: 
-      objectReference: {fileID: 11400000, guid: 087d775883339cf41a050bb28ab9a039,
-        type: 2}
-    m_RemovedComponents: []
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: 7377116499963237597, guid: c951d5a19754f3643a6aa2b94dea7399, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: c951d5a19754f3643a6aa2b94dea7399, type: 3}
 --- !u!1001 &7433305840058702133
 PrefabInstance:

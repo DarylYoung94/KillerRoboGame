@@ -9,17 +9,18 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a541483b9c0f99e47818f43d114ba0f8, type: 3}
-  m_Name: AttackSpeedAbility
+  m_Script: {fileID: 11500000, guid: 43246501c600c87489a93ecf20c14206, type: 3}
+  m_Name: TotemAbility
   m_EditorClassIdentifier: 
   aName: New Ability
-  cdString: OnRelease
+  cdString: QuickCast
   aBaseCoolDown: 1
   holding: 0
-  buffPrefab: {fileID: 1819252622954579800, guid: ab2c9fbfe47b2324eaf6d2ccc6dc3bbd,
+  totemPrefab: {fileID: 3219271229723910230, guid: a4203e5264bfde844b4f5d0b84a9cf43,
     type: 3}
-  projectorPrefab: {fileID: 1819252622954579800, guid: ab2c9fbfe47b2324eaf6d2ccc6dc3bbd,
+  bulletPrefab: {fileID: 2629439600449195228, guid: b8fee540b190d7b4da903c91855bc54c,
     type: 3}
-  maxRange: 5
-  despawnTimer: 8
-  attackSpeedMultiplier: 2
+  placementRange: 20
+  totemRange: 20
+  totemBulletSpeed: 50
+  despawnTimer: 5
