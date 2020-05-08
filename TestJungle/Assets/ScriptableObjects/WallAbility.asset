@@ -16,7 +16,7 @@ MonoBehaviour:
   cdString: QuickCast
   aBaseCoolDown: 1
   holding: 0
-  wallPrefab: {fileID: 3324169760153976963, guid: 60feca50bd1614741bdcaded5104b373,
+  wallPrefab: {fileID: 1073486666521078983, guid: 0cfa3a3055959b44b9f6add4f1129e03,
     type: 3}
   maxRange: 5
   despawnTimer: 5
