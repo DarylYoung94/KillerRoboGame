@@ -9,12 +9,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1873604c6675a8d4a997b4d083d4c75f, type: 3}
-  m_Name: Bomb Abilitiy
+  m_Script: {fileID: 11500000, guid: b036b8467f9b6bf4c9292d0f29d6a548, type: 3}
+  m_Name: New Bomb Ability
   m_EditorClassIdentifier: 
-  aName: Bomb
+  aName: New Ability
   cdString: OnHold
-  aBaseCoolDown: 10
+  aBaseCoolDown: 1
   holding: 0
   bombPrefab: {fileID: 5119310701056857973, guid: d4973d2d2e07f9d45b4644598d099922,
     type: 3}
