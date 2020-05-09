@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e3daf62fedad9974eb5b24abece26d28, type: 3}
+  m_Name: LightningWeapon
+  m_EditorClassIdentifier: 
+  aName: New Ability
+  cdString: OnRelease
+  aBaseCoolDown: 1
+  holding: 0
+  damage: 1
+  range: 10
+  lightningPrefab: {fileID: 6751955489980688553, guid: 7d3234e15a99478498254fea662930e7,
+    type: 3}
+  despawnTimer: 0.5
