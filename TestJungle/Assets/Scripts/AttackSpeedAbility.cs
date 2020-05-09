@@ -20,7 +20,7 @@ public class AttackSpeedAbility : AbstractAbility {
         attackSpeedTrigger.buffPrefab = buffPrefab;
         attackSpeedTrigger.projectorPrefab = projectorPrefab;
         attackSpeedTrigger.despawnTimer = despawnTimer;
-        attackSpeedTrigger.attackSpeedMultiplier = attackSpeedMultiplier;
+        attackSpeedTrigger.attackSpeedMultiplier =  attackSpeedMultiplier;
     }
 
     public override void ButtonDown()

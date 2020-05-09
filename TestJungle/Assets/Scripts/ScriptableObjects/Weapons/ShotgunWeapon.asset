@@ -9,7 +9,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b5b49dd4419261b47aee8207252bb04e, type: 3}
+  m_Script: {fileID: 11500000, guid: 6344d294b3f0f934f8f73ad14f03132c, type: 3}
   m_Name: ShotgunWeapon
   m_EditorClassIdentifier: 
   aName: New Ability
@@ -17,10 +17,10 @@ MonoBehaviour:
   aBaseCoolDown: 1
   holding: 0
   damage: 1
-  force: 15
+  force: 5
   pelletPrefab: {fileID: 1318197578036205983, guid: c7167629e20234e4fbf1ee3046ec5615,
     type: 3}
   despawnTimer: 5
-  pelletCount: 5
-  verticalSpread: 15
-  horizontalSpread: 15
+  pelletCount: 0
+  verticalSpread: 0
+  horizontalSpread: 0
