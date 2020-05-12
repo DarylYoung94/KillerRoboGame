@@ -51,7 +51,6 @@ public class Totem : MonoBehaviour
             float distToEnemy = Vector3.Distance(hit.transform.position, totemPosition);
             Enemy enemyHit = hit.transform.GetComponent<Enemy>();
 
-
             if (enemyHit != null && distToEnemy < closestEnemy)
             {
                 closestEnemy = distToEnemy;
