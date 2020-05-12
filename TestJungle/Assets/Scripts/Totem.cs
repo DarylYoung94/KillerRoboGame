@@ -40,7 +40,7 @@ public class Totem : MonoBehaviour
 
     public void FindClosestEnemy()
     {
-        Vector3 totemPosition = totemPrefab.transform.position;
+        Vector3 totemPosition = this.transform.position;
         Collider[] colliders = Physics.OverlapSphere(totemPosition, totemRange);
 
         float closestEnemy = Mathf.Infinity;

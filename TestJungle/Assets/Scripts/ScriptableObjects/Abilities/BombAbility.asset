@@ -22,4 +22,4 @@ MonoBehaviour:
     type: 3}
   maxRange: 5
   despawnTimer: 5
-  projectileSpeed: 5
+  projectileSpeed: 20
