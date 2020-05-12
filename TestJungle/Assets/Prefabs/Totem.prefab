@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4849283019640226783}
   - component: {fileID: -2819071293440568479}
+  - component: {fileID: 6095586850337331288}
   m_Layer: 0
   m_Name: Totem
   m_TagString: Totem
@@ -49,6 +50,24 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &6095586850337331288
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3219271229723910230}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7d1a507d35e7a2c4e835ad49e7db85e6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  totemPrefab: {fileID: 3219271229723910230}
+  bulletPrefab: {fileID: 2629439600449195228, guid: b8fee540b190d7b4da903c91855bc54c,
+    type: 3}
+  totemFirePoint: {fileID: 7587115284105185112}
+  totemRange: 20
+  totemBulletSpeed: 20
 --- !u!1 &7587115284105185112
 GameObject:
   m_ObjectHideFlags: 0
@@ -134,6 +153,7 @@ MeshRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 2
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:

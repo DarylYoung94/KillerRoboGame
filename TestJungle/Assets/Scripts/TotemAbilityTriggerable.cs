@@ -32,7 +32,7 @@ public class TotemAbilityTriggerable : MonoBehaviour
     void SpawnTotem (Vector3 totemAim) 
     {
         GameObject turretInstance = Instantiate(totemPrefab, totemAim, Quaternion.identity);
-        turretInstance.AddComponent<Totem>()
+        turretInstance.GetComponent<Totem>()
                       .Initialise(bulletPrefab,
                                   totemPrefab, 
                                   totemRange, 
