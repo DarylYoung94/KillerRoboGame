@@ -23,7 +23,7 @@ public class Totem : MonoBehaviour
         this.totemBulletSpeed = totemBulletSpeed;
         this.totemRange = totemRange;
 
-        totemFirePoint = this.totemPrefab.transform.Find("TotemFirePoint").gameObject;
+        totemFirePoint = this.transform.Find("TotemFirePoint").gameObject;
     }
 
     public void OnCollisionEnter(Collision collision)
@@ -50,7 +50,6 @@ public class Totem : MonoBehaviour
 
             float distToEnemy = Vector3.Distance(hit.transform.position, totemPosition);
             Enemy enemyHit = hit.transform.GetComponent<Enemy>();
-
 
             if (enemyHit != null && distToEnemy < closestEnemy)
             {

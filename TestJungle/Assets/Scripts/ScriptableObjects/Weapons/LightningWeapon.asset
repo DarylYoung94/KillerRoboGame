@@ -16,8 +16,12 @@ MonoBehaviour:
   cdString: OnRelease
   aBaseCoolDown: 1
   holding: 0
-  damage: 1
-  range: 10
+  damage: 0.1
+  range: 20
   lightningPrefab: {fileID: 6751955489980688553, guid: 7d3234e15a99478498254fea662930e7,
     type: 3}
-  despawnTimer: 0.5
+  chainLightningPrefab: {fileID: 6751955489980688553, guid: 7d3234e15a99478498254fea662930e7,
+    type: 3}
+  despawnTimer: 0.2
+  chainRange: 20
+  applyChains: 1

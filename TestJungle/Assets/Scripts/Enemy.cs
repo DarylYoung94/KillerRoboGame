@@ -89,7 +89,7 @@ public class Enemy : MonoBehaviour
         if(DMG != null)
         {
             DMG.GetComponent<TextMesh>().text = damageTaken.ToString();
-            Debug.Log(damageTaken + " damageTaken" );
+            //Debug.Log(damageTaken + " damageTaken" );
         }      
     }
 

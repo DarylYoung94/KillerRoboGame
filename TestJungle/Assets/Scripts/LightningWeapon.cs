@@ -5,9 +5,12 @@ using UnityEngine;
 public class LightningWeapon : RayCastWeapon {
 
     public GameObject lightningPrefab;
+    public GameObject chainLightningPrefab;
     public float despawnTimer = 0.5f;
-    private Transform barrelExit;
+    public float chainRange = 4.0f;
+    public bool applyChains = false;
 
+    private Transform barrelExit;
     private LightningTriggerable lightningTrigger;
     
     public override void Initialise(GameObject obj)
@@ -17,6 +20,9 @@ public class LightningWeapon : RayCastWeapon {
         lightningTrigger.despawnTimer = despawnTimer;
         lightningTrigger.range = range;
         lightningTrigger.damage = damage;
+        lightningTrigger.chainRange = chainRange;
+        lightningTrigger.applyChains = applyChains;
+        lightningTrigger.chainLightningPrefab = chainLightningPrefab;
         
         barrelExit = GameObject.Find("Player/firePoint").transform;
         lightningTrigger.barrelExit = barrelExit;

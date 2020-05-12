@@ -74,16 +74,16 @@ LineRenderer:
   m_SortingOrder: 0
   m_Positions:
   - {x: 0, y: 0, z: 0}
-  - {x: 0, y: 0.86, z: 2}
-  - {x: 0, y: -0.66, z: 4}
-  - {x: 0, y: 1.01, z: 6}
-  - {x: 0, y: 0, z: 8}
-  - {x: 0, y: 0, z: 8}
-  - {x: 0, y: 0, z: 8}
-  - {x: 0, y: 0, z: 8}
-  - {x: 0, y: 0, z: 8}
-  - {x: 0, y: 0, z: 8}
-  - {x: 0, y: 0, z: 8}
+  - {x: 0, y: 0, z: 0}
+  - {x: 0, y: 0, z: 0}
+  - {x: 0, y: 0, z: 0}
+  - {x: 0, y: 0, z: 0}
+  - {x: 0, y: 0, z: 0}
+  - {x: 0, y: 0, z: 0}
+  - {x: 0, y: 0, z: 0}
+  - {x: 0, y: 0, z: 0}
+  - {x: 0, y: 0, z: 0}
+  - {x: 0, y: 0, z: 0}
   - {x: 0, y: 0, z: 8}
   m_Parameters:
     serializedVersion: 3
@@ -152,3 +152,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: abe6c8beef45dc64f86ffe1c25de137a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  linePoints: []
+  applyChains: 0
+  chainLightningPrefab: {fileID: 6751955489980688553}

@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 1850530535368198206}
   - component: {fileID: 1850530535368198207}
   - component: {fileID: 1850530535368198200}
-  m_Layer: 5
+  m_Layer: 10
   m_Name: Canvas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -110,7 +110,7 @@ GameObject:
   - component: {fileID: 1850530535770161667}
   - component: {fileID: 1850530535770161665}
   - component: {fileID: 1850530535770161666}
-  m_Layer: 5
+  m_Layer: 10
   m_Name: HealthBG
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -160,6 +160,7 @@ MonoBehaviour:
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 0.16509432, b: 0.16509432, a: 1}
   m_RaycastTarget: 1
+  m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
@@ -184,7 +185,7 @@ GameObject:
   - component: {fileID: 1850530536104777745}
   - component: {fileID: 1850530536104777746}
   - component: {fileID: 1850530536104777747}
-  m_Layer: 5
+  m_Layer: 10
   m_Name: Healthbar
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -233,6 +234,7 @@ MonoBehaviour:
   m_Material: {fileID: 0}
   m_Color: {r: 0.15972686, g: 1, b: 0, a: 1}
   m_RaycastTarget: 1
+  m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
@@ -264,7 +266,7 @@ GameObject:
   - component: {fileID: 1850530536060326396}
   - component: {fileID: 5988041405409659080}
   - component: {fileID: 2391617112497608776}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: ChargeEnemy
   m_TagString: ChargeEnemy
   m_Icon: {fileID: 0}
@@ -308,6 +310,7 @@ MeshRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 2
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:

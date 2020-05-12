@@ -5,14 +5,16 @@ using UnityEngine;
 public class LightningTriggerable : MonoBehaviour
 {
     [HideInInspector] public GameObject lightningPrefab;
+    [HideInInspector] public GameObject chainLightningPrefab;
 
     public float despawnTimer;
     public float range;
+    public float chainRange;
     public float damage;
+    public bool applyChains;
 
     public Transform barrelExit;
 
-    // Update is called once per frame
     public void Hold()
     {
         RaycastHit hit;
@@ -25,9 +27,12 @@ public class LightningTriggerable : MonoBehaviour
 
             if (aimDistance <= range)
             {
-                GameObject lightning = Instantiate(lightningPrefab, this.transform.position, Quaternion.identity);
-                lightning.transform.SetParent(this.gameObject.transform);
-                lightning.GetComponent<Lightning>().SetTarget(lightningAim);
+                GameObject lightningGO = Instantiate(lightningPrefab, barrelExit.position, Quaternion.identity);
+                lightningGO.transform.SetParent(this.gameObject.transform);
+                lightningGO.transform.LookAt(lightningAim);
+
+                Lightning lightning = lightningGO.GetComponent<Lightning>();
+                lightning.Setup(aimDistance, applyChains, chainRange, chainLightningPrefab, damage);
             }
         }
     }
