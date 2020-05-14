@@ -32,7 +32,7 @@ public class LightningTriggerable : MonoBehaviour
                 lightningGO.transform.LookAt(lightningAim);
 
                 Lightning lightning = lightningGO.GetComponent<Lightning>();
-                lightning.Setup(aimDistance, applyChains, chainRange, chainLightningPrefab, damage);
+                lightning.Setup(null, aimDistance, applyChains, chainRange, chainLightningPrefab, damage);
             }
         }
     }

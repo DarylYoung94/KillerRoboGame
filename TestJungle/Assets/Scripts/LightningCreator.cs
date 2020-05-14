@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class LightningCreator : MonoBehaviour
 {
-    public Lightning lightningPrefab;
+    public GameObject lightningPrefab;
 
     IEnumerator Start() {
 

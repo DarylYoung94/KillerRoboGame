@@ -8,36 +8,40 @@ public class Enemy : MonoBehaviour
 {
     public float enemyLevel = 1;
 
-    private Vector3 look;
-    public float damageTaken;
-    public GameObject damagePop;
     public int experience;
+
     public Image healthBar;
     public GameObject healthCanvas;
-    public float dropRate = 0.3f; //can change this in inspector for different enemies?
-    Camera  cam;
     public float healthness;
-    public float startHealth ;
-    public float health =0 ;
+    public float startHealth;
+    public float health = 0;
+
     public GameObject enemy;
-    public GameObject Loot1;
     public GameObject player;
-    private AbilityManager scriptObj ;
-    public GameObject[] otherScriptObj;
-    public int itemIndex;
-    public float dropChance ;
-    public GameObject enemyManager;
+
+    public float damageTaken;
+    public GameObject damagePop;
     public Vector3 dmgPopLoc;
+
+    public float totalDamageTaken = 0;
+    public GameObject totalDamagePrefab;
+    private GameObject totalDamageGO;
+    public Vector3 totalDmgPopLoc;
+    float totalDamageTimer;
+
+    
+    public float dropChance;
+    public float dropRate = 0.3f; //can change this in inspector for different enemies?
     public GameObject lootPrefab;
     
+    bool alive = true;
+
     // Start is called before the first frame update
     void Start()
     {
         healthness = startHealth + 10 * enemyLevel;
         health = healthness;
         enemy = this.gameObject;
-      
-        cam = Camera.main;
     }
 
     // Update is called once per frame
@@ -46,51 +50,74 @@ public class Enemy : MonoBehaviour
         player = GameManager.instance.player;
         dropChance = Random.value;
 
-        healthCanvas.transform.LookAt(cam.transform.position);
+        healthCanvas.transform.LookAt(Camera.main.transform.position);
         
+        TotalDamageTimer();
     }
 
     public void TakeDamage(float amount)
     {
         health -= amount;
         damageTaken = amount;
-  
-        if (damagePop )
-        {
+        totalDamageTaken += amount;
+
+        if (damagePop)
             ShowDamagePop();
-        }
+
+        if (totalDamagePrefab)
+            ShowTotalDamagePop();
 
         healthBar.fillAmount = health / healthness;
-        if(health<=0f )
+        if(alive && health <= 0f )
         {
-            if (AbilityManager.AbilityTriggers.Count <= 0)
+            alive = false;
+
+            if (dropChance < dropRate)
             {
-                player.GetComponent<PlayerXP>().AddExp(experience);
-               
-                Die();
+                Loot();
             }
-            else
-            {
-                if (dropChance < dropRate)
-                    Loot();
-                if (Loot1 != null)
-                {
-                    player.GetComponent<PlayerXP>().AddExp(experience);
-                    Die();
-                }
-            }
+
+            player.GetComponent<PlayerXP>().AddExp(experience);  
+            Die();
         }
     }
     
 
     public void ShowDamagePop()
     {
-        GameObject DMG = Instantiate(damagePop, transform.position + (dmgPopLoc)  , Quaternion.identity);
+        GameObject DMG = Instantiate(damagePop,
+                                     transform.position + dmgPopLoc + RandomVector3(1.0f),
+                                     Quaternion.identity);
         if(DMG != null)
         {
             DMG.GetComponent<TextMesh>().text = damageTaken.ToString();
-            //Debug.Log(damageTaken + " damageTaken" );
-        }      
+        }
+
+    }
+
+    public void ShowTotalDamagePop()
+    {   
+        // 3 states this could be in
+        // - First time damage is taken so we instantiate
+        // - The damage popup timed out and is no longer active so we make it active and reset the timer.
+        // - The damage popup is active and we need to reset the timer.
+        if (totalDamageGO == null)
+        {
+            totalDamageGO = Instantiate(totalDamagePrefab,
+                                        transform.position + totalDmgPopLoc,
+                                        Quaternion.identity);
+        }
+        else if (totalDamageGO.activeSelf == false)
+        {
+            totalDamageGO.SetActive(true);
+        }
+
+        if(totalDamageGO != null && totalDamageGO.activeSelf)
+        {
+            totalDamageGO.GetComponent<TextMesh>().text = totalDamageTaken.ToString("0.00");
+        }
+
+        ResetTimer();
     }
 
     void Die()
@@ -100,7 +127,31 @@ public class Enemy : MonoBehaviour
 
     public void Loot()
     {
-        GameObject l;
-        l = Instantiate(lootPrefab, enemy.transform.position, Quaternion.identity);
+        GameObject loot = Instantiate(lootPrefab, enemy.transform.position, Quaternion.identity);
+    }
+
+    private Vector3 RandomVector3(float range)
+    {
+        return new Vector3(Random.Range(-range,range), Random.Range(-range,range), Random.Range(-range,range));
+    }
+
+    private void TotalDamageTimer()
+    {
+        totalDamageTimer -= Time.deltaTime;
+
+        if (totalDamageTimer < 0)
+        {
+            totalDamageTaken = 0;
+            if (totalDamageGO)
+            {
+                totalDamageGO.GetComponent<TextMesh>().text = totalDamageTaken.ToString("0.00");
+                totalDamageGO.SetActive(false);
+            }
+        }
+    }
+
+    private void ResetTimer()
+    {
+        totalDamageTimer = 2.0f;
     }
 }

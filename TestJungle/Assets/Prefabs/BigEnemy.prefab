@@ -50,6 +50,7 @@ GameObject:
   - component: {fileID: 1978058152785135357}
   - component: {fileID: 814644639735266773}
   - component: {fileID: 2496795201826189676}
+  - component: {fileID: 6932763538887802902}
   m_Layer: 10
   m_Name: BigEnemy
   m_TagString: Enemy
@@ -156,25 +157,24 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemyLevel: 1
-  damageTaken: 0
-  damagePop: {fileID: 833885491248636895, guid: cee59fe21c0078a48b1ecfd64ef996db,
-    type: 3}
   experience: 20
   healthBar: {fileID: 4426881803155200176}
   healthCanvas: {fileID: 4426881804563089561}
-  dropRate: 0.5
   healthness: 0
   startHealth: 200
   health: 0
   enemy: {fileID: 1260946748892822101}
-  Loot1: {fileID: 2833331249340996941, guid: 27fcd6e3a18633b4bb69133f50047786, type: 3}
   player: {fileID: 0}
-  otherScriptObj: []
-  itemIndex: 0
-  dropChance: 0
-  enemyManager: {fileID: 8343699857576561646, guid: ea9879d41520aea499d0a7cb48607e80,
+  damageTaken: 0
+  damagePop: {fileID: 833885491248636895, guid: cee59fe21c0078a48b1ecfd64ef996db,
     type: 3}
   dmgPopLoc: {x: 0, y: 4, z: 0}
+  totalDamageTaken: 0
+  totalDamagePrefab: {fileID: 340990915897414071, guid: 043da56f05217fb4ea897713cf8e3ffc,
+    type: 3}
+  totalDmgPopLoc: {x: 0, y: 7, z: 0}
+  dropChance: 0
+  dropRate: 0.5
   lootPrefab: {fileID: 0}
 --- !u!54 &7347904590841676039
 Rigidbody:
@@ -316,6 +316,20 @@ MonoBehaviour:
   enemyHealth50: 0
   enemyStartHealth: 0
   bossSpawn: 1
+--- !u!114 &6932763538887802902
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1260946748892822101}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cadc5dbd92d98f845970481d01b366f5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  electrocuted: 0
+  electrocuteTimer: 0.5
 --- !u!1 &2525750731038173748
 GameObject:
   m_ObjectHideFlags: 0
