@@ -38,7 +38,7 @@ public class TurretAbilityTriggerable : MonoBehaviour
        
         if (Physics.Raycast(ray, out hit))
         {
-            turretAim = hit.point;
+           
             float range = Vector3.Distance(this.gameObject.transform.position, turretAim);
             GameObject turretInstance = Instantiate(turretPrefab, turretAim, Quaternion.identity) as GameObject;
             StartCoroutine(ExecuteAfterTime(despawnTimer,turretInstance));
@@ -49,6 +49,11 @@ public class TurretAbilityTriggerable : MonoBehaviour
     }
     private void UpdateProjector()
     {
+        Vector3 direction = turretAim - this.transform.position;
+        if (direction.magnitude > maxRange)
+        {
+            turretAim = this.transform.position + direction.normalized * maxRange;
+        }
         if (projectorTarget == null)
         {
             projectorTarget = Instantiate(projectorPrefab, turretAim, Quaternion.identity);
@@ -70,11 +75,11 @@ public class TurretAbilityTriggerable : MonoBehaviour
         yield return new WaitForSeconds(turretTime) ;
         Destroy(turretInstance);
     }
-    void PlaceTurret()
+    /*void PlaceTurret()
     {
                 GameObject turretInstance = Instantiate(turretPrefab, turretAim, Quaternion.identity) as GameObject;
 
-    }
+    }*/
 }
    
    

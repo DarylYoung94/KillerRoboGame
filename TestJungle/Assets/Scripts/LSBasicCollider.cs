@@ -2,16 +2,15 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class BulletCollider : MonoBehaviour
+public class LSBasicCollider : MonoBehaviour
 {
-    public Turret turretscript;
+     public Turret turretscript;
     public GameObject player;
     public Rigidbody bulletPrefab;
     public float autoDamage;
     public float dmgScale;
     public float Damage;
-    public float lifestealAmount =5f;
-    public bool isHealingBullet = false;
+    public float lifestealamount = 5f;
      void Start()
     {
         player = GameManager.instance.player;
@@ -30,10 +29,7 @@ public class BulletCollider : MonoBehaviour
                 if (enemyHit != null)
                 {
                     enemyHit.TakeDamage(autoDamage);
-                    if (isHealingBullet)
-                    {
-                    player.GetComponent<PlayerManager>().health +=lifestealAmount;
-                    }
+                    player.GetComponent<PlayerManager>().health +=lifestealamount;
                 }
 
                 Destroy(this.gameObject);

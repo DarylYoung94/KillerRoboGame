@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: TotemAbility
   m_EditorClassIdentifier: 
   aName: New Ability
-  cdString: QuickCast
+  cdString: OnHold
   aBaseCoolDown: 1
   holding: 0
   totemPrefab: {fileID: 3219271229723910230, guid: a4203e5264bfde844b4f5d0b84a9cf43,
@@ -21,6 +21,8 @@ MonoBehaviour:
   bulletPrefab: {fileID: 2629439600449195228, guid: b8fee540b190d7b4da903c91855bc54c,
     type: 3}
   placementRange: 20
-  totemRange: 20
   totemBulletSpeed: 50
   despawnTimer: 5
+  projectorPrefab: {fileID: 3219271229723910230, guid: a4203e5264bfde844b4f5d0b84a9cf43,
+    type: 3}
+  maxRange: 20
