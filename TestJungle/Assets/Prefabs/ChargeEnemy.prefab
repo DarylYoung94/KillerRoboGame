@@ -266,6 +266,7 @@ GameObject:
   - component: {fileID: 1850530536060326396}
   - component: {fileID: 5988041405409659080}
   - component: {fileID: 2391617112497608776}
+  - component: {fileID: 6694752186380161120}
   m_Layer: 10
   m_Name: ChargeEnemy
   m_TagString: ChargeEnemy
@@ -362,24 +363,24 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemyLevel: 1
-  damageTaken: 0
-  damagePop: {fileID: 833885491248636895, guid: cee59fe21c0078a48b1ecfd64ef996db,
-    type: 3}
   experience: 100
   healthBar: {fileID: 1850530536104777747}
   healthCanvas: {fileID: 1850530535368198202}
-  dropRate: 0.5
   healthness: 0
   startHealth: 100
   health: 50
   enemy: {fileID: 3872777230820948726}
-  Loot1: {fileID: 2833331249340996941, guid: 27fcd6e3a18633b4bb69133f50047786, type: 3}
   player: {fileID: 0}
-  otherScriptObj: []
-  itemIndex: 0
-  dropChance: 0
-  enemyManager: {fileID: 0}
+  damageTaken: 0
+  damagePop: {fileID: 833885491248636895, guid: cee59fe21c0078a48b1ecfd64ef996db,
+    type: 3}
   dmgPopLoc: {x: 0, y: 2.5, z: 0}
+  totalDamageTaken: 0
+  totalDamagePrefab: {fileID: 340990915897414071, guid: 043da56f05217fb4ea897713cf8e3ffc,
+    type: 3}
+  totalDmgPopLoc: {x: 0, y: 5, z: 0}
+  dropChance: 0
+  dropRate: 0.5
   lootPrefab: {fileID: 4923901484974759255, guid: 8739ff60affb00c4a9b8fcc66b4bb829,
     type: 3}
 --- !u!54 &4699530912284115364
@@ -480,3 +481,17 @@ MonoBehaviour:
   charging: 0
   chargingTimer: 0.5
   timer2: 0
+--- !u!114 &6694752186380161120
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3872777230820948726}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cadc5dbd92d98f845970481d01b366f5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  electrocuted: 0
+  electrocuteTimer: 0.5

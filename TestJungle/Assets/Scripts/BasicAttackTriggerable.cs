@@ -8,9 +8,11 @@ public class BasicAttackTriggerable : MonoBehaviour
 
     public float force;
     public GameObject pelletPrefab;
+    public GameObject empoweredPrefab;
     public Transform barrelExit;
 
     Vector3 aim;
+    int i = 0;
 
     public void Shoot() 
     {
@@ -18,15 +20,26 @@ public class BasicAttackTriggerable : MonoBehaviour
         Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
 
         if (Physics.Raycast(ray, out hit))
-        {         
-            aim = hit.point;    
-            Fire();
+        {
+            
+            aim = hit.point;
+
+            i++; 
+            if (i < 3)
+            {
+                Fire(pelletPrefab);
+            }
+            else
+            {
+                Fire(empoweredPrefab);
+                i = 0;
+            }
         }
     }
 
-    void Fire()
+    void Fire(GameObject firePrefab)
     {
-        GameObject basicBulletInstance = Instantiate(pelletPrefab, barrelExit.position, Quaternion.identity);
+        GameObject basicBulletInstance = Instantiate(firePrefab, barrelExit.position, Quaternion.identity);
         Rigidbody rb = basicBulletInstance.GetComponent<Rigidbody>();
         rb.transform.LookAt(aim);
         rb.AddForce(rb.transform.forward * force, ForceMode.Impulse);
