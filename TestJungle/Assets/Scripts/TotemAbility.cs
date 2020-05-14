@@ -7,10 +7,11 @@ public class TotemAbility : AbstractAbility {
     public GameObject totemPrefab;
     public GameObject bulletPrefab;
     public float placementRange = 20f;
-    public float totemRange = 20f;
+    
     public float totemBulletSpeed = 50f;
     public float despawnTimer = 5f;
-
+    public GameObject projectorPrefab;
+    public float maxRange = 20f;
     private TotemAbilityTriggerable totemPlacement;
     
     public override void Initialise(GameObject obj)
@@ -19,22 +20,24 @@ public class TotemAbility : AbstractAbility {
 
         // Stats
         totemPlacement.placementRange = placementRange;
-        totemPlacement.totemRange = totemRange;
+        totemPlacement.maxRange = maxRange;
         totemPlacement.despawnTimer = despawnTimer;
         totemPlacement.totemBulletSpeed = totemBulletSpeed;
 
         // Prefabs
         totemPlacement.totemPrefab = totemPrefab;
         totemPlacement.bulletPrefab = bulletPrefab;
+        totemPlacement.projectorPrefab = projectorPrefab;
     }
 
     public override void ButtonDown()
     {
-        totemPlacement.PlaceTotem();
+        totemPlacement.Hold();
     }
 
     public override void ButtonUp()
     {
-        
+        totemPlacement.Release();
+
     }
 }

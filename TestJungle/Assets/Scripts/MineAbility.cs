@@ -14,6 +14,7 @@ public class MineAbility : AbstractAbility
     public float Damage = 10f;
     public GameObject explosionParticles;
     public GameObject timerParticles;
+    public float maxRange = 20f;
 
     public override void Initialise(GameObject obj)
     {
@@ -23,6 +24,7 @@ public class MineAbility : AbstractAbility
         mineTrigger.despawnTimer = despawnTimer;
         mineTrigger.radius = radius;
         mineTrigger.power =power;
+        mineTrigger.maxRange = maxRange;
         mineTrigger.upForce= upForce;
         mineTrigger.Damage = Damage;
         mineTrigger.explosionParticles= explosionParticles;

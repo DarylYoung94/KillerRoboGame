@@ -9,15 +9,17 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a0763dfa7843b594fae84ee0596cf001, type: 3}
-  m_Name: BasicWeapon
+  m_Script: {fileID: 11500000, guid: 54ddc8dd24b1d4c49a8709f87e76aafb, type: 3}
+  m_Name: ThreeHitWeapon
   m_EditorClassIdentifier: 
   aName: New Ability
   cdString: QuickCast
-  aBaseCoolDown: 1
+  aBaseCoolDown: 0.75
   holding: 0
-  damage: 4
+  damage: 1
   force: 40
-  pelletPrefab: {fileID: 3139354962694299586, guid: 7acde952d0af7a54eab7abde1d5a4ee2,
+  bulletPrefab: {fileID: 5018037636694644118, guid: bc680bceb57d7d545b619a4cf6f41bf1,
+    type: 3}
+  healingBulletPrefab: {fileID: 3139354962694299586, guid: 7acde952d0af7a54eab7abde1d5a4ee2,
     type: 3}
   despawnTimer: 5
