@@ -60,6 +60,7 @@ public class AttackSpeedAbilityTriggerable : MonoBehaviour
         {
             buffAim = this.transform.position + direction.normalized * maxRange;
         }
+
         if (projectorTarget == null)
         {
             projectorTarget = Instantiate(projectorPrefab, buffAim, Quaternion.identity);

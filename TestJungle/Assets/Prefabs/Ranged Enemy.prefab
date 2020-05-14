@@ -950,6 +950,7 @@ GameObject:
   - component: {fileID: 6722915512905374764}
   - component: {fileID: 1728032415052825880}
   - component: {fileID: 8170384314556357816}
+  - component: {fileID: -4592870505918898550}
   m_Layer: 10
   m_Name: Ranged Enemy
   m_TagString: RangedEnemy1
@@ -1054,24 +1055,24 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemyLevel: 1
-  damageTaken: 0
-  damagePop: {fileID: 833885491248636895, guid: cee59fe21c0078a48b1ecfd64ef996db,
-    type: 3}
   experience: 50
   healthBar: {fileID: 6722915512555820483}
   healthCanvas: {fileID: 6722915514369246698}
-  dropRate: 0.5
   healthness: 0
   startHealth: 40
   health: 50
   enemy: {fileID: 8168441081761773350}
-  Loot1: {fileID: 2833331249340996941, guid: 27fcd6e3a18633b4bb69133f50047786, type: 3}
   player: {fileID: 0}
-  otherScriptObj: []
-  itemIndex: 0
-  dropChance: 0
-  enemyManager: {fileID: 0}
+  damageTaken: 0
+  damagePop: {fileID: 833885491248636895, guid: cee59fe21c0078a48b1ecfd64ef996db,
+    type: 3}
   dmgPopLoc: {x: 0, y: 2.5, z: 0}
+  totalDamageTaken: 0
+  totalDamagePrefab: {fileID: 340990915897414071, guid: 043da56f05217fb4ea897713cf8e3ffc,
+    type: 3}
+  totalDmgPopLoc: {x: 0, y: 5, z: 0}
+  dropChance: 0
+  dropRate: 0.5
   lootPrefab: {fileID: 4923901484974759255, guid: 8739ff60affb00c4a9b8fcc66b4bb829,
     type: 3}
 --- !u!54 &421906573132696692
@@ -1172,3 +1173,17 @@ MonoBehaviour:
   shootTimer: 0
   distanceFromPlayer: 0
   attackRange: 30
+--- !u!114 &-4592870505918898550
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8168441081761773350}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cadc5dbd92d98f845970481d01b366f5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  electrocuted: 0
+  electrocuteTimer: 0.5

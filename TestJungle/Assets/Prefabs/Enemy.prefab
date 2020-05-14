@@ -358,6 +358,7 @@ GameObject:
   - component: {fileID: 6833896156814601291}
   - component: {fileID: 69102831}
   - component: {fileID: 5383961379646207451}
+  - component: {fileID: -1704298053855842401}
   m_Layer: 10
   m_Name: Enemy
   m_TagString: Enemy
@@ -456,25 +457,24 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemyLevel: 1
-  damageTaken: 0
-  damagePop: {fileID: 833885491248636895, guid: cee59fe21c0078a48b1ecfd64ef996db,
-    type: 3}
   experience: 20
   healthBar: {fileID: 427042048}
   healthCanvas: {fileID: 1834972457}
-  dropRate: 0.5
   healthness: 0
   startHealth: 50
   health: 0
   enemy: {fileID: 3175242146243430373}
-  Loot1: {fileID: 2833331249340996941, guid: 27fcd6e3a18633b4bb69133f50047786, type: 3}
   player: {fileID: 0}
-  otherScriptObj: []
-  itemIndex: 0
-  dropChance: 0
-  enemyManager: {fileID: 8343699857576561646, guid: ea9879d41520aea499d0a7cb48607e80,
+  damageTaken: 0
+  damagePop: {fileID: 833885491248636895, guid: cee59fe21c0078a48b1ecfd64ef996db,
     type: 3}
   dmgPopLoc: {x: 0, y: 2.5, z: 0}
+  totalDamageTaken: 0
+  totalDamagePrefab: {fileID: 340990915897414071, guid: 043da56f05217fb4ea897713cf8e3ffc,
+    type: 3}
+  totalDmgPopLoc: {x: 0, y: 5, z: 0}
+  dropChance: 0
+  dropRate: 0.5
   lootPrefab: {fileID: 4923901484974759255, guid: 8739ff60affb00c4a9b8fcc66b4bb829,
     type: 3}
 --- !u!54 &6383414595156212919
@@ -551,6 +551,20 @@ MonoBehaviour:
   timerForNewpath: 2
   campLocation: {fileID: 1581661092493565847, guid: 8b83adabf265ab842a788af917df1883,
     type: 3}
+--- !u!114 &-1704298053855842401
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3175242146243430373}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cadc5dbd92d98f845970481d01b366f5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  electrocuted: 0
+  electrocuteTimer: 0.5
 --- !u!1 &8062296000640769121
 GameObject:
   m_ObjectHideFlags: 0

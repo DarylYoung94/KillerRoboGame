@@ -15,17 +15,19 @@ public class Lightning : MonoBehaviour
     private Vector2 midPoint;
     [SerializeField] private Vector3[] linePoints;
 
-    private float aimDist = 0.0f;
-    private float chainRange = 4.0f;
+    private float aimDist = 8.0f;
+    private float chainRange = 20.0f;
     public bool applyChains = false;
     public GameObject chainLightningPrefab;
     private GameObject prevEnemy = null;
     float damage = 0.5f;
 
+    public int ticksPerSecond = 10;
+    public float tickInterval = 0.1f;
 
     // TODO
     // - Tick rate?
-    // - Stop line at the first enemy hit
+    // - Add despawn timer to setup
 
     void Start()
     {
@@ -47,7 +49,6 @@ public class Lightning : MonoBehaviour
 
         lineRenderer.SetPosition(0, new Vector3(0,0,0));
         lineRenderer.SetPosition(noSegments-1, new Vector3 (0, 0, aimDist));
-
 
         GetLinePointsInWorldSpace();
     }
@@ -82,14 +83,20 @@ public class Lightning : MonoBehaviour
                 if (enemyHit != null)
                 {
                     enemyHit.TakeDamage(damage);
+                    hit.transform.GetComponent<Mark>().Electrocuted();
                 }
 
+                // If we are applying chains set the owner to the collided object
+                // It then looks for the closest enemy that is not the current owner
                 if(applyChains)
                 {
                     ChainLightning(hit.transform.gameObject);
                 }
 
                 SetLineRendererAfterCollision(i+1, hit.transform.position);
+
+                Destroy(this.gameObject);
+
                 break;
             }
         }
@@ -123,43 +130,38 @@ public class Lightning : MonoBehaviour
         GetLinePointsInWorldSpace();
     }
 
-    private void ChainLightning(GameObject parent)
+    private void ChainLightning(GameObject parentGO)
     {
-        GameObject targetGO = FindClosestEnemy(parent);
-        if (targetGO != null && targetGO != parent)
+        GameObject targetGO = FindClosestEnemy(parentGO);
+        if (targetGO != null && targetGO != parentGO && targetGO != prevEnemy)
         {
-            //Debug.Log ("Found closest enemy " + targetGO);
-            //Debug.DrawLine(this.transform.position, targetGO.transform.position, Color.black, 1.0f);
-            float aimDistance  = Vector3.Distance(this.transform.position, targetGO.transform.position);
+            float aimDistance  = Vector3.Distance(parentGO.transform.position, targetGO.transform.position);
 
-            GameObject lightning = Instantiate(chainLightningPrefab, parent.transform.position, Quaternion.identity);
-            lightning.transform.SetParent(parent.transform);
+            GameObject lightning = Instantiate(chainLightningPrefab, parentGO.transform.position, Quaternion.identity);
+            lightning.transform.SetParent(parentGO.transform);
             lightning.transform.LookAt(targetGO.transform.position);
             lightning.GetComponent<Lightning>()
-                     .Setup(aimDistance, applyChains, chainRange, chainLightningPrefab, damage);
-            lightning.GetComponent<Lightning>()
-                     .SetPrevEnemy(parent);
+                     .Setup(parentGO, aimDistance, applyChains, chainRange, chainLightningPrefab, damage);
         }
     }
 
 
-    private GameObject FindClosestEnemy(GameObject go)
+    private GameObject FindClosestEnemy(GameObject parentGO)
     {
-        Vector3 position = go.transform.position;
         GameObject target = null;
-
-        Collider[] colliders = Physics.OverlapSphere(position, chainRange);
+        Collider[] colliders = Physics.OverlapSphere(parentGO.transform.position, chainRange);
 
         float closestEnemy = Mathf.Infinity;
 
         foreach (Collider hit in colliders)
         {
-            float distToEnemy = Vector3.Distance(position, hit.transform.position);
+            float distToEnemy = Vector3.Distance(parentGO.transform.position, hit.transform.position);
             Enemy enemyHit = hit.transform.GetComponent<Enemy>();
 
             if (enemyHit != null &&
-                hit.transform.gameObject != go &&
+                hit.transform.gameObject != parentGO &&
                 hit.transform.gameObject != prevEnemy &&
+                !IsElectrocuted(hit.transform.gameObject) &&
                 distToEnemy < closestEnemy)
             {
                 closestEnemy = distToEnemy;
@@ -170,8 +172,9 @@ public class Lightning : MonoBehaviour
         return target;
     }
 
-    public void Setup(float aimDist, bool applyChains, float chainRange, GameObject chainPrefab, float damage)
+    public void Setup(GameObject prevEnemy, float aimDist, bool applyChains, float chainRange, GameObject chainPrefab, float damage)
     {
+        this.prevEnemy = prevEnemy;
         this.aimDist = aimDist ;
         this.chainRange = chainRange;
         this.chainLightningPrefab = chainPrefab;
@@ -179,5 +182,20 @@ public class Lightning : MonoBehaviour
         this.damage = damage;
     }
 
-    public void SetPrevEnemy(GameObject enemy){ prevEnemy = enemy; }
+    public bool IsElectrocuted(GameObject go)
+    {
+        bool ret = false;
+
+        Mark mark = go.GetComponent<Mark>();
+
+        if (mark != null)
+        {
+            if (mark.IsElectrocuted())
+            {
+                ret = true;
+            }
+        }
+
+        return ret;
+    }
 }
