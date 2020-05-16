@@ -7,7 +7,7 @@ public class WallAbility : AbstractAbility {
     public GameObject wallPrefab;
     public float maxRange = 5f;
     public float despawnTimer = 5f;
-
+    public GameObject projectorPrefab;
     private WallAbilityTriggerable wallPlace;
     
     public override void Initialise(GameObject obj)
@@ -16,15 +16,16 @@ public class WallAbility : AbstractAbility {
         wallPlace.maxRange = maxRange;
         wallPlace.wallPrefab = wallPrefab;
         wallPlace.despawnTimer = despawnTimer;
+        wallPlace.projectorPrefab = projectorPrefab;
     }
 
     public override void ButtonDown()
     {
-        wallPlace.Place();
+        wallPlace.Hold();
     }
 
     public override void ButtonUp()
     {
-        
+        wallPlace.Release();
     }
 }

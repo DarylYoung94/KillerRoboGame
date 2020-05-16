@@ -13,10 +13,12 @@ MonoBehaviour:
   m_Name: WallAbility
   m_EditorClassIdentifier: 
   aName: New Ability
-  cdString: QuickCast
+  cdString: OnHold
   aBaseCoolDown: 1
   holding: 0
   wallPrefab: {fileID: 1073486666521078983, guid: 0cfa3a3055959b44b9f6add4f1129e03,
     type: 3}
   maxRange: 10
   despawnTimer: 5
+  projectorPrefab: {fileID: 1073486666521078983, guid: 0cfa3a3055959b44b9f6add4f1129e03,
+    type: 3}
