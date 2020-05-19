@@ -61,7 +61,7 @@ public class Enemy : MonoBehaviour
         damageTaken = amount;
         totalDamageTaken += amount;
 
-        if (damagePop)
+        if (damagePop && damageTaken >= 1.0f)
             ShowDamagePop();
 
         if (totalDamagePrefab)
@@ -114,7 +114,7 @@ public class Enemy : MonoBehaviour
 
         if(totalDamageGO != null && totalDamageGO.activeSelf)
         {
-            totalDamageGO.GetComponent<TextMesh>().text = totalDamageTaken.ToString("0.00");
+            totalDamageGO.GetComponent<TextMesh>().text = totalDamageTaken.ToString("n2");
         }
 
         ResetTimer();
