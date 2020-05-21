@@ -8,7 +8,7 @@ public class BasicAttackTriggerable : MonoBehaviour
 
     public float force;
     public GameObject pelletPrefab;
-    public GameObject empoweredPrefab;
+   
     public Transform barrelExit;
 
     Vector3 aim;
@@ -24,16 +24,9 @@ public class BasicAttackTriggerable : MonoBehaviour
             
             aim = hit.point;
 
-            i++; 
-            if (i < 3)
-            {
-                Fire(pelletPrefab);
-            }
-            else
-            {
-                Fire(empoweredPrefab);
-                i = 0;
-            }
+           
+            Fire(pelletPrefab);
+          
         }
     }
 

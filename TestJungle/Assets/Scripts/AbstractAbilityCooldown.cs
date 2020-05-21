@@ -1,11 +1,14 @@
 ﻿using UnityEngine;
+using UnityEngine.UI;
 
 public abstract class AbstractAbilityCooldown : MonoBehaviour {
 
     [SerializeField] protected AbstractAbility ability;
     [SerializeField] protected GameObject abilityHolder;
     [SerializeField] protected KeyCode abilityKeyCode;
+    //    [SerializeField] protected Image abilityIcon;
 
+    protected int iconIndex;
     protected float coolDownDuration;
     protected float nextReadyTime;
     protected float coolDownTimeLeft;
@@ -14,15 +17,16 @@ public abstract class AbstractAbilityCooldown : MonoBehaviour {
     {
         if (ability != null && abilityHolder != null)
         {
-            Initialise(ability, abilityHolder, abilityKeyCode);
+            Initialise(ability, abilityHolder, abilityKeyCode,-1);
         }
     }
 
-    public void Initialise(AbstractAbility selectedAbility, GameObject abilityHolder, KeyCode keyCode)
+    public void Initialise(AbstractAbility selectedAbility, GameObject abilityHolder, KeyCode keyCode, int iconIndex)
     {
         abilityKeyCode = keyCode;
         ability = selectedAbility;
         coolDownDuration = ability.aBaseCoolDown;
+        this.iconIndex = iconIndex;
         ability.Initialise(abilityHolder);
     }
 
@@ -41,4 +45,14 @@ public abstract class AbstractAbilityCooldown : MonoBehaviour {
     public AbstractAbility GetAbility() { return ability; }
 
     public void SetCooldownMultiplier(float multiplier) { coolDownDuration = ability.aBaseCoolDown * multiplier; }
+
+    public void SetIconFill()
+    {
+        if(iconIndex>=0 || iconIndex<=3 )
+        {
+        IconManager iconManager = GameObject.Find("iconmanager").GetComponent<IconManager>();
+        iconManager.SetIconFill(iconIndex, (coolDownDuration-coolDownTimeLeft)/coolDownDuration);
+        }
+    }
+
 }

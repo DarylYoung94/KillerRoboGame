@@ -15,7 +15,7 @@ public abstract class AbstractWeapon : AbstractAbility {
         do 
         {
             cooldown = player.GetComponent<AbstractAbilityCooldown>();
-            if (cooldown.GetAbility() is AbstractWeapon)
+            if (cooldown.enabled && cooldown.GetAbility() is AbstractWeapon)
             {
                 return cooldown;
             }

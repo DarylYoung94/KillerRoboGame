@@ -31,5 +31,7 @@ public class OnHoldAbilityCooldown : AbstractAbilityCooldown {
             ButtonUp();
             abilityReady = false;
         }
+        SetIconFill();
     }
+
 }

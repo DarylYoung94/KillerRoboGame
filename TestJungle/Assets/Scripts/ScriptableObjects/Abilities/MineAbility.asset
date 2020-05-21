@@ -15,6 +15,7 @@ MonoBehaviour:
   aName: New Ability
   cdString: OnRelease
   aBaseCoolDown: 1
+  abilityIcon: {fileID: 21300000, guid: 118316cec73cecb468f33bcd55b5b12a, type: 3}
   holding: 0
   minePrefab: {fileID: 7328864026322712994, guid: d595610906c21da4789ae6af24006b2f,
     type: 3}
@@ -28,3 +29,4 @@ MonoBehaviour:
   explosionParticles: {fileID: 3056532069015774829, guid: 1dcd2ad71bbfbb24b825507302ade540,
     type: 3}
   timerParticles: {fileID: 0}
+  maxRange: 20

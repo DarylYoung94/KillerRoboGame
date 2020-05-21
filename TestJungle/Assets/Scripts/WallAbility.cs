@@ -1,5 +1,6 @@
 using System.Collections;
 using UnityEngine;
+using UnityEngine.UI;
 
 [CreateAssetMenu (fileName = "WallAbility", menuName = "Abilities/WallAbility")]
 public class WallAbility : AbstractAbility {
@@ -9,6 +10,7 @@ public class WallAbility : AbstractAbility {
     public float despawnTimer = 5f;
     public GameObject projectorPrefab;
     private WallAbilityTriggerable wallPlace;
+    //public Image icon;
     
     public override void Initialise(GameObject obj)
     {
