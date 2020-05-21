@@ -9,15 +9,15 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a0763dfa7843b594fae84ee0596cf001, type: 3}
-  m_Name: BasicWeapon
+  m_Script: {fileID: 11500000, guid: 1301a0baae14e354c842aeb918bb642a, type: 3}
+  m_Name: TwoHitWeapon
   m_EditorClassIdentifier: 
   aName: New Ability
-  cdString: QuickCast
+  cdString: OnHold
   aBaseCoolDown: 1
   holding: 0
-  damage: 4
-  force: 40
-  pelletPrefab: {fileID: 1318197578036205983, guid: c7167629e20234e4fbf1ee3046ec5615,
+  damage: 10
+  force: 50
+  pelletPrefab: {fileID: 7655611414864951605, guid: 9dca391076909e641835034c7f53f7d0,
     type: 3}
   despawnTimer: 5

@@ -30,6 +30,7 @@ public class ThreeHitTriggerable : MonoBehaviour
             else
             {
                 Debug.Log("HEAL");
+                
                 Fire(healingBulletPrefab);
                 i = 0;
             } 

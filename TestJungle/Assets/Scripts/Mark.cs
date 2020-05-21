@@ -10,6 +10,7 @@ public class Mark : MonoBehaviour
     void Start()
     {
         electrocuted = false;
+        marked = false;
     }
 
     IEnumerator WaitAndResetBool(float timeToWait, Callback callback)
@@ -34,5 +35,19 @@ public class Mark : MonoBehaviour
 
     public bool IsElectrocuted() { return electrocuted; }
 
+        // Mark stuff
+    [SerializeField] private bool marked = false;
+    public float markedTimer = 5.0f;
+
+    public void MarkEnemy()
+    {
+        marked = true;
+        StartCoroutine(WaitAndResetBool(markedTimer, () => marked = false));
+    }
+
+    public bool IsMarked() { return marked; }
+    public void ResetMark() { marked = false; }
+
 }
+
 
