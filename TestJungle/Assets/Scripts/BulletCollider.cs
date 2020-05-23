@@ -13,6 +13,7 @@ public class BulletCollider : MonoBehaviour
     public float lifestealAmount =5f;
     public bool isHealingBullet = false;
     public bool isMarkBullet = false;
+
     float multiplier = 1f;
 
      void Start()
@@ -85,3 +86,4 @@ public class BulletCollider : MonoBehaviour
         }
     }
 }
+

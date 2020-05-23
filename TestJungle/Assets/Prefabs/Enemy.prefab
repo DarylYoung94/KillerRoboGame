@@ -100,7 +100,7 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1834972457}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: -0.0026629139, y: -0.283736, z: -0.00078795047, w: 0.9588984}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 0.02, y: -0.004, z: 1}
   m_Children:
@@ -443,7 +443,7 @@ CapsuleCollider:
   m_Radius: 0.5000001
   m_Height: 2
   m_Direction: 1
-  m_Center: {x: 0.000000059604645, y: 0, z: -0.00000008940697}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &3175242146243430362
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -565,6 +565,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   electrocuted: 0
   electrocuteTimer: 0.5
+  marked: 0
+  markedTimer: 2
 --- !u!1 &8062296000640769121
 GameObject:
   m_ObjectHideFlags: 0
