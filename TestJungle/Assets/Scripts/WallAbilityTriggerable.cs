@@ -1,6 +1,8 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
+
 
 public class WallAbilityTriggerable : MonoBehaviour
 {
@@ -10,7 +12,13 @@ public class WallAbilityTriggerable : MonoBehaviour
     public float despawnTimer = 5f;
     private GameObject projectorTarget;
     Vector3 wallAim = -Vector3.one;
+    public Image icon;
  
+    void Update()
+    {
+        
+    }
+
     public void Hold()
     {
         RaycastHit hit;

@@ -15,6 +15,7 @@ MonoBehaviour:
   aName: New Ability
   cdString: OnHold
   aBaseCoolDown: 1
+  abilityIcon: {fileID: 21300000, guid: 25d1146172fbf2440a70257ec7bc255b, type: 3}
   holding: 0
   totemPrefab: {fileID: 3219271229723910230, guid: a4203e5264bfde844b4f5d0b84a9cf43,
     type: 3}
