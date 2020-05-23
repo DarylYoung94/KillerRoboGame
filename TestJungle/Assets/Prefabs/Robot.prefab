@@ -255,7 +255,7 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4464245629181830349}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0.004730998, y: 0.96342736, z: 0.26738507, w: -0.017046474}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 0.02, y: -0.0039999997, z: 1}
   m_Children:
@@ -509,8 +509,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemyLevel: 1
   experience: 20
-  healthBar: {fileID: 0}
-  healthCanvas: {fileID: 0}
+  healthBar: {fileID: 5365872406624754396}
+  healthCanvas: {fileID: 4464245629181830349}
   healthness: 0
   startHealth: 50
   health: 0
@@ -600,7 +600,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   timerForNewpath: 2
-  campLocation: {fileID: 1581661092493565847, guid: 8b83adabf265ab842a788af917df1883,
+  moveSpeed: 3.5
+  curveTolerance: 0.01
+  campLocation: {fileID: 3882877840829819293, guid: 424a4d164df9462419a7a0f4733b1166,
     type: 3}
 --- !u!114 &2731186085846300166
 MonoBehaviour:
