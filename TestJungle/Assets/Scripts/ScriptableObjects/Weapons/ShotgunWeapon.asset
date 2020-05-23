@@ -15,8 +15,9 @@ MonoBehaviour:
   aName: New Ability
   cdString: QuickCast
   aBaseCoolDown: 1
+  abilityIcon: {fileID: 0}
   holding: 0
-  damage: 1
+  damage: 10
   force: 50
   pelletPrefab: {fileID: 1318197578036205983, guid: c7167629e20234e4fbf1ee3046ec5615,
     type: 3}
