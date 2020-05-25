@@ -6,21 +6,16 @@ using UnityEngine.AI;
 public class RandomMovement : MonoBehaviour
 {
     NavMeshAgent navMeshAgent;
-    Animator animator;
     public float timerForNewpath;
     bool inCoroutine = false;
     Vector3 target;
     NavMeshPath path;
-
-    public float moveSpeed = 3.5f;
-    public float curveTolerance = 0.01f;
 
     public GameObject campLocation;
 
     void Start()
     {
         navMeshAgent = GetComponent<NavMeshAgent>();
-        animator = GetComponent<Animator>();
         path = new NavMeshPath();
     }
 
@@ -28,19 +23,6 @@ public class RandomMovement : MonoBehaviour
     {
         if (!inCoroutine)
             StartCoroutine(DoSomething());
-
-        if (animator != null)
-        {
-            float animCurve = animator.GetFloat("JumpCurve");
-            if (animCurve > curveTolerance)
-            {
-                navMeshAgent.speed = animCurve * moveSpeed;
-            }
-            else 
-            {
-                navMeshAgent.speed = 0f;
-            }
-        }
     }
 
     Vector3 getRandomPosition()
