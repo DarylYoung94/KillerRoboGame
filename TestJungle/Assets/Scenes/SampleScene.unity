@@ -1614,7 +1614,7 @@ Light:
   m_BounceIntensity: 1
   m_ColorTemperature: 6570
   m_UseColorTemperature: 0
-  m_BoundingSphereOverride: {x: 0, y: 1.6462e-41, z: 0, w: 0}
+  m_BoundingSphereOverride: {x: 0, y: 1.7796e-41, z: 0, w: NaN}
   m_UseBoundingSphereOverride: 0
   m_ShadowRadius: 0
   m_ShadowAngle: 0
@@ -4574,7 +4574,7 @@ PrefabInstance:
     - target: {fileID: 239521956, guid: c951d5a19754f3643a6aa2b94dea7399, type: 3}
       propertyPath: unobtainableAbilities.Array.data[3]
       value: 
-      objectReference: {fileID: 11400000, guid: b67f4f003853fa949bf9e571e7dce2c9,
+      objectReference: {fileID: 11400000, guid: b361288e4594de04aac797cecf5a57a7,
         type: 2}
     - target: {fileID: 239521956, guid: c951d5a19754f3643a6aa2b94dea7399, type: 3}
       propertyPath: unobtainableAbilities.Array.data[4]
@@ -5101,66 +5101,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1998172609}
     m_Modifications:
-    - target: {fileID: 8493909004912109060, guid: 78d2880b28650bb49be405e669037fde,
-        type: 3}
-      propertyPath: m_Name
-      value: Robollama
-      objectReference: {fileID: 0}
-    - target: {fileID: 8493909004912109061, guid: 78d2880b28650bb49be405e669037fde,
-        type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 30.8
-      objectReference: {fileID: 0}
-    - target: {fileID: 8493909004912109061, guid: 78d2880b28650bb49be405e669037fde,
-        type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 1.64
-      objectReference: {fileID: 0}
-    - target: {fileID: 8493909004912109061, guid: 78d2880b28650bb49be405e669037fde,
-        type: 3}
-      propertyPath: m_LocalPosition.z
-      value: -45.61
-      objectReference: {fileID: 0}
-    - target: {fileID: 8493909004912109061, guid: 78d2880b28650bb49be405e669037fde,
-        type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8493909004912109061, guid: 78d2880b28650bb49be405e669037fde,
-        type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8493909004912109061, guid: 78d2880b28650bb49be405e669037fde,
-        type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8493909004912109061, guid: 78d2880b28650bb49be405e669037fde,
-        type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8493909004912109061, guid: 78d2880b28650bb49be405e669037fde,
-        type: 3}
-      propertyPath: m_RootOrder
-      value: 20
-      objectReference: {fileID: 0}
-    - target: {fileID: 8493909004912109061, guid: 78d2880b28650bb49be405e669037fde,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8493909004912109061, guid: 78d2880b28650bb49be405e669037fde,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8493909004912109061, guid: 78d2880b28650bb49be405e669037fde,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 8394280207057409970, guid: ef0ffdc5b2ed633488e986d76404656d,
         type: 3}
       propertyPath: m_AnchoredPosition.x
@@ -5261,6 +5201,66 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: IconF
+      objectReference: {fileID: 0}
+    - target: {fileID: 8493909004912109060, guid: 78d2880b28650bb49be405e669037fde,
+        type: 3}
+      propertyPath: m_Name
+      value: Robollama
+      objectReference: {fileID: 0}
+    - target: {fileID: 8493909004912109061, guid: 78d2880b28650bb49be405e669037fde,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 30.8
+      objectReference: {fileID: 0}
+    - target: {fileID: 8493909004912109061, guid: 78d2880b28650bb49be405e669037fde,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 1.64
+      objectReference: {fileID: 0}
+    - target: {fileID: 8493909004912109061, guid: 78d2880b28650bb49be405e669037fde,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -45.61
+      objectReference: {fileID: 0}
+    - target: {fileID: 8493909004912109061, guid: 78d2880b28650bb49be405e669037fde,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8493909004912109061, guid: 78d2880b28650bb49be405e669037fde,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8493909004912109061, guid: 78d2880b28650bb49be405e669037fde,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8493909004912109061, guid: 78d2880b28650bb49be405e669037fde,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8493909004912109061, guid: 78d2880b28650bb49be405e669037fde,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 8493909004912109061, guid: 78d2880b28650bb49be405e669037fde,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8493909004912109061, guid: 78d2880b28650bb49be405e669037fde,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8493909004912109061, guid: 78d2880b28650bb49be405e669037fde,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ef0ffdc5b2ed633488e986d76404656d, type: 3}
