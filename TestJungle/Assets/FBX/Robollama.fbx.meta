@@ -105,8 +105,8 @@ ModelImporter:
             inWeight: 0.8005978
             outWeight: 0.33333334
           - serializedVersion: 3
-            time: 0.34476003
-            value: -0.00029446185
+            time: 0.3385192
+            value: 0.00068210065
             inSlope: 0
             outSlope: 0
             tangentMode: 0
@@ -114,8 +114,17 @@ ModelImporter:
             inWeight: 0.33333334
             outWeight: 0.33333334
           - serializedVersion: 3
-            time: 0.41340995
-            value: 0.07059419
+            time: 0.4207301
+            value: 0.010878676
+            inSlope: 0.265321
+            outSlope: 0.265321
+            tangentMode: 0
+            weightedMode: 0
+            inWeight: 1
+            outWeight: 0.33333334
+          - serializedVersion: 3
+            time: 0.42604423
+            value: 0.07173097
             inSlope: 0.0139004355
             outSlope: 0.0139004355
             tangentMode: 0
@@ -123,17 +132,8 @@ ModelImporter:
             inWeight: 0.33333334
             outWeight: 0.33333334
           - serializedVersion: 3
-            time: 0.7958925
-            value: 0.064097494
-            inSlope: -0.07119921
-            outSlope: -0.07119921
-            tangentMode: 0
-            weightedMode: 0
-            inWeight: 0.33333334
-            outWeight: 0.33333334
-          - serializedVersion: 3
-            time: 1
-            value: 0
+            time: 1.001831
+            value: 0.07046509
             inSlope: 0
             outSlope: 0
             tangentMode: 0
@@ -337,8 +337,8 @@ ModelImporter:
             inWeight: 0
             outWeight: 0
           - serializedVersion: 3
-            time: 0.37629545
-            value: -0.00047201006
+            time: 0.37990785
+            value: -0.0002447373
             inSlope: -0.0046988577
             outSlope: -0.0046988577
             tangentMode: 0
@@ -346,8 +346,17 @@ ModelImporter:
             inWeight: 0.4059461
             outWeight: 0.40092954
           - serializedVersion: 3
-            time: 0.39348868
-            value: 0.030456543
+            time: 0.39722794
+            value: 0.009041998
+            inSlope: 0.008324888
+            outSlope: 0.008324888
+            tangentMode: 0
+            weightedMode: 0
+            inWeight: 1
+            outWeight: 0.33333334
+          - serializedVersion: 3
+            time: 0.4313749
+            value: 0.02999878
             inSlope: 0
             outSlope: 0
             tangentMode: 0
@@ -355,23 +364,14 @@ ModelImporter:
             inWeight: 0.33333334
             outWeight: 0.33333334
           - serializedVersion: 3
-            time: 0.5946059
-            value: 0.029842412
+            time: 0.9935272
+            value: 0.030517794
             inSlope: -0.009315944
             outSlope: -0.009315944
             tangentMode: 0
             weightedMode: 0
             inWeight: 0.26686066
             outWeight: 0.33333334
-          - serializedVersion: 3
-            time: 0.6076368
-            value: 0.001113927
-            inSlope: -0.011167609
-            outSlope: -0.011167609
-            tangentMode: 0
-            weightedMode: 0
-            inWeight: 0.33333334
-            outWeight: 0.2547241
           - serializedVersion: 3
             time: 1
             value: 0
@@ -384,93 +384,6 @@ ModelImporter:
           preInfinity: 3
           postInfinity: 3
           rotationOrder: 4
-      events: []
-      transformMask: []
-      maskType: 3
-      maskSource: {instanceID: 0}
-      additiveReferencePoseFrame: 0
-    - serializedVersion: 16
-      name: Armature|Hopping
-      takeName: Armature|Hopping
-      internalID: 0
-      firstFrame: 0
-      lastFrame: 28
-      wrapMode: 0
-      orientationOffsetY: 0
-      level: 0
-      cycleOffset: 0
-      loop: 0
-      hasAdditiveReferencePose: 0
-      loopTime: 1
-      loopBlend: 0
-      loopBlendOrientation: 0
-      loopBlendPositionY: 0
-      loopBlendPositionXZ: 1
-      keepOriginalOrientation: 0
-      keepOriginalPositionY: 1
-      keepOriginalPositionXZ: 0
-      heightFromFeet: 0
-      mirror: 0
-      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
-      curves: []
-      events: []
-      transformMask: []
-      maskType: 3
-      maskSource: {instanceID: 0}
-      additiveReferencePoseFrame: 0
-    - serializedVersion: 16
-      name: Armature|Hopping and Yeet2
-      takeName: Armature|Hopping and Yeet2
-      internalID: 0
-      firstFrame: 0
-      lastFrame: 39
-      wrapMode: 0
-      orientationOffsetY: 0
-      level: 0
-      cycleOffset: 0
-      loop: 0
-      hasAdditiveReferencePose: 0
-      loopTime: 1
-      loopBlend: 0
-      loopBlendOrientation: 0
-      loopBlendPositionY: 0
-      loopBlendPositionXZ: 0
-      keepOriginalOrientation: 0
-      keepOriginalPositionY: 1
-      keepOriginalPositionXZ: 0
-      heightFromFeet: 0
-      mirror: 0
-      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
-      curves: []
-      events: []
-      transformMask: []
-      maskType: 3
-      maskSource: {instanceID: 0}
-      additiveReferencePoseFrame: 0
-    - serializedVersion: 16
-      name: Armature|Yeet
-      takeName: Armature|Yeet
-      internalID: 0
-      firstFrame: 0
-      lastFrame: 40
-      wrapMode: 0
-      orientationOffsetY: 0
-      level: 0
-      cycleOffset: 0
-      loop: 0
-      hasAdditiveReferencePose: 0
-      loopTime: 1
-      loopBlend: 0
-      loopBlendOrientation: 0
-      loopBlendPositionY: 0
-      loopBlendPositionXZ: 1
-      keepOriginalOrientation: 0
-      keepOriginalPositionY: 1
-      keepOriginalPositionXZ: 0
-      heightFromFeet: 0
-      mirror: 0
-      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
-      curves: []
       events: []
       transformMask: []
       maskType: 3
