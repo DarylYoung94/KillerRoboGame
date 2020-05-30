@@ -14,7 +14,7 @@ public class Turret : MonoBehaviour
     public float turretBulletSpeed;
     private float timer ;
     public float turretAttackSpeed = 1f;
-
+    public GameObject turretGun;
     public void Update()
     {
 
@@ -33,16 +33,18 @@ public class Turret : MonoBehaviour
             FindClosestEnemy();
             if (bestTarget != null)
             {
+                turretGun.transform.LookAt(bestTarget);
                 TurretShot();
                 Debug.Log(bestTarget.name);
                 
             }
           timer = turretAttackSpeed;
-            
+           
         }
 
+         turretGun.transform.LookAt(bestTarget);
 
-
+        
 
 
        if( Input.GetKeyDown(KeyCode.G))
@@ -71,7 +73,11 @@ public class Turret : MonoBehaviour
                 closestEnemy = distToEnemy;
                 bestTarget = enemyHit.transform;
             }
+            turretGun = GameObject.Find("TurretLad/TurretGun") ;
+            
         }
+
+
       
     }
     void TurretShot()

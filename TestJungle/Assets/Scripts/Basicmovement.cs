@@ -16,6 +16,8 @@ public class Basicmovement : MonoBehaviour
     public float flightGravity;
     public Vector3 lookat;
     public GameObject player;
+    public float rotSpeed = 2f ; 
+    
     // Start is called before the first frame update
     void Start()
     {
@@ -62,7 +64,21 @@ public class Basicmovement : MonoBehaviour
             inputVector = new Vector3(Input.GetAxisRaw("Horizontal") * movespeed, 0, Input.GetAxisRaw("Vertical") * movespeed);
             verticalVelocity = gravity;
             rigid.velocity = GetCameraTurn() * inputVector - new Vector3(0, verticalVelocity, 0);
-            transform.LookAt((this.transform.position + GetCameraTurn() * inputVector));
+            
+          
+            
+            if (inputVector != Vector3.zero)
+            {
+                Vector3 posToLook = GetCameraTurn() * inputVector;
+                Quaternion rotation = Quaternion.LookRotation(posToLook);
+                transform.rotation = Quaternion.Lerp(transform.rotation, rotation, rotSpeed );
+
+            }
+            
+            
+            
+            //transform.LookAt((this.transform.position + GetCameraTurn() * inputVector));
+           
         }
 
         else

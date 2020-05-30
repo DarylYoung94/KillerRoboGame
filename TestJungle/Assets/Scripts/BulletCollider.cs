@@ -71,7 +71,9 @@ public class BulletCollider : MonoBehaviour
     }
 
     public void MarkBulletCollision(GameObject GO, Enemy enemy)
-    {
+    { 
+        
+
         // If not marked then set inital mark
         // Else take damage and reset the mark
         if (!GO.GetComponent<Mark>().IsMarked())
