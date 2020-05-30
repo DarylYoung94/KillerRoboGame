@@ -160,7 +160,7 @@ MonoBehaviour:
   bulletPrefab: {fileID: 3182782433654286953}
   autoDamage: 0
   dmgScale: 0
-  Damage: 4
+  Damage: 10
   lifestealAmount: 5
   isHealingBullet: 0
   isMarkBullet: 1

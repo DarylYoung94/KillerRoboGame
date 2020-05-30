@@ -37,7 +37,7 @@ public class Mark : MonoBehaviour
 
     // Mark stuff
     [SerializeField] private bool marked = false;
-    public float markedTimer = 5.0f;
+    public float markedTimer = 2f;
 
 
     public void MarkEnemy()

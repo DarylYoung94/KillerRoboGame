@@ -47,7 +47,8 @@ public class TwoHitAttackTriggerable : MonoBehaviour
         Rigidbody rb = basicBulletInstance.GetComponent<Rigidbody>();
         rb.transform.LookAt(aim);
         rb.AddForce(rb.transform.forward * force, ForceMode.Impulse);
-
+       
+        
         Destroy(basicBulletInstance,3);
     }
 
@@ -64,6 +65,7 @@ public class TwoHitAttackTriggerable : MonoBehaviour
     {
         if(!firstShot)
         {
+           
             float multiplier = currentTimer/maxTimer;
 
             Shoot(multiplier);
