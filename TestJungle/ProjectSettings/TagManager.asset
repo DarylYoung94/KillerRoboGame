@@ -6,7 +6,6 @@ TagManager:
   tags:
   - PickUp
   - Enemy
-  - Ability12
   - Terrain
   - AtkSpd
   - RangedEnemy1
@@ -14,6 +13,8 @@ TagManager:
   - Totem
   - Bullet
   - Firepoint
+  - Wall
+  - Ability12
   layers:
   - Default
   - TransparentFX
@@ -26,7 +27,7 @@ TagManager:
   - Terrain
   - Bullets
   - Enemies
-  - 
+  - Walls
   - 
   - 
   - 

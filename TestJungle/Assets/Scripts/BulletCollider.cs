@@ -6,6 +6,7 @@ public class BulletCollider : MonoBehaviour
 {
     public Turret turretscript;
     public GameObject player;
+    public GameObject hitVfx;
     public Rigidbody bulletPrefab;
     public float autoDamage;
     public float dmgScale;
@@ -13,6 +14,7 @@ public class BulletCollider : MonoBehaviour
     public float lifestealAmount =5f;
     public bool isHealingBullet = false;
     public bool isMarkBullet = false;
+
     float multiplier = 1f;
 
      void Start()
@@ -35,7 +37,7 @@ public class BulletCollider : MonoBehaviour
         autoDamage = (Damage + dmgScale)*multiplier;
     }
 
-     public void OnCollisionEnter(Collision collision)
+    public void OnCollisionEnter(Collision collision)
     {
         if (collision.gameObject.tag == "Enemy" || collision.gameObject.tag == "RangedEnemy1" || collision.gameObject.tag == "ChargeEnemy" )
         {
@@ -58,6 +60,7 @@ public class BulletCollider : MonoBehaviour
                 }
             }
 
+            TriggerHitVFX(collision);
             Destroy(this.gameObject);
         }
         else if (collision.gameObject.tag == "Bullet")
@@ -86,4 +89,16 @@ public class BulletCollider : MonoBehaviour
             GO.GetComponent<Mark>().ResetMark();
         }
     }
+
+    private void TriggerHitVFX(Collision collision)
+    {
+        ContactPoint contactPoint = collision.contacts[0];
+        Quaternion rot = Quaternion.FromToRotation(Vector3.up, contactPoint.normal);
+        
+        if (hitVfx != null)
+        {
+            GameObject vfx = Instantiate(hitVfx, contactPoint.point, Quaternion.identity);
+        }
+    }
 }
+

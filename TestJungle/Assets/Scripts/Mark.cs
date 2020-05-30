@@ -35,9 +35,10 @@ public class Mark : MonoBehaviour
 
     public bool IsElectrocuted() { return electrocuted; }
 
-        // Mark stuff
+    // Mark stuff
     [SerializeField] private bool marked = false;
     public float markedTimer = 2f;
+
 
     public void MarkEnemy()
     {

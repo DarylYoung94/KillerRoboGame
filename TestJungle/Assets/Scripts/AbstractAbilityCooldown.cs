@@ -9,9 +9,9 @@ public abstract class AbstractAbilityCooldown : MonoBehaviour {
     //    [SerializeField] protected Image abilityIcon;
 
     protected int iconIndex;
-    protected float coolDownDuration;
+    [SerializeField] protected float coolDownDuration;
     protected float nextReadyTime;
-    protected float coolDownTimeLeft;
+    [SerializeField] protected float coolDownTimeLeft;
 
     void Start()
     {

@@ -33,23 +33,25 @@ public class WallAbilityTriggerable : MonoBehaviour
 
     }    
 
-        public void Release()
+    public void Release()
     {
         projectorTarget.SetActive(false);
 
         GameObject wallInstance = Instantiate(wallPrefab, wallAim, Quaternion.identity) as GameObject;
-        wallInstance.transform.LookAt(this.transform.position);
+        wallInstance.transform.LookAt(new Vector3(this.transform.position.x,
+                                                  wallInstance.transform.position.y,
+                                                  this.transform.position.z));
         StartCoroutine(ExecuteAfterTime(despawnTimer,wallInstance));
     }
 
 
      private void UpdateProjector()
     {
-        Vector3 direction = wallAim - this.transform.position;
+        Vector3 direction = wallAim - new Vector3(this.transform.position.x, 0, this.transform.position.z);
+
         if (direction.magnitude > maxRange)
         {
-            wallAim = this.transform.position + direction.normalized * maxRange;
-            
+            wallAim = new Vector3(this.transform.position.x, 0, this.transform.position.z) + direction.normalized * maxRange;    
         }
         if (projectorTarget == null)
         {
@@ -62,7 +64,9 @@ public class WallAbilityTriggerable : MonoBehaviour
             {
                 projectorTarget.gameObject.SetActive(true);
             }
-            projectorTarget.transform.LookAt(this.transform.position);
+            projectorTarget.transform.LookAt(new Vector3(this.transform.position.x,
+                                                        projectorTarget.transform.position.y,
+                                                        this.transform.position.z));
             projectorTarget.transform.position = wallAim;
         }
     }

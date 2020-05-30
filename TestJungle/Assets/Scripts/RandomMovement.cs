@@ -40,7 +40,7 @@ public class RandomMovement : MonoBehaviour
         yield return new WaitForSeconds(timerForNewpath);
         GetNewPath();
         if (navMeshAgent.CalculatePath(target, path)) //Debug.Log("found invalid path");
-        inCoroutine = false;
+            inCoroutine = false;
     }
 
     void GetNewPath()

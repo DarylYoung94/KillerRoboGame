@@ -1,0 +1,637 @@
+fileFormatVersion: 2
+guid: 8e104650ed5d29a45acde574bdc9e3e2
+ModelImporter:
+  serializedVersion: 19300
+  internalIDToNameTable:
+  - first:
+      74: -3889830323219305035
+    second: walking
+  - first:
+      74: 6722471848062299282
+    second: Armature|Hopping
+  - first:
+      74: -7141626722981465941
+    second: Armature|Hopping and Yeet
+  - first:
+      74: -5111910131042493952
+    second: Armature|Hopping and Yeet2
+  - first:
+      74: -939876546443940268
+    second: Armature|Yeet
+  - first:
+      74: -5459702853713710489
+    second: Yeet
+  - first:
+      74: -1945631729825261107
+    second: Hopping
+  - first:
+      74: 570188661684280269
+    second: Hopping and Yeet
+  - first:
+      74: 451603786815402535
+    second: Yeet (1)
+  externalObjects: {}
+  materials:
+    materialImportMode: 1
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    importConstraints: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations:
+    - serializedVersion: 16
+      name: Yeet
+      takeName: Yeet
+      internalID: 0
+      firstFrame: 0
+      lastFrame: 40
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 1
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 1
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves:
+      - name: ShootCurve
+        curve:
+          serializedVersion: 2
+          curve:
+          - serializedVersion: 3
+            time: 0
+            value: 0
+            inSlope: 0
+            outSlope: 0
+            tangentMode: 0
+            weightedMode: 0
+            inWeight: 0
+            outWeight: 0
+          - serializedVersion: 3
+            time: 0.11092677
+            value: -0.00008396583
+            inSlope: -0.0016510517
+            outSlope: -0.0016510517
+            tangentMode: 0
+            weightedMode: 0
+            inWeight: 0.8005978
+            outWeight: 0.33333334
+          - serializedVersion: 3
+            time: 0.3385192
+            value: 0.00068210065
+            inSlope: 0
+            outSlope: 0
+            tangentMode: 0
+            weightedMode: 0
+            inWeight: 0.33333334
+            outWeight: 0.33333334
+          - serializedVersion: 3
+            time: 0.4207301
+            value: 0.010878676
+            inSlope: 0.265321
+            outSlope: 0.265321
+            tangentMode: 0
+            weightedMode: 0
+            inWeight: 1
+            outWeight: 0.33333334
+          - serializedVersion: 3
+            time: 0.42604423
+            value: 0.07173097
+            inSlope: 0.0139004355
+            outSlope: 0.0139004355
+            tangentMode: 0
+            weightedMode: 0
+            inWeight: 0.33333334
+            outWeight: 0.33333334
+          - serializedVersion: 3
+            time: 1.001831
+            value: 0.07046509
+            inSlope: 0
+            outSlope: 0
+            tangentMode: 0
+            weightedMode: 0
+            inWeight: 0
+            outWeight: 0
+          preInfinity: 3
+          postInfinity: 3
+          rotationOrder: 4
+      events: []
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: Hopping
+      takeName: Hopping
+      internalID: 0
+      firstFrame: 0
+      lastFrame: 28
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 1
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 1
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves:
+      - name: JumpCurve
+        curve:
+          serializedVersion: 2
+          curve:
+          - serializedVersion: 3
+            time: 0
+            value: 0
+            inSlope: 0
+            outSlope: 0
+            tangentMode: 0
+            weightedMode: 0
+            inWeight: 0
+            outWeight: 0
+          - serializedVersion: 3
+            time: 0.218727
+            value: 0.0022821305
+            inSlope: 0
+            outSlope: 0
+            tangentMode: 0
+            weightedMode: 0
+            inWeight: 0.33333334
+            outWeight: 0.33333334
+          - serializedVersion: 3
+            time: 0.23209098
+            value: 0.998546
+            inSlope: -0.00426877
+            outSlope: -0.00426877
+            tangentMode: 0
+            weightedMode: 0
+            inWeight: 0.6942904
+            outWeight: 0.17850503
+          - serializedVersion: 3
+            time: 0.62582576
+            value: 0.9937258
+            inSlope: 0
+            outSlope: 0
+            tangentMode: 0
+            weightedMode: 0
+            inWeight: 0
+            outWeight: 0
+          - serializedVersion: 3
+            time: 0.6706944
+            value: -0.0028330311
+            inSlope: -0.15259637
+            outSlope: -0.15259637
+            tangentMode: 0
+            weightedMode: 0
+            inWeight: 0.33333334
+            outWeight: 0.54629225
+          - serializedVersion: 3
+            time: 0.82241946
+            value: 0.0022277832
+            inSlope: 0
+            outSlope: 0
+            tangentMode: 0
+            weightedMode: 0
+            inWeight: 0
+            outWeight: 0
+          preInfinity: 3
+          postInfinity: 3
+          rotationOrder: 4
+      events: []
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: Hopping and Yeet
+      takeName: Hopping and Yeet
+      internalID: 0
+      firstFrame: 0
+      lastFrame: 39
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 1
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 1
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves:
+      - name: JumpCurve
+        curve:
+          serializedVersion: 2
+          curve:
+          - serializedVersion: 3
+            time: 0
+            value: 0
+            inSlope: 0
+            outSlope: 0
+            tangentMode: 0
+            weightedMode: 0
+            inWeight: 0
+            outWeight: 0
+          - serializedVersion: 3
+            time: 0.23067166
+            value: -0.000015258789
+            inSlope: 0
+            outSlope: 0
+            tangentMode: 0
+            weightedMode: 0
+            inWeight: 0.33333334
+            outWeight: 0.33333334
+          - serializedVersion: 3
+            time: 0.27278364
+            value: 0.02116754
+            inSlope: 0.02403308
+            outSlope: 0.02403308
+            tangentMode: 0
+            weightedMode: 0
+            inWeight: 0.33333334
+            outWeight: 0.33333334
+          - serializedVersion: 3
+            time: 0.52183515
+            value: 0.022744082
+            inSlope: -0.021080464
+            outSlope: -0.021080464
+            tangentMode: 0
+            weightedMode: 0
+            inWeight: 0.33333334
+            outWeight: 0.33333334
+          - serializedVersion: 3
+            time: 0.5515749
+            value: 0.0016348641
+            inSlope: -0.057786778
+            outSlope: -0.057786778
+            tangentMode: 0
+            weightedMode: 0
+            inWeight: 0.33333334
+            outWeight: 0.33333334
+          - serializedVersion: 3
+            time: 1
+            value: 0
+            inSlope: 0
+            outSlope: 0
+            tangentMode: 0
+            weightedMode: 0
+            inWeight: 0
+            outWeight: 0
+          preInfinity: 3
+          postInfinity: 3
+          rotationOrder: 4
+      - name: ShootCurve
+        curve:
+          serializedVersion: 2
+          curve:
+          - serializedVersion: 3
+            time: 0
+            value: 0
+            inSlope: 0
+            outSlope: 0
+            tangentMode: 0
+            weightedMode: 0
+            inWeight: 0
+            outWeight: 0
+          - serializedVersion: 3
+            time: 0.37990785
+            value: -0.0002447373
+            inSlope: -0.0046988577
+            outSlope: -0.0046988577
+            tangentMode: 0
+            weightedMode: 0
+            inWeight: 0.4059461
+            outWeight: 0.40092954
+          - serializedVersion: 3
+            time: 0.39722794
+            value: 0.009041998
+            inSlope: 0.008324888
+            outSlope: 0.008324888
+            tangentMode: 0
+            weightedMode: 0
+            inWeight: 1
+            outWeight: 0.33333334
+          - serializedVersion: 3
+            time: 0.4313749
+            value: 0.02999878
+            inSlope: 0
+            outSlope: 0
+            tangentMode: 0
+            weightedMode: 0
+            inWeight: 0.33333334
+            outWeight: 0.33333334
+          - serializedVersion: 3
+            time: 0.9935272
+            value: 0.030517794
+            inSlope: -0.009315944
+            outSlope: -0.009315944
+            tangentMode: 0
+            weightedMode: 0
+            inWeight: 0.26686066
+            outWeight: 0.33333334
+          - serializedVersion: 3
+            time: 1
+            value: 0
+            inSlope: 0
+            outSlope: 0
+            tangentMode: 0
+            weightedMode: 0
+            inWeight: 0
+            outWeight: 0
+          preInfinity: 3
+          postInfinity: 3
+          rotationOrder: 4
+      events: []
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    isReadable: 0
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 1
+    useSRGBMaterialColor: 1
+    sortHierarchyByName: 1
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 0
+    importLights: 0
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    keepQuads: 0
+    weldVertices: 1
+    preserveHierarchy: 0
+    skinWeightsMode: 0
+    maxBonesPerVertex: 4
+    minBoneWeight: 0.001
+    meshOptimizationFlags: -1
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+    legacyComputeAllNormalsFromSmoothingGroupsWhenMeshHasBlendShapes: 0
+    blendShapeNormalImportMode: 1
+    normalSmoothingSource: 0
+  referencedClips: []
+  importAnimation: 1
+  humanDescription:
+    serializedVersion: 3
+    human: []
+    skeleton:
+    - name: Robollama(Clone)
+      parentName: 
+      position: {x: 0, y: 0, z: 0}
+      rotation: {x: 0, y: 0, z: 0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Cylinder
+      parentName: Robollama(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Armature
+      parentName: Robollama(Clone)
+      position: {x: 0, y: 3.2453468, z: -2.4538176}
+      rotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071067}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Spine
+      parentName: Armature
+      position: {x: -0, y: -0.46427006, z: 0}
+      rotation: {x: 0.00000017881393, y: 0.00000035762787, z: -0.7071068, w: -0.70710677}
+      scale: {x: 0.9999999, y: 0.9999998, z: 0.99999994}
+    - name: Spine.001
+      parentName: Spine
+      position: {x: -1.0161324, y: 0, z: 0}
+      rotation: {x: -0.9999944, y: 0.00000008856653, z: 0.0033427293, w: 0.000019577355}
+      scale: {x: 1.0000001, y: 1.0000006, z: 1.0000005}
+    - name: NeckBase
+      parentName: Spine.001
+      position: {x: -1.0538222, y: 3.1229654e-14, z: 9.313226e-10}
+      rotation: {x: 0.5671848, y: -0.41603372, z: 0.42047352, w: 0.573079}
+      scale: {x: 1.0000004, y: 0.9999999, z: 0.9999999}
+    - name: Neck
+      parentName: NeckBase
+      position: {x: -0.84912926, y: -0.0000000891323, z: 1.3096724e-10}
+      rotation: {x: -0.70598716, y: -0.016271442, z: 0.0091941655, w: 0.707978}
+      scale: {x: 0.99999994, y: 1, z: 0.9999995}
+    - name: Neck.004
+      parentName: Neck
+      position: {x: -0.299366, y: 0.0000000013785666, z: 0.00000047462933}
+      rotation: {x: -0.000000029802322, y: 0.00000031664968, z: -0.00000010430813,
+        w: 1}
+      scale: {x: 1.0000004, y: 1.0000005, z: 1.0000002}
+    - name: Neck.002
+      parentName: Neck.004
+      position: {x: -0.29936647, y: 0.0000000016488002, z: 0.00000077250445}
+      rotation: {x: -0, y: -0, z: 2.3314684e-15, w: 1}
+      scale: {x: 0.9999998, y: 1.0000002, z: 1.0000001}
+    - name: Neck.006
+      parentName: Neck.002
+      position: {x: -0.2993664, y: -1.9932145e-10, z: -0.00000012160231}
+      rotation: {x: -0.0000012449249, y: 0.00000016645394, z: -0.605294, w: 0.796002}
+      scale: {x: 1.0000002, y: 1.0000002, z: 1.0000001}
+    - name: Neck.001
+      parentName: Neck.006
+      position: {x: -0.29936635, y: -0.0000000013054091, z: 0.00000029559305}
+      rotation: {x: 0.00000023448916, y: 0.00000127129, z: -0.09827137, w: 0.9951597}
+      scale: {x: 1, y: 1.0000001, z: 1}
+    - name: Neck.005
+      parentName: Neck.001
+      position: {x: -0.29936624, y: -0.0000000012147439, z: -0.000000062072054}
+      rotation: {x: 0.000000029802337, y: -0.0000003585592, z: 0.000000063329935,
+        w: 1}
+      scale: {x: 1.0000001, y: 1.0000001, z: 1}
+    - name: Neck.003
+      parentName: Neck.005
+      position: {x: -0.299366, y: -3.9554493e-10, z: 0.00000023591389}
+      rotation: {x: -0.000000029802312, y: -0.00000014528631, z: -0.000000019557765,
+        w: 1}
+      scale: {x: 1.0000002, y: 1.0000001, z: 1}
+    - name: Neck.007
+      parentName: Neck.003
+      position: {x: -0.2993665, y: -2.353886e-10, z: 0.0000001762719}
+      rotation: {x: -4.2632564e-14, y: 0.0000005038455, z: -0.00000004377215, w: 1}
+      scale: {x: 1, y: 1.0000001, z: 1}
+    - name: Neck.008
+      parentName: Neck.007
+      position: {x: -0.29936627, y: -2.6011548e-10, z: 0.00000047425772}
+      rotation: {x: -0.000000028292598, y: -0.014248024, z: -0.00000004513886, w: 0.9998985}
+      scale: {x: 1.0000008, y: 1.0000004, z: 1.0000002}
+    - name: Spine.002
+      parentName: Spine.001
+      position: {x: -0.9696941, y: -0.4984959, z: 0.5599088}
+      rotation: {x: -0.4672986, y: 0.5159639, z: 0.43505496, w: 0.5710872}
+      scale: {x: 1, y: 1.0000001, z: 1.0000004}
+    - name: Spine.003
+      parentName: Spine.002
+      position: {x: -1.1851852, y: 0.00000044651097, z: -0.00000012107193}
+      rotation: {x: -0.7514418, y: -0.06658886, z: 0.08849141, w: 0.6504387}
+      scale: {x: 1, y: 0.9999998, z: 0.9999999}
+    - name: FrontFoot.L
+      parentName: Spine.003
+      position: {x: -1.2122993, y: -0.00000006891787, z: -0.00000024586916}
+      rotation: {x: 0.67613256, y: -0.011606995, z: -0.73650473, w: 0.01646055}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Spine.004
+      parentName: Spine.001
+      position: {x: -0.9696941, y: 0.49853888, z: 0.55987066}
+      rotation: {x: -0.47494912, y: 0.52290297, z: 0.42668965, w: 0.56474054}
+      scale: {x: 1.0000004, y: 1.0000005, z: 1.0000005}
+    - name: Spine.006
+      parentName: Spine.004
+      position: {x: -1.1851856, y: -0.000000015133992, z: 0.000000019557774}
+      rotation: {x: -0.75312626, y: -0.07138946, z: 0.084666066, w: 0.64848757}
+      scale: {x: 0.9999998, y: 0.9999997, z: 1}
+    - name: FrontFoot.R.001
+      parentName: Spine.006
+      position: {x: -1.212299, y: -0.00000012293458, z: 0.00000008940697}
+      rotation: {x: 0.6762565, y: -0.01738739, z: -0.7363908, w: 0.010164575}
+      scale: {x: 1.0000006, y: 1.0000006, z: 1.0000005}
+    - name: Spine.005
+      parentName: Spine
+      position: {x: 0.06458032, y: 0.48695886, z: -0.540125}
+      rotation: {x: -0.020572577, y: 0.6730285, z: 0.004165732, w: -0.73931867}
+      scale: {x: 0.99999994, y: 1.0000004, z: 0.99999994}
+    - name: BackFoot.L
+      parentName: Spine.005
+      position: {x: -1.2237571, y: -0.000000012572855, z: 0.000000005122274}
+      rotation: {x: 0.99363786, y: 0.01818117, z: 0.11063795, w: 0.010612867}
+      scale: {x: 1.0000011, y: 1.0000004, z: 1.0000001}
+    - name: Spine.010
+      parentName: BackFoot.L
+      position: {x: -1.1684761, y: 0.0000000060535967, z: 0.00000008754432}
+      rotation: {x: 0.016293187, y: -0.70939887, z: -0.023641685, w: 0.7042222}
+      scale: {x: 0.99999976, y: 0.99999994, z: 0.99999994}
+    - name: BackFootIK.L
+      parentName: Armature
+      position: {x: -0.52838355, y: -0.36563843, z: -2.9166772}
+      rotation: {x: 0.6859496, y: 0.7251161, z: 0.04753584, w: -0.03768519}
+      scale: {x: 0.9999995, y: 0.99999624, z: 0.9999836}
+    - name: FrontFootIK.L
+      parentName: Armature
+      position: {x: -0.52663064, y: -2.4231348, z: -2.9346879}
+      rotation: {x: 0.70695984, y: 0.7069596, z: 0.014425725, w: -0.014418066}
+      scale: {x: 1, y: 0.9999999, z: 0.9999937}
+    - name: front_pole.L
+      parentName: Armature
+      position: {x: -0.5159732, y: -5.928192, z: -1.4523828}
+      rotation: {x: 0.554436, y: 0.53799605, z: 0.44887045, w: 0.44908392}
+      scale: {x: 1, y: 1.0003115, z: 1.0001997}
+    - name: Spine.008
+      parentName: Armature
+      position: {x: 0.48695838, y: -0.39968985, z: -0.5401254}
+      rotation: {x: 0.47411957, y: -0.4772471, z: 0.5377366, w: 0.50821775}
+      scale: {x: 1.0000002, y: 1.0000001, z: 1.0000002}
+    - name: BackFoot.R.001
+      parentName: Spine.008
+      position: {x: -1.2237567, y: -0.000000022118911, z: 2.3283064e-10}
+      rotation: {x: 0.9935906, y: -0.0154631715, z: 0.11105028, w: 0.014366208}
+      scale: {x: 0.9999981, y: 0.9999999, z: 0.9999995}
+    - name: Spine.009
+      parentName: BackFoot.R.001
+      position: {x: -1.1684759, y: 0.000000054948032, z: 0.000000011175871}
+      rotation: {x: -0.023545554, y: -0.70961475, z: 0.015894597, w: 0.7040169}
+      scale: {x: 1.0000002, y: 1.0000002, z: 1.0000002}
+    - name: HeadIK
+      parentName: Armature
+      position: {x: -0.008454136, y: -3.510268, z: 3.5755358}
+      rotation: {x: 0.44370657, y: -0.44370657, z: -0.55056745, w: -0.55056745}
+      scale: {x: 1.0000001, y: 1, z: 1.0000002}
+    - name: back_pole.L
+      parentName: Armature
+      position: {x: -0.52838355, y: -3.9470983, z: -1.3919728}
+      rotation: {x: 0.7071068, y: 0.7071068, z: 0.00000005960465, w: -0.00000005960465}
+      scale: {x: 0.99999976, y: 0.9999997, z: 0.9999997}
+    - name: FrontFootIK.R
+      parentName: Armature
+      position: {x: 0.52634156, y: -2.41481, z: -2.935651}
+      rotation: {x: 0.70695984, y: 0.7069596, z: 0.014426351, w: -0.014417291}
+      scale: {x: 0.9999999, y: 1.0000002, z: 0.99982595}
+    - name: BackFootIK.R
+      parentName: Armature
+      position: {x: 0.55374604, y: -0.36563843, z: -2.9082232}
+      rotation: {x: 0.72557896, y: 0.6855119, z: 0.04495061, w: -0.03985086}
+      scale: {x: 0.9999999, y: 0.99999964, z: 0.9999993}
+    - name: back_pole.R
+      parentName: Armature
+      position: {x: 0.52838355, y: -1.7828839, z: -1.7577559}
+      rotation: {x: 0.7071068, y: 0.7071068, z: 0.00000005960465, w: -0.00000005960465}
+      scale: {x: 0.99999976, y: 0.9999997, z: 0.9999997}
+    - name: front_pole.R
+      parentName: Armature
+      position: {x: 0.52838355, y: -5.8871827, z: -1.4229711}
+      rotation: {x: 0.7071068, y: 0.7071068, z: 0.00000005960465, w: -0.00000005960465}
+      scale: {x: 0.99999976, y: 0.9999997, z: 0.9999997}
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    globalScale: 1
+    rootMotionBoneName: Spine
+    hasTranslationDoF: 0
+    hasExtraRoot: 1
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  autoGenerateAvatarMappingIfUnspecified: 1
+  animationType: 2
+  humanoidOversampling: 1
+  avatarSetup: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
