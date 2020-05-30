@@ -17,9 +17,9 @@ MonoBehaviour:
   aBaseCoolDown: 1
   abilityIcon: {fileID: 21300000, guid: 1c5121f0697a1d0448058cae67ef3711, type: 3}
   holding: 0
-  wallPrefab: {fileID: 1073486666521078983, guid: 0cfa3a3055959b44b9f6add4f1129e03,
+  wallPrefab: {fileID: 6345704499532687237, guid: d02e146415cc7bb44849598f6bb85db2,
     type: 3}
   maxRange: 10
   despawnTimer: 5
-  projectorPrefab: {fileID: 1073486666521078983, guid: 0cfa3a3055959b44b9f6add4f1129e03,
+  projectorPrefab: {fileID: 7055351462662261483, guid: 08f2c9160a2e3d74e90bb2f8af34db35,
     type: 3}

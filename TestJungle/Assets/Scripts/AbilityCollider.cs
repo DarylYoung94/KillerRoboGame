@@ -21,10 +21,11 @@ public class AbilityCollider :MonoBehaviour
 
     void OnCollisionEnter(Collision collision)
     {
-        if(collision.gameObject.tag == "Ability12")
+        if(collision.gameObject.tag == "Wall")
         {
             Debug.Log("Wall hit with bomb.");
             radius = 20f;
+            collision.gameObject.GetComponent<WallOnCollision>().ShatterWall();
             Detonate();
             Destroy(this.gameObject);
         }
