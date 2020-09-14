@@ -384,6 +384,7 @@ MonoBehaviour:
   m_Material: {fileID: 0}
   m_Color: {r: 0.15972686, g: 1, b: 0, a: 1}
   m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -511,12 +512,11 @@ MonoBehaviour:
   experience: 20
   healthBar: {fileID: 5365872406624754396, guid: dece8b72068026247ac9054a0353095d,
     type: 3}
-  healthCanvas: {fileID: 4464245629181830349, guid: dece8b72068026247ac9054a0353095d,
-    type: 3}
+  healthCanvas: {fileID: 8807875315904283980}
   healthness: 0
   startHealth: 50
   health: 0
-  enemy: {fileID: 0}
+  enemy: {fileID: 8493909004912109060}
   player: {fileID: 7294040209906256453, guid: c951d5a19754f3643a6aa2b94dea7399, type: 3}
   damageTaken: 0
   damagePop: {fileID: 833885491248636895, guid: cee59fe21c0078a48b1ecfd64ef996db,
@@ -836,6 +836,7 @@ MonoBehaviour:
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 0.16509432, b: 0.16509432, a: 1}
   m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
