@@ -15,10 +15,11 @@ MonoBehaviour:
   aName: New Ability
   cdString: OnHold
   aBaseCoolDown: 1
+  abilityIcon: {fileID: 21300000, guid: 31f9543ead36f2e4abc428553820b80f, type: 3}
   holding: 0
-  turretPrefab: {fileID: 512516759530681207, guid: 0f0051f110df6194ca39d2ef6e090bf0,
+  turretPrefab: {fileID: 2587809845584092610, guid: 0eb6464d871ba6b4c8dd85ba6af34de7,
     type: 3}
-  projectorPrefab: {fileID: 5903206294493142546, guid: 6482911046391674e92061cbaf4f5302,
+  projectorPrefab: {fileID: 4109236271897723057, guid: 23ee808c579726242a6910065e88712d,
     type: 3}
   despawnTimer: 5
   turretAttackSpeed: 1
