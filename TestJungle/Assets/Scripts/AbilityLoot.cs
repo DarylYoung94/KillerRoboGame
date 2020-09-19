@@ -7,7 +7,6 @@ public class AbilityLoot : MonoBehaviour
 {
     public GameObject player;
     private int randomIndex;
-    public GameObject loot;
     public IconManager iconManager;
     
     void Start()
@@ -24,8 +23,6 @@ public class AbilityLoot : MonoBehaviour
             randomIndex = Random.Range(0, player.GetComponent<PlayerManager>().unobtainableAbilities.Count);
             Debug.Log(randomIndex);
             AssignAbility();
-            
-            
         }
     }
 
@@ -38,20 +35,10 @@ public class AbilityLoot : MonoBehaviour
             AbstractAbilityCooldown abilityCooldown = player.AddComponent(assignedAbility.GetCooldownType()) as AbstractAbilityCooldown;
             int iconIndex = iconManager.SetNextIcon(assignedAbility.abilityIcon);
             
-                
-
             abilityCooldown.Initialise(assignedAbility,
                                        player,
                                        player.GetComponent<InputManager>().GetNextKeyCode(),
                                        iconIndex);
-            
-           
-           
-                                    
-                                   
-                                 
-                                    
-
             
             removeAbilityFromList(assignedAbility);
 
