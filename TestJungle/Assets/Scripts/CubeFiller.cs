@@ -11,10 +11,27 @@ public class CubeFiller : MonoBehaviour
     public int cubeSize_z = 9;
     public int offset = 1;
     public float scale = 0.4f;
+    private Vector3 originalScale;
 
     // Start is called before the first frame update
     void Start()
     {
+        originalScale = this.transform.localScale;
+        GenerateCubes();
+    }
+
+    void Update()
+    {
+        if (cubes.Count == 0)
+        {
+            GenerateCubes();
+        }
+    }
+
+    void GenerateCubes()
+    {
+        this.transform.localScale = originalScale;
+
         for (int y = 0; y<cubeSize_y*offset; y += offset)
         {
             for (int z = 0; z<cubeSize_z*offset; z += offset)
@@ -31,6 +48,6 @@ public class CubeFiller : MonoBehaviour
             }
         }
 
-        this.transform.localScale = scale * this.transform.localScale;
+        this.transform.localScale = scale * originalScale;   
     }
 }

@@ -4,71 +4,77 @@ using UnityEngine;
 
 public class Basicmovement : MonoBehaviour
 {
-    public float movespeed;
-    public Rigidbody rigid;
-    public GameObject cam;
-    public float jumpForce;
-    public float gravity ;
-    public bool flight = true;
-    public float verticalVelocity;
-    public float flightGravity;
+	public float speed = 5.0f;
+    public float baseSpeed = 5.0f;
+    public float speedMultiplier = 1.2f;
+	public float gravity = 10.0f;
+	public float maxVelocityChange = 10.0f;
     public float rotSpeed = 2f ; 
-    
-    // Start is called before the first frame update
-    void Start()
-    {
-        rigid = GetComponent<Rigidbody>();
-        movespeed = 4f;
-        jumpForce = 100f;
-    }
+	public bool canJump = true;
+	public float jumpHeight = 2.0f;
+	private bool grounded = false;
+    private Rigidbody rb;
+    public LayerMask groundMask;
 
-    // Update is called once per frame
+    Vector3 velocityChange = new Vector3(0,0,0);
+    Vector3 velocity = new Vector3(0,0,0);
+    bool jump = false;
+
+    public GameObject cam;
+	void Awake ()
+    {
+        rb = GetComponent<Rigidbody>();
+	    rb.freezeRotation = true;
+	    rb.useGravity = false;
+	}
+
     void Update()
     {
-        if (GameManager.instance.playerActive)
+        if (Input.GetKeyDown(KeyCode.LeftShift))
         {
-            if (flight)
-            {
-                gravity = flightGravity * Time.deltaTime;
-            }
-            else
-            {
-                gravity = 0;
-
-                if (Input.GetKeyDown(KeyCode.Space))
-                {
-                  
-                    rigid.AddForce(Vector3.up * jumpForce, ForceMode.Impulse);
-                    
-                }
-            }
-            if(Input.GetKeyDown(KeyCode.LeftShift))
-            {
-                movespeed = movespeed + 4f;
-            }
-
-            if (Input.GetKeyUp(KeyCode.LeftShift))
-            {
-                movespeed = movespeed - 4f;
-            }
-
-            transform.Rotate(new Vector3(0, 0, 0));
-            Vector3 inputVector = new Vector3(Input.GetAxisRaw("Horizontal") * movespeed, 0, Input.GetAxisRaw("Vertical") * movespeed);
-            verticalVelocity = gravity;
-            Vector3 posToLook = GetCameraTurn() * inputVector;
-            rigid.velocity =  posToLook - new Vector3(0, verticalVelocity, 0);
-            
-            if (inputVector != Vector3.zero)
-            {
-                Debug.DrawRay(transform.position + posToLook, Vector3.up, Color.cyan);
-                Quaternion rotation = Quaternion.LookRotation(posToLook);
-                transform.rotation = Quaternion.Lerp(transform.rotation, rotation, rotSpeed);
-            }           
+            speed = baseSpeed * speedMultiplier;
         }
-        else
+        
+        if (Input.GetKeyUp(KeyCode.LeftShift))
         {
-            rigid.velocity = new Vector3(0, 0, 0);
+            speed = baseSpeed;
         }
+        
+        Vector3 inputVector = new Vector3(Input.GetAxisRaw("Horizontal"), 0, Input.GetAxisRaw("Vertical")) * speed;
+        Vector3 posToLook = GetCameraTurn() * inputVector;
+
+        velocity = rb.velocity;
+        velocityChange = posToLook - velocity;
+        velocityChange.x = Mathf.Clamp(velocityChange.x, -maxVelocityChange, maxVelocityChange);
+        velocityChange.z = Mathf.Clamp(velocityChange.z, -maxVelocityChange, maxVelocityChange);
+        velocityChange.y = 0;
+
+        if (inputVector != Vector3.zero)
+        {
+            Quaternion rotation = Quaternion.LookRotation(posToLook);
+            transform.rotation = Quaternion.Lerp(transform.rotation, rotation, rotSpeed);
+        }
+
+        if (canJump && Input.GetKeyDown(KeyCode.Space))
+        {
+            jump = true;
+        } 
+    }
+    void FixedUpdate()
+    {
+        if (grounded)
+        {
+            rb.AddForce(velocityChange, ForceMode.VelocityChange);
+
+            if (canJump && jump)
+            {
+                rb.velocity = new Vector3 (velocity.x, CalculateJumpVerticalSpeed(), velocity.z);
+                jump = false;
+            }
+        }
+    
+        rb.AddForce(new Vector3 (0, -gravity * rb.mass, 0));
+        grounded = false;
     }
    
     private Quaternion GetCameraTurn()
@@ -76,24 +82,15 @@ public class Basicmovement : MonoBehaviour
         return Quaternion.AngleAxis(cam.transform.rotation.eulerAngles.y, Vector3.up).normalized;
     }
 
-    private void OnCollisionEnter(Collision collision)
-    {
-        if (collision.gameObject.layer == LayerMask.NameToLayer("Terrain"))
-        {
-            flight = false;
-        }
-    }
-    private void OnCollisionExit(Collision collision)
-    {
-        if (collision.gameObject.layer == LayerMask.NameToLayer("Terrain"))
-        {
-            flight = true;
-        }
-    }
-    void CamLock()
-    {
-        
-    }
+	void OnCollisionStay (Collision collision) {
+        if ((groundMask.value & 1<<collision.gameObject.layer) != 0)
+	        grounded = true;    
+	}
 
+	float CalculateJumpVerticalSpeed () {
+	    // From the jump height and gravity we deduce the upwards speed 
+	    // for the character to reach at the apex.
+	    return Mathf.Sqrt(2 * jumpHeight * gravity);
+	}
 }
 
