@@ -15,6 +15,7 @@ MonoBehaviour:
   aName: New Ability
   cdString: OnRelease
   aBaseCoolDown: 1
+  abilityIcon: {fileID: 21300000, guid: bf7d1732a1805c94a8fb94a8bc2cbe3c, type: 3}
   holding: 0
   lightningCreatorPrefab: {fileID: 9018959815086984905, guid: 0ecd175969c18bb45b687c1e8a47fc24,
     type: 3}

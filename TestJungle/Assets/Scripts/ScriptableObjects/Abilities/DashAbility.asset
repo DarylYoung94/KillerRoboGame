@@ -17,4 +17,4 @@ MonoBehaviour:
   aBaseCoolDown: 1
   abilityIcon: {fileID: 21300000, guid: 903f5dcacb37b93409dc94ceb13e8016, type: 3}
   holding: 0
-  speed: 500
+  speed: 100
