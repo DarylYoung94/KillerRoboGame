@@ -50,8 +50,8 @@ public abstract class AbstractAbilityCooldown : MonoBehaviour {
     {
         if(iconIndex>=0 || iconIndex<=3 )
         {
-        IconManager iconManager = GameObject.Find("iconmanager").GetComponent<IconManager>();
-        iconManager.SetIconFill(iconIndex, (coolDownDuration-coolDownTimeLeft)/coolDownDuration);
+            IconManager iconManager = GameObject.Find("iconmanager").GetComponent<IconManager>();
+            iconManager.SetIconFill(iconIndex, (coolDownDuration-coolDownTimeLeft)/coolDownDuration);
         }
     }
 
