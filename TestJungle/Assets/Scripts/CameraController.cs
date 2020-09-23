@@ -31,6 +31,9 @@
     private float desiredDistance;
     private float correctedDistance;
 
+    private bool sprinting = false;
+    public float sprintZoom = 0.85f;
+
     void Start ()
     {
         Vector3 angles = transform.eulerAngles;
@@ -40,7 +43,6 @@
         currentDistance = distance;
         desiredDistance = distance;
         correctedDistance = distance;
-
     }
 
     /**
@@ -90,6 +92,11 @@
             correctedDistance = Vector3.Distance (trueTargetPosition, collisionHit.point) - offsetFromWall;
             isCorrected = true;
         }
+
+        if (sprinting)
+        {
+            correctedDistance *= sprintZoom;
+        }
  
         // For smoothing, lerp distance only if either distance wasn't corrected, or correctedDistance is more than currentDistance
         currentDistance = !isCorrected || correctedDistance > currentDistance ? 
@@ -104,6 +111,16 @@
  
         transform.rotation = rotation;
         transform.position = position;
+    }
+
+    public void StartSprint()
+    {
+        sprinting = true;
+    }
+
+    public void StopSprint()
+    {
+        sprinting = false;
     }
  
     private static float ClampAngle (float angle, float min, float max)

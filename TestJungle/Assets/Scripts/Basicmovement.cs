@@ -15,6 +15,8 @@ public class Basicmovement : MonoBehaviour
 	private bool grounded = false;
     private Rigidbody rb;
     public LayerMask groundMask;
+    public GameObject jumpVFX, collisionVFX;
+    public Vector3 jumpVfxOffset;
 
     Vector3 velocityChange = new Vector3(0,0,0);
     Vector3 velocity = new Vector3(0,0,0);
@@ -33,11 +35,13 @@ public class Basicmovement : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.LeftShift))
         {
             speed = baseSpeed * speedMultiplier;
+            cam.GetComponent<CameraController>().StartSprint();
         }
         
         if (Input.GetKeyUp(KeyCode.LeftShift))
         {
             speed = baseSpeed;
+            cam.GetComponent<CameraController>().StopSprint();
         }
         
         Vector3 inputVector = new Vector3(Input.GetAxisRaw("Horizontal"), 0, Input.GetAxisRaw("Vertical")) * speed;
@@ -57,9 +61,11 @@ public class Basicmovement : MonoBehaviour
 
         if (canJump && Input.GetKeyDown(KeyCode.Space))
         {
+            SpawnJumpVFX();
             jump = true;
         } 
     }
+
     void FixedUpdate()
     {
         if (grounded)
@@ -92,5 +98,10 @@ public class Basicmovement : MonoBehaviour
 	    // for the character to reach at the apex.
 	    return Mathf.Sqrt(2 * jumpHeight * gravity);
 	}
+
+    void SpawnJumpVFX()
+    {
+        Destroy(Instantiate(jumpVFX, this.transform.position + jumpVfxOffset, Quaternion.identity), 5.0f);
+    }
 }
 
