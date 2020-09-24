@@ -1741,6 +1741,7 @@ GameObject:
   - component: {fileID: 239521956}
   - component: {fileID: 239521958}
   - component: {fileID: 8126130896300004270}
+  - component: {fileID: 1021202241256423941}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -1835,7 +1836,7 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1, y: 2.2694283, z: 1}
+  m_Size: {x: 1, y: 2.22, z: 1}
   m_Center: {x: 0, y: 0.46971416, z: 0}
 --- !u!54 &7294040209906256452
 Rigidbody:
@@ -1873,6 +1874,12 @@ MonoBehaviour:
   rotSpeed: 2
   canJump: 1
   jumpHeight: 2
+  groundMask:
+    serializedVersion: 2
+    m_Bits: 0
+  jumpVFX: {fileID: 0}
+  collisionVFX: {fileID: 0}
+  jumpVfxOffset: {x: 0, y: 0, z: 0}
   cam: {fileID: 0}
 --- !u!114 &5449777714880240354
 MonoBehaviour:
@@ -1914,11 +1921,7 @@ MonoBehaviour:
   expText: {fileID: 1501042659}
   levelText: {fileID: 1574366955}
   lvl: 0
-  unobtainableAbilities:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
+  unobtainedAbilities: []
   canTakeDamage: 1
 --- !u!114 &239521958
 MonoBehaviour:
@@ -1949,3 +1952,17 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   abilityKeys: 00000000000000000000000000000000
   keyCodeList: 
+--- !u!136 &1021202241256423941
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7294040209906256453}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  m_Radius: 0.5533352
+  m_Height: 2.2427397
+  m_Direction: 1
+  m_Center: {x: 0.0014992952, y: 0.4522003, z: 0.007468581}
