@@ -27,8 +27,8 @@ Transform:
   m_LocalPosition: {x: 16.900002, y: 0, z: -44.6}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
-  - {fileID: 8404386727429134676}
   - {fileID: 3591855988424171654}
+  - {fileID: 8404386727429134676}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -64,7 +64,7 @@ Transform:
   m_Children:
   - {fileID: 8722441702529078166}
   m_Father: {fileID: 3591855987932235944}
-  m_RootOrder: 1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &3591855988424171649
 MeshFilter:
@@ -89,10 +89,11 @@ MeshRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_RayTracingMode: 2
+  m_RayTraceProcedural: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: c4acb01d6a9613d4496a3333ea0cb97e, type: 2}
+  - {fileID: 0}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -113,6 +114,7 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+  m_AdditionalVertexStreams: {fileID: 0}
 --- !u!135 &3591855988424171655
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -263,7 +265,7 @@ PrefabInstance:
     - target: {fileID: -4216859302048453862, guid: 60508ae662ee06a4a98f773f3d9195f1,
         type: 3}
       propertyPath: m_RootOrder
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: 60508ae662ee06a4a98f773f3d9195f1,
         type: 3}
