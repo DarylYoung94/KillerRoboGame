@@ -6,26 +6,24 @@ public class WeaponManager : MonoBehaviour
 {
     public List<AbstractWeapon> weapons;
     public List<AbstractAbilityCooldown> weaponHolders;
-    public int currentWeaponIndex = 0;
-
-    List<KeyCode> weaponKeys = new List<KeyCode>()
-                                    { KeyCode.Alpha1, KeyCode.Alpha2, KeyCode.Alpha3,
-                                      KeyCode.Alpha4, KeyCode.Alpha5, KeyCode.Alpha6 };
+    public List<int> activeWeaponList = new List<int> { 0, 1, 4 };
+    
+    // Should be between 0 and the number of active weapons.
+    private int activeWeaponIndex = 0;
 
     void Start()
     {
         CreateWeaponHolders();
-        SetCurrentWeapon(currentWeaponIndex);
+        SetCurrentWeapon(activeWeaponIndex);
     }
+
     // Update is called once per frame
     void Update()
     {
-        for(int i=0; i<weaponKeys.Count; i++ )
+        if (Input.GetKeyDown(InputManager.Instance.GetWeaponSwapKey()))
         {
-            if (Input.GetKeyDown(weaponKeys[i]) && i<weaponHolders.Count)
-            {
-                SetCurrentWeapon(i);
-            }
+            int temp = (activeWeaponIndex + 1) % activeWeaponList.Count;
+            SetCurrentWeapon(temp);
         }
 
     }
@@ -50,8 +48,6 @@ public class WeaponManager : MonoBehaviour
             weaponHolders[i].Initialise(weapons[i], this.transform.gameObject, KeyCode.Mouse0, -1);
             weaponHolders[i].enabled = false;
         }
-
-        weaponHolders[0].enabled = true;
     }
 
     public void AddWeapon(AbstractWeapon weapon)
@@ -79,14 +75,16 @@ public class WeaponManager : MonoBehaviour
             {
                 weaponHolders.Add(this.transform.gameObject.AddComponent<QuickCastAbilityCooldown>());
             }
+
+            weaponHolders[weaponHolders.Count-1].enabled = false;
         }
     }
 
     private void SetCurrentWeapon(int index)
     {
-        weaponHolders[currentWeaponIndex].enabled = false;
-        weaponHolders[index].enabled = true;
+        weaponHolders[activeWeaponList[activeWeaponIndex]].enabled = false;
+        weaponHolders[activeWeaponList[index]].enabled = true;
 
-        currentWeaponIndex = index;
+        activeWeaponIndex = index;
     }
 }
