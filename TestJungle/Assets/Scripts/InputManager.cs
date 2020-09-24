@@ -4,30 +4,38 @@ using UnityEngine;
 
 public class InputManager : MonoBehaviour
 {
-    public KeyCode[] abilityKeys;
-   public  List<KeyCode> keyCodeList = new List<KeyCode>(4);
-
-    void Start()
-    {
-        keyCodeList.Add(KeyCode.Q);
-        keyCodeList.Add(KeyCode.E);
-        keyCodeList.Add(KeyCode.R);
-        keyCodeList.Add(KeyCode.F);
-
-        abilityKeys = new KeyCode[] { KeyCode.Q, KeyCode.E, KeyCode.R, KeyCode.F };
-       
-    }
-    void Update()
-    {
-    }
+    [SerializeField] private List<KeyCode> abilityKeyCodes = new List<KeyCode> { KeyCode.Alpha1, KeyCode.Alpha2, KeyCode.Alpha3, KeyCode.Alpha4 };
+    [SerializeField] private KeyCode interactKeyCode = KeyCode.E;
+    [SerializeField] private KeyCode weaponSwapKeyCode = KeyCode.Q;
 
     public KeyCode GetNextKeyCode ()
     {
-        if (keyCodeList.Count == 0)
+        if (abilityKeyCodes.Count == 0)
             Debug.Log("No key bindings available");
 
-        KeyCode keyCode = keyCodeList[0];
-        keyCodeList.RemoveAt(0);
+        KeyCode keyCode = abilityKeyCodes[0];
+        abilityKeyCodes.RemoveAt(0);
         return keyCode;
+    }
+
+    public KeyCode GetWeaponSwapKey() { return weaponSwapKeyCode; }
+    public KeyCode GetInteractKey() { return interactKeyCode; }
+
+    private static InputManager inputManager = null;
+    public static InputManager Instance
+    {
+        get
+        {
+            if (inputManager == null)
+            {
+                inputManager = GameObject.FindObjectOfType<InputManager>();
+                if (inputManager == null)
+                {
+                    inputManager = new GameObject("InputManager").AddComponent<InputManager>();
+                }
+            }
+
+            return inputManager;
+        }
     }
 }

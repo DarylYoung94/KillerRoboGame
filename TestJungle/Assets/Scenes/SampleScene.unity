@@ -25433,6 +25433,11 @@ PrefabInstance:
       propertyPath: m_Size.y
       value: 2.22
       objectReference: {fileID: 0}
+    - target: {fileID: 7294040209906256450, guid: c951d5a19754f3643a6aa2b94dea7399,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7294040209906256451, guid: c951d5a19754f3643a6aa2b94dea7399,
         type: 3}
       propertyPath: cam
