@@ -19,6 +19,8 @@ public class WallAbility : AbstractAbility {
         wallPlace.wallPrefab = wallPrefab;
         wallPlace.despawnTimer = despawnTimer;
         wallPlace.projectorPrefab = projectorPrefab;
+
+        triggerable = wallPlace;
     }
 
     public override void ButtonDown()

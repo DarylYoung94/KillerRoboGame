@@ -11,6 +11,8 @@ public class DashAbility : AbstractAbility
     {
         dashAbilityTrigger = obj.AddComponent<DashAbilityTriggerable>();
         dashAbilityTrigger.speed = speed;
+
+        triggerable = dashAbilityTrigger;
     }
     public override void ButtonDown()
     {

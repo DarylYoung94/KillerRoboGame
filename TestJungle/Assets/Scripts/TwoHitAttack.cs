@@ -21,6 +21,8 @@ public class TwoHitAttack : RBWeapon
         twoHitAttackTrigger.barrelExit = barrelExit;
 
         pelletPrefab.GetComponent<BulletCollider>().Damage = damage;
+
+        triggerable = twoHitAttackTrigger;
     }
 
     public override void ButtonDown()

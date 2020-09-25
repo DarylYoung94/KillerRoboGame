@@ -20,6 +20,8 @@ public class BombAbility : AbstractAbility {
         bombTrigger.projectorPrefab = projectorPrefab;
         bombTrigger.despawnTimer = despawnTimer;
         bombTrigger.projectileSpeed = projectileSpeed;
+
+        triggerable = bombTrigger;
     }
 
     public override void ButtonDown()

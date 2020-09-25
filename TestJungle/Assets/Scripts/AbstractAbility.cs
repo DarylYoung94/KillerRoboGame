@@ -12,6 +12,8 @@ public abstract class AbstractAbility : ScriptableObject {
     public float aBaseCoolDown = 1f;
     public Sprite abilityIcon;
     
+    public MonoBehaviour triggerable;
+
     // Private Members
     [SerializeField] private bool holding = false;
 

@@ -24,6 +24,8 @@ public class HeliAbility : AbstractAbility
         heliTrigger.droppedItem = droppedItem;
         heliTrigger.dropTimer = dropTimer;
         heliTrigger.dropPoint = dropPoint;
+
+        triggerable = heliTrigger;
     }
       public override void ButtonDown()
     {

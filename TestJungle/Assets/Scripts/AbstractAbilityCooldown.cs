@@ -6,7 +6,7 @@ public abstract class AbstractAbilityCooldown : MonoBehaviour {
     [SerializeField] protected AbstractAbility ability;
     [SerializeField] protected GameObject abilityHolder;
     [SerializeField] protected KeyCode abilityKeyCode;
-    //    [SerializeField] protected Image abilityIcon;
+    public MonoBehaviour triggerable;
 
     protected int iconIndex;
     [SerializeField] protected float coolDownDuration;
@@ -28,10 +28,12 @@ public abstract class AbstractAbilityCooldown : MonoBehaviour {
         coolDownDuration = ability.aBaseCoolDown;
         this.iconIndex = iconIndex;
         ability.Initialise(abilityHolder);
+
+        triggerable = ability.triggerable;
     }
 
-    protected abstract void Update();
-
+    protected virtual void Update() { triggerable.enabled = this.enabled; }
+    
     protected virtual void ButtonDown() { ability.ButtonDown(); }
     protected virtual void ButtonUp() { ability.ButtonUp(); }
 

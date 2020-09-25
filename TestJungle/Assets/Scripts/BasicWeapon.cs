@@ -21,6 +21,8 @@ public class BasicWeapon : RBWeapon {
         basicAttackTrigger.barrelExit = barrelExit;
 
         pelletPrefab.GetComponent<BulletCollider>().Damage = damage;
+
+        triggerable = basicAttackTrigger;
     }
 
     public override void ButtonDown()

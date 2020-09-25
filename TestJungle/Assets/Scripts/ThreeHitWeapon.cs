@@ -23,6 +23,8 @@ public class ThreeHitWeapon : RBWeapon
        barrelExit = GameObject.Find("Player/firePoint").transform;
        threeHitTrigger.barrelExit = barrelExit;
        bulletPrefab.GetComponent<BulletCollider>().Damage = damage;
+
+       triggerable = threeHitTrigger;
    }
 
     public override void ButtonDown()

@@ -27,6 +27,7 @@ public class LightningWeapon : RayCastWeapon {
         barrelExit = GameObject.Find("Player/firePoint").transform;
         lightningTrigger.barrelExit = barrelExit;
 
+        triggerable = lightningTrigger;
     }
 
     public override void ButtonDown()

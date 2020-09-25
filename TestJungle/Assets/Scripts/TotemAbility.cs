@@ -28,6 +28,8 @@ public class TotemAbility : AbstractAbility {
         totemPlacement.totemPrefab = totemPrefab;
         totemPlacement.bulletPrefab = bulletPrefab;
         totemPlacement.projectorPrefab = projectorPrefab;
+
+        triggerable = totemPlacement;
     }
 
     public override void ButtonDown()

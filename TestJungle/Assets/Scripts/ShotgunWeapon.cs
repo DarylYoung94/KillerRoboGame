@@ -30,6 +30,8 @@ public class ShotgunWeapon : RBWeapon {
         pelletPrefab.GetComponent<BulletCollider>().Damage = damage;
 
         sgTrigger.Initialise();
+
+        triggerable = sgTrigger;
     }
 
     public override void ButtonDown()

@@ -29,6 +29,8 @@ public class LightningTrap : AbstractAbility {
         trapTriggerable.damage = damage;
         trapTriggerable.applyChains = applyChains;
         trapTriggerable.chainLightningPrefab = chainLightningPrefab;
+
+        triggerable = trapTriggerable;
     }
 
     public override void ButtonDown()

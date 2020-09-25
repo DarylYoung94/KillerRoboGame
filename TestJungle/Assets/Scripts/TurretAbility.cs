@@ -29,7 +29,8 @@ public class TurretAbility : AbstractAbility
         turretTrigger.damage = damage;
         turretTrigger.maxRange = maxRange;
         turretPrefab.GetComponent<Turret>().turretAttackSpeed = attackSpeed;
-        
+
+        triggerable = turretTrigger;
     }
     public override void ButtonDown()
     {

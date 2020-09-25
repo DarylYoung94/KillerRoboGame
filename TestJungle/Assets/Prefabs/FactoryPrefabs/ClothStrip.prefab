@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 2829772119096253736}
   - component: {fileID: 4268749604272795926}
   - component: {fileID: 1813673163970387435}
+  - component: {fileID: -2182384987617279285}
   m_Layer: 0
   m_Name: ClothStrip
   m_TagString: Untagged
@@ -56,6 +57,7 @@ SkinnedMeshRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_RayTracingMode: 0
+  m_RayTraceProcedural: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -399,3 +401,15 @@ Cloth:
   - {x: 0.6666667, y: 0.16666667, z: 0.16666667}
   - {x: 0.5, y: 0.5, z: 0}
   m_VirtualParticleIndices: 
+--- !u!114 &-2182384987617279285
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1152115005346870430}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 83ea990ce5afdac4981d9a41f2efd211, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

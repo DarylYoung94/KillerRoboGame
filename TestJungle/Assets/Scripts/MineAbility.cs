@@ -29,6 +29,8 @@ public class MineAbility : AbstractAbility
         mineTrigger.Damage = Damage;
         mineTrigger.explosionParticles= explosionParticles;
         mineTrigger.timerParticles = timerParticles;
+
+        triggerable = mineTrigger;
     }
 
     public override void ButtonDown()
