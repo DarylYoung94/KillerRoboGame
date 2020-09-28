@@ -8,8 +8,6 @@ public class WeaponManager : MonoBehaviour
     public List<AbstractWeapon> weapons;
     public List<AbstractAbilityCooldown> weaponHolders;
     public List<int> activeWeaponList = new List<int> { 0, 1, 4 };
-
-    public Image Weapon;
     
     // Should be between 0 and the number of active weapons.
     private int activeWeaponIndex = 0;

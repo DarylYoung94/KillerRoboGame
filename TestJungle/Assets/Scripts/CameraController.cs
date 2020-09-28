@@ -34,6 +34,10 @@
     private bool sprinting = false;
     public float sprintZoom = 0.85f;
 
+    [Header ("Highlighting")]
+    public Material highlightMat;
+    private GameObject highlightedGO;
+
     void Start ()
     {
         Vector3 angles = transform.eulerAngles;
@@ -111,6 +115,8 @@
  
         transform.rotation = rotation;
         transform.position = position;
+
+        DoHighlighting();
     }
 
     public void StartSprint()
@@ -130,5 +136,34 @@
         if (angle > 360)
             angle -= 360;
         return Mathf.Clamp (angle, min, max);
+    }
+
+    private void DoHighlighting()
+    {
+        Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+        RaycastHit hit;
+
+        if (Physics.Raycast(ray, out hit))
+        {
+            // Reset last highlighted object if no longer highlighted.
+            if (highlightedGO != null && highlightedGO != hit.transform.gameObject)
+            {
+                highlightedGO.GetComponent<Renderer>().materials = 
+                    new Material[] { highlightedGO.GetComponent<Renderer>().materials[0] };
+
+                highlightedGO = null;
+            }
+
+            if (highlightedGO != hit.transform.gameObject && hit.transform.tag == "Interactable")
+            {
+                highlightedGO = hit.transform.gameObject;
+                Material[] mats = highlightedGO.GetComponent<Renderer>().materials;
+                highlightMat.SetColor("_Color", mats[0].GetColor("_Color"));
+                mats = new Material[] { mats[0], highlightMat };
+
+                highlightedGO.GetComponent<Renderer>().materials = mats;
+            }
+
+        }
     }
  }
