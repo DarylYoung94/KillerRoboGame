@@ -16,6 +16,7 @@
             "."
         ],
         "fbxSavePaths": [
+            "Prefabs/WeaponPrefabs",
             "."
         ],
         "selectedFbxPath": 0,
