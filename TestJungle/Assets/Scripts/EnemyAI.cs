@@ -16,6 +16,10 @@ public class EnemyAI : MonoBehaviour
     public GameObject attackParticles;
     public bool allowAttack = true;
     // Use this for initialization
+
+    private float currentSpeed = 0.0f;
+    private float maxSpeed = 5.0f;
+
     void Start()
     {
         StartCoroutine(AttackSpeed(attackSpeed));
@@ -60,6 +64,7 @@ public class EnemyAI : MonoBehaviour
             }
 
         }
+
     }
     void OnDrawGizmosSelected()
     {
