@@ -1670,7 +1670,7 @@ GameObject:
   - component: {fileID: 6896184844947965874}
   m_Layer: 0
   m_Name: MechSuit
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1709,7 +1709,7 @@ MonoBehaviour:
   healthBar: {fileID: 8568573054775270004}
   healthCanvas: {fileID: 610638326886398660}
   healthness: 0
-  startHealth: 0
+  startHealth: 500
   health: 0
   enemy: {fileID: 2798668409923851973}
   player: {fileID: 7294040209906256453, guid: c951d5a19754f3643a6aa2b94dea7399, type: 3}
