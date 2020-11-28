@@ -17,6 +17,7 @@ TagManager:
   - Ability12
   - Doors
   - Interactable
+  - Data Collector
   layers:
   - Default
   - TransparentFX
