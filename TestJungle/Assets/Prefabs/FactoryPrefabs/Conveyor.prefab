@@ -141,6 +141,11 @@ PrefabInstance:
       propertyPath: m_DirtyAABB
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -7780734103960978560, guid: fffa5c85d6f1e814a9c574ae52690ecf,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: c9ede6d87b75ce64bbe817b92167eb9f, type: 2}
     - target: {fileID: -6057140222963153312, guid: fffa5c85d6f1e814a9c574ae52690ecf,
         type: 3}
       propertyPath: m_Controller
@@ -201,11 +206,21 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -2397996973257786244, guid: fffa5c85d6f1e814a9c574ae52690ecf,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: a74f158569f32cc4291ce8badccf1e6c, type: 2}
     - target: {fileID: -927199367670048503, guid: fffa5c85d6f1e814a9c574ae52690ecf,
         type: 3}
       propertyPath: m_Name
       value: conveyorAnimated
       objectReference: {fileID: 0}
+    - target: {fileID: 1066910053003865102, guid: fffa5c85d6f1e814a9c574ae52690ecf,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: a74f158569f32cc4291ce8badccf1e6c, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fffa5c85d6f1e814a9c574ae52690ecf, type: 3}
 --- !u!1 &6584319928700368484 stripped

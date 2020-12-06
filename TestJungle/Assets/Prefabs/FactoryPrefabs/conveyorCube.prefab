@@ -55,10 +55,11 @@ MeshRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_RayTracingMode: 2
+  m_RayTraceProcedural: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 1167716875115762238, guid: 349333c1d9ae7194c9800f5a4e8e2379, type: 3}
+  - {fileID: 2100000, guid: c9ede6d87b75ce64bbe817b92167eb9f, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -79,6 +80,7 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+  m_AdditionalVertexStreams: {fileID: 0}
 --- !u!1 &8249601030965690198
 GameObject:
   m_ObjectHideFlags: 0
@@ -140,6 +142,11 @@ PrefabInstance:
       propertyPath: m_CapsuleColliders.Array.data[0]
       value: 
       objectReference: {fileID: 0}
+    - target: {fileID: 4268749604272795926, guid: edd65f4c6a5a6a7409e9cdece078fb49,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: c9ede6d87b75ce64bbe817b92167eb9f, type: 2}
     - target: {fileID: 5403761574677989539, guid: edd65f4c6a5a6a7409e9cdece078fb49,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -225,6 +232,11 @@ PrefabInstance:
       propertyPath: m_CapsuleColliders.Array.data[0]
       value: 
       objectReference: {fileID: 0}
+    - target: {fileID: 4268749604272795926, guid: edd65f4c6a5a6a7409e9cdece078fb49,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: c9ede6d87b75ce64bbe817b92167eb9f, type: 2}
     - target: {fileID: 5403761574677989539, guid: edd65f4c6a5a6a7409e9cdece078fb49,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -310,6 +322,11 @@ PrefabInstance:
       propertyPath: m_CapsuleColliders.Array.data[0]
       value: 
       objectReference: {fileID: 0}
+    - target: {fileID: 4268749604272795926, guid: edd65f4c6a5a6a7409e9cdece078fb49,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: c9ede6d87b75ce64bbe817b92167eb9f, type: 2}
     - target: {fileID: 5403761574677989539, guid: edd65f4c6a5a6a7409e9cdece078fb49,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -395,6 +412,11 @@ PrefabInstance:
       propertyPath: m_CapsuleColliders.Array.data[0]
       value: 
       objectReference: {fileID: 0}
+    - target: {fileID: 4268749604272795926, guid: edd65f4c6a5a6a7409e9cdece078fb49,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: c9ede6d87b75ce64bbe817b92167eb9f, type: 2}
     - target: {fileID: 5403761574677989539, guid: edd65f4c6a5a6a7409e9cdece078fb49,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -480,6 +502,11 @@ PrefabInstance:
       propertyPath: m_CapsuleColliders.Array.data[0]
       value: 
       objectReference: {fileID: 0}
+    - target: {fileID: 4268749604272795926, guid: edd65f4c6a5a6a7409e9cdece078fb49,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: c9ede6d87b75ce64bbe817b92167eb9f, type: 2}
     - target: {fileID: 5403761574677989539, guid: edd65f4c6a5a6a7409e9cdece078fb49,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -565,6 +592,11 @@ PrefabInstance:
       propertyPath: m_CapsuleColliders.Array.data[0]
       value: 
       objectReference: {fileID: 0}
+    - target: {fileID: 4268749604272795926, guid: edd65f4c6a5a6a7409e9cdece078fb49,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: c9ede6d87b75ce64bbe817b92167eb9f, type: 2}
     - target: {fileID: 5403761574677989539, guid: edd65f4c6a5a6a7409e9cdece078fb49,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -645,6 +677,11 @@ PrefabInstance:
       propertyPath: m_CapsuleColliders.Array.data[0]
       value: 
       objectReference: {fileID: 0}
+    - target: {fileID: 4268749604272795926, guid: edd65f4c6a5a6a7409e9cdece078fb49,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: c9ede6d87b75ce64bbe817b92167eb9f, type: 2}
     - target: {fileID: 5403761574677989539, guid: edd65f4c6a5a6a7409e9cdece078fb49,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -730,6 +767,11 @@ PrefabInstance:
       propertyPath: m_CapsuleColliders.Array.data[0]
       value: 
       objectReference: {fileID: 0}
+    - target: {fileID: 4268749604272795926, guid: edd65f4c6a5a6a7409e9cdece078fb49,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: c9ede6d87b75ce64bbe817b92167eb9f, type: 2}
     - target: {fileID: 5403761574677989539, guid: edd65f4c6a5a6a7409e9cdece078fb49,
         type: 3}
       propertyPath: m_LocalPosition.x
