@@ -5,6 +5,9 @@ using UnityEngine.UI;
 
 public class WeaponManager : MonoBehaviour
 {
+    public IconManager iconManager;
+    GameObject currentWeaponIcon;
+
     public List<AbstractWeapon> weapons;
     public List<AbstractAbilityCooldown> weaponHolders;
     public List<int> activeWeaponList = new List<int> { 0, 1, 4 };
@@ -25,8 +28,16 @@ public class WeaponManager : MonoBehaviour
         {
             int temp = (activeWeaponIndex + 1) % activeWeaponList.Count;
             SetCurrentWeapon(temp);
+            
+            
+            
         }
 
+    }
+
+    public AbstractWeapon GetCurrentWeapon()
+    {
+        return weapons[activeWeaponList[activeWeaponIndex]];
     }
 
     void CreateWeaponHolders()
@@ -87,6 +98,7 @@ public class WeaponManager : MonoBehaviour
         weaponHolders[activeWeaponList[index]].enabled = true;
 
         activeWeaponIndex = index;
+        iconManager.SetWeaponIcon(GetCurrentWeapon().abilityIcon);
     }
 
     public GameObject GetWeaponGameObject()

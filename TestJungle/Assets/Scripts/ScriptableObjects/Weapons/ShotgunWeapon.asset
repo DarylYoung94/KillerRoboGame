@@ -15,7 +15,8 @@ MonoBehaviour:
   aName: New Ability
   cdString: QuickCast
   aBaseCoolDown: 1
-  abilityIcon: {fileID: 0}
+  abilityIcon: {fileID: 21300000, guid: ec258c212eed82d4e8c7a4a995208299, type: 3}
+  triggerable: {fileID: 0}
   holding: 0
   damage: 10
   force: 50

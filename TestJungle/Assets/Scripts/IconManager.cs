@@ -5,7 +5,8 @@ using UnityEngine.UI;
 
 public class IconManager : MonoBehaviour
 {
-  
+    public GameObject WeaponIcon;
+
     public GameObject [] AbilityIcons;
     public int abilityNumber = 0;
     public GameObject player;
@@ -20,6 +21,10 @@ public class IconManager : MonoBehaviour
         AbilityIcons[3].SetActive(false);
     }
 
+    public void SetWeaponIcon(Sprite iconSprite)
+    {
+        WeaponIcon.GetComponent<Image>().sprite = iconSprite;
+    }
     public int SetNextIcon(Sprite iconSprite)
     {
         if(abilityNumber<=3)
