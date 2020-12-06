@@ -10,7 +10,7 @@ public class BombAbility : AbstractAbility {
     public float maxRange = 5f;
     public float despawnTimer = 5f;
     public float projectileSpeed = 5f;
-
+    
     private BombAbilityTriggerable bombTrigger;
     
     public override void Initialise(GameObject obj)
@@ -20,6 +20,8 @@ public class BombAbility : AbstractAbility {
         bombTrigger.projectorPrefab = projectorPrefab;
         bombTrigger.despawnTimer = despawnTimer;
         bombTrigger.projectileSpeed = projectileSpeed;
+
+        triggerable = bombTrigger;
     }
 
     public override void ButtonDown()

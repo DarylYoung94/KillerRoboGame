@@ -19,7 +19,7 @@ public class MineAbilityTriggerable : MonoBehaviour
     public float upForce = 2f;
     public float Damage = 10f;
     public float mineTime = 1f;
-
+    public float maxRange = 20f;
     public void Hold()
     {
         RaycastHit hit;
@@ -47,6 +47,11 @@ public class MineAbilityTriggerable : MonoBehaviour
    
     private void UpdateProjector()
     {
+        Vector3 direction = mineAim - this.transform.position;
+        if (direction.magnitude > maxRange)
+        {
+            mineAim = this.transform.position + direction.normalized * maxRange;
+        }
         if (projectorTarget == null)
         {
             projectorTarget = Instantiate(projectorPrefab, mineAim, Quaternion.identity);

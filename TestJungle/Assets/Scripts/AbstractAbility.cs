@@ -1,6 +1,8 @@
 using System.Collections;
 using static System.Type;
 using UnityEngine;
+using UnityEngine.UI;
+
 
 public abstract class AbstractAbility : ScriptableObject {
 
@@ -8,7 +10,10 @@ public abstract class AbstractAbility : ScriptableObject {
     public string aName = "New Ability";
     public string cdString = "QuickCast";
     public float aBaseCoolDown = 1f;
+    public Sprite abilityIcon;
     
+    public MonoBehaviour triggerable;
+
     // Private Members
     [SerializeField] private bool holding = false;
 

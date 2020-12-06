@@ -1,33 +1,39 @@
 ﻿using UnityEngine;
+using UnityEngine.UI;
 
 public abstract class AbstractAbilityCooldown : MonoBehaviour {
 
     [SerializeField] protected AbstractAbility ability;
     [SerializeField] protected GameObject abilityHolder;
     [SerializeField] protected KeyCode abilityKeyCode;
+    public MonoBehaviour triggerable;
 
-    protected float coolDownDuration;
+    protected int iconIndex;
+    [SerializeField] protected float coolDownDuration;
     protected float nextReadyTime;
-    protected float coolDownTimeLeft;
+    [SerializeField] protected float coolDownTimeLeft;
 
     void Start()
     {
         if (ability != null && abilityHolder != null)
         {
-            Initialise(ability, abilityHolder, abilityKeyCode);
+            Initialise(ability, abilityHolder, abilityKeyCode,-1);
         }
     }
 
-    public void Initialise(AbstractAbility selectedAbility, GameObject abilityHolder, KeyCode keyCode)
+    public void Initialise(AbstractAbility selectedAbility, GameObject abilityHolder, KeyCode keyCode, int iconIndex)
     {
         abilityKeyCode = keyCode;
         ability = selectedAbility;
         coolDownDuration = ability.aBaseCoolDown;
+        this.iconIndex = iconIndex;
         ability.Initialise(abilityHolder);
+
+        triggerable = ability.triggerable;
     }
 
-    protected abstract void Update();
-
+    protected virtual void Update() { triggerable.enabled = this.enabled; }
+    
     protected virtual void ButtonDown() { ability.ButtonDown(); }
     protected virtual void ButtonUp() { ability.ButtonUp(); }
 
@@ -41,4 +47,14 @@ public abstract class AbstractAbilityCooldown : MonoBehaviour {
     public AbstractAbility GetAbility() { return ability; }
 
     public void SetCooldownMultiplier(float multiplier) { coolDownDuration = ability.aBaseCoolDown * multiplier; }
+
+    public void SetIconFill()
+    {
+        if(iconIndex>=0 || iconIndex<=3 )
+        {
+            IconManager iconManager = GameObject.Find("iconmanager").GetComponent<IconManager>();
+            iconManager.SetIconFill(iconIndex, (coolDownDuration-coolDownTimeLeft)/coolDownDuration);
+        }
+    }
+
 }

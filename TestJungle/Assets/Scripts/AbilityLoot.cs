@@ -1,24 +1,26 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
-
+using UnityEngine.UI;
 using UnityEngine;
 
 public class AbilityLoot : MonoBehaviour
 {
     public GameObject player;
     private int randomIndex;
-    public GameObject loot;
-
+    public IconManager iconManager;
+    
     void Start()
     {
         player = GameManager.instance.player;
+        iconManager = GameObject.Find("iconmanager").GetComponent<IconManager>();
     }
+   
 
     private void OnCollisionEnter(Collision collision)
     {
         if(collision.collider.CompareTag ("Player"))
         {
-            randomIndex = Random.Range(0, player.GetComponent<PlayerManager>().unobtainableAbilities.Count);
+            randomIndex = Random.Range(0, player.GetComponent<PlayerManager>().unobtainedAbilities.Count);
             Debug.Log(randomIndex);
             AssignAbility();
         }
@@ -26,29 +28,30 @@ public class AbilityLoot : MonoBehaviour
 
     void AssignAbility()
     {
-        AbstractAbility assignedAbility = player.GetComponent<PlayerManager>().unobtainableAbilities[randomIndex];
-
+        AbstractAbility assignedAbility = player.GetComponent<PlayerManager>().unobtainedAbilities[randomIndex];
+        
         if (assignedAbility != null)
         {
             AbstractAbilityCooldown abilityCooldown = player.AddComponent(assignedAbility.GetCooldownType()) as AbstractAbilityCooldown;
+            int iconIndex = iconManager.SetNextIcon(assignedAbility.abilityIcon);
+            
             abilityCooldown.Initialise(assignedAbility,
                                        player,
-                                       player.GetComponent<InputManager>().GetNextKeyCode());
+                                       player.GetComponent<InputManager>().GetNextKeyCode(),
+                                       iconIndex);
+            
             removeAbilityFromList(assignedAbility);
+
             Destroy();
-        }
-        else
-        {
-            Debug.Log("no more abilities to unlock");
         }
     }
 
     public int findAbilityIndex(AbstractAbility abilityNumber)
     {
         int index = -1;
-        for (int i = 0; i < player.GetComponent<PlayerManager>().unobtainableAbilities.Count; i++)
+        for (int i = 0; i < player.GetComponent<PlayerManager>().unobtainedAbilities.Count; i++)
         {
-            if (player.GetComponent<PlayerManager>().unobtainableAbilities[i] == abilityNumber)
+            if (player.GetComponent<PlayerManager>().unobtainedAbilities[i] == abilityNumber)
             {
                 index = i;
                 break;
@@ -62,11 +65,7 @@ public class AbilityLoot : MonoBehaviour
     {
         if (findAbilityIndex(abilityNumber) != -1)
         {
-            player.GetComponent<PlayerManager>().unobtainableAbilities.RemoveAt(findAbilityIndex(abilityNumber));
-        }
-        else
-        {
-            Debug.Log("can't find ability in list");
+            player.GetComponent<PlayerManager>().unobtainedAbilities.RemoveAt(findAbilityIndex(abilityNumber));
         }
     }
 

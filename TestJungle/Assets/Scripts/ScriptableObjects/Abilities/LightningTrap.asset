@@ -1,0 +1,29 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 13efc161feb6d944a8ef0df7bd1da407, type: 3}
+  m_Name: LightningTrap
+  m_EditorClassIdentifier: 
+  aName: New Ability
+  cdString: OnRelease
+  aBaseCoolDown: 1
+  abilityIcon: {fileID: 21300000, guid: bf7d1732a1805c94a8fb94a8bc2cbe3c, type: 3}
+  holding: 0
+  lightningCreatorPrefab: {fileID: 9018959815086984905, guid: 0ecd175969c18bb45b687c1e8a47fc24,
+    type: 3}
+  chainLightningPrefab: {fileID: 6751955489980688553, guid: 7d3234e15a99478498254fea662930e7,
+    type: 3}
+  despawnTimer: 0.5
+  range: 8
+  startToEndRange: 12
+  chainRange: 4
+  applyChains: 0
+  damage: 0.5

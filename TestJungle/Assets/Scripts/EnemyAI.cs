@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
+using UnityEngine.Events;
 
 public class EnemyAI : MonoBehaviour
 {
@@ -16,8 +17,16 @@ public class EnemyAI : MonoBehaviour
     public GameObject attackParticles;
     public bool allowAttack = true;
     // Use this for initialization
+
+    private float currentSpeed = 0.0f;
+    private float maxSpeed = 5.0f;
+
+    [SerializeField] UnityEvent foundEnemyEvent = new UnityEvent();
+
     void Start()
     {
+        foundEnemyEvent.AddListener(FoundEnemy);
+
         StartCoroutine(AttackSpeed(attackSpeed));
         target = GameManager.instance.player.transform;
         agent = GetComponent<NavMeshAgent>();
@@ -36,7 +45,7 @@ public class EnemyAI : MonoBehaviour
 
         if (distance <= lookRadius)
         {
-            agent.SetDestination(target.position);
+            foundEnemyEvent.Invoke();
         }
 
         if (nextAttackTime > 0)
@@ -60,12 +69,14 @@ public class EnemyAI : MonoBehaviour
             }
 
         }
+
     }
     void OnDrawGizmosSelected()
     {
         Gizmos.color = Color.red;
         Gizmos.DrawWireSphere(transform.position, lookRadius);
     }
+    
     public void Attack1()
     {
         if (target != null)
@@ -86,5 +97,10 @@ public class EnemyAI : MonoBehaviour
                 }
             }
         }
+    }
+
+    public void FoundEnemy()
+    {
+        agent.SetDestination(target.position);
     }
 }

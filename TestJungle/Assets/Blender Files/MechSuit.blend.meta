@@ -1,0 +1,1061 @@
+fileFormatVersion: 2
+guid: 1995172a662123d4ab627bdb5df313fb
+ModelImporter:
+  serializedVersion: 20101
+  internalIDToNameTable:
+  - first:
+      74: -623603649343465320
+    second: Walk
+  - first:
+      74: 5318495228865026261
+    second: Open Lid
+  - first:
+      74: -1609281748187839663
+    second: Scene
+  - first:
+      74: 7712529399265868831
+    second: Walk Start
+  - first:
+      74: -7658006253216485982
+    second: Walk End
+  externalObjects: {}
+  materials:
+    materialImportMode: 1
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    importConstraints: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations:
+    - serializedVersion: 16
+      name: Walk
+      takeName: Scene
+      internalID: 0
+      firstFrame: 38
+      lastFrame: 65
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 1
+      loopBlend: 1
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Armature
+        weight: 1
+      - path: Armature/IKLegPole.L
+        weight: 1
+      - path: Armature/IKLegPole.L/IKLegPole.L_end
+        weight: 1
+      - path: Armature/IKLegPole.R
+        weight: 1
+      - path: Armature/IKLegPole.R/IKLegPole.R_end
+        weight: 1
+      - path: Armature/IKLegTarget.L
+        weight: 1
+      - path: Armature/IKLegTarget.L/IKLegTarget.L_end
+        weight: 1
+      - path: Armature/IKLegTarget.R
+        weight: 1
+      - path: Armature/IKLegTarget.R/IKLegTarget.R_end
+        weight: 1
+      - path: Armature/UpperLeg.L
+        weight: 1
+      - path: Armature/UpperLeg.L/LowerLeg.L
+        weight: 1
+      - path: Armature/UpperLeg.L/LowerLeg.L/Foot.L
+        weight: 1
+      - path: Armature/UpperLeg.L/LowerLeg.L/Foot.L/Foot.L_end
+        weight: 1
+      - path: Armature/UpperLeg.R
+        weight: 1
+      - path: Armature/UpperLeg.R/LowerLeg.R
+        weight: 1
+      - path: Armature/UpperLeg.R/LowerLeg.R/Foot.R
+        weight: 1
+      - path: Armature/UpperLeg.R/LowerLeg.R/Foot.R/Foot.R_end
+        weight: 1
+      - path: BezierCurve
+        weight: 1
+      - path: BezierCurve.001
+        weight: 1
+      - path: Circle
+        weight: 0
+      - path: Circle.001
+        weight: 1
+      - path: Circle.002
+        weight: 1
+      - path: Cube
+        weight: 1
+      - path: Cube.001
+        weight: 1
+      - path: Cube.002
+        weight: 1
+      - path: Cube.003
+        weight: 1
+      - path: Cube.004
+        weight: 1
+      - path: Cube.005
+        weight: 1
+      - path: Cube.006
+        weight: 1
+      - path: Cube.007
+        weight: 1
+      - path: Cube.010
+        weight: 1
+      - path: Cube.011
+        weight: 1
+      - path: Cube.012
+        weight: 1
+      - path: Cube.013
+        weight: 1
+      - path: Cube.014
+        weight: 1
+      - path: Cube.015
+        weight: 1
+      - path: Cube.016
+        weight: 1
+      - path: Cube.017
+        weight: 1
+      - path: Cube.018
+        weight: 1
+      - path: Cube.019
+        weight: 1
+      - path: Cube.020
+        weight: 1
+      - path: Cube.021
+        weight: 1
+      - path: Cube.022
+        weight: 1
+      - path: Cube.023
+        weight: 1
+      - path: Cube.024
+        weight: 1
+      - path: Cube.025
+        weight: 1
+      - path: Cube.026
+        weight: 1
+      - path: Cube.027
+        weight: 1
+      - path: Cube.028
+        weight: 1
+      - path: Cube.029
+        weight: 1
+      - path: Cube.030
+        weight: 1
+      - path: Cube.031
+        weight: 1
+      - path: Cube.032
+        weight: 1
+      - path: Cube.033
+        weight: 1
+      - path: Cube.034
+        weight: 1
+      - path: Cube.035
+        weight: 1
+      - path: Cube.036
+        weight: 1
+      - path: Cylinder
+        weight: 1
+      - path: Cylinder.001
+        weight: 1
+      - path: Cylinder.002
+        weight: 1
+      - path: Cylinder.003
+        weight: 1
+      - path: Cylinder.004
+        weight: 1
+      - path: Cylinder.006
+        weight: 1
+      - path: Cylinder.007
+        weight: 1
+      - path: Cylinder.008
+        weight: 1
+      - path: Cylinder.009
+        weight: 1
+      - path: Cylinder.010
+        weight: 1
+      - path: Cylinder.011
+        weight: 1
+      - path: Cylinder.012
+        weight: 1
+      - path: Cylinder.013
+        weight: 1
+      - path: Cylinder.014
+        weight: 1
+      - path: Cylinder.015
+        weight: 1
+      - path: Cylinder.016
+        weight: 1
+      - path: Cylinder.017
+        weight: 1
+      - path: Cylinder.018
+        weight: 1
+      - path: Cylinder.019
+        weight: 1
+      - path: Cylinder.020
+        weight: 1
+      - path: Cylinder.021
+        weight: 1
+      - path: Cylinder.022
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: Open Lid
+      takeName: Scene
+      internalID: 0
+      firstFrame: 0
+      lastFrame: 30
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Armature
+        weight: 0
+      - path: Armature/IKLegPole.L
+        weight: 0
+      - path: Armature/IKLegPole.L/IKLegPole.L_end
+        weight: 0
+      - path: Armature/IKLegPole.R
+        weight: 0
+      - path: Armature/IKLegPole.R/IKLegPole.R_end
+        weight: 0
+      - path: Armature/IKLegTarget.L
+        weight: 0
+      - path: Armature/IKLegTarget.L/IKLegTarget.L_end
+        weight: 0
+      - path: Armature/IKLegTarget.R
+        weight: 0
+      - path: Armature/IKLegTarget.R/IKLegTarget.R_end
+        weight: 0
+      - path: Armature/UpperLeg.L
+        weight: 0
+      - path: Armature/UpperLeg.L/LowerLeg.L
+        weight: 0
+      - path: Armature/UpperLeg.L/LowerLeg.L/Foot.L
+        weight: 0
+      - path: Armature/UpperLeg.L/LowerLeg.L/Foot.L/Foot.L_end
+        weight: 0
+      - path: Armature/UpperLeg.R
+        weight: 0
+      - path: Armature/UpperLeg.R/LowerLeg.R
+        weight: 0
+      - path: Armature/UpperLeg.R/LowerLeg.R/Foot.R
+        weight: 0
+      - path: Armature/UpperLeg.R/LowerLeg.R/Foot.R/Foot.R_end
+        weight: 0
+      - path: BezierCurve
+        weight: 0
+      - path: BezierCurve.001
+        weight: 0
+      - path: Circle
+        weight: 1
+      - path: Circle.001
+        weight: 0
+      - path: Circle.002
+        weight: 0
+      - path: Cube
+        weight: 0
+      - path: Cube.001
+        weight: 0
+      - path: Cube.002
+        weight: 0
+      - path: Cube.003
+        weight: 0
+      - path: Cube.004
+        weight: 0
+      - path: Cube.005
+        weight: 0
+      - path: Cube.006
+        weight: 0
+      - path: Cube.007
+        weight: 0
+      - path: Cube.010
+        weight: 0
+      - path: Cube.011
+        weight: 0
+      - path: Cube.012
+        weight: 0
+      - path: Cube.013
+        weight: 0
+      - path: Cube.014
+        weight: 0
+      - path: Cube.015
+        weight: 0
+      - path: Cube.016
+        weight: 0
+      - path: Cube.017
+        weight: 0
+      - path: Cube.018
+        weight: 0
+      - path: Cube.019
+        weight: 0
+      - path: Cube.020
+        weight: 0
+      - path: Cube.021
+        weight: 0
+      - path: Cube.022
+        weight: 0
+      - path: Cube.023
+        weight: 0
+      - path: Cube.024
+        weight: 0
+      - path: Cube.025
+        weight: 0
+      - path: Cube.026
+        weight: 0
+      - path: Cube.027
+        weight: 0
+      - path: Cube.028
+        weight: 0
+      - path: Cube.029
+        weight: 0
+      - path: Cube.030
+        weight: 0
+      - path: Cube.031
+        weight: 0
+      - path: Cube.032
+        weight: 0
+      - path: Cube.033
+        weight: 0
+      - path: Cube.034
+        weight: 0
+      - path: Cube.035
+        weight: 0
+      - path: Cube.036
+        weight: 0
+      - path: Cylinder
+        weight: 0
+      - path: Cylinder.001
+        weight: 0
+      - path: Cylinder.002
+        weight: 0
+      - path: Cylinder.003
+        weight: 0
+      - path: Cylinder.004
+        weight: 0
+      - path: Cylinder.006
+        weight: 0
+      - path: Cylinder.007
+        weight: 0
+      - path: Cylinder.008
+        weight: 0
+      - path: Cylinder.009
+        weight: 0
+      - path: Cylinder.010
+        weight: 0
+      - path: Cylinder.011
+        weight: 0
+      - path: Cylinder.012
+        weight: 0
+      - path: Cylinder.013
+        weight: 0
+      - path: Cylinder.014
+        weight: 0
+      - path: Cylinder.015
+        weight: 0
+      - path: Cylinder.016
+        weight: 0
+      - path: Cylinder.017
+        weight: 0
+      - path: Cylinder.018
+        weight: 0
+      - path: Cylinder.019
+        weight: 0
+      - path: Cylinder.020
+        weight: 0
+      - path: Cylinder.021
+        weight: 0
+      - path: Cylinder.022
+        weight: 0
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: Scene
+      takeName: Scene
+      internalID: 0
+      firstFrame: 0
+      lastFrame: 100
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Armature
+        weight: 0
+      - path: Armature/IKLegPole.L
+        weight: 0
+      - path: Armature/IKLegPole.L/IKLegPole.L_end
+        weight: 0
+      - path: Armature/IKLegPole.R
+        weight: 0
+      - path: Armature/IKLegPole.R/IKLegPole.R_end
+        weight: 0
+      - path: Armature/IKLegTarget.L
+        weight: 0
+      - path: Armature/IKLegTarget.L/IKLegTarget.L_end
+        weight: 0
+      - path: Armature/IKLegTarget.R
+        weight: 0
+      - path: Armature/IKLegTarget.R/IKLegTarget.R_end
+        weight: 0
+      - path: Armature/UpperLeg.L
+        weight: 0
+      - path: Armature/UpperLeg.L/LowerLeg.L
+        weight: 0
+      - path: Armature/UpperLeg.L/LowerLeg.L/Foot.L
+        weight: 0
+      - path: Armature/UpperLeg.L/LowerLeg.L/Foot.L/Foot.L_end
+        weight: 0
+      - path: Armature/UpperLeg.R
+        weight: 0
+      - path: Armature/UpperLeg.R/LowerLeg.R
+        weight: 0
+      - path: Armature/UpperLeg.R/LowerLeg.R/Foot.R
+        weight: 0
+      - path: Armature/UpperLeg.R/LowerLeg.R/Foot.R/Foot.R_end
+        weight: 0
+      - path: BezierCurve
+        weight: 0
+      - path: BezierCurve.001
+        weight: 0
+      - path: Circle
+        weight: 1
+      - path: Circle.001
+        weight: 0
+      - path: Circle.002
+        weight: 0
+      - path: Cube
+        weight: 0
+      - path: Cube.001
+        weight: 0
+      - path: Cube.002
+        weight: 0
+      - path: Cube.003
+        weight: 0
+      - path: Cube.004
+        weight: 0
+      - path: Cube.005
+        weight: 0
+      - path: Cube.006
+        weight: 0
+      - path: Cube.007
+        weight: 0
+      - path: Cube.010
+        weight: 0
+      - path: Cube.011
+        weight: 0
+      - path: Cube.012
+        weight: 0
+      - path: Cube.013
+        weight: 0
+      - path: Cube.014
+        weight: 0
+      - path: Cube.015
+        weight: 0
+      - path: Cube.016
+        weight: 0
+      - path: Cube.017
+        weight: 0
+      - path: Cube.018
+        weight: 0
+      - path: Cube.019
+        weight: 0
+      - path: Cube.020
+        weight: 0
+      - path: Cube.021
+        weight: 0
+      - path: Cube.022
+        weight: 0
+      - path: Cube.023
+        weight: 0
+      - path: Cube.024
+        weight: 0
+      - path: Cube.025
+        weight: 0
+      - path: Cube.026
+        weight: 0
+      - path: Cube.027
+        weight: 0
+      - path: Cube.028
+        weight: 0
+      - path: Cube.029
+        weight: 0
+      - path: Cube.030
+        weight: 0
+      - path: Cube.031
+        weight: 0
+      - path: Cube.032
+        weight: 0
+      - path: Cube.033
+        weight: 0
+      - path: Cube.034
+        weight: 0
+      - path: Cube.035
+        weight: 0
+      - path: Cube.036
+        weight: 0
+      - path: Cylinder
+        weight: 0
+      - path: Cylinder.001
+        weight: 0
+      - path: Cylinder.002
+        weight: 0
+      - path: Cylinder.003
+        weight: 0
+      - path: Cylinder.004
+        weight: 0
+      - path: Cylinder.006
+        weight: 0
+      - path: Cylinder.007
+        weight: 0
+      - path: Cylinder.008
+        weight: 0
+      - path: Cylinder.009
+        weight: 0
+      - path: Cylinder.010
+        weight: 0
+      - path: Cylinder.011
+        weight: 0
+      - path: Cylinder.012
+        weight: 0
+      - path: Cylinder.013
+        weight: 0
+      - path: Cylinder.014
+        weight: 0
+      - path: Cylinder.015
+        weight: 0
+      - path: Cylinder.016
+        weight: 0
+      - path: Cylinder.017
+        weight: 0
+      - path: Cylinder.018
+        weight: 0
+      - path: Cylinder.019
+        weight: 0
+      - path: Cylinder.020
+        weight: 0
+      - path: Cylinder.021
+        weight: 0
+      - path: Cylinder.022
+        weight: 0
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: Walk Start
+      takeName: Scene
+      internalID: 0
+      firstFrame: 0
+      lastFrame: 37
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Armature
+        weight: 1
+      - path: Armature/IKLegPole.L
+        weight: 1
+      - path: Armature/IKLegPole.L/IKLegPole.L_end
+        weight: 1
+      - path: Armature/IKLegPole.R
+        weight: 1
+      - path: Armature/IKLegPole.R/IKLegPole.R_end
+        weight: 1
+      - path: Armature/IKLegTarget.L
+        weight: 1
+      - path: Armature/IKLegTarget.L/IKLegTarget.L_end
+        weight: 1
+      - path: Armature/IKLegTarget.R
+        weight: 1
+      - path: Armature/IKLegTarget.R/IKLegTarget.R_end
+        weight: 1
+      - path: Armature/UpperLeg.L
+        weight: 1
+      - path: Armature/UpperLeg.L/LowerLeg.L
+        weight: 1
+      - path: Armature/UpperLeg.L/LowerLeg.L/Foot.L
+        weight: 1
+      - path: Armature/UpperLeg.L/LowerLeg.L/Foot.L/Foot.L_end
+        weight: 1
+      - path: Armature/UpperLeg.R
+        weight: 1
+      - path: Armature/UpperLeg.R/LowerLeg.R
+        weight: 1
+      - path: Armature/UpperLeg.R/LowerLeg.R/Foot.R
+        weight: 1
+      - path: Armature/UpperLeg.R/LowerLeg.R/Foot.R/Foot.R_end
+        weight: 1
+      - path: BezierCurve
+        weight: 1
+      - path: BezierCurve.001
+        weight: 1
+      - path: Circle
+        weight: 0
+      - path: Circle.001
+        weight: 1
+      - path: Circle.002
+        weight: 1
+      - path: Cube
+        weight: 1
+      - path: Cube.001
+        weight: 1
+      - path: Cube.002
+        weight: 1
+      - path: Cube.003
+        weight: 1
+      - path: Cube.004
+        weight: 1
+      - path: Cube.005
+        weight: 1
+      - path: Cube.006
+        weight: 1
+      - path: Cube.007
+        weight: 1
+      - path: Cube.010
+        weight: 1
+      - path: Cube.011
+        weight: 1
+      - path: Cube.012
+        weight: 1
+      - path: Cube.013
+        weight: 1
+      - path: Cube.014
+        weight: 1
+      - path: Cube.015
+        weight: 1
+      - path: Cube.016
+        weight: 1
+      - path: Cube.017
+        weight: 1
+      - path: Cube.018
+        weight: 1
+      - path: Cube.019
+        weight: 1
+      - path: Cube.020
+        weight: 1
+      - path: Cube.021
+        weight: 1
+      - path: Cube.022
+        weight: 1
+      - path: Cube.023
+        weight: 1
+      - path: Cube.024
+        weight: 1
+      - path: Cube.025
+        weight: 1
+      - path: Cube.026
+        weight: 1
+      - path: Cube.027
+        weight: 1
+      - path: Cube.028
+        weight: 1
+      - path: Cube.029
+        weight: 1
+      - path: Cube.030
+        weight: 1
+      - path: Cube.031
+        weight: 1
+      - path: Cube.032
+        weight: 1
+      - path: Cube.033
+        weight: 1
+      - path: Cube.034
+        weight: 1
+      - path: Cube.035
+        weight: 1
+      - path: Cube.036
+        weight: 1
+      - path: Cylinder
+        weight: 1
+      - path: Cylinder.001
+        weight: 1
+      - path: Cylinder.002
+        weight: 1
+      - path: Cylinder.003
+        weight: 1
+      - path: Cylinder.004
+        weight: 1
+      - path: Cylinder.006
+        weight: 1
+      - path: Cylinder.007
+        weight: 1
+      - path: Cylinder.008
+        weight: 1
+      - path: Cylinder.009
+        weight: 1
+      - path: Cylinder.010
+        weight: 1
+      - path: Cylinder.011
+        weight: 1
+      - path: Cylinder.012
+        weight: 1
+      - path: Cylinder.013
+        weight: 1
+      - path: Cylinder.014
+        weight: 1
+      - path: Cylinder.015
+        weight: 1
+      - path: Cylinder.016
+        weight: 1
+      - path: Cylinder.017
+        weight: 1
+      - path: Cylinder.018
+        weight: 1
+      - path: Cylinder.019
+        weight: 1
+      - path: Cylinder.020
+        weight: 1
+      - path: Cylinder.021
+        weight: 1
+      - path: Cylinder.022
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: Walk End
+      takeName: Scene
+      internalID: 0
+      firstFrame: 66
+      lastFrame: 100
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Armature
+        weight: 1
+      - path: Armature/IKLegPole.L
+        weight: 1
+      - path: Armature/IKLegPole.L/IKLegPole.L_end
+        weight: 1
+      - path: Armature/IKLegPole.R
+        weight: 1
+      - path: Armature/IKLegPole.R/IKLegPole.R_end
+        weight: 1
+      - path: Armature/IKLegTarget.L
+        weight: 1
+      - path: Armature/IKLegTarget.L/IKLegTarget.L_end
+        weight: 1
+      - path: Armature/IKLegTarget.R
+        weight: 1
+      - path: Armature/IKLegTarget.R/IKLegTarget.R_end
+        weight: 1
+      - path: Armature/UpperLeg.L
+        weight: 1
+      - path: Armature/UpperLeg.L/LowerLeg.L
+        weight: 1
+      - path: Armature/UpperLeg.L/LowerLeg.L/Foot.L
+        weight: 1
+      - path: Armature/UpperLeg.L/LowerLeg.L/Foot.L/Foot.L_end
+        weight: 1
+      - path: Armature/UpperLeg.R
+        weight: 1
+      - path: Armature/UpperLeg.R/LowerLeg.R
+        weight: 1
+      - path: Armature/UpperLeg.R/LowerLeg.R/Foot.R
+        weight: 1
+      - path: Armature/UpperLeg.R/LowerLeg.R/Foot.R/Foot.R_end
+        weight: 1
+      - path: BezierCurve
+        weight: 1
+      - path: BezierCurve.001
+        weight: 1
+      - path: Circle
+        weight: 0
+      - path: Circle.001
+        weight: 1
+      - path: Circle.002
+        weight: 1
+      - path: Cube
+        weight: 1
+      - path: Cube.001
+        weight: 1
+      - path: Cube.002
+        weight: 1
+      - path: Cube.003
+        weight: 1
+      - path: Cube.004
+        weight: 1
+      - path: Cube.005
+        weight: 1
+      - path: Cube.006
+        weight: 1
+      - path: Cube.007
+        weight: 1
+      - path: Cube.010
+        weight: 1
+      - path: Cube.011
+        weight: 1
+      - path: Cube.012
+        weight: 1
+      - path: Cube.013
+        weight: 1
+      - path: Cube.014
+        weight: 1
+      - path: Cube.015
+        weight: 1
+      - path: Cube.016
+        weight: 1
+      - path: Cube.017
+        weight: 1
+      - path: Cube.018
+        weight: 1
+      - path: Cube.019
+        weight: 1
+      - path: Cube.020
+        weight: 1
+      - path: Cube.021
+        weight: 1
+      - path: Cube.022
+        weight: 1
+      - path: Cube.023
+        weight: 1
+      - path: Cube.024
+        weight: 1
+      - path: Cube.025
+        weight: 1
+      - path: Cube.026
+        weight: 1
+      - path: Cube.027
+        weight: 1
+      - path: Cube.028
+        weight: 1
+      - path: Cube.029
+        weight: 1
+      - path: Cube.030
+        weight: 1
+      - path: Cube.031
+        weight: 1
+      - path: Cube.032
+        weight: 1
+      - path: Cube.033
+        weight: 1
+      - path: Cube.034
+        weight: 1
+      - path: Cube.035
+        weight: 1
+      - path: Cube.036
+        weight: 1
+      - path: Cylinder
+        weight: 1
+      - path: Cylinder.001
+        weight: 1
+      - path: Cylinder.002
+        weight: 1
+      - path: Cylinder.003
+        weight: 1
+      - path: Cylinder.004
+        weight: 1
+      - path: Cylinder.006
+        weight: 1
+      - path: Cylinder.007
+        weight: 1
+      - path: Cylinder.008
+        weight: 1
+      - path: Cylinder.009
+        weight: 1
+      - path: Cylinder.010
+        weight: 1
+      - path: Cylinder.011
+        weight: 1
+      - path: Cylinder.012
+        weight: 1
+      - path: Cylinder.013
+        weight: 1
+      - path: Cylinder.014
+        weight: 1
+      - path: Cylinder.015
+        weight: 1
+      - path: Cylinder.016
+        weight: 1
+      - path: Cylinder.017
+        weight: 1
+      - path: Cylinder.018
+        weight: 1
+      - path: Cylinder.019
+        weight: 1
+      - path: Cylinder.020
+        weight: 1
+      - path: Cylinder.021
+        weight: 1
+      - path: Cylinder.022
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    isReadable: 0
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    useSRGBMaterialColor: 1
+    sortHierarchyByName: 1
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    fileIdsGeneration: 2
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    keepQuads: 0
+    weldVertices: 1
+    bakeAxisConversion: 0
+    preserveHierarchy: 0
+    skinWeightsMode: 0
+    maxBonesPerVertex: 4
+    minBoneWeight: 0.001
+    meshOptimizationFlags: -1
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVMarginMethod: 1
+    secondaryUVMinLightmapResolution: 40
+    secondaryUVMinObjectScale: 1
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+    legacyComputeAllNormalsFromSmoothingGroupsWhenMeshHasBlendShapes: 0
+    blendShapeNormalImportMode: 1
+    normalSmoothingSource: 0
+  referencedClips: []
+  importAnimation: 1
+  humanDescription:
+    serializedVersion: 3
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    globalScale: 1
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  autoGenerateAvatarMappingIfUnspecified: 1
+  animationType: 2
+  humanoidOversampling: 1
+  avatarSetup: 0
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

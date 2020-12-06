@@ -15,6 +15,13 @@ public class LightningTriggerable : MonoBehaviour
 
     public Transform barrelExit;
 
+    public Transform arms;
+    // Speed in rotations per second
+    private float maxArmSpeed = 3.0f;
+    private float currentArmSpeed = 0.0f;
+    private float desiredSpeed = 0.0f;
+    private float lerpSpeed = 0.5f;
+
     public void Hold()
     {
         RaycastHit hit;
@@ -32,13 +39,34 @@ public class LightningTriggerable : MonoBehaviour
                 lightningGO.transform.LookAt(lightningAim);
 
                 Lightning lightning = lightningGO.GetComponent<Lightning>();
-                lightning.Setup(aimDistance, applyChains, chainRange, chainLightningPrefab, damage);
+                lightning.Setup(null, aimDistance + 0.25f, applyChains, chainRange, chainLightningPrefab, damage);
+
+                desiredSpeed = maxArmSpeed;
             }
+        }
+    }
+
+    void Update()
+    {
+        if (this.enabled && arms == null)
+        {
+            arms = this.transform.GetComponent<WeaponManager>().GetWeaponGameObject().transform.Find("ElectricGun/ElectricGun/Arms");
+        }
+
+        currentArmSpeed = Mathf.Lerp(currentArmSpeed, desiredSpeed, lerpSpeed * Time.deltaTime);
+
+    }
+
+    void FixedUpdate()
+    {
+        if (this.enabled && arms != null)
+        {
+            arms.localEulerAngles += new Vector3(0,0,currentArmSpeed * 360f * Time.deltaTime);
         }
     }
 
     public void Release()
     {
-
+        desiredSpeed = 0.0f;
     }
 }

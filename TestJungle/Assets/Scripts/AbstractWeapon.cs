@@ -11,17 +11,19 @@ public abstract class AbstractWeapon : AbstractAbility {
 
     public static AbstractAbilityCooldown GetWeaponCooldownHolder (GameObject player)
     {
-        AbstractAbilityCooldown cooldown;
-        do 
+        bool found = false;
+        AbstractAbilityCooldown cooldown = null;
+        AbstractAbilityCooldown[] cooldowns = player.GetComponents<AbstractAbilityCooldown>();
+
+        for (int i=0; i < cooldowns.Length && !found; i++)
         {
-            cooldown = player.GetComponent<AbstractAbilityCooldown>();
-            if (cooldown.GetAbility() is AbstractWeapon)
+            if (cooldowns[i].enabled && cooldowns[i].GetAbility() is AbstractWeapon)
             {
-                return cooldown;
+                cooldown = cooldowns[i];
+                break;
             }
+        }
 
-        } while (cooldown != null);
-
-        return null;
+        return cooldown;
     }
 }

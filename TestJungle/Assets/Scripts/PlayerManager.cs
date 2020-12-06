@@ -19,7 +19,7 @@ public class PlayerManager : MonoBehaviour
     public Text expText;
     public Text levelText;
     public float lvl;
-    public List<AbstractAbility> unobtainableAbilities;
+    public List<AbstractAbility> unobtainedAbilities;
     public bool canTakeDamage=true;
 
     // Start is called before the first frame update
@@ -41,6 +41,11 @@ public class PlayerManager : MonoBehaviour
         healthText.text = health.ToString() + "/" + maxHealth.ToString();
         expText.text = EXP.ToString() + "/" + EXP2.ToString();
         levelText.text =  "Level " + lvl.ToString();
+        healthBar.fillAmount = health / maxHealth;
+        if(health>=maxHealth)
+        {
+            health = maxHealth;
+        }
     }
 
     public void TakeDamage(float amount)
