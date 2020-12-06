@@ -110550,11 +110550,31 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 2.7987
       objectReference: {fileID: 0}
+    - target: {fileID: 2323914301019085398, guid: 19d414cb2d8b78840855db96d0b5855b,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: a74f158569f32cc4291ce8badccf1e6c, type: 2}
+    - target: {fileID: 2325339066174270956, guid: 19d414cb2d8b78840855db96d0b5855b,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: a74f158569f32cc4291ce8badccf1e6c, type: 2}
+    - target: {fileID: 3663352541630766332, guid: 19d414cb2d8b78840855db96d0b5855b,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: a74f158569f32cc4291ce8badccf1e6c, type: 2}
     - target: {fileID: 4893118280520437900, guid: 19d414cb2d8b78840855db96d0b5855b,
         type: 3}
       propertyPath: m_Name
       value: Antenna
       objectReference: {fileID: 0}
+    - target: {fileID: 8862040609184442763, guid: 19d414cb2d8b78840855db96d0b5855b,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: a74f158569f32cc4291ce8badccf1e6c, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 19d414cb2d8b78840855db96d0b5855b, type: 3}
 --- !u!4 &7111558909610334675 stripped

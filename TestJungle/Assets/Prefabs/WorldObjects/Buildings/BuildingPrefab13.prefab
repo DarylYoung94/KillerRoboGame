@@ -5637,6 +5637,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: BigFan (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 4790593224651527933, guid: f6dce27f92fcc9645b477ccd9fbad321,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: a74f158569f32cc4291ce8badccf1e6c, type: 2}
     - target: {fileID: 7331212735934471229, guid: f6dce27f92fcc9645b477ccd9fbad321,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -6102,6 +6107,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: BigFan
       objectReference: {fileID: 0}
+    - target: {fileID: 4790593224651527933, guid: f6dce27f92fcc9645b477ccd9fbad321,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: a74f158569f32cc4291ce8badccf1e6c, type: 2}
     - target: {fileID: 7331212735934471229, guid: f6dce27f92fcc9645b477ccd9fbad321,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -7272,6 +7282,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: BigFan (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 4790593224651527933, guid: f6dce27f92fcc9645b477ccd9fbad321,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: a74f158569f32cc4291ce8badccf1e6c, type: 2}
     - target: {fileID: 7331212735934471229, guid: f6dce27f92fcc9645b477ccd9fbad321,
         type: 3}
       propertyPath: m_LocalPosition.x
