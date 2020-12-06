@@ -14,7 +14,7 @@ public class DataCollector : MonoBehaviour
     [SerializeField] private float maxSpeed = 5.0f;
 
     [Header("Collection")]
-    [SerializeField] int dataCollected = 0;
+    [SerializeField] DataManager data;
     [SerializeField] float collectRange = 5.0f;
     [SerializeField] float collectTime = 0.0f;
     [SerializeField] float collectCooldown = 0.5f;
@@ -36,6 +36,11 @@ public class DataCollector : MonoBehaviour
         if (target != null)
         {
             foundTargetEvent.Invoke();
+        }
+
+        if (data == null)
+        {
+            this.gameObject.GetComponent<DataManager>();
         }
     }
 
@@ -85,7 +90,7 @@ public class DataCollector : MonoBehaviour
                 {
                     Debug.Log("Collected");
                     collectTime = 0.0f;
-                    dataCollected++;
+                    data.CollectData(1);
                 }
                 else
                 {
