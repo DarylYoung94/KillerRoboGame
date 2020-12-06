@@ -15,4 +15,6 @@ public class DataManager : MonoBehaviour
     {
         dataCollected = 0;
     }
+
+    public int GetData() { return dataCollected; }
 }
