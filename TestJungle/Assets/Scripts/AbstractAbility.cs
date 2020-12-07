@@ -11,7 +11,8 @@ public abstract class AbstractAbility : ScriptableObject {
     public string cdString = "QuickCast";
     public float aBaseCoolDown = 1f;
     public Sprite abilityIcon;
-    
+    public GameObject pickupPrefab;
+
     public MonoBehaviour triggerable;
 
     // Private Members

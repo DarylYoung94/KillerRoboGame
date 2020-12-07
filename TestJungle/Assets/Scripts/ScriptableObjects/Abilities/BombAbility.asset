@@ -16,6 +16,9 @@ MonoBehaviour:
   cdString: OnHold
   aBaseCoolDown: 1
   abilityIcon: {fileID: 21300000, guid: 5abc8b0391d5dc74b8d0f3750a47de2b, type: 3}
+  pickupPrefab: {fileID: 7477862897245444568, guid: a02b5dbd11dd62247aeb55d13601367d,
+    type: 3}
+  triggerable: {fileID: 0}
   holding: 0
   bombPrefab: {fileID: 5119310701056857973, guid: d4973d2d2e07f9d45b4644598d099922,
     type: 3}

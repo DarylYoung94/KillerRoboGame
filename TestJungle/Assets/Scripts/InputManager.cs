@@ -11,7 +11,9 @@ public class InputManager : MonoBehaviour
     public KeyCode GetNextKeyCode ()
     {
         if (abilityKeyCodes.Count == 0)
+        {
             Debug.Log("No key bindings available");
+        }
 
         KeyCode keyCode = abilityKeyCodes[0];
         abilityKeyCodes.RemoveAt(0);

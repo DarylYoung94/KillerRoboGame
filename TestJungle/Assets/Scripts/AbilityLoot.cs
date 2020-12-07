@@ -6,71 +6,61 @@ using UnityEngine;
 public class AbilityLoot : MonoBehaviour
 {
     public GameObject player;
-    private int randomIndex;
     public IconManager iconManager;
+    public AbstractAbility ability;
     
+    private float timer = 0.0f;
+    public float timeToDespawn = 10.0f;
+    [SerializeField] private bool active = true;
+
     void Start()
     {
         player = GameManager.instance.player;
         iconManager = GameObject.Find("iconmanager").GetComponent<IconManager>();
+
+        timer = 0.0f;
     }
    
+   void Update()
+   {
+        if (!active)
+            timer += Time.deltaTime;
+
+        if (timer > timeToDespawn)
+        {
+            DespawnPickup();
+        }
+   }
 
     private void OnCollisionEnter(Collision collision)
     {
         if(collision.collider.CompareTag ("Player"))
         {
-            randomIndex = Random.Range(0, player.GetComponent<PlayerManager>().unobtainedAbilities.Count);
-            Debug.Log(randomIndex);
             AssignAbility();
         }
     }
 
     void AssignAbility()
-    {
-        AbstractAbility assignedAbility = player.GetComponent<PlayerManager>().unobtainedAbilities[randomIndex];
-        
-        if (assignedAbility != null)
+    {        
+        if (ability != null)
         {
-            AbstractAbilityCooldown abilityCooldown = player.AddComponent(assignedAbility.GetCooldownType()) as AbstractAbilityCooldown;
-            int iconIndex = iconManager.SetNextIcon(assignedAbility.abilityIcon);
+            AbstractAbilityCooldown abilityCooldown = player.AddComponent(ability.GetCooldownType()) as AbstractAbilityCooldown;
+            int iconIndex = iconManager.SetNextIcon(ability.abilityIcon);
             
-            abilityCooldown.Initialise(assignedAbility,
+            abilityCooldown.Initialise(ability,
                                        player,
                                        player.GetComponent<InputManager>().GetNextKeyCode(),
                                        iconIndex);
             
-            removeAbilityFromList(assignedAbility);
 
-            Destroy();
+            Destroy(this.gameObject);
         }
     }
 
-    public int findAbilityIndex(AbstractAbility abilityNumber)
+    void DespawnPickup()
     {
-        int index = -1;
-        for (int i = 0; i < player.GetComponent<PlayerManager>().unobtainedAbilities.Count; i++)
-        {
-            if (player.GetComponent<PlayerManager>().unobtainedAbilities[i] == abilityNumber)
-            {
-                index = i;
-                break;
-            }
-        }
-
-        return index;
-    }
-
-   public void removeAbilityFromList(AbstractAbility abilityNumber)
-    {
-        if (findAbilityIndex(abilityNumber) != -1)
-        {
-            player.GetComponent<PlayerManager>().unobtainedAbilities.RemoveAt(findAbilityIndex(abilityNumber));
-        }
-    }
-
-    public void Destroy()
-    {
+        active = false;
+        LootManager.instance.AddAbility(ability);
         Destroy(this.gameObject);
     }
 }

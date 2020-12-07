@@ -16,6 +16,9 @@ MonoBehaviour:
   cdString: OnRelease
   aBaseCoolDown: 1
   abilityIcon: {fileID: 21300000, guid: ad01e3adc55d2ca47a932f145d27bb85, type: 3}
+  pickupPrefab: {fileID: 7477862897245444568, guid: 18ea0d0cca95670419be2a323e154c93,
+    type: 3}
+  triggerable: {fileID: 0}
   holding: 0
   buffPrefab: {fileID: 1819252622954579800, guid: ab2c9fbfe47b2324eaf6d2ccc6dc3bbd,
     type: 3}
