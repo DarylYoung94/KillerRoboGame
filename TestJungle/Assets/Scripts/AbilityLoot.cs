@@ -46,12 +46,21 @@ public class AbilityLoot : MonoBehaviour
         {
             AbstractAbilityCooldown abilityCooldown = player.AddComponent(ability.GetCooldownType()) as AbstractAbilityCooldown;
             int iconIndex = iconManager.SetNextIcon(ability.abilityIcon);
-            
+            LootManager.instance.AddObtainedAbility(ability, abilityCooldown);
+
             abilityCooldown.Initialise(ability,
                                        player,
-                                       player.GetComponent<InputManager>().GetNextKeyCode(),
                                        iconIndex);
-            
+
+            // If a slot is free then assign it otherwise don't set key code and disable the ability holder
+            if (player.GetComponent<InputManager>().IsKeyCodeAvailable())
+            {
+                abilityCooldown.SetKeyCode(player.GetComponent<InputManager>().GetNextKeyCode());
+            }
+            else
+            {
+                abilityCooldown.enabled = false;
+            }
 
             Destroy(this.gameObject);
         }
@@ -60,7 +69,7 @@ public class AbilityLoot : MonoBehaviour
     void DespawnPickup()
     {
         active = false;
-        LootManager.instance.AddAbility(ability);
+        LootManager.instance.AddUnobtainedAbility(ability);
         Destroy(this.gameObject);
     }
 }

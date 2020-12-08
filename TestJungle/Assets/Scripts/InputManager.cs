@@ -8,13 +8,13 @@ public class InputManager : MonoBehaviour
     [SerializeField] private KeyCode interactKeyCode = KeyCode.E;
     [SerializeField] private KeyCode weaponSwapKeyCode = KeyCode.Q;
 
+    public bool IsKeyCodeAvailable()
+    {
+        return abilityKeyCodes.Count > 0;
+    }
+
     public KeyCode GetNextKeyCode ()
     {
-        if (abilityKeyCodes.Count == 0)
-        {
-            Debug.Log("No key bindings available");
-        }
-
         KeyCode keyCode = abilityKeyCodes[0];
         abilityKeyCodes.RemoveAt(0);
         return keyCode;

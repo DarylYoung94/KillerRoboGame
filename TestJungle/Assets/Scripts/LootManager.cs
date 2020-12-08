@@ -5,7 +5,8 @@ using UnityEngine;
 public class LootManager : MonoBehaviour
 {
     [SerializeField] private List<AbstractAbility> unobtainedAbilities;
-
+    [SerializeField] private List<AbstractAbility> obtainedAbilities;
+    [SerializeField] private List<AbstractAbilityCooldown> abilityCooldowns;
     public static LootManager instance = null;
 
     void Awake()
@@ -41,8 +42,14 @@ public class LootManager : MonoBehaviour
         return returnedAbility;
     }
 
-    public void AddAbility(AbstractAbility ability)
+    public void AddUnobtainedAbility(AbstractAbility ability)
     {
         unobtainedAbilities.Add(ability);
+    }
+
+    public void AddObtainedAbility(AbstractAbility ability, AbstractAbilityCooldown aac)
+    {
+        obtainedAbilities.Add(ability);
+        abilityCooldowns.Add(aac);
     }
 }
