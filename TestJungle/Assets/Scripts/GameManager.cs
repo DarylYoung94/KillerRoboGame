@@ -8,14 +8,8 @@ using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour
 {
-    // Start is called before the first frame update
     public static GameManager instance = null;
-    public GameObject scene = null;
     public bool playerActive = true;
-    public float bossHealth =1;
-    public GameObject boss;
-    public bool bossSpawned = false;
-    public GameObject enemyMan;
 
     void Awake()
     {
@@ -29,15 +23,5 @@ public class GameManager : MonoBehaviour
         }
     }
 
-    public GameObject player;
-
-    public void Update()
-    {
-        bossHealth = boss.GetComponent<Enemy>().health;
-        bossSpawned = boss.GetComponent<BigEnemyAbilities>().bossSpawn;
-        if (bossHealth <=0 && bossSpawned == true)
-        {
-            //SceneManager.LoadScene(2);
-        }
-    }      
+    public GameObject player;    
 }

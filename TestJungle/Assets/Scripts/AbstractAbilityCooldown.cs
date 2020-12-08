@@ -17,13 +17,12 @@ public abstract class AbstractAbilityCooldown : MonoBehaviour {
     {
         if (ability != null && abilityHolder != null)
         {
-            Initialise(ability, abilityHolder, abilityKeyCode,-1);
+            Initialise(ability, abilityHolder, -1);
         }
     }
 
-    public void Initialise(AbstractAbility selectedAbility, GameObject abilityHolder, KeyCode keyCode, int iconIndex)
+    public void Initialise(AbstractAbility selectedAbility, GameObject abilityHolder, int iconIndex)
     {
-        abilityKeyCode = keyCode;
         ability = selectedAbility;
         coolDownDuration = ability.aBaseCoolDown;
         this.iconIndex = iconIndex;
@@ -31,6 +30,8 @@ public abstract class AbstractAbilityCooldown : MonoBehaviour {
 
         triggerable = ability.triggerable;
     }
+
+    public void SetKeyCode (KeyCode keyCode) { abilityKeyCode = keyCode; }
 
     protected virtual void Update() { triggerable.enabled = this.enabled; }
     

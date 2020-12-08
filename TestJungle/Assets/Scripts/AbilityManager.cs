@@ -4,17 +4,20 @@ using UnityEngine;
 
 public class AbilityManager : MonoBehaviour
 {
-    public static List<GameObject> AbilityTriggers = new List<GameObject>();
-    private GameObject loot;
-    private Vector3 spawnPoint;
-    public int itemIndex;
- 
-    void Start()
-    {
-        AbilityTriggers = new List<GameObject>(Resources.LoadAll<GameObject>("Prefab"));
+    [SerializeField] private List<AbstractAbility> unobtainedAbilities;
+    [SerializeField] private List<AbstractAbility> obtainedAbilities;
+    public static AbilityManager instance = null;
 
-        Debug.Log(AbilityTriggers.Count);
-    }
-    
+    void Awake()
+    {
+        if (instance == null)
+        {
+            instance = this;
+        }
+        else if (instance != this)
+        {
+            Destroy(gameObject);
+        }
+    }    
 }
  

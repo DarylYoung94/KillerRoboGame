@@ -85,16 +85,10 @@ public class DataCollector : MonoBehaviour
         {
             if (dc != null && dc.GetData() > 0)
             {
-                Debug.Log("DC Exists");
                 if (dc.CollectData(antennaTransform))
                 {
-                    Debug.Log("Collected");
                     collectTime = 0.0f;
                     data.CollectData(1);
-                }
-                else
-                {
-                    Debug.Log("Not Collected");
                 }
             }
             else

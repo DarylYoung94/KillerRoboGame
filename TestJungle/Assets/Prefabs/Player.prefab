@@ -1742,6 +1742,7 @@ GameObject:
   - component: {fileID: 239521958}
   - component: {fileID: 8126130896300004270}
   - component: {fileID: 1021202241256423941}
+  - component: {fileID: 2101600538720404643}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -1922,7 +1923,6 @@ MonoBehaviour:
   expText: {fileID: 1501042659}
   levelText: {fileID: 1574366955}
   lvl: 0
-  unobtainedAbilities: []
   canTakeDamage: 1
 --- !u!114 &239521958
 MonoBehaviour:
@@ -1968,6 +1968,27 @@ CapsuleCollider:
   m_Height: 2.2427397
   m_Direction: 1
   m_Center: {x: 0.0014992952, y: 0.4522003, z: 0.007468581}
+--- !u!114 &2101600538720404643
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7294040209906256453}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7ed08d356c1fb9e4ea44ad526a8fc1fe, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  iconManager: {fileID: 0}
+  weapons:
+  - {fileID: 11400000, guid: f3eea8b85448046448694876528eb26e, type: 2}
+  - {fileID: 11400000, guid: a32422660039e1047ae08f22533e0b5c, type: 2}
+  - {fileID: 11400000, guid: d6c911e695b52d6409a897651aa1d3cd, type: 2}
+  - {fileID: 11400000, guid: 194520128b21bb542b224439a2412ecd, type: 2}
+  - {fileID: 11400000, guid: 2f4b4e9a1fcc7194bb2126f09dca1704, type: 2}
+  weaponHolders: []
+  activeWeaponList: 000000000100000002000000
 --- !u!1 &8882400739922378565
 GameObject:
   m_ObjectHideFlags: 0

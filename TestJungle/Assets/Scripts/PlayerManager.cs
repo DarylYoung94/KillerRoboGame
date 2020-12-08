@@ -19,7 +19,6 @@ public class PlayerManager : MonoBehaviour
     public Text expText;
     public Text levelText;
     public float lvl;
-    public List<AbstractAbility> unobtainedAbilities;
     public bool canTakeDamage=true;
 
     // Start is called before the first frame update

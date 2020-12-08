@@ -1,0 +1,33 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!21 &2100000
+Material:
+  serializedVersion: 6
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: AttackSpeedZone
+  m_Shader: {fileID: -6465566751694194690, guid: 080bc6c26470c264c8640696aaa2da1d,
+    type: 3}
+  m_ShaderKeywords: 
+  m_LightmapFlags: 4
+  m_EnableInstancingVariants: 0
+  m_DoubleSidedGI: 0
+  m_CustomRenderQueue: -1
+  stringTagMap: {}
+  disabledShaderPasses: []
+  m_SavedProperties:
+    serializedVersion: 3
+    m_TexEnvs:
+    - Texture2D_3159ADE8:
+        m_Texture: {fileID: 2800000, guid: ccd1b7e54a7c58c44b94c338eb429787, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    m_Floats:
+    - Vector1_460BCB1A: 0.2
+    m_Colors:
+    - Color_9BA0BB6B: {r: 2.25656, g: 1.538918, b: 0, a: 0}
+    - Color_BC1694D8: {r: 0.5310609, g: 0.563014, b: 0.9622642, a: 0}
+    - Vector2_39F2F0B3: {r: 1, g: 3, b: 0, a: 0}
+  m_BuildTextureStacks: []

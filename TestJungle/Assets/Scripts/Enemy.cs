@@ -31,9 +31,7 @@ public class Enemy : MonoBehaviour
 
     
     public float dropChance;
-    public float dropRate = 0.3f; //can change this in inspector for different enemies?
-    public GameObject lootPrefab;
-    
+    public float dropRate = 0.3f; //can change this in inspector for different enemies?    
     bool alive = true;
 
     // Start is called before the first frame update
@@ -127,7 +125,7 @@ public class Enemy : MonoBehaviour
 
     public void Loot()
     {
-        GameObject loot = Instantiate(lootPrefab, enemy.transform.position, Quaternion.identity);
+        LootManager.instance.SpawnAbilityPickup(enemy.transform.position);
     }
 
     private Vector3 RandomVector3(float range)
