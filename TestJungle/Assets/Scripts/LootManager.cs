@@ -26,18 +26,25 @@ public class LootManager : MonoBehaviour
     public void SpawnAbilityPickup(Vector3 position)
     {
         AbstractAbility ability = LootManager.instance.GetNewAbility();
-        GameObject pickup = Instantiate(ability.pickupPrefab,
-                                        position,
-                                        Quaternion.identity);
-        pickup.GetComponent<AbilityLoot>().ability = ability;
+        if (ability)
+        {
+            GameObject pickup = Instantiate(ability.pickupPrefab,
+                                            position,
+                                            Quaternion.identity);
+            pickup.GetComponent<AbilityLoot>().ability = ability;
+        }
     }
 
     public AbstractAbility GetNewAbility()
     {
-        AbstractAbility returnedAbility;
-        int randomIndex = Random.Range(0, unobtainedAbilities.Count);
-        returnedAbility = unobtainedAbilities[randomIndex];
-        unobtainedAbilities.Remove(returnedAbility);
+        AbstractAbility returnedAbility = null;
+
+        if (unobtainedAbilities.Count > 0)
+        {
+            int randomIndex = Random.Range(0, unobtainedAbilities.Count);
+            returnedAbility = unobtainedAbilities[randomIndex];
+            unobtainedAbilities.Remove(returnedAbility);
+        }
 
         return returnedAbility;
     }
