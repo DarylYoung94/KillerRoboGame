@@ -2059,6 +2059,7 @@ GameObject:
   - component: {fileID: 7477862897245444569}
   - component: {fileID: 7477862897245444567}
   - component: {fileID: -7970260757062762513}
+  - component: {fileID: 123715710724608457}
   m_Layer: 0
   m_Name: Pickup_Bomb
   m_TagString: Untagged
@@ -2130,6 +2131,20 @@ MonoBehaviour:
   iconManager: {fileID: 0}
   ability: {fileID: 0}
   timeToDespawn: 10
+  active: 1
+--- !u!65 &123715710724608457
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7477862897245444568}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1.1547241, y: 1.1456172, z: 1.1456165}
+  m_Center: {x: 0.0015258789, y: 0.5005604, z: -0.003033638}
 --- !u!1 &8393055345231474237
 GameObject:
   m_ObjectHideFlags: 0
