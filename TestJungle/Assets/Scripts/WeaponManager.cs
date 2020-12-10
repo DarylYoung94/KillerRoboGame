@@ -28,11 +28,7 @@ public class WeaponManager : MonoBehaviour
         {
             int temp = (activeWeaponIndex + 1) % activeWeaponList.Count;
             SetCurrentWeapon(temp);
-            
-            
-            
         }
-
     }
 
     public AbstractWeapon GetCurrentWeapon()
@@ -57,7 +53,7 @@ public class WeaponManager : MonoBehaviour
                 weaponHolders.Add(this.transform.gameObject.AddComponent<QuickCastAbilityCooldown>());
             }
 
-            weaponHolders[i].Initialise(weapons[i], this.transform.gameObject, -1);
+            weaponHolders[i].Initialise(weapons[i], this.transform.gameObject);
             weaponHolders[i].SetKeyCode(KeyCode.Mouse0);
             weaponHolders[i].enabled = false;
         }

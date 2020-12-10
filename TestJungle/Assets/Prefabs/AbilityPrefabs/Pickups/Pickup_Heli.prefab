@@ -3406,9 +3406,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 0}
-  iconManager: {fileID: 0}
-  ability: {fileID: 0}
+  ability: {fileID: 11400000, guid: 1c7d1b33da6055b49a8ba90c17827770, type: 2}
   timeToDespawn: 10
+  active: 1
 --- !u!65 &1908785518510508464
 BoxCollider:
   m_ObjectHideFlags: 0

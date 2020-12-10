@@ -25,7 +25,5 @@ public class QuickCastAbilityCooldown : AbstractAbilityCooldown {
         {
             CoolDown();
         }
-        SetIconFill();
-
     }
 }

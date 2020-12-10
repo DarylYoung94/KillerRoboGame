@@ -6,7 +6,6 @@ using UnityEngine;
 public class AbilityLoot : MonoBehaviour
 {
     public GameObject player;
-    public IconManager iconManager;
     public AbstractAbility ability;
     
     private float timer = 0.0f;
@@ -16,8 +15,6 @@ public class AbilityLoot : MonoBehaviour
     void Start()
     {
         player = GameManager.instance.player;
-        iconManager = GameObject.Find("iconmanager").GetComponent<IconManager>();
-
         timer = 0.0f;
     }
    
@@ -44,24 +41,7 @@ public class AbilityLoot : MonoBehaviour
     {        
         if (ability != null)
         {
-            AbstractAbilityCooldown abilityCooldown = player.AddComponent(ability.GetCooldownType()) as AbstractAbilityCooldown;
-            int iconIndex = iconManager.SetNextIcon(ability.abilityIcon);
-            LootManager.instance.AddObtainedAbility(ability, abilityCooldown);
-
-            abilityCooldown.Initialise(ability,
-                                       player,
-                                       iconIndex);
-
-            // If a slot is free then assign it otherwise don't set key code and disable the ability holder
-            if (player.GetComponent<InputManager>().IsKeyCodeAvailable())
-            {
-                abilityCooldown.SetKeyCode(player.GetComponent<InputManager>().GetNextKeyCode());
-            }
-            else
-            {
-                abilityCooldown.enabled = false;
-            }
-
+            LootManager.instance.AddObtainedAbility(ability);
             Destroy(this.gameObject);
         }
     }

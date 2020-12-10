@@ -27,6 +27,7 @@ public class InvUIButtons : MonoBehaviour
             
             if (!moving)
             {
+
                 if (clicked1.tag != clicked2.tag)
                 {
                     string tempTag = clicked1.tag;
@@ -50,10 +51,11 @@ public class InvUIButtons : MonoBehaviour
         clicked1.transform.localScale = new Vector2(1f,1f);
         clicked2.transform.localScale = new Vector2(1f,1f);
 
+        int a = IconManager.instance.GetIconIndexByGameObject(clicked1.gameObject);
+        int b = IconManager.instance.GetIconIndexByGameObject(clicked2.gameObject);
+        LootManager.instance.SwapAbilities(a, b);
         clickedCount = 0;
         moving = false;
-
-
     }
 
    public void forBtn(Button btn)

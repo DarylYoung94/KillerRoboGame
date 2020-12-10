@@ -31,7 +31,5 @@ public class OnReleaseAbilityCooldown : AbstractAbilityCooldown {
             PutOnCooldown();
             abilityReady = false;
         }
-        SetIconFill();
-
     }
 }

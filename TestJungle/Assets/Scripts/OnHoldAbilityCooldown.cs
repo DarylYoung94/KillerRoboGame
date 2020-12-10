@@ -11,8 +11,6 @@ public class OnHoldAbilityCooldown : AbstractAbilityCooldown {
     bool abilityReady = true;
     protected override void Update () 
     {
-        
-
         if (Time.time > nextReadyTime) 
         {
             abilityReady = true;
@@ -33,7 +31,6 @@ public class OnHoldAbilityCooldown : AbstractAbilityCooldown {
             ButtonUp();
             abilityReady = false;
         }
-        SetIconFill();
     }
 
 }

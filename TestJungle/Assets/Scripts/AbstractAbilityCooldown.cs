@@ -8,7 +8,6 @@ public abstract class AbstractAbilityCooldown : MonoBehaviour {
     [SerializeField] protected KeyCode abilityKeyCode;
     public MonoBehaviour triggerable;
 
-    protected int iconIndex;
     [SerializeField] protected float coolDownDuration;
     protected float nextReadyTime;
     [SerializeField] protected float coolDownTimeLeft;
@@ -17,21 +16,21 @@ public abstract class AbstractAbilityCooldown : MonoBehaviour {
     {
         if (ability != null && abilityHolder != null)
         {
-            Initialise(ability, abilityHolder, -1);
+            Initialise(ability, abilityHolder);
         }
     }
 
-    public void Initialise(AbstractAbility selectedAbility, GameObject abilityHolder, int iconIndex)
+    public void Initialise(AbstractAbility selectedAbility, GameObject abilityHolder)
     {
         ability = selectedAbility;
         coolDownDuration = ability.aBaseCoolDown;
-        this.iconIndex = iconIndex;
         ability.Initialise(abilityHolder);
 
         triggerable = ability.triggerable;
     }
 
     public void SetKeyCode (KeyCode keyCode) { abilityKeyCode = keyCode; }
+    public KeyCode GetKeyCode () { return abilityKeyCode;}
 
     protected virtual void Update() { triggerable.enabled = this.enabled; }
     
@@ -49,13 +48,9 @@ public abstract class AbstractAbilityCooldown : MonoBehaviour {
 
     public void SetCooldownMultiplier(float multiplier) { coolDownDuration = ability.aBaseCoolDown * multiplier; }
 
-    public void SetIconFill()
+    public float CoolDownProgress()
     {
-        if(iconIndex>=0 || iconIndex<=3 )
-        {
-            IconManager iconManager = GameObject.Find("iconmanager").GetComponent<IconManager>();
-            iconManager.SetIconFill(iconIndex, (coolDownDuration-coolDownTimeLeft)/coolDownDuration);
-        }
+        float temp = (coolDownDuration-coolDownTimeLeft)/coolDownDuration;
+        return temp < 1.0f ? temp : 1.0f;
     }
-
 }

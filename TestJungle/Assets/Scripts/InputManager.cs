@@ -7,18 +7,7 @@ public class InputManager : MonoBehaviour
     [SerializeField] private List<KeyCode> abilityKeyCodes = new List<KeyCode> { KeyCode.Alpha1, KeyCode.Alpha2, KeyCode.Alpha3, KeyCode.Alpha4 };
     [SerializeField] private KeyCode interactKeyCode = KeyCode.E;
     [SerializeField] private KeyCode weaponSwapKeyCode = KeyCode.Q;
-
-    public bool IsKeyCodeAvailable()
-    {
-        return abilityKeyCodes.Count > 0;
-    }
-
-    public KeyCode GetNextKeyCode ()
-    {
-        KeyCode keyCode = abilityKeyCodes[0];
-        abilityKeyCodes.RemoveAt(0);
-        return keyCode;
-    }
+    [SerializeField] private int nextKeyCode = 0;
 
     public KeyCode GetWeaponSwapKey() { return weaponSwapKeyCode; }
     public KeyCode GetInteractKey() { return interactKeyCode; }
@@ -36,8 +25,12 @@ public class InputManager : MonoBehaviour
                     inputManager = new GameObject("InputManager").AddComponent<InputManager>();
                 }
             }
-
             return inputManager;
         }
+    }
+
+    public KeyCode GetKeyCodeByInt(int index)
+    {
+        return abilityKeyCodes[index];
     }
 }

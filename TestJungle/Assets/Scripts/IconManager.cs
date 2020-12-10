@@ -6,45 +6,50 @@ using UnityEngine.UI;
 public class IconManager : MonoBehaviour
 {
     public GameObject WeaponIcon;
-
     public GameObject [] AbilityIcons;
-    public int abilityNumber = 0;
-    public GameObject player;
+
+    public static IconManager instance = null;
+
+    void Awake()
+    {
+        if (instance == null)
+        {
+            instance = this;
+        }
+        else if (instance != this)
+        {
+            Destroy(gameObject);
+        }
+    }
 
     void Start()
     {
-        player = GameManager.instance.player;
-
-        AbilityIcons[0].SetActive(false);
-        AbilityIcons[1].SetActive(false);
-        AbilityIcons[2].SetActive(false);
-        AbilityIcons[3].SetActive(false);
+        for (int i=0; i < AbilityIcons.Length; i++)
+        {
+            AbilityIcons[i].SetActive(false);
+        }
     }
 
     public void SetWeaponIcon(Sprite iconSprite)
     {
         WeaponIcon.GetComponent<Image>().sprite = iconSprite;
     }
-    public int SetNextIcon(Sprite iconSprite)
-    {
-        if(abilityNumber<=3)
-        {
-            GameObject icon =  AbilityIcons[abilityNumber] ;
-            GameObject iconChild = icon.transform.GetChild(1).gameObject;
-            GameObject iconBG = icon.transform.GetChild(0).gameObject;
-            icon.SetActive(true);
-            iconChild.SetActive(true);
-            iconBG.SetActive(true);
-            iconChild.GetComponent<Image>().sprite = iconSprite;
-        }
 
-        abilityNumber++;
-        return abilityNumber-1;
+    public void SetAbilityIconByIndex(int index, Sprite iconSprite)
+    {
+        GameObject icon =  AbilityIcons[index] ;
+        icon.SetActive(true);
+        icon.GetComponent<Image>().sprite = iconSprite;
     }
 
-    public void SetIconFill(int iconIndex,float fillAmount)
+    public int GetIconIndexByGameObject(GameObject icon)
     {
-        if (iconIndex>=0)
+        return System.Array.FindIndex(AbilityIcons, o => o == icon);
+    }
+
+    public void SetIconFill(int iconIndex, float fillAmount)
+    {
+        if (iconIndex >= 0)
         {
             AbilityIcons[iconIndex].transform.GetChild(0).GetComponent<Image>().fillAmount = fillAmount; 
         }

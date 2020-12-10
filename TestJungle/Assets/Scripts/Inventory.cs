@@ -16,17 +16,16 @@ public class Inventory : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Tab))
         {
-            inventoryEnabled= !inventoryEnabled;
+            inventoryEnabled = !inventoryEnabled;
 
             if(inventoryEnabled == true)
-            
-                {
+            {
                 inventory.SetActive(true);
-                }
-                else
-                {
-                    inventory.SetActive(false);
-                }
+            }
+            else
+            {
+                inventory.SetActive(false);
+            }
             
         }
             
