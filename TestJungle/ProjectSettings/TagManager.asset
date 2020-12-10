@@ -18,6 +18,8 @@ TagManager:
   - Doors
   - Interactable
   - Data Collector
+  - InventoryItem
+  - AbilityItem
   layers:
   - Default
   - TransparentFX

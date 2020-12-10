@@ -128,6 +128,7 @@ MonoBehaviour:
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -259,6 +260,37 @@ PrefabInstance:
       propertyPath: m_Name
       value: IIcon
       objectReference: {fileID: 0}
+    - target: {fileID: 6421202144681648821, guid: ff6f376d786243f499663ad838c48ae1,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 2614343452089647601, guid: 7cd6c3ea2387e2840a4f88297310bc69,
+        type: 3}
+    - target: {fileID: 6421202144681648821, guid: ff6f376d786243f499663ad838c48ae1,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: InvUIButtons, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 6421202144681648821, guid: ff6f376d786243f499663ad838c48ae1,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: forBtn
+      objectReference: {fileID: 0}
+    - target: {fileID: 6421202144681648821, guid: ff6f376d786243f499663ad838c48ae1,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6421202144681648821, guid: ff6f376d786243f499663ad838c48ae1,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.UI.Button, UnityEngine.UI
+      objectReference: {fileID: 0}
+    - target: {fileID: 6421202144681648821, guid: ff6f376d786243f499663ad838c48ae1,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgument
+      value: 
+      objectReference: {fileID: 5883303281624080770}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ff6f376d786243f499663ad838c48ae1, type: 3}
 --- !u!224 &2911410440541156645 stripped
@@ -267,3 +299,15 @@ RectTransform:
     type: 3}
   m_PrefabInstance: {fileID: 628534163081659191}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &5883303281624080770 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6421202144681648821, guid: ff6f376d786243f499663ad838c48ae1,
+    type: 3}
+  m_PrefabInstance: {fileID: 628534163081659191}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

@@ -39,7 +39,7 @@ public class PlayerManager : MonoBehaviour
         ExpBar.fillAmount = EXP / EXP2;
         healthText.text = health.ToString() + "/" + maxHealth.ToString();
         expText.text = EXP.ToString() + "/" + EXP2.ToString();
-        levelText.text =  "Level " + lvl.ToString();
+        levelText.text =   lvl.ToString();
         healthBar.fillAmount = health / maxHealth;
         if(health>=maxHealth)
         {
