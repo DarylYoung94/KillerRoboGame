@@ -20,6 +20,7 @@ TagManager:
   - Data Collector
   - InventoryItem
   - AbilityItem
+  - Money
   layers:
   - Default
   - TransparentFX

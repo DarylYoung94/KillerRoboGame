@@ -39,7 +39,7 @@ public class BulletCollider : MonoBehaviour
 
     public void OnCollisionEnter(Collision collision)
     {
-        if (collision.gameObject.tag == "Enemy" || collision.gameObject.tag == "RangedEnemy1" || collision.gameObject.tag == "ChargeEnemy" )
+        if (collision.gameObject.tag == "Enemy" || collision.gameObject.tag == "RangedEnemy1" || collision.gameObject.tag == "ChargeEnemy" || collision.gameObject.tag == "DataCollector" )
         {
             Enemy enemyHit = collision.transform.GetComponent<Enemy>();
             if (enemyHit != null)

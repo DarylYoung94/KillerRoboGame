@@ -8,6 +8,11 @@ public class Enemy : MonoBehaviour
 {
     public float enemyLevel = 1;
 
+    public GameObject screw;
+    public GameObject nut;
+    public bool canDropMoney = true;
+    public bool killedByPlayer = true;
+
     public int experience;
 
     public Image healthBar;
@@ -74,6 +79,14 @@ public class Enemy : MonoBehaviour
             {
                 Loot();
             }
+            if(canDropMoney)
+            {
+                DropMoney(); 
+            }
+           if(killedByPlayer)
+           {
+                TransferData();
+           }
 
             player.GetComponent<PlayerXP>().AddExp(experience);  
             Die();
@@ -126,6 +139,30 @@ public class Enemy : MonoBehaviour
     public void Loot()
     {
         LootManager.instance.SpawnAbilityPickup(enemy.transform.position);
+    }
+
+    public void DropMoney()
+    {
+        int screwNum = Random.Range(0, 2);
+            for (int i=0; i<screwNum; i++)
+            {
+                GameObject screwSpawn = Instantiate(screw,this.transform.position,Quaternion.identity);
+                Rigidbody screwRB = screwSpawn.GetComponent<Rigidbody>();
+                screwRB.AddForce(screwRB.transform.up * 8, ForceMode.Impulse);
+            }
+        int nutNum = Random.Range(0, 3);
+            for (int i=0; i<nutNum; i++)
+            {
+                GameObject nutSpawn = Instantiate(nut,this.transform.position,Quaternion.identity);
+                Rigidbody nutRB = nutSpawn.GetComponent<Rigidbody>();
+                nutRB.AddForce(nutRB.transform.up * 8, ForceMode.Impulse);
+            }
+    }
+
+    public void TransferData()
+    {
+        int tempData = this.gameObject.GetComponent<DataManager>().GetData();
+        player.GetComponent<DataManager>().AddToDataCollected(tempData);
     }
 
     private Vector3 RandomVector3(float range)

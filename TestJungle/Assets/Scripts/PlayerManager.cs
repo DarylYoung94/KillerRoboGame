@@ -5,6 +5,12 @@ using UnityEngine.UI;
 
 public class PlayerManager : MonoBehaviour
 {
+    public int currentMoney;
+    public Text currentMoneyUI;
+
+    public int currentData;
+    public Text currentDataUI;
+
     public GameObject player;
     public float health;
     public float startHealth = 90;
@@ -45,6 +51,9 @@ public class PlayerManager : MonoBehaviour
         {
             health = maxHealth;
         }
+        currentData = player.GetComponent<DataManager>().GetData();
+        currentDataUI.text = currentData.ToString();
+        currentMoneyUI.text = currentMoney.ToString();
     }
 
     public void TakeDamage(float amount)
@@ -59,6 +68,17 @@ public class PlayerManager : MonoBehaviour
             }
         }
     }
+
+    public void OnCollisionEnter(Collision collision)
+        {
+            if (collision.gameObject.tag == "Money")
+            {
+                int pickupValue;
+                pickupValue = collision.transform.GetComponent<MoneyPickup>().value; 
+                currentMoney = currentMoney += pickupValue;  
+            }
+        }
+    
     public void Die()
     {
         Destroy(this.gameObject);
