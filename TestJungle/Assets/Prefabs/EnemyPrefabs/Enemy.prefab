@@ -60,6 +60,7 @@ MonoBehaviour:
   m_Material: {fileID: 0}
   m_Color: {r: 0.15972686, g: 1, b: 0, a: 1}
   m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -234,6 +235,7 @@ MonoBehaviour:
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 0.16509432, b: 0.16509432, a: 1}
   m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -304,6 +306,7 @@ MeshRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_RayTracingMode: 2
+  m_RayTraceProcedural: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -328,6 +331,7 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+  m_AdditionalVertexStreams: {fileID: 0}
 --- !u!135 &4330760416605277148
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -359,6 +363,7 @@ GameObject:
   - component: {fileID: 69102831}
   - component: {fileID: 5383961379646207451}
   - component: {fileID: -1704298053855842401}
+  - component: {fileID: 5270057767812569883}
   m_Layer: 10
   m_Name: Enemy
   m_TagString: Enemy
@@ -406,10 +411,11 @@ MeshRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_RayTracingMode: 2
+  m_RayTraceProcedural: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: cb67df3c638b1b341b922ef28f3b848e, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -430,6 +436,7 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+  m_AdditionalVertexStreams: {fileID: 0}
 --- !u!136 &3175242146243430363
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -457,6 +464,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemyLevel: 1
+  screw: {fileID: 7359285193420249293, guid: c505558a4ca294d4997ae6069b25f936, type: 3}
+  nut: {fileID: 4617804490400431508, guid: 2525ed1c724bfd043aee443a57426105, type: 3}
+  canDropMoney: 1
+  killedByPlayer: 1
   experience: 20
   healthBar: {fileID: 427042048}
   healthCanvas: {fileID: 1834972457}
@@ -475,8 +486,6 @@ MonoBehaviour:
   totalDmgPopLoc: {x: 0, y: 5, z: 0}
   dropChance: 0
   dropRate: 0.5
-  lootPrefab: {fileID: 4923901484974759255, guid: 8739ff60affb00c4a9b8fcc66b4bb829,
-    type: 3}
 --- !u!54 &6383414595156212919
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -514,6 +523,9 @@ MonoBehaviour:
   attackParticles: {fileID: 7986742393934304454, guid: 462d384f4fa6e494f9c46e98fdb4040b,
     type: 3}
   allowAttack: 1
+  foundEnemyEvent:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!195 &69102831
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -567,6 +579,19 @@ MonoBehaviour:
   electrocuteTimer: 0.5
   marked: 0
   markedTimer: 2
+--- !u!114 &5270057767812569883
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3175242146243430373}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 32ed2b0bec3190141828be4bc01837f6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dataCollected: 0
 --- !u!1 &8062296000640769121
 GameObject:
   m_ObjectHideFlags: 0
@@ -623,6 +648,7 @@ MeshRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_RayTracingMode: 2
+  m_RayTraceProcedural: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -647,6 +673,7 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+  m_AdditionalVertexStreams: {fileID: 0}
 --- !u!135 &2186429297773747
 SphereCollider:
   m_ObjectHideFlags: 0
