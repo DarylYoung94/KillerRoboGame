@@ -8,12 +8,14 @@ public class PlayerManager : MonoBehaviour
     public int currentMoney;
     public Text currentMoneyUI;
 
+    
     public int currentData;
     public Text currentDataUI;
 
     public GameObject player;
     public float health;
     public float startHealth = 90;
+    public float missingHealth;
     public Image healthBar;
     public GameObject healthCanvas;
     public float maxHealth;
@@ -54,6 +56,8 @@ public class PlayerManager : MonoBehaviour
         currentData = player.GetComponent<DataManager>().GetData();
         currentDataUI.text = currentData.ToString();
         currentMoneyUI.text = currentMoney.ToString();
+
+        missingHealth = maxHealth - health;
     }
 
     public void TakeDamage(float amount)
@@ -66,6 +70,22 @@ public class PlayerManager : MonoBehaviour
             {
                 Die();
             }
+        }
+    }
+
+    public void HealPlayer()
+    {
+        float CM = (float)currentMoney ;
+        if(CM>=missingHealth)
+        {
+            float healAmount = missingHealth;
+            health = health + healAmount;
+            currentMoney = currentMoney - (int)healAmount ;
+        }else if (CM<missingHealth)
+        {
+            float healAmount = CM;
+            health = health + healAmount;
+            currentMoney = currentMoney - currentMoney;
         }
     }
 

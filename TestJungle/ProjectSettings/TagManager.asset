@@ -21,6 +21,7 @@ TagManager:
   - InventoryItem
   - AbilityItem
   - Money
+  - InteractArea
   layers:
   - Default
   - TransparentFX
