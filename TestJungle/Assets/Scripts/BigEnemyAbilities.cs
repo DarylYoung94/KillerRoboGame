@@ -13,9 +13,7 @@ public class BigEnemyAbilities : MonoBehaviour
     // Start is called before the first frame update
      void Awake()
     {
-        Debug.Log("enemy health" + enemy.GetComponent<Enemy>().health);
-        enemyStartHealth =  enemy.GetComponent<Enemy>().health;
-        
+        enemyStartHealth =  enemy.GetComponent<EnemyStats>().GetCurrentHealth();
     }
 
     // Update is called once per frame
@@ -23,11 +21,11 @@ public class BigEnemyAbilities : MonoBehaviour
     {
         if(enemyStartHealth == 0 )
         {
-            enemyStartHealth = enemy.GetComponent<Enemy>().health;
+            enemyStartHealth = enemy.GetComponent<EnemyStats>().GetCurrentHealth();
         }
         enemyHealth75 = enemyStartHealth * 0.75f;
         enemyHealth50 = enemyStartHealth * 0.5f;
-        enemyHealth = enemy.GetComponent<Enemy>().health;
+        enemyHealth = enemy.GetComponent<EnemyStats>().GetCurrentHealth();
 
         if (enemyHealth <= enemyHealth75)
         {

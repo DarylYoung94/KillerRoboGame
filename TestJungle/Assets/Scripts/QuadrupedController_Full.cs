@@ -39,6 +39,14 @@ public class QuadrupedController_Full : MonoBehaviour
         TailUpdate();
     }
 
+    public void SetTarget()
+    {
+        Transform tempTarget = transform.GetComponent<EnemyAI>().target;
+
+        if (tempTarget)
+            target = tempTarget;
+    }
+
     #region Root Motion
 
     [Header("Root Motion")]

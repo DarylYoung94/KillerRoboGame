@@ -7,12 +7,12 @@ using UnityEngine.Events;
 public class EnemyAI : MonoBehaviour
 {
     public float attackTime = 1f;
-    public float nextAttackTime;
+    public float nextAttackTime = 1.0f;
     public float attackSpeed = 1f;
     public float attackDamage = 10f;
     public float lookRadius = 10f;
     public float attackRange = 5f;
-    Transform target;
+    public Transform target;
     NavMeshAgent agent;
     public GameObject attackParticles;
     public bool allowAttack = true;
@@ -35,7 +35,7 @@ public class EnemyAI : MonoBehaviour
     IEnumerator AttackSpeed(float attackSpeed)
     {
         yield return new WaitForSeconds(attackSpeed);
-        Attack1();
+        Attack();
     }
 
     // Update is called once per frame
@@ -57,34 +57,36 @@ public class EnemyAI : MonoBehaviour
         {
             nextAttackTime = 0;
         }
+
+        if (distance <= attackRange && nextAttackTime == 0 && allowAttack == true) 
         {
-            if (distance <= attackRange && nextAttackTime == 0 && allowAttack == true) 
+            Attack();
+            nextAttackTime = attackTime;
+
+
+            if (attackParticles)
             {
-                Attack1();
-                nextAttackTime = attackTime;
-
-                GameObject particleInstance;
-                particleInstance = Instantiate(attackParticles, transform.position, Quaternion.identity);
-
+                Instantiate(attackParticles, transform.position, Quaternion.identity);
             }
 
         }
-
     }
+
     void OnDrawGizmosSelected()
     {
         Gizmos.color = Color.red;
         Gizmos.DrawWireSphere(transform.position, lookRadius);
     }
     
-    public void Attack1()
+    public void Attack()
     {
         if (target != null)
         {
-              
-           GameObject particleInstance;
-            particleInstance = Instantiate(attackParticles, transform.position, Quaternion.identity);
-            
+            if (attackParticles)
+            {
+                Instantiate(attackParticles, transform.position, Quaternion.identity);
+            }
+
             Vector3 attackPosition = transform.position;
             Collider[] collider = Physics.OverlapSphere(attackPosition, attackRange);
 

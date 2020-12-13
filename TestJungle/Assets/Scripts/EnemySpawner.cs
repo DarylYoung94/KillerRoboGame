@@ -4,37 +4,30 @@ using UnityEngine;
 
 public class EnemySpawner : MonoBehaviour
 {
-    public float waveLevel = 1;
-    public float timeBetweenWaves = 5f;       // time between camps spawning
-    private float waveCountdown = 5f;            //time before camps spawn
+    public List<EnemySettings> enemySettings;
+    public List<GameObject> enemies = new List<GameObject>();
+
+    private int waveLevel = 1;
     public Transform spawnPoint;
-    public Rigidbody enemyPrefab;
+    public GameObject enemyPrefab;
     public int numberOfEnemies = 3;
     public float Speed;
-    public float time;
-    public GameObject player;
-    public float radius;
-    public float time1 = 5f;
-    public bool areEnemies = true;
-    public float timer =0;
     public float spawnTimer = 10;
-    public bool spawn = false;
-    // Start is called before the first frame update
+    private float timer =0;
+    private bool spawn = false;
 
  
     void Start()
     {
         SpawnWave();
-        waveCountdown = timeBetweenWaves;
     }
 
     // Update is called once per frame
     void Update()
     {
-        GameObject[] enemies;
-        enemies = GameObject.FindGameObjectsWithTag("Enemy");
+        CheckForDeadEnemies();
 
-        if (enemies.Length == 0)
+        if (enemies.Count == 0)
         {
             timer += Time.deltaTime;
             if (timer >= spawnTimer)
@@ -43,7 +36,7 @@ public class EnemySpawner : MonoBehaviour
                 timer = 0;
             }
 
-            if (areEnemies == false && spawn == true)
+            if (spawn == true)
             {
                 SpawnWave();
                 spawn = false;
@@ -51,39 +44,30 @@ public class EnemySpawner : MonoBehaviour
             }
         }
 
-        enemyPrefab.GetComponent<Enemy>().enemyLevel = waveLevel;
+        if (waveLevel <= enemySettings.Count)
+        {
+            enemyPrefab.GetComponent<EnemyStats>().UpdateEnemySettings(enemySettings[waveLevel-1]);
+        }
     }
 
     void SpawnWave()  
     {
         for (int i = 0; i < numberOfEnemies; i++)
         {
-            Rigidbody enemyInstance;
-            enemyInstance = Instantiate(enemyPrefab, spawnPoint.position, Quaternion.identity) as Rigidbody;
-            enemyInstance.AddForce(-spawnPoint.forward * Speed, ForceMode.Impulse);
+            GameObject enemyInstance = Instantiate(enemyPrefab, spawnPoint.position, Quaternion.identity);
+            enemyInstance.GetComponent<Rigidbody>().AddForce(-spawnPoint.forward * Speed, ForceMode.Impulse);
+            enemies.Add(enemyInstance);
         }
-      
-
     }
 
-    /*public void Respawn()
+    void CheckForDeadEnemies()
     {
-        if(player!=null)
+        for (int i=0; i<enemies.Count; i++)
         {
-            Collider[] colliders = Physics.OverlapSphere(spawnPoint.position, radius);
-            foreach (Collider hit in colliders)
+            if (!enemies[i])
             {
-                Enemy enemyHit = hit.transform.GetComponent<Enemy>();
-                if (enemyHit = null) 
-                StartCoroutine(ExecuteAfterTime(time));
-            }
-            foreach (Collider hit in colliders)
-            {
-                Enemy enemyHit = hit.transform.GetComponent<Enemy>();
-                Enemy enemy = enemyHit ;
-                if (enemy !=null)
-                    StopCoroutine(ExecuteAfterTime(time));
+                enemies.RemoveAt(i);
             }
         }
-    }*/
+    }
 }

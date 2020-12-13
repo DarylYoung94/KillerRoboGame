@@ -39,25 +39,22 @@ public class BulletCollider : MonoBehaviour
 
     public void OnCollisionEnter(Collision collision)
     {
-        if (collision.gameObject.tag == "Enemy" || collision.gameObject.tag == "RangedEnemy1" || collision.gameObject.tag == "ChargeEnemy" || collision.gameObject.tag == "DataCollector" )
+        Enemy enemyHit = collision.transform.GetComponent<Enemy>();
+        if (enemyHit)
         {
-            Enemy enemyHit = collision.transform.GetComponent<Enemy>();
-            if (enemyHit != null)
+            if (isMarkBullet)
             {
-                if (isMarkBullet)
-                {
-                    MarkBulletCollision(collision.gameObject, enemyHit);
-                }
-                else
-                {
-                    enemyHit.TakeDamage(autoDamage);
-                }
+                MarkBulletCollision(collision.gameObject, enemyHit);
+            }
+            else
+            {
+                enemyHit.TakeDamage(autoDamage);
+            }
 
 
-                if (isHealingBullet)
-                {
-                    player.GetComponent<PlayerManager>().health += lifestealAmount;
-                }
+            if (isHealingBullet)
+            {
+                player.GetComponent<PlayerManager>().health += lifestealAmount;
             }
 
             TriggerHitVFX(collision);

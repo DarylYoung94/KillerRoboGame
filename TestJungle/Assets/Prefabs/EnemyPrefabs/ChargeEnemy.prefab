@@ -160,6 +160,7 @@ MonoBehaviour:
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 0.16509432, b: 0.16509432, a: 1}
   m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -234,6 +235,7 @@ MonoBehaviour:
   m_Material: {fileID: 0}
   m_Color: {r: 0.15972686, g: 1, b: 0, a: 1}
   m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -260,13 +262,16 @@ GameObject:
   - component: {fileID: 3872777230820948682}
   - component: {fileID: 3872777230820948683}
   - component: {fileID: 3872777230820948680}
-  - component: {fileID: 3872777230820948681}
   - component: {fileID: 4699530912284115364}
+  - component: {fileID: 3872777230820948681}
   - component: {fileID: 5150015634753098072}
+  - component: {fileID: -694103545604692588}
+  - component: {fileID: -419969322082404726}
   - component: {fileID: 1850530536060326396}
   - component: {fileID: 5988041405409659080}
   - component: {fileID: 2391617112497608776}
   - component: {fileID: 6694752186380161120}
+  - component: {fileID: -4729761699253328627}
   m_Layer: 10
   m_Name: ChargeEnemy
   m_TagString: ChargeEnemy
@@ -312,6 +317,7 @@ MeshRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_RayTracingMode: 2
+  m_RayTraceProcedural: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -336,6 +342,7 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+  m_AdditionalVertexStreams: {fileID: 0}
 --- !u!136 &3872777230820948680
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -350,39 +357,6 @@ CapsuleCollider:
   m_Height: 2
   m_Direction: 1
   m_Center: {x: 0.000000059604645, y: 0, z: -0.00000008940697}
---- !u!114 &3872777230820948681
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3872777230820948726}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 350d5e8e619b43945b19eaf83d8958b0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  enemyLevel: 1
-  experience: 100
-  healthBar: {fileID: 1850530536104777747}
-  healthCanvas: {fileID: 1850530535368198202}
-  healthness: 0
-  startHealth: 100
-  health: 50
-  enemy: {fileID: 3872777230820948726}
-  player: {fileID: 0}
-  damageTaken: 0
-  damagePop: {fileID: 833885491248636895, guid: cee59fe21c0078a48b1ecfd64ef996db,
-    type: 3}
-  dmgPopLoc: {x: 0, y: 2.5, z: 0}
-  totalDamageTaken: 0
-  totalDamagePrefab: {fileID: 340990915897414071, guid: 043da56f05217fb4ea897713cf8e3ffc,
-    type: 3}
-  totalDmgPopLoc: {x: 0, y: 5, z: 0}
-  dropChance: 0
-  dropRate: 0.5
-  lootPrefab: {fileID: 4923901484974759255, guid: 8739ff60affb00c4a9b8fcc66b4bb829,
-    type: 3}
 --- !u!54 &4699530912284115364
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -399,6 +373,22 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 112
   m_CollisionDetection: 0
+--- !u!114 &3872777230820948681
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3872777230820948726}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 350d5e8e619b43945b19eaf83d8958b0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  screw: {fileID: 7359285193420249293, guid: c505558a4ca294d4997ae6069b25f936, type: 3}
+  nut: {fileID: 4617804490400431508, guid: 2525ed1c724bfd043aee443a57426105, type: 3}
+  canDropMoney: 1
+  killedByPlayer: 1
 --- !u!114 &5150015634753098072
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -420,6 +410,49 @@ MonoBehaviour:
   attackParticles: {fileID: 7986742393934304454, guid: 462d384f4fa6e494f9c46e98fdb4040b,
     type: 3}
   allowAttack: 0
+  foundEnemyEvent:
+    m_PersistentCalls:
+      m_Calls: []
+--- !u!114 &-694103545604692588
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3872777230820948726}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c1ec9e05dfce8ea4a8c3ed9e4260bd81, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  healthCanvas: {fileID: 1850530535368198202}
+  healthBar: {fileID: 1850530536104777747}
+  damagePopPrefab: {fileID: 833885491248636895, guid: cee59fe21c0078a48b1ecfd64ef996db,
+    type: 3}
+  dmgPopLoc: {x: 0, y: 1, z: 0}
+  totalDamagePopPrefab: {fileID: 340990915897414071, guid: 043da56f05217fb4ea897713cf8e3ffc,
+    type: 3}
+  totalDmgPopLoc: {x: 0, y: 2, z: 0}
+--- !u!114 &-419969322082404726
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3872777230820948726}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6960cb202a78f1540a209c9d54c8d647, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  activeEnemySettings: {fileID: 11400000, guid: 44bea1c412041fe4591e0995ea0727fb,
+    type: 2}
+  alive: 1
+  level: 1
+  currentHealth: 10
+  maxHealth: 10
+  experience: 100
+  dropRate: 0.3
 --- !u!195 &1850530536060326396
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -495,3 +528,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   electrocuted: 0
   electrocuteTimer: 0.5
+  marked: 0
+  markedTimer: 2
+--- !u!114 &-4729761699253328627
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3872777230820948726}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 32ed2b0bec3190141828be4bc01837f6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dataCollected: 0

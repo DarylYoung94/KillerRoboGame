@@ -6,187 +6,79 @@ using UnityEngine.UI;
 
 public class Enemy : MonoBehaviour
 {
-    public float enemyLevel = 1;
-
     public GameObject screw;
     public GameObject nut;
     public bool canDropMoney = true;
     public bool killedByPlayer = true;
-
-    public int experience;
-
-    public Image healthBar;
-    public GameObject healthCanvas;
-    public float healthness;
-    public float startHealth;
-    public float health = 0;
-
-    public GameObject enemy;
-    public GameObject player;
-
-    public float damageTaken;
-    public GameObject damagePop;
-    public Vector3 dmgPopLoc;
-
-    public float totalDamageTaken = 0;
-    public GameObject totalDamagePrefab;
-    private GameObject totalDamageGO;
-    public Vector3 totalDmgPopLoc;
-    float totalDamageTimer;
-
     
-    public float dropChance;
-    public float dropRate = 0.3f; //can change this in inspector for different enemies?    
-    bool alive = true;
+    // Necessary Components
+    private EnemyUI enemyUI;
+    private EnemyStats enemyStats;
 
     // Start is called before the first frame update
     void Start()
     {
-        healthness = startHealth + 10 * enemyLevel;
-        health = healthness;
-        enemy = this.gameObject;
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        player = GameManager.instance.player;
-        dropChance = Random.value;
-
-        healthCanvas.transform.LookAt(Camera.main.transform.position);
-        
-        TotalDamageTimer();
+        enemyStats = this.GetComponent<EnemyStats>();
+        enemyUI = this.GetComponent<EnemyUI>();
     }
 
     public void TakeDamage(float amount)
     {
-        health -= amount;
-        damageTaken = amount;
-        totalDamageTaken += amount;
-
-        if (damagePop && damageTaken >= 1.0f)
-            ShowDamagePop();
-
-        if (totalDamagePrefab)
-            ShowTotalDamagePop();
-
-        healthBar.fillAmount = health / healthness;
-        if(alive && health <= 0f )
+        if (enemyUI)
+            enemyUI.EnemyDamaged(amount);
+        
+        if(enemyStats)
         {
-            alive = false;
+            enemyStats.TakeDamage(amount);
 
-            if (dropChance < dropRate)
+            if(enemyStats.IsAlive() && enemyStats.GetCurrentHealth() <= 0f)
             {
-                Loot();
+                enemyStats.Dead();
+
+                if (Random.value < enemyStats.GetDropRate())
+                {
+                    LootManager.instance.SpawnAbilityPickup(transform.position);
+                }
+
+                if (canDropMoney)
+                {
+                    DropMoney(); 
+                }
+
+                if (killedByPlayer)
+                {
+                    TransferData();
+                }
+
+                GameManager.instance.player.GetComponent<PlayerXP>().AddExp(enemyStats.GetExperience());  
+                Destroy(this.gameObject);
             }
-            if(canDropMoney)
-            {
-                DropMoney(); 
-            }
-           if(killedByPlayer)
-           {
-                TransferData();
-           }
-
-            player.GetComponent<PlayerXP>().AddExp(experience);  
-            Die();
         }
     }
-    
 
-    public void ShowDamagePop()
-    {
-        GameObject DMG = Instantiate(damagePop,
-                                     transform.position + dmgPopLoc + RandomVector3(1.0f),
-                                     Quaternion.identity);
-        if(DMG != null)
-        {
-            DMG.GetComponent<TextMesh>().text = damageTaken.ToString();
-        }
-
-    }
-
-    public void ShowTotalDamagePop()
-    {   
-        // 3 states this could be in
-        // - First time damage is taken so we instantiate
-        // - The damage popup timed out and is no longer active so we make it active and reset the timer.
-        // - The damage popup is active and we need to reset the timer.
-        if (totalDamageGO == null)
-        {
-            totalDamageGO = Instantiate(totalDamagePrefab,
-                                        transform.position + totalDmgPopLoc,
-                                        Quaternion.identity);
-        }
-        else if (totalDamageGO.activeSelf == false)
-        {
-            totalDamageGO.SetActive(true);
-        }
-
-        if(totalDamageGO != null && totalDamageGO.activeSelf)
-        {
-            totalDamageGO.GetComponent<TextMesh>().text = totalDamageTaken.ToString("n2");
-        }
-
-        ResetTimer();
-    }
-
-    void Die()
-    {
-        Destroy(this.gameObject);
-    }
-
-    public void Loot()
-    {
-        LootManager.instance.SpawnAbilityPickup(enemy.transform.position);
-    }
 
     public void DropMoney()
     {
         int screwNum = Random.Range(0, 2);
-            for (int i=0; i<screwNum; i++)
-            {
-                GameObject screwSpawn = Instantiate(screw,this.transform.position,Quaternion.identity);
-                Rigidbody screwRB = screwSpawn.GetComponent<Rigidbody>();
-                screwRB.AddForce(screwRB.transform.up * 8, ForceMode.Impulse);
-            }
+        for (int i=0; i<screwNum; i++)
+        {
+            GameObject screwSpawn = Instantiate(screw,this.transform.position,Quaternion.identity);
+            Rigidbody screwRB = screwSpawn.GetComponent<Rigidbody>();
+            screwRB.AddForce(screwRB.transform.up * 8, ForceMode.Impulse);
+        }
+
         int nutNum = Random.Range(0, 3);
-            for (int i=0; i<nutNum; i++)
-            {
-                GameObject nutSpawn = Instantiate(nut,this.transform.position,Quaternion.identity);
-                Rigidbody nutRB = nutSpawn.GetComponent<Rigidbody>();
-                nutRB.AddForce(nutRB.transform.up * 8, ForceMode.Impulse);
-            }
+        for (int i=0; i<nutNum; i++)
+        {
+            GameObject nutSpawn = Instantiate(nut,this.transform.position,Quaternion.identity);
+            Rigidbody nutRB = nutSpawn.GetComponent<Rigidbody>();
+            nutRB.AddForce(nutRB.transform.up * 8, ForceMode.Impulse);
+        }
     }
 
     public void TransferData()
     {
         int tempData = this.gameObject.GetComponent<DataManager>().GetData();
-        player.GetComponent<DataManager>().AddToDataCollected(tempData);
-    }
-
-    private Vector3 RandomVector3(float range)
-    {
-        return new Vector3(Random.Range(-range,range), Random.Range(-range,range), Random.Range(-range,range));
-    }
-
-    private void TotalDamageTimer()
-    {
-        totalDamageTimer -= Time.deltaTime;
-
-        if (totalDamageTimer < 0)
-        {
-            totalDamageTaken = 0;
-            if (totalDamageGO)
-            {
-                totalDamageGO.GetComponent<TextMesh>().text = totalDamageTaken.ToString("0.00");
-                totalDamageGO.SetActive(false);
-            }
-        }
-    }
-
-    private void ResetTimer()
-    {
-        totalDamageTimer = 2.0f;
+        GameManager.instance.player.GetComponent<DataManager>().AddToDataCollected(tempData);
     }
 }

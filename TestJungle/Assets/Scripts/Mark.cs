@@ -17,7 +17,7 @@ public class Mark : MonoBehaviour
     {
         yield return new WaitForSeconds(timeToWait);
 
-        if(callback != null)
+        if (callback != null)
         {
             callback();
         }

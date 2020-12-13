@@ -51,6 +51,8 @@ GameObject:
   - component: {fileID: 814644639735266773}
   - component: {fileID: 2496795201826189676}
   - component: {fileID: 6932763538887802902}
+  - component: {fileID: -7254192259199545522}
+  - component: {fileID: 91484805176476514}
   m_Layer: 10
   m_Name: BigEnemy
   m_TagString: Enemy
@@ -158,26 +160,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 350d5e8e619b43945b19eaf83d8958b0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemyLevel: 1
-  experience: 20
-  healthBar: {fileID: 4426881803155200176}
-  healthCanvas: {fileID: 4426881804563089561}
-  healthness: 0
-  startHealth: 200
-  health: 0
-  enemy: {fileID: 1260946748892822101}
-  player: {fileID: 0}
-  damageTaken: 0
-  damagePop: {fileID: 833885491248636895, guid: cee59fe21c0078a48b1ecfd64ef996db,
-    type: 3}
-  dmgPopLoc: {x: 0, y: 4, z: 0}
-  totalDamageTaken: 0
-  totalDamagePrefab: {fileID: 340990915897414071, guid: 043da56f05217fb4ea897713cf8e3ffc,
-    type: 3}
-  totalDmgPopLoc: {x: 0, y: 7, z: 0}
-  dropChance: 0
-  dropRate: 0.5
-  lootPrefab: {fileID: 0}
+  screw: {fileID: 0}
+  nut: {fileID: 0}
+  canDropMoney: 1
+  killedByPlayer: 1
 --- !u!54 &7347904590841676039
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -332,6 +318,45 @@ MonoBehaviour:
   electrocuteTimer: 0.5
   marked: 0
   markedTimer: 2
+--- !u!114 &-7254192259199545522
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1260946748892822101}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c1ec9e05dfce8ea4a8c3ed9e4260bd81, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  healthCanvas: {fileID: 4426881804563089561}
+  healthBar: {fileID: 4426881803155200176}
+  damagePopPrefab: {fileID: 833885491248636895, guid: cee59fe21c0078a48b1ecfd64ef996db,
+    type: 3}
+  dmgPopLoc: {x: 0, y: 2.424, z: 0}
+  totalDamagePopPrefab: {fileID: 340990915897414071, guid: 043da56f05217fb4ea897713cf8e3ffc,
+    type: 3}
+  totalDmgPopLoc: {x: 0, y: 0, z: 0}
+--- !u!114 &91484805176476514
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1260946748892822101}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6960cb202a78f1540a209c9d54c8d647, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  activeEnemySettings: {fileID: 0}
+  alive: 1
+  level: 1
+  currentHealth: 10
+  maxHealth: 0
+  experience: 100
+  dropRate: 0.3
 --- !u!1 &2525750731038173748
 GameObject:
   m_ObjectHideFlags: 0

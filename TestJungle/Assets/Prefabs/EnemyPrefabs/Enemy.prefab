@@ -357,9 +357,11 @@ GameObject:
   - component: {fileID: 3175242146243430361}
   - component: {fileID: 3175242146243430360}
   - component: {fileID: 3175242146243430363}
-  - component: {fileID: 3175242146243430362}
   - component: {fileID: 6383414595156212919}
+  - component: {fileID: 3175242146243430362}
   - component: {fileID: 6833896156814601291}
+  - component: {fileID: 5855075664545954432}
+  - component: {fileID: 259702462819689654}
   - component: {fileID: 69102831}
   - component: {fileID: 5383961379646207451}
   - component: {fileID: -1704298053855842401}
@@ -451,41 +453,6 @@ CapsuleCollider:
   m_Height: 2
   m_Direction: 1
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &3175242146243430362
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3175242146243430373}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 350d5e8e619b43945b19eaf83d8958b0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  enemyLevel: 1
-  screw: {fileID: 7359285193420249293, guid: c505558a4ca294d4997ae6069b25f936, type: 3}
-  nut: {fileID: 4617804490400431508, guid: 2525ed1c724bfd043aee443a57426105, type: 3}
-  canDropMoney: 1
-  killedByPlayer: 1
-  experience: 20
-  healthBar: {fileID: 427042048}
-  healthCanvas: {fileID: 1834972457}
-  healthness: 0
-  startHealth: 50
-  health: 0
-  enemy: {fileID: 3175242146243430373}
-  player: {fileID: 0}
-  damageTaken: 0
-  damagePop: {fileID: 833885491248636895, guid: cee59fe21c0078a48b1ecfd64ef996db,
-    type: 3}
-  dmgPopLoc: {x: 0, y: 2.5, z: 0}
-  totalDamageTaken: 0
-  totalDamagePrefab: {fileID: 340990915897414071, guid: 043da56f05217fb4ea897713cf8e3ffc,
-    type: 3}
-  totalDmgPopLoc: {x: 0, y: 5, z: 0}
-  dropChance: 0
-  dropRate: 0.5
 --- !u!54 &6383414595156212919
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -502,6 +469,22 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 112
   m_CollisionDetection: 0
+--- !u!114 &3175242146243430362
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3175242146243430373}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 350d5e8e619b43945b19eaf83d8958b0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  screw: {fileID: 7359285193420249293, guid: c505558a4ca294d4997ae6069b25f936, type: 3}
+  nut: {fileID: 4617804490400431508, guid: 2525ed1c724bfd043aee443a57426105, type: 3}
+  canDropMoney: 1
+  killedByPlayer: 1
 --- !u!114 &6833896156814601291
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -526,6 +509,46 @@ MonoBehaviour:
   foundEnemyEvent:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &5855075664545954432
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3175242146243430373}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c1ec9e05dfce8ea4a8c3ed9e4260bd81, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  healthCanvas: {fileID: 1834972457}
+  healthBar: {fileID: 427042048}
+  damagePopPrefab: {fileID: 833885491248636895, guid: cee59fe21c0078a48b1ecfd64ef996db,
+    type: 3}
+  dmgPopLoc: {x: 0, y: 1, z: 0}
+  totalDamagePopPrefab: {fileID: 340990915897414071, guid: 043da56f05217fb4ea897713cf8e3ffc,
+    type: 3}
+  totalDmgPopLoc: {x: 0, y: 2, z: 0}
+--- !u!114 &259702462819689654
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3175242146243430373}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6960cb202a78f1540a209c9d54c8d647, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  activeEnemySettings: {fileID: 11400000, guid: f636284ff7bf2454fa9ea9a578968f36,
+    type: 2}
+  alive: 1
+  level: 1
+  currentHealth: 20
+  maxHealth: 20
+  experience: 200
+  dropRate: 0.5
 --- !u!195 &69102831
 NavMeshAgent:
   m_ObjectHideFlags: 0

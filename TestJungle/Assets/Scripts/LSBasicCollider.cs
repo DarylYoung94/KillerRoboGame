@@ -21,19 +21,13 @@ public class LSBasicCollider : MonoBehaviour
 
     public void OnCollisionEnter(Collision collision)
     {
-        if (collision.gameObject.tag == "Enemy" || collision.gameObject.tag == "RangedEnemy1" || collision.gameObject.tag == "ChargeEnemy" )
+        Enemy enemyHit = collision.transform.GetComponent<Enemy>();
+        if (enemyHit != null)
         {
-            if (bulletPrefab != null)
-            {
-                Enemy enemyHit = collision.transform.GetComponent<Enemy>();
-                if (enemyHit != null)
-                {
-                    enemyHit.TakeDamage(autoDamage);
-                    player.GetComponent<PlayerManager>().health +=lifestealamount;
-                }
+            enemyHit.TakeDamage(autoDamage);
+            player.GetComponent<PlayerManager>().health +=lifestealamount;
 
-                Destroy(this.gameObject);
-            }
+            Destroy(this.gameObject);
         }
         else if (collision.gameObject.tag == "Bullet")
         {
