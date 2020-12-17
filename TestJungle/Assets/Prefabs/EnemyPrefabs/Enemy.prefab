@@ -503,6 +503,7 @@ MonoBehaviour:
   attackDamage: 10
   lookRadius: 10
   attackRange: 5
+  target: {fileID: 0}
   attackParticles: {fileID: 7986742393934304454, guid: 462d384f4fa6e494f9c46e98fdb4040b,
     type: 3}
   allowAttack: 1

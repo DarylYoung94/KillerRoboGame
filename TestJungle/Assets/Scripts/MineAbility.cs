@@ -7,6 +7,7 @@ public class MineAbility : AbstractAbility
     public GameObject minePrefab;
     public GameObject projectorPrefab;
     private MineAbilityTriggerable mineTrigger;
+    
     public float despawnTimer = 8f;
     public float radius = 10f;
     public float power = 10f;
@@ -29,7 +30,7 @@ public class MineAbility : AbstractAbility
         mineTrigger.Damage = Damage;
         mineTrigger.explosionParticles= explosionParticles;
         mineTrigger.timerParticles = timerParticles;
-
+        
         triggerable = mineTrigger;
     }
 

@@ -83,13 +83,13 @@ public class DataCollector : MonoBehaviour
         DataConsole dc = target.GetComponent<DataConsole>();
         if (collectTime > collectCooldown)
         {
-            if (dc != null && dc.GetData() > 0)
+            if (dc != null && dc.CollectData(antennaTransform ))
             {
-                if (dc.CollectData(antennaTransform))
-                {
+                
+                
                     collectTime = 0.0f;
                     data.CollectData(1);
-                }
+                
             }
             else
             {

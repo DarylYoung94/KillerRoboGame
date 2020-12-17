@@ -6,6 +6,8 @@ public class EnemySpawner : MonoBehaviour
 {
     public List<EnemySettings> enemySettings;
     public List<GameObject> enemies = new List<GameObject>();
+    public List<GameObject> enemyPrefabs = new List<GameObject>();
+
 
     private int waveLevel = 1;
     public Transform spawnPoint;
@@ -54,9 +56,12 @@ public class EnemySpawner : MonoBehaviour
     {
         for (int i = 0; i < numberOfEnemies; i++)
         {
-            GameObject enemyInstance = Instantiate(enemyPrefab, spawnPoint.position, Quaternion.identity);
+            
+            GameObject enemyInstance = Instantiate(enemyPrefabs[0], spawnPoint.position, Quaternion.identity);
             enemyInstance.GetComponent<Rigidbody>().AddForce(-spawnPoint.forward * Speed, ForceMode.Impulse);
             enemies.Add(enemyInstance);
+            enemyInstance.GetComponent<RandomMovement>().campLocation = spawnPoint.gameObject;
+            ChooseNextEnemy();
         }
     }
 
@@ -69,5 +74,9 @@ public class EnemySpawner : MonoBehaviour
                 enemies.RemoveAt(i);
             }
         }
+    }
+    void ChooseNextEnemy()
+    {
+      
     }
 }

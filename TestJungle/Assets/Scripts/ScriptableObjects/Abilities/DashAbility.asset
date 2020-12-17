@@ -15,7 +15,7 @@ MonoBehaviour:
   aName: New Ability
   cdString: QuickCast
   aBaseCoolDown: 1
-  abilityIcon: {fileID: 21300000, guid: 903f5dcacb37b93409dc94ceb13e8016, type: 3}
+  abilityIcon: {fileID: 21300000, guid: fa7681d1f557f0e439e29e139cbb8e77, type: 3}
   pickupPrefab: {fileID: 7477862897245444568, guid: 641ba3f385b71a648a3f0673218d6027,
     type: 3}
   triggerable: {fileID: 0}

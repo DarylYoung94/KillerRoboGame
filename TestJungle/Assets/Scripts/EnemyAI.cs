@@ -70,6 +70,7 @@ public class EnemyAI : MonoBehaviour
             }
 
         }
+        
     }
 
     void OnDrawGizmosSelected()

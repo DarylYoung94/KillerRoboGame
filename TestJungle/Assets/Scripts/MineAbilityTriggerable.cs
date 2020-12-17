@@ -12,6 +12,7 @@ public class MineAbilityTriggerable : MonoBehaviour
     private GameObject projectorTarget;
     Vector3 mineAim = -Vector3.one;
     
+    
     public float despawnTimer = 3f;
     public GameObject spotlight;
     public float radius = 10f;

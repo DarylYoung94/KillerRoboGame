@@ -16,6 +16,7 @@ GameObject:
   - component: {fileID: 6336327056288783827}
   - component: {fileID: 8488732098277395097}
   - component: {fileID: 5178512769781425015}
+  - component: {fileID: 8672303391070730048}
   m_Layer: 0
   m_Name: WheelRobot
   m_TagString: Data Collector
@@ -323,6 +324,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dataCollected: 0
+--- !u!65 &8672303391070730048
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 710487540040468503}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 3.083243, z: 1}
+  m_Center: {x: 0, y: 1.7838681, z: 0}
 --- !u!1 &3156973464252165595
 GameObject:
   m_ObjectHideFlags: 0

@@ -20,6 +20,7 @@ public class EnemyFaction : MonoBehaviour
     }
      void Update()
     {
+        
        disFaction1 = disposition - factions.faction1.disposition; 
        disFaction2 = disposition - factions.faction2.disposition; 
        disFaction3 = disposition - factions.faction3.disposition; 
