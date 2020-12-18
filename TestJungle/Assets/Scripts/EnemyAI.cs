@@ -16,6 +16,7 @@ public class EnemyAI : MonoBehaviour
     NavMeshAgent agent;
     public GameObject attackParticles;
     public bool allowAttack = true;
+    public bool moving =false;
     // Use this for initialization
 
     private float currentSpeed = 0.0f;
@@ -45,9 +46,9 @@ public class EnemyAI : MonoBehaviour
 
         if (distance <= lookRadius)
         {
-            foundEnemyEvent.Invoke();
+            foundEnemyEvent.Invoke(); 
+           
         }
-
         if (nextAttackTime > 0)
         {
             nextAttackTime -= Time.deltaTime;
@@ -60,9 +61,10 @@ public class EnemyAI : MonoBehaviour
 
         if (distance <= attackRange && nextAttackTime == 0 && allowAttack == true) 
         {
+            
             Attack();
             nextAttackTime = attackTime;
-
+            
 
             if (attackParticles)
             {
@@ -105,5 +107,6 @@ public class EnemyAI : MonoBehaviour
     public void FoundEnemy()
     {
         agent.SetDestination(target.position);
+        
     }
 }
