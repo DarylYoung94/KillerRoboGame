@@ -23,9 +23,10 @@ MonoBehaviour:
   rocketPrefab: {fileID: 7085155767481983121, guid: 68564090b30a7b04799a74f7d2dc9315,
     type: 3}
   radius: 10
-  power: 15.14
+  power: 25
   upForce: 2
   Damage: 10
   explosionParticles: {fileID: 3056532069015774829, guid: 1dcd2ad71bbfbb24b825507302ade540,
     type: 3}
   maxRange: 40.21
+  verticalForce: 15

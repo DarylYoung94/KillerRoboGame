@@ -13,6 +13,7 @@ public class RocketAbilityTriggerable : MonoBehaviour
 
     public float radius = 20f;
     public float power = 10f;
+    public float verticalForce = 10f;
     public float Damage;
     public float maxRange = 20f;
 
@@ -49,7 +50,7 @@ public class RocketAbilityTriggerable : MonoBehaviour
         rocketInstance.transform.Rotate(-90f,0f, 0f);
         rocketInstance.name = "rocket";
         Rigidbody rocketRB = rocketInstance.GetComponent<Rigidbody>();
-        rocketRB.AddForce(rocketRB.transform.forward *power, ForceMode.Impulse); 
+        rocketRB.AddForce(rocketRB.transform.forward *verticalForce, ForceMode.Impulse); 
         spawned = true;
         }
     }

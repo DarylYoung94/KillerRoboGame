@@ -13,6 +13,7 @@ public class RocketAbility : AbstractAbility
     public float Damage = 10f;
     public GameObject explosionParticles;
     public float maxRange = 20f;
+    public float verticalForce;
 
     public override void Initialise(GameObject obj)
     {
@@ -25,7 +26,7 @@ public class RocketAbility : AbstractAbility
         rocketTrigger.Damage = Damage;
         rocketTrigger.explosionParticles= explosionParticles;
         rocketTrigger.firePoint = firePoint;
-
+        rocketTrigger.verticalForce = verticalForce;
         triggerable = rocketTrigger;
     }
 
