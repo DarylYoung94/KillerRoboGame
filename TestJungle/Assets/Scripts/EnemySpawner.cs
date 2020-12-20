@@ -61,7 +61,6 @@ public class EnemySpawner : MonoBehaviour
             enemyInstance.GetComponent<Rigidbody>().AddForce(-spawnPoint.forward * Speed, ForceMode.Impulse);
             enemies.Add(enemyInstance);
             enemyInstance.GetComponent<RandomMovement>().campLocation = spawnPoint.gameObject;
-            ChooseNextEnemy();
         }
     }
 
@@ -74,9 +73,5 @@ public class EnemySpawner : MonoBehaviour
                 enemies.RemoveAt(i);
             }
         }
-    }
-    void ChooseNextEnemy()
-    {
-      
     }
 }

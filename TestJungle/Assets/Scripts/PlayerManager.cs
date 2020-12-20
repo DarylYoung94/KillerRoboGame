@@ -49,7 +49,7 @@ public class PlayerManager : MonoBehaviour
         expText.text = EXP.ToString() + "/" + EXP2.ToString();
         levelText.text =   lvl.ToString();
         healthBar.fillAmount = health / maxHealth;
-        if(health>=maxHealth)
+        if(health >= maxHealth)
         {
             health = maxHealth;
         }
@@ -76,12 +76,13 @@ public class PlayerManager : MonoBehaviour
     public void HealPlayer()
     {
         float CM = (float)currentMoney ;
-        if(CM>=missingHealth)
+        if (CM >= missingHealth)
         {
             float healAmount = missingHealth;
             health = health + healAmount;
             currentMoney = currentMoney - (int)healAmount ;
-        }else if (CM<missingHealth)
+        }
+        else if (CM < missingHealth)
         {
             float healAmount = CM;
             health = health + healAmount;
@@ -90,14 +91,14 @@ public class PlayerManager : MonoBehaviour
     }
 
     public void OnCollisionEnter(Collision collision)
+    {
+        if (collision.gameObject.tag == "Money")
         {
-            if (collision.gameObject.tag == "Money")
-            {
-                int pickupValue;
-                pickupValue = collision.transform.GetComponent<MoneyPickup>().value; 
-                currentMoney = currentMoney += pickupValue;  
-            }
+            int pickupValue;
+            pickupValue = collision.transform.GetComponent<MoneyPickup>().value; 
+            currentMoney = currentMoney += pickupValue;  
         }
+    }
     
     public void Die()
     {

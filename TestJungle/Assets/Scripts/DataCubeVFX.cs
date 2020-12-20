@@ -16,6 +16,7 @@ public class DataCubeVFX : MonoBehaviour
         {
             Destroy(this.gameObject);
         }
+
         this.transform.position += (target.position - this.transform.position).normalized * speed * Time.deltaTime;
         this.transform.Rotate(Vector3.left, rotateSpeed * Time.deltaTime);
     }
