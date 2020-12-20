@@ -237,6 +237,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1688853241489916406}
+  - component: {fileID: 779973667}
   m_Layer: 0
   m_Name: CannonBase
   m_TagString: Untagged
@@ -262,6 +263,22 @@ Transform:
   m_Father: {fileID: 5305157931708629538}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: -0.605, z: 0}
+--- !u!54 &779973667
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1809542793646178138}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 0
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!1 &2122977139241494904
 GameObject:
   m_ObjectHideFlags: 0
@@ -271,6 +288,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7894682586603425272}
+  - component: {fileID: 1999740949}
   m_Layer: 0
   m_Name: Cannon
   m_TagString: Untagged
@@ -285,7 +303,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2122977139241494904}
-  m_LocalRotation: {x: 0.70710456, y: 0.0017809441, z: -0.0017809441, w: 0.70710456}
+  m_LocalRotation: {x: 0.70710456, y: 0.001783272, z: -0.001783272, w: 0.70710456}
   m_LocalPosition: {x: -0.0020530138, y: 0.86500007, z: -0.037999965}
   m_LocalScale: {x: 0.7617201, y: 0.76172024, z: 0.76172006}
   m_Children:
@@ -295,7 +313,23 @@ Transform:
   - {fileID: 7668521768185103655}
   m_Father: {fileID: 1688853241489916406}
   m_RootOrder: 3
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 90, y: 0, z: -0.289}
+--- !u!54 &1999740949
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2122977139241494904}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 0
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 110
+  m_CollisionDetection: 0
 --- !u!1 &3104060442653445099
 GameObject:
   m_ObjectHideFlags: 0
@@ -1222,6 +1256,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e2322d62f7258c249a8111736a58070e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  rotSpeed: 20
 --- !u!1 &5305157930460602344
 GameObject:
   m_ObjectHideFlags: 0
@@ -1861,6 +1896,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e2322d62f7258c249a8111736a58070e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  rotSpeed: 20
 --- !u!1 &5305157930877585511
 GameObject:
   m_ObjectHideFlags: 0
@@ -2372,6 +2408,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e2322d62f7258c249a8111736a58070e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  rotSpeed: 20
 --- !u!1 &5305157931596541059
 GameObject:
   m_ObjectHideFlags: 0
@@ -2600,6 +2637,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e2322d62f7258c249a8111736a58070e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  rotSpeed: 20
 --- !u!1 &5305157931675868767
 GameObject:
   m_ObjectHideFlags: 0
@@ -2708,6 +2746,7 @@ GameObject:
   - component: {fileID: 5305157931708629539}
   - component: {fileID: 5305157931708629541}
   - component: {fileID: 5305157931708629540}
+  - component: {fileID: 816175938}
   m_Layer: 0
   m_Name: CannonBot
   m_TagString: Untagged
@@ -2764,7 +2803,7 @@ NavMeshAgent:
   m_Acceleration: 8
   avoidancePriority: 50
   m_AngularSpeed: 120
-  m_StoppingDistance: 12.01
+  m_StoppingDistance: 15
   m_AutoTraverseOffMeshLink: 1
   m_AutoBraking: 1
   m_AutoRepath: 1
@@ -2797,6 +2836,30 @@ MonoBehaviour:
   foundEnemyEvent:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &816175938
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5305157931708629537}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1d4d1dc8a1806934585c9b0c34fb8597, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bombPrefab: {fileID: 2146896327063408616, guid: e0d2efdee76e01f45af37691b7da6889,
+    type: 3}
+  firepoint: {fileID: 0}
+  cannon: {fileID: 0}
+  cannonBase: {fileID: 0}
+  lookRadius: 25
+  shootDistance: 15
+  rotSpeed: 200
+  newRot: 0
+  attackTime: 3
+  nextAttackTime: 1
+  power: 10
 --- !u!1 &5305157931924532020
 GameObject:
   m_ObjectHideFlags: 0
@@ -3586,7 +3649,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8874059718929316783}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0.01, y: 1.98, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 7894682586603425272}

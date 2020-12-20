@@ -4,11 +4,18 @@ using UnityEngine;
 
 public class CannonBotAnim : MonoBehaviour
 {
+    GameObject player;
     bool moving ;
     Animator anim;
+    
+    public float rotSpeed = 20f;
+
+
     void Start() 
     {
+        player = GameManager.instance.player;
         anim = GetComponent<Animator>();    
+        
     }
     void Update() 
     {
@@ -21,7 +28,6 @@ public class CannonBotAnim : MonoBehaviour
         {
             anim.SetBool("moving" , false);
         }
-        
-           
+     
     }
 }
