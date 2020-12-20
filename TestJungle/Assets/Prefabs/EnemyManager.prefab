@@ -10,8 +10,6 @@ GameObject:
   m_Component:
   - component: {fileID: 8343699857576561647}
   - component: {fileID: 8343699857576561644}
-  - component: {fileID: 8343699857576561645}
-  - component: {fileID: 8343699857576561618}
   - component: {fileID: 4225442332154667408}
   - component: {fileID: 992667118798910237}
   - component: {fileID: 7150811252911592308}
@@ -48,77 +46,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bc7f9541139987b43ae04f7965613199, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  waveLevel: 0
-  timeBetweenWaves: 5
+  enemySettings: []
+  enemies: []
+  enemyPrefabs: []
   spawnPoint: {fileID: 0}
   enemyPrefab: {fileID: 6383414595156212919, guid: e5aff05bf4f687044a24c15ea1f2f7c7,
     type: 3}
   numberOfEnemies: 3
   Speed: 5
-  time: 10
-  player: {fileID: 0}
-  radius: 20
-  time1: 5
-  areEnemies: 0
-  timer: 0
   spawnTimer: 10
-  spawn: 0
---- !u!114 &8343699857576561645
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8343699857576561646}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 70d26c3557527f54b81f2f0b5282e7fe, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  waveLevel: 1
-  timeBetweenWaves: 5
-  spawnPoint: {fileID: 7433305841168296229, guid: e524d049818d7b64e83ff8cf45fc24c5,
-    type: 3}
-  enemyPrefab: {fileID: 421906573132696692, guid: 516dccf50c3818a44a68030d381ae13d,
-    type: 3}
-  numberOfEnemies: 3
-  Speed: 5
-  time: 10
-  player: {fileID: 0}
-  radius: 20
-  time1: 5
-  areEnemies: 0
-  timer: 0
-  spawnTimer: 10
-  spawn: 0
---- !u!114 &8343699857576561618
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8343699857576561646}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 83906850e79d6ed4b9cd92213e730576, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  waveLevel: 1
-  timeBetweenWaves: 5
-  spawnPoint: {fileID: 4991807544700666838, guid: 479f320c12af5fa4d8c1a30c04114959,
-    type: 3}
-  enemyPrefab: {fileID: 4699530912284115364, guid: 761ceaa4ff36c32409ec49384ab31172,
-    type: 3}
-  numberOfEnemies: 3
-  Speed: 5
-  time: 10
-  player: {fileID: 7294040209906256453, guid: c951d5a19754f3643a6aa2b94dea7399, type: 3}
-  radius: 0
-  time1: 5
-  areEnemies: 0
-  timer: 0
-  spawnTimer: 10
-  spawn: 0
 --- !u!114 &4225442332154667408
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -131,22 +67,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bc7f9541139987b43ae04f7965613199, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  waveLevel: 1
-  timeBetweenWaves: 5
+  enemySettings: []
+  enemies: []
+  enemyPrefabs: []
   spawnPoint: {fileID: 100593603310423512, guid: be87371c8b6e6384eace94f9924d21df,
     type: 3}
   enemyPrefab: {fileID: 9214774735827569024, guid: dece8b72068026247ac9054a0353095d,
     type: 3}
   numberOfEnemies: 3
   Speed: 0
-  time: 0
-  player: {fileID: 0}
-  radius: 0
-  time1: 5
-  areEnemies: 1
-  timer: 0
   spawnTimer: 10
-  spawn: 0
 --- !u!114 &992667118798910237
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -178,18 +108,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bc7f9541139987b43ae04f7965613199, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  waveLevel: 1
-  timeBetweenWaves: 5
+  enemySettings: []
+  enemies: []
+  enemyPrefabs: []
   spawnPoint: {fileID: 0}
   enemyPrefab: {fileID: 270109287549725122, guid: edfb832b150b69044b48be12af8d5c31,
     type: 3}
   numberOfEnemies: 3
   Speed: 5
-  time: 10
-  player: {fileID: 0}
-  radius: 20
-  time1: 5
-  areEnemies: 1
-  timer: 0
   spawnTimer: 10
-  spawn: 0

@@ -1,0 +1,378 @@
+fileFormatVersion: 2
+guid: 3b16008c5f79c574c946d9d4e267df8f
+ModelImporter:
+  serializedVersion: 20101
+  internalIDToNameTable:
+  - first:
+      74: 1878475657571535251
+    second: Tracks
+  - first:
+      74: 5504206620999695806
+    second: MovingTilt
+  - first:
+      74: -40762098286069129
+    second: Cube.003|Cube.001|Cube|CubeAction.001|Cube|CubeAction.001
+  - first:
+      74: 4457308221386684631
+    second: Cube.003|Shader NodetreeAction
+  - first:
+      74: -6067641304923398614
+    second: Cube.003|Tracks
+  - first:
+      74: 11644142735903600
+    second: Armature|Cube.001|Cube|CubeAction.001|Cube|CubeAction.001
+  - first:
+      74: 8825636891798640121
+    second: Armature|MovingTilt
+  - first:
+      74: -287440507510724908
+    second: Armature|Shader NodetreeAction
+  - first:
+      74: 5388114709782224723
+    second: Armature|Tracks
+  - first:
+      74: -5422566369916286567
+    second: Cylinder.004|Cube.001|Cube|CubeAction.001|Cube|CubeAction.001
+  - first:
+      74: 4245475990975399291
+    second: Cylinder.004|Shader NodetreeAction
+  - first:
+      74: 2922293017396877177
+    second: Cylinder.004|Tracks
+  - first:
+      74: 5267796552157547527
+    second: Cylinder.005|Cube.001|Cube|CubeAction.001|Cube|CubeAction.001
+  - first:
+      74: -7400457857992016193
+    second: Cylinder.005|Shader NodetreeAction
+  - first:
+      74: -2598819388654951980
+    second: Cylinder.005|Tracks
+  - first:
+      74: -5145346013330102402
+    second: Still
+  - first:
+      74: -6601093399316381666
+    second: Moving
+  - first:
+      74: 8469038361199828435
+    second: Armature|Moving
+  - first:
+      74: -2613998814351176284
+    second: Armature|Shader NodetreeAction.001
+  - first:
+      74: 3842220627032053094
+    second: Armature|Shader NodetreeAction.002
+  - first:
+      74: 8458306435612547597
+    second: Armature|Still
+  - first:
+      74: 1018870415211807008
+    second: Cube.003|Moving
+  - first:
+      74: 8589913521602711406
+    second: Cube.003|Shader NodetreeAction.001
+  - first:
+      74: 9147506584205944510
+    second: Cube.003|Shader NodetreeAction.002
+  - first:
+      74: -6209654394503749720
+    second: Cylinder.000|Moving
+  - first:
+      74: -760649347884491072
+    second: Cylinder.000|Shader NodetreeAction
+  - first:
+      74: 4972790418625070547
+    second: Cylinder.000|Shader NodetreeAction.001
+  - first:
+      74: -7190020687548129252
+    second: Cylinder.000|Shader NodetreeAction.002
+  - first:
+      74: -5429465936719421547
+    second: Cylinder.000|Tracks
+  - first:
+      74: 2709210356988894824
+    second: Cylinder.001|Moving
+  - first:
+      74: -5037741821906862003
+    second: Cylinder.001|Shader NodetreeAction
+  - first:
+      74: -6143600414532565062
+    second: Cylinder.001|Shader NodetreeAction.001
+  - first:
+      74: 6170513076830976367
+    second: Cylinder.001|Shader NodetreeAction.002
+  - first:
+      74: 3851249148238355589
+    second: Cylinder.001|Tracks
+  - first:
+      74: 5691299243934539683
+    second: Cylinder.004|Moving
+  - first:
+      74: 6966335345437430301
+    second: Cylinder.004|Shader NodetreeAction.001
+  - first:
+      74: 354349098856478745
+    second: Cylinder.004|Shader NodetreeAction.002
+  - first:
+      74: -7660229728570123372
+    second: Cylinder.005|Moving
+  - first:
+      74: -8955364005345869933
+    second: Cylinder.005|Shader NodetreeAction.001
+  - first:
+      74: -3401828142393029719
+    second: Cylinder.005|Shader NodetreeAction.002
+  - first:
+      74: 4239436049569501276
+    second: TwoHanded
+  - first:
+      74: 7818558724730044344
+    second: OneHanded
+  - first:
+      74: -3078186033600868896
+    second: Moving.001
+  - first:
+      74: 8101476802609423761
+    second: Cube.003Action
+  externalObjects: {}
+  materials:
+    materialImportMode: 1
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    importConstraints: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations:
+    - serializedVersion: 16
+      name: MovingTilt
+      takeName: MovingTilt
+      internalID: 0
+      firstFrame: 0
+      lastFrame: 40
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 1
+      loopBlend: 1
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: Still
+      takeName: Still
+      internalID: 0
+      firstFrame: 0
+      lastFrame: 20
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 1
+      loopBlend: 1
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: Cube.003Action
+      takeName: Cube.003Action
+      internalID: 0
+      firstFrame: 20
+      lastFrame: 39
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 1
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: TwoHanded
+      takeName: WeaponPoses
+      internalID: 0
+      firstFrame: 0
+      lastFrame: 10
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 1
+      loopBlend: 1
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: OneHanded
+      takeName: WeaponPoses
+      internalID: 0
+      firstFrame: 30
+      lastFrame: 40
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 1
+      loopBlend: 1
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    isReadable: 0
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    useSRGBMaterialColor: 1
+    sortHierarchyByName: 1
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    fileIdsGeneration: 2
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    keepQuads: 0
+    weldVertices: 1
+    bakeAxisConversion: 0
+    preserveHierarchy: 0
+    skinWeightsMode: 0
+    maxBonesPerVertex: 4
+    minBoneWeight: 0.001
+    meshOptimizationFlags: -1
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVMarginMethod: 1
+    secondaryUVMinLightmapResolution: 40
+    secondaryUVMinObjectScale: 1
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+    legacyComputeAllNormalsFromSmoothingGroupsWhenMeshHasBlendShapes: 0
+    blendShapeNormalImportMode: 1
+    normalSmoothingSource: 0
+  referencedClips: []
+  importAnimation: 1
+  humanDescription:
+    serializedVersion: 3
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    globalScale: 1
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  autoGenerateAvatarMappingIfUnspecified: 1
+  animationType: 2
+  humanoidOversampling: 1
+  avatarSetup: 0
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
