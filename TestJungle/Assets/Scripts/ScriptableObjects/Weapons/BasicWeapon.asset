@@ -16,10 +16,11 @@ MonoBehaviour:
   cdString: QuickCast
   aBaseCoolDown: 1
   abilityIcon: {fileID: 21300000, guid: 58de2d97c7ba5b743997c863676dd377, type: 3}
+  pickupPrefab: {fileID: 0}
   triggerable: {fileID: 0}
   holding: 0
   damage: 4
   force: 40
-  pelletPrefab: {fileID: 1318197578036205983, guid: c7167629e20234e4fbf1ee3046ec5615,
+  pelletPrefab: {fileID: 8412879891822534231, guid: a3c90b17790624b4bad9954144348d4d,
     type: 3}
   despawnTimer: 5

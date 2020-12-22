@@ -15,6 +15,7 @@ public class Turret : MonoBehaviour
     private float timer ;
     public float turretAttackSpeed = 1f;
     public GameObject turretGun;
+    public float atkMultiplier = 0.5f;
     public void Update()
     {
 
@@ -79,6 +80,22 @@ public class Turret : MonoBehaviour
 
 
       
+    }
+    public void OnTriggerEnter(Collider collision)
+    {
+        if (collision.gameObject.tag == "AtkSpd")
+        {
+            turretAttackSpeed = atkMultiplier;
+           
+        }
+    }
+
+    public void OnTriggerExit(Collider collision)
+    {
+        if (collision.gameObject.tag == "AtkSpd")
+        {
+            turretAttackSpeed = 1f;
+        }
     }
     void TurretShot()
     {
