@@ -507,6 +507,7 @@ MonoBehaviour:
   attackParticles: {fileID: 7986742393934304454, guid: 462d384f4fa6e494f9c46e98fdb4040b,
     type: 3}
   allowAttack: 1
+  moving: 0
   foundEnemyEvent:
     m_PersistentCalls:
       m_Calls: []
@@ -585,8 +586,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   timerForNewpath: 2
-  campLocation: {fileID: 1581661092493565847, guid: 8b83adabf265ab842a788af917df1883,
-    type: 3}
+  campLocation: {fileID: 3175242146243430373}
 --- !u!114 &-1704298053855842401
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -615,7 +615,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 32ed2b0bec3190141828be4bc01837f6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dataCollected: 0
+  dataCollected: 15
 --- !u!1 &8062296000640769121
 GameObject:
   m_ObjectHideFlags: 0
