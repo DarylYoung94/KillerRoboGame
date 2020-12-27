@@ -83,6 +83,7 @@ public class FactionWaveManager : MonoBehaviour
 
     void SpawnWave()
     {
+        globalSpawn = true;
         for (int i = 0; i < enemyIndex.Count ; i++)
         {
             GameObject enemyInstance = Instantiate(typeOfEnemy[enemyIndex[index]], spawnPoint.transform.position, Quaternion.identity);
