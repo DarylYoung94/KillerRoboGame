@@ -22,35 +22,23 @@ public class Basicmovement : MonoBehaviour
     Vector3 velocity = new Vector3(0,0,0);
     bool jump = false;
 
+    PlayerAnimation playerAnimation;
+
     public GameObject cam;
 
-    [Header ("Animation")]
-    // Constant states
-    const string PLAYER_ONE_HANDED = "OneHanded";
-    const string PLAYER_TWO_HANDED = "TwoHanded";
-    const string PLAYER_SPRINT = "Sprinting";
-    // Animator variables
-    [SerializeField] Animator animator;
-    float treadBaseSpeed = 1.5f;
-    string playerWeaponState = "OneHanded";
-    string currentAnimaton = "";
-
-
 	void Awake ()
-    {
-        // Animator
-        if (animator)
-            ChangeAnimationState(PLAYER_ONE_HANDED, true);
-        
+    {   
         // Rigidbody
         rb = GetComponent<Rigidbody>();
 	    rb.freezeRotation = true;
 	    rb.useGravity = false;
+
+        playerAnimation = GetComponent<PlayerAnimation>();
 	}
 
     void Update()
     {
-        animator.SetFloat("TreadSpeed", treadBaseSpeed);
+        playerAnimation.SetTreadSpeed(1.0f);
 
         if (Input.GetKeyDown(KeyCode.LeftShift))
         {
@@ -58,8 +46,11 @@ public class Basicmovement : MonoBehaviour
             cam.GetComponent<CameraController>().StartSprint();
 
             // Animation
-            ChangeAnimationState(PLAYER_SPRINT, true);
-            animator.SetFloat("TreadSpeed", treadBaseSpeed * speedMultiplier);
+            if (playerAnimation)
+            {
+                playerAnimation.SetSprinting();
+                playerAnimation.SetTreadSpeed(speedMultiplier);
+            }
         }
         
         if (Input.GetKeyUp(KeyCode.LeftShift))
@@ -68,8 +59,10 @@ public class Basicmovement : MonoBehaviour
             cam.GetComponent<CameraController>().StopSprint();
 
             // Animation
-            ChangeAnimationState(playerWeaponState, true);
-            animator.SetFloat("TreadSpeed", treadBaseSpeed);
+            if (playerAnimation)
+            {
+                playerAnimation.SetWalking();
+            }
         }
         
         Vector3 inputVector = new Vector3(Input.GetAxisRaw("Horizontal"), 0, Input.GetAxisRaw("Vertical")) * speed;
@@ -88,7 +81,7 @@ public class Basicmovement : MonoBehaviour
         }
         else
         {
-            animator.SetFloat("TreadSpeed", 0.0f);
+            playerAnimation.SetTreadSpeed(0.0f);
         }
 
         if (canJump && Input.GetKeyDown(KeyCode.Space))
@@ -134,21 +127,6 @@ public class Basicmovement : MonoBehaviour
     void SpawnJumpVFX()
     {
         Destroy(Instantiate(jumpVFX, this.transform.position + jumpVfxOffset, Quaternion.identity), 5.0f);
-    }
-
-    void ChangeAnimationState(string newAnimation, bool crossFade)
-    {
-        if (currentAnimaton == newAnimation) return;
-
-        if (!crossFade)
-        {
-            animator.Play(newAnimation);
-        }
-        else
-        {
-            animator.CrossFade(newAnimation, 0.2f);
-        }
-        currentAnimaton = newAnimation;
     }
 }
 
