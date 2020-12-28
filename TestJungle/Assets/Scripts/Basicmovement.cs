@@ -66,6 +66,12 @@ public class Basicmovement : MonoBehaviour
         }
         
         Vector3 inputVector = new Vector3(Input.GetAxisRaw("Horizontal"), 0, Input.GetAxisRaw("Vertical")) * speed;
+
+        if (inputVector.z < 0.0f)
+        {
+            inputVector /= 2.5f;
+        }
+
         Vector3 posToLook = GetCameraTurn() * inputVector;
 
         velocity = rb.velocity;
@@ -76,7 +82,17 @@ public class Basicmovement : MonoBehaviour
 
         if (inputVector != Vector3.zero)
         {
-            Quaternion rotation = Quaternion.LookRotation(posToLook);
+            Quaternion rotation;
+
+            if (inputVector.z < 0)
+            {
+                rotation = Quaternion.LookRotation(-posToLook);
+            }
+            else
+            {
+                rotation = Quaternion.LookRotation(posToLook);
+            }
+            
             transform.rotation = Quaternion.Lerp(transform.rotation, rotation, rotSpeed);
         }
         else
