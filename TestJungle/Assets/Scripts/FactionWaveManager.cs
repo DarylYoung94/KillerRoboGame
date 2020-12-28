@@ -34,6 +34,7 @@ public class FactionWaveManager : MonoBehaviour
     {
         globalSpawn =true;
         index = 0;
+        SetFactionWave();
         GetWaveInfo(factionWaveIndex);    
         SpawnWave();
         waveNumber++;
@@ -91,14 +92,12 @@ public class FactionWaveManager : MonoBehaviour
             int cost = enemyInstance.GetComponent<DataManager>().unitCost;
             totalData = totalData - cost;
             enemyInstance.GetComponent<DataManager>().dataCollected =cost;
-            
-            if(enemyInstance.GetComponent<RandomMovement>() != null)
+            enemies.Add(enemyInstance);
+
+            if (enemyInstance.GetComponent<RandomMovement>() != null)
             {
                 enemyInstance.GetComponent<RandomMovement>().campLocation = enemies[0].gameObject;
             }
-
-            
-            enemies.Add(enemyInstance);
             index++;
         }
     }
@@ -116,29 +115,27 @@ public class FactionWaveManager : MonoBehaviour
     void SetFactionWave()
     {
         //choose faction wave index based on total data
-        
-            if (totalData>=100 && totalData <175)
-            {
-                factionWaveIndex = 0;
-            }
-            else if( totalData >=175 && totalData <=200)
-            {
-                Debug.Log("175-200");
-                factionWaveIndex =1;
-                
-            }
-            else if (totalData >200 && totalData <=300)
-            {
-                Debug.Log("200-300");
-                factionWaveIndex = 2;
-            }
+        if (totalData>=100 && totalData <175)
+        {
+            factionWaveIndex = 0;
+        }
+        else if( totalData >=175 && totalData <=200)
+        {
+            Debug.Log("175-200");
+            factionWaveIndex =1;
+            
+        }
+        else if (totalData >200 && totalData <=300)
+        {
+            Debug.Log("200-300");
+            factionWaveIndex = 2;
+        }
+    
         GetWaveInfo(factionWaveIndex);
     }
 
     void GetFactionData(GameObject unit)
     {
-        //sum of data on all units still alive at the end of the wave
-        Debug.Log("Total Data Calculated");
         totalData = totalData + unit.GetComponent<DataManager>().GetData();
     }
 
@@ -155,24 +152,18 @@ public class FactionWaveManager : MonoBehaviour
             
             }
             
-            
-            
             agent = enemy.GetComponent<NavMeshAgent>();
             agent.SetDestination(spawnPoint.transform.position);
-
             
             float distanceFromSpawn = Vector3.Distance(enemy.transform.position , spawnPoint.transform.position);
-            float maxSpawnDist = 0.0f;
-                
-            if( distanceFromSpawn <= rangeFromSpawn)
+            if (distanceFromSpawn <= rangeFromSpawn)
             { 
-               
                 GetFactionData(enemy);                    
                 Destroy(enemy);
             }   
         }
 
-        if(enemies.Count ==0)
+        if (enemies.Count ==0)
         {
             globalSpawn = false;
             globalTimer = 0;
