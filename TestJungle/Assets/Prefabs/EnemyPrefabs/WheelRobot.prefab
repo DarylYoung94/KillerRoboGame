@@ -324,6 +324,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dataCollected: 0
+  unitCost: 50
 --- !u!65 &8672303391070730048
 BoxCollider:
   m_ObjectHideFlags: 0

@@ -3086,7 +3086,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 32ed2b0bec3190141828be4bc01837f6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dataCollected: 20
+  dataCollected: 0
+  unitCost: 100
 --- !u!54 &5383340095926581024
 Rigidbody:
   m_ObjectHideFlags: 0

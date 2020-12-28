@@ -13,7 +13,7 @@ public class FactionWaveManager : MonoBehaviour
     public NavMeshAgent agent;
     
     
-    public int factionWaveIndex;
+    [SerializeField] private int factionWaveIndex;
     private float speed = 5f;
 
     public int totalData;
@@ -75,7 +75,6 @@ public class FactionWaveManager : MonoBehaviour
     public void GetWaveInfo(int factionWaveIndex)
     {
         waveNumber = factionWave[factionWaveIndex].waveNumber;
-        totalData = factionWave[factionWaveIndex].totalData;
         typeOfEnemy = factionWave[factionWaveIndex].typeOfEnemy;
         enemyIndex = factionWave[factionWaveIndex].enemyIndex;
         spawnTimer = factionWave[factionWaveIndex].spawnTimer;
@@ -83,11 +82,22 @@ public class FactionWaveManager : MonoBehaviour
 
     void SpawnWave()
     {
+        // call functions depending on what wave is spawned
         globalSpawn = true;
         for (int i = 0; i < enemyIndex.Count ; i++)
         {
             GameObject enemyInstance = Instantiate(typeOfEnemy[enemyIndex[index]], spawnPoint.transform.position, Quaternion.identity);
             enemyInstance.GetComponent<Rigidbody>().AddForce(-spawnPoint.forward * speed, ForceMode.Impulse);
+            int cost = enemyInstance.GetComponent<DataManager>().unitCost;
+            totalData = totalData - cost;
+            enemyInstance.GetComponent<DataManager>().dataCollected =cost;
+            
+            if(enemyInstance.GetComponent<RandomMovement>() != null)
+            {
+                enemyInstance.GetComponent<RandomMovement>().campLocation = enemies[0].gameObject;
+            }
+
+            
             enemies.Add(enemyInstance);
             index++;
         }
@@ -107,7 +117,22 @@ public class FactionWaveManager : MonoBehaviour
     {
         //choose faction wave index based on total data
         
-        
+            if (totalData>=100 && totalData <175)
+            {
+                factionWaveIndex = 0;
+            }
+            else if( totalData >=175 && totalData <=200)
+            {
+                Debug.Log("175-200");
+                factionWaveIndex =1;
+                
+            }
+            else if (totalData >200 && totalData <=300)
+            {
+                Debug.Log("200-300");
+                factionWaveIndex = 2;
+            }
+        GetWaveInfo(factionWaveIndex);
     }
 
     void GetFactionData(GameObject unit)
@@ -124,10 +149,12 @@ public class FactionWaveManager : MonoBehaviour
             if(enemy.GetComponent<RandomMovement>() != null)
             {
                 if(enemy.GetComponent<RandomMovement>().enabled)
-            {
-              enemy.GetComponent<RandomMovement>().enabled  = false;
+                {
+                    enemy.GetComponent<RandomMovement>().enabled  = false;
+                }
+            
             }
-            }
+            
             
             
             agent = enemy.GetComponent<NavMeshAgent>();
@@ -153,3 +180,4 @@ public class FactionWaveManager : MonoBehaviour
     }
 
 }
+    

@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class DataManager : MonoBehaviour
 {
-    [SerializeField] int dataCollected = 0;
-    
+    public int dataCollected = 0;
+    public int unitCost;
 
     public void CollectData(int amount)
     {
