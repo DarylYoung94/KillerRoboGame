@@ -8,6 +8,7 @@ using UnityEngine;
 public abstract class AbstractWeapon : AbstractAbility {
 
     public float damage = 1.0f;
+    public WeaponType weaponType = WeaponType.ONE_HANDED;
 
     public static AbstractAbilityCooldown GetWeaponCooldownHolder (GameObject player)
     {
@@ -25,5 +26,28 @@ public abstract class AbstractWeapon : AbstractAbility {
         }
 
         return cooldown;
+    }
+
+    public enum WeaponType {
+        ONE_HANDED,
+        TWO_HANDED
+    };
+
+    public string GetAnimationString()
+    {
+        string ret = "OneHanded";
+        switch (weaponType)
+        {
+            case WeaponType.ONE_HANDED :
+                ret = "OneHanded";
+                break;
+            case WeaponType.TWO_HANDED :
+                ret = "TwoHanded";
+                break;
+            default:
+                break;
+        }
+
+        return ret;
     }
 }

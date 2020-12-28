@@ -2352,6 +2352,7 @@ GameObject:
   - component: {fileID: 5698491229020129302}
   - component: {fileID: -7394398615534331264}
   - component: {fileID: 8642275731840792347}
+  - component: {fileID: 4721183728508869050}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -2426,7 +2427,6 @@ MonoBehaviour:
     type: 3}
   jumpVfxOffset: {x: 0, y: -0.5, z: 0}
   cam: {fileID: 0}
-  animator: {fileID: 674118989959831729}
 --- !u!114 &5449777714880240354
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2585,6 +2585,19 @@ MonoBehaviour:
   collectTime: 0
   collectCooldown: 0.5
   dataCollectPoint: {fileID: 2096670918}
+--- !u!114 &4721183728508869050
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7294040209906256453}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c1cab03465179d6429f4df1750ba86ae, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  animator: {fileID: 674118989959831729}
 --- !u!1 &7294040209992589799
 GameObject:
   m_ObjectHideFlags: 0

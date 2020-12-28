@@ -9,17 +9,22 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1301a0baae14e354c842aeb918bb642a, type: 3}
-  m_Name: TwoHitWeapon
+  m_Script: {fileID: 11500000, guid: 6344d294b3f0f934f8f73ad14f03132c, type: 3}
+  m_Name: ShotgunWeapon
   m_EditorClassIdentifier: 
   aName: New Ability
-  cdString: OnHold
+  cdString: QuickCast
   aBaseCoolDown: 1
-  abilityIcon: {fileID: 21300000, guid: 2f58278c800b4d74f9b9be46a6a4af42, type: 3}
+  abilityIcon: {fileID: 21300000, guid: ec258c212eed82d4e8c7a4a995208299, type: 3}
+  pickupPrefab: {fileID: 0}
   triggerable: {fileID: 0}
   holding: 0
   damage: 10
+  weaponType: 1
   force: 50
-  pelletPrefab: {fileID: 7655611414864951605, guid: 9dca391076909e641835034c7f53f7d0,
+  pelletPrefab: {fileID: 1318197578036205983, guid: c7167629e20234e4fbf1ee3046ec5615,
     type: 3}
   despawnTimer: 5
+  pelletCount: 20
+  verticalSpread: 15
+  horizontalSpread: 15
