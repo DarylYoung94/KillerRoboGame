@@ -1,10 +1,11 @@
 ﻿using System.Collections;
 using UnityEngine;
-using UnityEngine.UI;
+using UnityEngine.AI;
 
 public class QuadrupedController_Full : MonoBehaviour
 {
     [SerializeField] Transform target;
+    [SerializeField] Transform tempTransform;
 
     [SerializeField] bool rootMotionEnabled;
     [SerializeField] bool idleBobbingEnabled;
@@ -16,6 +17,7 @@ public class QuadrupedController_Full : MonoBehaviour
 
     void Awake()
     {
+        ConfigureNavMesh();
         StartCoroutine(LegUpdateCoroutine());
         TailInitialize();
         RootMotionInitialize();
@@ -23,6 +25,7 @@ public class QuadrupedController_Full : MonoBehaviour
 
     void Update()
     {
+        tempTransform.position = GetComponent<NavMeshAgent>().nextPosition;
         RootMotionUpdate();
     }
 
@@ -39,12 +42,21 @@ public class QuadrupedController_Full : MonoBehaviour
         TailUpdate();
     }
 
+    public void StopRootMotion() { rootMotionEnabled = false; }
+    public void StartRootMotion() { rootMotionEnabled = true; }
+
     public void SetTarget()
     {
         Transform tempTarget = transform.GetComponent<EnemyAI>().target;
 
         if (tempTarget)
             target = tempTarget;
+    }
+
+    public void ConfigureNavMesh()
+    {
+        target = tempTransform;
+        GetComponent<NavMeshAgent>().updatePosition = false;
     }
 
     #region Root Motion
@@ -172,18 +184,19 @@ public class QuadrupedController_Full : MonoBehaviour
         // the angles will balance themselves out automatically, even if we don't apply
         // it to all three bones!
 
-        if (headTrackingBoneCount > 1)
+        if (headTrackingBoneCount > 1 && spine1Bone)
             spine1Bone.localEulerAngles = currentLocalHeadEulerAngles;
-        else
+        else if (spine1Bone)
             spine1Bone.localRotation = Quaternion.identity;
 
-        if (headTrackingBoneCount > 2)
+        if (headTrackingBoneCount > 2 && spine2Bone)
             spine2Bone.localEulerAngles = currentLocalHeadEulerAngles;
-        else
+        else if (spine2Bone)
             spine2Bone.localRotation = Quaternion.identity;
 
         // Apply a forward tilt to hips to prevent front legs coming off the floor
-        hipBone.localEulerAngles = new Vector3(Mathf.DeltaAngle(headBone.localEulerAngles.x * headTrackingBoneCount, 0) * hipVerticalTiltInfluence, 0, 0);
+        if (hipBone)
+            hipBone.localEulerAngles = new Vector3(Mathf.DeltaAngle(headBone.localEulerAngles.x * headTrackingBoneCount, 0) * hipVerticalTiltInfluence, 0, 0);
     }
 
     #endregion

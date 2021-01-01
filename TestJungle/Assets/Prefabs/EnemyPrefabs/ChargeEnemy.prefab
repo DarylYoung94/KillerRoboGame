@@ -26,7 +26,7 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1850530535368198202}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: -0.0014315312, y: -0.69743097, z: -0.001393142, w: 0.7166493}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 0.02, y: -0.004, z: 1}
   m_Children:
@@ -407,9 +407,12 @@ MonoBehaviour:
   attackDamage: 10
   lookRadius: 10
   attackRange: 5
+  target: {fileID: 0}
+  agentIsControlledByNavMesh: 1
   attackParticles: {fileID: 7986742393934304454, guid: 462d384f4fa6e494f9c46e98fdb4040b,
     type: 3}
   allowAttack: 0
+  moving: 0
   foundEnemyEvent:
     m_PersistentCalls:
       m_Calls: []
@@ -543,3 +546,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dataCollected: 0
+  unitCost: 0
