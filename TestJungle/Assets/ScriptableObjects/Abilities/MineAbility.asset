@@ -29,7 +29,7 @@ MonoBehaviour:
   power: 10
   upForce: 2
   Damage: 10
-  explosionParticles: {fileID: 3056532069015774829, guid: 1dcd2ad71bbfbb24b825507302ade540,
+  explosionParticles: {fileID: 2496617399248297364, guid: b14e618bc0313784caf2ad6d11048ec7,
     type: 3}
   timerParticles: {fileID: 0}
   maxRange: 20

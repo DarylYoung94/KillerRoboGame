@@ -4889,7 +4889,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 88156541a6c69a24c83d7ba3c02694f8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  explosionVFX: {fileID: 4283531035395342677, guid: 75d395dbae3e69c4ebc6534361768c7e,
+  explosionVFX: {fileID: 2496617399248297364, guid: b14e618bc0313784caf2ad6d11048ec7,
     type: 3}
   radius: 10
   power: 10
