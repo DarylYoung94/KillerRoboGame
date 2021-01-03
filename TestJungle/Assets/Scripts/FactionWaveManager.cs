@@ -9,6 +9,8 @@ public class FactionWaveManager : MonoBehaviour
     public List<GameObject> enemies = new List<GameObject>();
     public List<int> enemyIndex ;
     public List <GameObject> typeOfEnemy;
+    public List <GameObject> groups;
+
     public Transform spawnPoint;
     public NavMeshAgent agent;
     public FactionFunctions fun;
@@ -81,6 +83,7 @@ public class FactionWaveManager : MonoBehaviour
             Debug.Log("callfunction");
             CallWaveFunction();
         }
+        RemoveGroups();
     }
    
     public void GetWaveInfo(int factionWaveIndex)
@@ -95,14 +98,20 @@ public class FactionWaveManager : MonoBehaviour
     {
         // call functions depending on what wave is spawned
         globalSpawn = true;
+        GameObject group = new GameObject ("Group");
+        group.AddComponent<FactionFunctions>();
+        group.transform.parent = this.transform;
+        groups.Add(group);
+
         for (int i = 0; i < enemyIndex.Count ; i++)
         {
             GameObject enemyInstance = Instantiate(typeOfEnemy[enemyIndex[index]], spawnPoint.transform.position, Quaternion.identity);
+            enemyInstance.transform.parent = group.transform;
             enemyInstance.GetComponent<Rigidbody>().AddForce(-spawnPoint.forward * speed, ForceMode.Impulse);
             int cost = enemyInstance.GetComponent<DataManager>().unitCost;
             totalData = totalData - cost;
             enemyInstance.GetComponent<DataManager>().dataCollected =cost;
-            enemyInstance.tag = "Faction"+factionNum;
+            //enemyInstance.tag = "Faction"+factionNum;
             enemyInstance.GetComponent<FactionType>().faction=faction;
             enemies.Add(enemyInstance);
 
@@ -117,6 +126,7 @@ public class FactionWaveManager : MonoBehaviour
 
             index++;
         }
+        group.GetComponent<FactionFunctions>().Initialise(enemies, faction);
     }
     void CheckForDeadEnemies()
     {
@@ -177,6 +187,7 @@ public class FactionWaveManager : MonoBehaviour
             { 
                 GetFactionData(enemy);                    
                 Destroy(enemy);
+                
             }   
         }
 
@@ -191,6 +202,17 @@ public class FactionWaveManager : MonoBehaviour
     {
         fun.SearchForFactions();
 
+    }
+
+    void RemoveGroups()
+    {
+        foreach(GameObject group in groups )
+        {
+            if(group.transform.childCount == 0)
+            {
+                Destroy(group);
+            }
+        }
     }
 
 }
