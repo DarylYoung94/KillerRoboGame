@@ -916,7 +916,7 @@ MonoBehaviour:
   lineRenderer: {fileID: 0}
   laserHitPrefab: {fileID: 6352815560199342503, guid: 50516fc3058deb34ab9f97ecbdecf70f,
     type: 3}
-  laserProjPrefab: {fileID: 247140670879696656, guid: 3e4942dd3acefb643b0233e905ffce5a,
+  laserProjPrefab: {fileID: 2250487207107020415, guid: f2feeb8b34e35844dbd07665817e3536,
     type: 3}
   projectileSpeed: 50
 --- !u!1 &3777540764737286162
