@@ -14,6 +14,7 @@ public class EnemyAI : MonoBehaviour
     public float attackRange = 5f;
     public Transform target;
     NavMeshAgent agent;
+    public bool agentIsControlledByNavMesh = true;
     public GameObject attackParticles;
     public bool allowAttack = true;
     public bool moving =false;
@@ -47,8 +48,8 @@ public class EnemyAI : MonoBehaviour
         if (distance <= lookRadius)
         {
             foundEnemyEvent.Invoke(); 
-           
         }
+
         if (nextAttackTime > 0)
         {
             nextAttackTime -= Time.deltaTime;
@@ -61,18 +62,14 @@ public class EnemyAI : MonoBehaviour
 
         if (distance <= attackRange && nextAttackTime == 0 && allowAttack == true) 
         {
-            
             Attack();
             nextAttackTime = attackTime;
-            
 
             if (attackParticles)
             {
                 Instantiate(attackParticles, transform.position, Quaternion.identity);
             }
-
         }
-        
     }
 
     void OnDrawGizmosSelected()
@@ -108,6 +105,5 @@ public class EnemyAI : MonoBehaviour
     public void FoundEnemy()
     {
         agent.SetDestination(target.position);
-        
     }
 }
