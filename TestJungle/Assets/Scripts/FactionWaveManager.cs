@@ -11,7 +11,10 @@ public class FactionWaveManager : MonoBehaviour
     public List <GameObject> typeOfEnemy;
     public Transform spawnPoint;
     public NavMeshAgent agent;
+    public FactionFunctions fun;
     
+    
+    public int factionNum;
     
     [SerializeField] private int factionWaveIndex;
     private float speed = 5f;
@@ -28,10 +31,11 @@ public class FactionWaveManager : MonoBehaviour
     public float globalTimer =0.0f;
     public bool globalSpawn = true;
     public float rangeFromSpawn = 5f;
-    
+    public FactionType.Faction faction;
     
     private void Start()
     {
+        
         globalSpawn =true;
         index = 0;
         SetFactionWave();
@@ -43,7 +47,7 @@ public class FactionWaveManager : MonoBehaviour
     void Update()
     {
         CheckForDeadEnemies();
- 
+        
         if (enemies.Count == 0)
         {
             timer += Time.deltaTime;
@@ -60,6 +64,7 @@ public class FactionWaveManager : MonoBehaviour
                 SpawnWave();
                 spawn = false;
                 waveNumber++;
+                CallWaveFunction();
             }
         }
 
@@ -71,8 +76,13 @@ public class FactionWaveManager : MonoBehaviour
                 RecallWave();  
             } 
         }
+        if(factionWaveIndex ==2)
+        {
+            Debug.Log("callfunction");
+            CallWaveFunction();
+        }
     }
-
+   
     public void GetWaveInfo(int factionWaveIndex)
     {
         waveNumber = factionWave[factionWaveIndex].waveNumber;
@@ -92,12 +102,19 @@ public class FactionWaveManager : MonoBehaviour
             int cost = enemyInstance.GetComponent<DataManager>().unitCost;
             totalData = totalData - cost;
             enemyInstance.GetComponent<DataManager>().dataCollected =cost;
+            enemyInstance.tag = "Faction"+factionNum;
+            enemyInstance.GetComponent<FactionType>().faction=faction;
             enemies.Add(enemyInstance);
 
             if (enemyInstance.GetComponent<RandomMovement>() != null)
             {
                 enemyInstance.GetComponent<RandomMovement>().campLocation = enemies[0].gameObject;
             }
+            if(factionNum==1 && factionWaveIndex ==2)
+            {
+                
+            }
+
             index++;
         }
     }
@@ -168,6 +185,12 @@ public class FactionWaveManager : MonoBehaviour
             globalSpawn = false;
             globalTimer = 0;
         }
+    }
+
+    void CallWaveFunction()
+    {
+        fun.SearchForFactions();
+
     }
 
 }

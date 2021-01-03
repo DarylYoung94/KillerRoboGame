@@ -95,6 +95,7 @@ public class EnemyAI : MonoBehaviour
 
             foreach (Collider hit in collider)
             {
+                
                 PlayerManager playerHit = hit.transform.GetComponent<PlayerManager>();
                 if (playerHit!= null)
                 {

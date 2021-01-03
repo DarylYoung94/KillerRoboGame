@@ -22,6 +22,8 @@ TagManager:
   - AbilityItem
   - Money
   - InteractArea
+  - Faction1
+  - Faction2
   layers:
   - Default
   - TransparentFX

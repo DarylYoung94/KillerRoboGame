@@ -20,6 +20,9 @@ public class EnemyStats : MonoBehaviour
     [Header ("Drops")]
     [SerializeField] float dropRate = 0.3f;
 
+     
+
+
     // Getters and Setters
     public float GetCurrentHealth (){ return currentHealth; }
     public float GetHealthPercentage (){ return currentHealth/maxHealth; }
@@ -33,6 +36,7 @@ public class EnemyStats : MonoBehaviour
     void Start()
     {
         UpdateInternalSettings();
+       
     }
 
     public void UpdateEnemySettings(EnemySettings enemySettings)
