@@ -15,7 +15,6 @@ public class FactionWaveManager : MonoBehaviour
     public NavMeshAgent agent;
     public FactionFunctions fun;
     
-    
     public int factionNum;
     
     [SerializeField] private int factionWaveIndex;
@@ -37,7 +36,6 @@ public class FactionWaveManager : MonoBehaviour
     
     private void Start()
     {
-        
         globalSpawn =true;
         index = 0;
         SetFactionWave();
@@ -70,7 +68,7 @@ public class FactionWaveManager : MonoBehaviour
             }
         }
 
-       if(globalSpawn)
+        if (globalSpawn)
         {
             globalTimer += Time.deltaTime;
             if(globalTimer >=globalSpawnTimer)
@@ -78,7 +76,8 @@ public class FactionWaveManager : MonoBehaviour
                 RecallWave();  
             } 
         }
-        if(factionWaveIndex ==2)
+
+        if (factionWaveIndex == 2)
         {
             Debug.Log("callfunction");
             CallWaveFunction();
@@ -128,6 +127,7 @@ public class FactionWaveManager : MonoBehaviour
         }
         group.GetComponent<FactionFunctions>().Initialise(enemies, faction);
     }
+
     void CheckForDeadEnemies()
     {
         for (int i=0; i<enemies.Count; i++)
@@ -201,7 +201,6 @@ public class FactionWaveManager : MonoBehaviour
     void CallWaveFunction()
     {
         fun.SearchForFactions();
-
     }
 
     void RemoveGroups()

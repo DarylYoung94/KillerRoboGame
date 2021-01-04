@@ -18,6 +18,7 @@ public class FactionFunctions : MonoBehaviour
         enemies = _enemies;
         faction = _faction;
     }
+
     public void SearchForFactions()
     {
         factionWaveManager = factionSpawn.GetComponent<FactionWaveManager>();
