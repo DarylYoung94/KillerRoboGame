@@ -18,4 +18,4 @@ MonoBehaviour:
   - {fileID: 710487540040468503, guid: 8e340ffc770610b4b97c68e7d2474e30, type: 3}
   enemyIndex: 0000000000000000
   spawnTimer: 10
-  behaviours: 0000000001000000
+  behaviours: 01000000

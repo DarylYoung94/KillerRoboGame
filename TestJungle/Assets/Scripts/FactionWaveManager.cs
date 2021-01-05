@@ -28,16 +28,28 @@ public class FactionWaveManager : MonoBehaviour
     private float timer =0;
     public int waveNumber;
     private bool spawn = false;
-    
+
 
     public float globalSpawnTimer = 20f;
     public float globalTimer =0.0f;
     private bool globalSpawn = true;
     public float rangeFromSpawn = 5f;
-    
+
+    [Header("Patrol/Scout")]
+    public List<Transform> waypoints;
+    public Transform waypointGO;
+    public List<Transform> points = new List<Transform>();
+    private Transform newPoint;
+    public float distanceFromWaypoint;
+    public bool patrolling = false;
+    public bool scouting = false;
+    public int targetPointIndex =0 ;
+
 
     public enum WaveBehaviour
     {
+        None,
+        DataCollector,
         Scout,
         Patrol,
         Attack,
@@ -46,6 +58,7 @@ public class FactionWaveManager : MonoBehaviour
     
     private void Start()
     {
+        GetWaypoints(waypointGO);
         globalSpawn =true;
         index = 0;
         SetFactionWave();
@@ -84,11 +97,8 @@ public class FactionWaveManager : MonoBehaviour
             if(globalTimer >=globalSpawnTimer)
             {   
                 RecallWave();  
+                RemoveGroups(); 
             } 
-
-            RemoveGroups(); 
-
-
             CallWaveFunction();
         }
     }
@@ -106,6 +116,7 @@ public class FactionWaveManager : MonoBehaviour
     void SpawnWave()
     {
         // call functions depending on what wave is spawned
+        
         globalSpawn = true;
         GameObject group = new GameObject ("Group");
         group.AddComponent<FactionFunctions>();
@@ -178,6 +189,8 @@ public class FactionWaveManager : MonoBehaviour
 
     void RecallWave()
     {
+        waveBehaviour = WaveBehaviour.None;
+
         foreach(GameObject enemy in enemies)
         {
             if(enemy.GetComponent<RandomMovement>() != null)
@@ -186,7 +199,6 @@ public class FactionWaveManager : MonoBehaviour
                 {
                     enemy.GetComponent<RandomMovement>().enabled  = false;
                 }
-            
             }
             
             agent = enemy.GetComponent<NavMeshAgent>();
@@ -197,7 +209,6 @@ public class FactionWaveManager : MonoBehaviour
             { 
                 GetFactionData(enemy);                    
                 Destroy(enemy);
-                
             }   
         }
 
@@ -205,42 +216,57 @@ public class FactionWaveManager : MonoBehaviour
         {
             globalSpawn = false;
             globalTimer = 0;
+            points.Clear();
         }
     }
 
     void CallWaveFunction()
     {
-
-        
         switch (waveBehaviour)
         {
+            case WaveBehaviour.None:
+                patrolling = false;
+                scouting = false;
+                break;
+
             case WaveBehaviour.Scout:
                 Debug.Log("Scouting");
+                scouting = true;
+                if(scouting)
+                {
+                    Scout();
+                }
                 break;
+
             case WaveBehaviour.Patrol:
-                Debug.Log("Patrolling");  
+                Debug.Log("Patrolling");
+                patrolling = true;  
+                if(patrolling)
+                {
+                    Patrol();   
+                }
                 break;
+
             case WaveBehaviour.Attack:
                 Debug.Log("Attacking");
                 break;
+
             case WaveBehaviour.Defend:
                 Debug.Log("Defending");
                 break;
-        }
 
+        }
     }
 
     void RemoveGroups()
     {
-    
         foreach(GameObject group in groups )
         {
             if(group.transform.childCount == 0)
             {
                 Destroy(group);
             }
-        }
-        
+        }  
     }
 
     void ChooseBehaviour()
@@ -261,16 +287,74 @@ public class FactionWaveManager : MonoBehaviour
             {
                 waveBehaviour = availableBehaviours[0];
             }
-
             else 
             {
                 waveBehaviour = availableBehaviours[1];
             }
-            
         }
-
-
     }
 
+    void GetWaypoints(Transform waypointGO)
+    {
+        foreach(Transform child in waypointGO)
+        {
+            waypoints.Add(child);
+        }
+    }
+
+    void Patrol()
+    {        
+        //choose two waypoints and path between them
+
+        if(points.Count <2)
+        {
+            int random = Random.Range(0, waypoints.Count);
+            newPoint = waypoints[random];
+            points.Add(newPoint);
+            targetPointIndex = 0;
+        }
+
+        foreach(GameObject enemy in enemies)
+        {
+            agent = enemy.GetComponent<NavMeshAgent>();
+            agent.SetDestination(points[targetPointIndex].position);
+                
+            float distanceFromWaypoint = Vector3.Distance(enemy.transform.position , points[targetPointIndex].transform.position);
+
+            if(distanceFromWaypoint <= rangeFromSpawn && targetPointIndex == 0)
+            {
+                targetPointIndex = 1;
+                distanceFromWaypoint = Vector3.Distance(enemy.transform.position , points[targetPointIndex].transform.position);
+            }
+            
+            if (distanceFromWaypoint <= rangeFromSpawn && targetPointIndex == 1)
+            {
+                targetPointIndex = 0;
+                distanceFromWaypoint = Vector3.Distance(enemy.transform.position , points[targetPointIndex].transform.position);
+            }
+        }
+    }
+
+    void Scout()
+    {
+        //choose random point in waypoints and path enemy to it 
+        if(points.Count< enemies.Count)
+        {
+            int random = Random.Range(0, waypoints.Count);
+            newPoint = waypoints[random];
+            points.Add(newPoint);
+        }
+        for(int i = 0; i < enemies.Count; i++)
+        {
+            bool destinationReached = false;
+            agent = enemies[i].GetComponent<NavMeshAgent>();
+               
+            float distanceFromWaypoint = Vector3.Distance(enemies[i].transform.position , points[i].transform.position);
+            if(distanceFromWaypoint > 3f)
+            {
+              agent.SetDestination(points[i].position); 
+            }
+        } 
+    }
 }
     
