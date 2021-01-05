@@ -5,35 +5,42 @@ using UnityEngine.AI;
 
 public class FactionWaveManager : MonoBehaviour
 {
+
+    public FactionType.Faction faction;
     public List<FactionWaveSettings> factionWave;
+    public WaveBehaviour waveBehaviour;
+    public int totalData;
+    [SerializeField] private int factionWaveIndex;
     public List<GameObject> enemies = new List<GameObject>();
-    public List<int> enemyIndex ;
+    private List<int> enemyIndex ;
     public List <GameObject> typeOfEnemy;
     public List <GameObject> groups;
-
+    public List<WaveBehaviour> availableBehaviours;
     public Transform spawnPoint;
-    public NavMeshAgent agent;
-    public FactionFunctions fun;
-    
-    
-    public int factionNum;
-    
-    [SerializeField] private int factionWaveIndex;
+    private NavMeshAgent agent;
+    private FactionFunctions fun;
+      
     private float speed = 5f;
-
-    public int totalData;
     private int index;
-    
     public float spawnTimer = 10f;
     private float timer =0;
     public int waveNumber;
     private bool spawn = false;
+    
 
     public float globalSpawnTimer = 20f;
     public float globalTimer =0.0f;
-    public bool globalSpawn = true;
+    private bool globalSpawn = true;
     public float rangeFromSpawn = 5f;
-    public FactionType.Faction faction;
+    
+
+    public enum WaveBehaviour
+    {
+        Scout,
+        Patrol,
+        Attack,
+        Defend,
+    }
     
     private void Start()
     {
@@ -77,13 +84,9 @@ public class FactionWaveManager : MonoBehaviour
             {   
                 RecallWave();  
             } 
-        }
-        if(factionWaveIndex ==2)
-        {
-            Debug.Log("callfunction");
+            RemoveGroups(); 
             CallWaveFunction();
         }
-        RemoveGroups();
     }
    
     public void GetWaveInfo(int factionWaveIndex)
@@ -92,6 +95,8 @@ public class FactionWaveManager : MonoBehaviour
         typeOfEnemy = factionWave[factionWaveIndex].typeOfEnemy;
         enemyIndex = factionWave[factionWaveIndex].enemyIndex;
         spawnTimer = factionWave[factionWaveIndex].spawnTimer;
+        availableBehaviours = factionWave[factionWaveIndex].behaviours;
+
     }
 
     void SpawnWave()
@@ -111,7 +116,7 @@ public class FactionWaveManager : MonoBehaviour
             int cost = enemyInstance.GetComponent<DataManager>().unitCost;
             totalData = totalData - cost;
             enemyInstance.GetComponent<DataManager>().dataCollected =cost;
-            //enemyInstance.tag = "Faction"+factionNum;
+            
             enemyInstance.GetComponent<FactionType>().faction=faction;
             enemies.Add(enemyInstance);
 
@@ -119,13 +124,9 @@ public class FactionWaveManager : MonoBehaviour
             {
                 enemyInstance.GetComponent<RandomMovement>().campLocation = enemies[0].gameObject;
             }
-            if(factionNum==1 && factionWaveIndex ==2)
-            {
-                
-            }
-
             index++;
         }
+        ChooseBehaviour();
         group.GetComponent<FactionFunctions>().Initialise(enemies, faction);
     }
     void CheckForDeadEnemies()
@@ -156,6 +157,10 @@ public class FactionWaveManager : MonoBehaviour
         {
             Debug.Log("200-300");
             factionWaveIndex = 2;
+        }
+        else if(totalData <100)
+        {
+            //cannot spawn another wave unless player funds it
         }
     
         GetWaveInfo(factionWaveIndex);
@@ -200,12 +205,27 @@ public class FactionWaveManager : MonoBehaviour
 
     void CallWaveFunction()
     {
-        fun.SearchForFactions();
-
+        
+        switch (waveBehaviour)
+        {
+            case WaveBehaviour.Scout:
+                Debug.Log("Scouting");
+                break;
+            case WaveBehaviour.Patrol:
+                Debug.Log("Patrolling");  
+                break;
+            case WaveBehaviour.Attack:
+                Debug.Log("Attacking");
+                break;
+            case WaveBehaviour.Defend:
+                Debug.Log("Defending");
+                break;
+        }
     }
 
     void RemoveGroups()
     {
+    
         foreach(GameObject group in groups )
         {
             if(group.transform.childCount == 0)
@@ -213,6 +233,36 @@ public class FactionWaveManager : MonoBehaviour
                 Destroy(group);
             }
         }
+        
+    }
+
+    void ChooseBehaviour()
+    {
+        if(availableBehaviours.Count == 1 )
+        {
+            Debug.Log("1 available behaviour");
+            waveBehaviour = availableBehaviours[0];
+        }
+
+        else if(availableBehaviours.Count == 2 )
+        {
+            Debug.Log("2 available behaviours");
+            //choose between available behaviours
+            float randomNum;
+            randomNum = Random.Range(0f,1f) ;
+            if(randomNum >= 0.3)
+            {
+                waveBehaviour = availableBehaviours[0];
+            }
+
+            else 
+            {
+                waveBehaviour = availableBehaviours[1];
+            }
+            
+        }
+
+
     }
 
 }

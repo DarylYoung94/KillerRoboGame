@@ -31,10 +31,10 @@ public class FactionFunctions : MonoBehaviour
             
            foreach(Collider hit in colliders)  
            {
-               Debug.Log("for each colliders acquired");
+              
                if(hit != null)
                {
-                   Debug.Log("hit not null");
+                   
                    FactionType tempFactionType = hit.transform.GetComponent<FactionType>();
                    if(tempFactionType)
                    {

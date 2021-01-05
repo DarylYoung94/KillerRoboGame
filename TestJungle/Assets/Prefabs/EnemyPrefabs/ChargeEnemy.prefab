@@ -26,7 +26,7 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1850530535368198202}
-  m_LocalRotation: {x: -0.0031436505, y: -0.7113362, z: -0.0031816633, w: 0.70283765}
+  m_LocalRotation: {x: 0.0007552222, y: -0.7145751, z: 0.0007714342, w: 0.69955796}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 0.02, y: -0.004, z: 1}
   m_Children:
@@ -408,6 +408,7 @@ MonoBehaviour:
   lookRadius: 10
   attackRange: 5
   target: {fileID: 0}
+  agentIsControlledByNavMesh: 1
   attackParticles: {fileID: 7986742393934304454, guid: 462d384f4fa6e494f9c46e98fdb4040b,
     type: 3}
   allowAttack: 0

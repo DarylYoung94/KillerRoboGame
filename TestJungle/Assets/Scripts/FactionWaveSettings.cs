@@ -10,5 +10,8 @@ public class FactionWaveSettings : ScriptableObject
  public List <GameObject> typeOfEnemy;
  public List<int> enemyIndex;
  public float spawnTimer;
+ public List<FactionWaveManager.WaveBehaviour> behaviours;
+ 
+
 
 }
