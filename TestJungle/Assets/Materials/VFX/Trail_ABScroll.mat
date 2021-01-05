@@ -7,14 +7,14 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: ProjectileMeshFront_AB
+  m_Name: Trail_ABScroll
   m_Shader: {fileID: -6465566751694194690, guid: bf574c6fdc1c9414193196013d7dd691,
     type: 3}
   m_ShaderKeywords: _EMISSION
   m_LightmapFlags: 2
   m_EnableInstancingVariants: 0
   m_DoubleSidedGI: 0
-  m_CustomRenderQueue: 3000
+  m_CustomRenderQueue: -1
   stringTagMap: {}
   disabledShaderPasses:
   - SHADOWCASTER
@@ -22,7 +22,7 @@ Material:
     serializedVersion: 3
     m_TexEnvs:
     - Texture2D_9C8EBCD0:
-        m_Texture: {fileID: 2800000, guid: efe753845a977844f89d9bb3d0268a4d, type: 3}
+        m_Texture: {fileID: 2800000, guid: b3a9287ea92d93242b8710e0e5575caa, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _BaseMap:
@@ -54,6 +54,8 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     m_Floats:
+    - Vector1_35D42FA9: 10
+    - Vector1_604D21BC: 0.05
     - _AlphaClip: 0
     - _Blend: 2
     - _BlendOp: 0
@@ -92,7 +94,9 @@ Material:
     - _WorkflowMode: 1
     - _ZWrite: 0
     m_Colors:
-    - Color_F6090733: {r: 1, g: 1, b: 1, a: 1}
+    - Color_F6090733: {r: 4, g: 4, b: 4, a: 1}
+    - Vector2_81944AA6: {r: -0.3, g: 0, b: 0, a: 0}
+    - Vector2_AFECFC15: {r: 0, g: -0.4, b: -0.4, a: 0}
     - _BaseColor: {r: 1, g: 1, b: 1, a: 1}
     - _BaseColorAddSubDiff: {r: 0, g: 0, b: 0, a: 0}
     - _CameraFadeParams: {r: 0, g: Infinity, b: 0, a: 0}

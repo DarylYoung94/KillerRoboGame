@@ -17,9 +17,11 @@ public class FactionWaveManager : MonoBehaviour
     public List <GameObject> groups;
     public List<WaveBehaviour> availableBehaviours;
     public Transform spawnPoint;
+
     private NavMeshAgent agent;
     private FactionFunctions fun;
       
+
     private float speed = 5f;
     private int index;
     public float spawnTimer = 10f;
@@ -44,7 +46,6 @@ public class FactionWaveManager : MonoBehaviour
     
     private void Start()
     {
-        
         globalSpawn =true;
         index = 0;
         SetFactionWave();
@@ -77,14 +78,17 @@ public class FactionWaveManager : MonoBehaviour
             }
         }
 
-       if(globalSpawn)
+        if (globalSpawn)
         {
             globalTimer += Time.deltaTime;
             if(globalTimer >=globalSpawnTimer)
             {   
                 RecallWave();  
             } 
+
             RemoveGroups(); 
+
+
             CallWaveFunction();
         }
     }
@@ -129,6 +133,7 @@ public class FactionWaveManager : MonoBehaviour
         ChooseBehaviour();
         group.GetComponent<FactionFunctions>().Initialise(enemies, faction);
     }
+
     void CheckForDeadEnemies()
     {
         for (int i=0; i<enemies.Count; i++)
@@ -205,6 +210,7 @@ public class FactionWaveManager : MonoBehaviour
 
     void CallWaveFunction()
     {
+
         
         switch (waveBehaviour)
         {
@@ -221,6 +227,7 @@ public class FactionWaveManager : MonoBehaviour
                 Debug.Log("Defending");
                 break;
         }
+
     }
 
     void RemoveGroups()
