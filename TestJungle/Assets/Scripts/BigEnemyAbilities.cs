@@ -34,7 +34,7 @@ public class BigEnemyAbilities : MonoBehaviour
 
         if (enemyHealth <= enemyHealth50)
         {
-            enemy.GetComponent<EnemyAI>().allowAttack = true;
+            enemy.GetComponent<BasicEnemyAttack>().allowAttack = true;
         }
     }   
 }

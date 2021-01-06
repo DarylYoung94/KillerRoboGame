@@ -32,7 +32,7 @@ public class TurretCannon : MonoBehaviour
         timer -= Time.deltaTime;
         lineRenderer.SetPosition(0, firepoint.transform.position);
 
-        if (target && !firing)
+        if (target && !firing && IsTargetInAngleRange())
         {
             RaycastHit hit;
             if (Physics.Raycast(firepoint.position, firepoint.transform.TransformDirection(Vector3.forward), out hit))
@@ -75,6 +75,7 @@ public class TurretCannon : MonoBehaviour
                     else if (vfx != null)
                     {
                         vfx.transform.position = hit.point;
+                        vfx.SetActive(true);
                     }
                 }
             }
@@ -92,6 +93,7 @@ public class TurretCannon : MonoBehaviour
         }
         
         ResetLineRenderer();
+        vfx.SetActive(false);
         firing = false;
         timer = cooldownTime;
         this.transform.GetComponent<QuadrupedController_Full>().StartRootMotion();
@@ -103,5 +105,18 @@ public class TurretCannon : MonoBehaviour
         lineRenderer.SetPosition(1, firepoint.transform.position);
         lineRenderer.enabled = false;
         lineRenderer.widthMultiplier = 1.0f;
+    }
+
+    bool IsTargetInAngleRange()
+    {
+        bool ret = false;
+        float angle = Mathf.Abs(Vector3.Angle(target.transform.position - firepoint.transform.position, firepoint.transform.TransformDirection(Vector3.forward)));
+
+        if (angle < 15.0f)
+        {
+            ret = true;
+        }
+
+        return ret;
     }
 }

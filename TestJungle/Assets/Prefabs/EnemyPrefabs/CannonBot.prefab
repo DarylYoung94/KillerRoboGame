@@ -2981,19 +2981,24 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 75f37a539030a19468a9e4a13114ea90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  attackTime: 1
-  nextAttackTime: 1
-  attackSpeed: 1
-  attackDamage: 10
   lookRadius: 20
-  attackRange: 5
   target: {fileID: 0}
-  attackParticles: {fileID: 0}
-  allowAttack: 1
   moving: 0
   foundEnemyEvent:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 816175938}
+        m_TargetAssemblyTypeName: CannonAI, Assembly-CSharp
+        m_MethodName: SetTarget
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &816175938
 MonoBehaviour:
   m_ObjectHideFlags: 0

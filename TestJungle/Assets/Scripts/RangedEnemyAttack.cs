@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class RangedEnemyAttack : MonoBehaviour
 {
-    public GameObject player;
+    public Transform target;
     public GameObject enemyBulletPrefab;
     public Transform firePoint;
     public float bulletSpeed;
@@ -17,12 +17,11 @@ public class RangedEnemyAttack : MonoBehaviour
     private void Start()
     {
         shootTimer = Random.Range(2, 5);
-        player = GameManager.instance.player;
     }
 
     private void Update()
     {
-        distanceFromPlayer = Vector3.Distance(player.transform.position, this.gameObject.transform.position);
+        distanceFromPlayer = Vector3.Distance(target.position, transform.position);
 
         timer += Time.deltaTime;
         if (timer >= shootTimer && distanceFromPlayer <= attackRange)
@@ -31,13 +30,19 @@ public class RangedEnemyAttack : MonoBehaviour
             timer = 0;
         }
     }
+
+    public void SetTarget()
+    {
+        target = transform.GetComponent<EnemyAI>().target;
+    }
+
     void ShootAtPlayer()
     {
         GameObject enemyBulletInstance;
         enemyBulletInstance = Instantiate(enemyBulletPrefab, firePoint.transform.position, Quaternion.identity);
         
         Rigidbody bulletRB = enemyBulletInstance.GetComponent<Rigidbody>();
-        bulletRB.transform.LookAt(player.transform.position);
+        bulletRB.transform.LookAt(target.position);
         bulletRB.AddForce(bulletRB.transform.forward * bulletSpeed, ForceMode.Impulse);
     }
 }

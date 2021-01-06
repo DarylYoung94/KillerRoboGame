@@ -6,8 +6,6 @@ using UnityEngine.VFX;
 
 public class CryptidController : MonoBehaviour
 {
-    GameObject player;
-
     [Header("Movement")]
     [SerializeField] float speed;
     [SerializeField] float walkSpeed;
@@ -30,7 +28,6 @@ public class CryptidController : MonoBehaviour
     void Start()
     {
         agent = GetComponent<NavMeshAgent>();
-        player = GameManager.instance.player;
         ResetAllAnimations();
     }
 
@@ -50,13 +47,16 @@ public class CryptidController : MonoBehaviour
         }
     }
 
+    public void SetTarget()
+    {
+        target = transform.GetComponent<EnemyAI>().target;
+    }
+
     public void FindTargetWithinRange()
     {
-        if (Vector3.Distance(this.transform.position, player.transform.position) < targetRange)
+        if (Vector3.Distance(this.transform.position, target.transform.position) < targetRange)
         {
-            target = player.transform;
-
-            if (Vector3.Distance(this.transform.position, player.transform.position) < attackRange)
+            if (Vector3.Distance(this.transform.position, target.transform.position) < attackRange)
             {
                 if (!animationController.GetBool("Attacking"))
                 {
@@ -86,6 +86,7 @@ public class CryptidController : MonoBehaviour
 
         agent.speed = walkSpeed;
     }
+
     public void SetRunning()
     {
         // Reset
@@ -97,6 +98,7 @@ public class CryptidController : MonoBehaviour
 
         agent.speed = runSpeed;
     }
+
     public void SetAttacking()
     {
         // Reset
@@ -113,6 +115,7 @@ public class CryptidController : MonoBehaviour
             vfx = Instantiate(vfxPrefab, vfxSpawnPoint.position, Quaternion.identity);
         }
     }
+
     public void ResetAllAnimations()
     {
         animationController.SetBool("Walk", false);

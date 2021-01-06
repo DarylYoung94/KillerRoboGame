@@ -834,6 +834,12 @@ GameObject:
   - component: {fileID: 3777540764662554326}
   - component: {fileID: 3777540764662554327}
   - component: {fileID: 4501036718611243155}
+  - component: {fileID: 240606427763113050}
+  - component: {fileID: 3720732341856956895}
+  - component: {fileID: 1993832616919608243}
+  - component: {fileID: 5202395562153742030}
+  - component: {fileID: 5331119955954882050}
+  - component: {fileID: 1723606833282332414}
   m_Layer: 0
   m_Name: Turret
   m_TagString: Untagged
@@ -1031,16 +1037,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 75f37a539030a19468a9e4a13114ea90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  attackTime: 1
-  nextAttackTime: 1
-  attackSpeed: 1
-  attackDamage: 10
   lookRadius: 15
-  attackRange: 5
   target: {fileID: 0}
-  agentIsControlledByNavMesh: 1
-  attackParticles: {fileID: 0}
-  allowAttack: 0
   moving: 0
   foundEnemyEvent:
     m_PersistentCalls:
@@ -1093,6 +1091,97 @@ MonoBehaviour:
   laserProjPrefab: {fileID: 2250487207107020415, guid: f2feeb8b34e35844dbd07665817e3536,
     type: 3}
   projectileSpeed: 50
+--- !u!65 &240606427763113050
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3777540764662554324}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1.9127197, y: 1.2890301, z: 2.0344276}
+  m_Center: {x: -0.06085205, y: 1.1028798, z: 0.060850143}
+--- !u!65 &3720732341856956895
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3777540764662554324}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.6348877, y: 0.5132127, z: 0.58927536}
+  m_Center: {x: -0.015197754, y: 2.046606, z: -0.007604599}
+--- !u!65 &1993832616919608243
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3777540764662554324}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1.4107666, y: 1.0912726, z: 1.4259453}
+  m_Center: {x: -0.022827148, y: 2.8356361, z: -0.015211105}
+--- !u!65 &5202395562153742030
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3777540764662554324}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.3914795, y: 0.5271511, z: 1}
+  m_Center: {x: 0, y: 2.8123944, z: 1.26}
+--- !u!114 &5331119955954882050
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3777540764662554324}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6960cb202a78f1540a209c9d54c8d647, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  activeEnemySettings: {fileID: 11400000, guid: a230480b406619d4ba1efca9ed5b66c5,
+    type: 2}
+  alive: 1
+  level: 1
+  currentHealth: 10
+  maxHealth: 0
+  experience: 100
+  dropRate: 0.3
+--- !u!114 &1723606833282332414
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3777540764662554324}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6960cb202a78f1540a209c9d54c8d647, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  activeEnemySettings: {fileID: 0}
+  alive: 1
+  level: 1
+  currentHealth: 10
+  maxHealth: 0
+  experience: 100
+  dropRate: 0.3
 --- !u!1 &3777540764737286162
 GameObject:
   m_ObjectHideFlags: 0

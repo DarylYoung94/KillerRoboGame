@@ -4,8 +4,7 @@ using UnityEngine;
 
 public class EnemyCharge : MonoBehaviour
 {
-    public GameObject player;
-    public GameObject enemy;
+    public Transform target;
     private Vector3 enemyAim;
     public float timer;
     public float chargeTimer;
@@ -22,42 +21,43 @@ public class EnemyCharge : MonoBehaviour
     private void Start()
     {
         chargeTimer = 5;
-        enemy = this.gameObject;
-        player = GameManager.instance.player;
         charging = true;
+        enemyRB = GetComponent<Rigidbody>();
     }
 
     private void Update()
     {
-        distanceFromPlayer = Vector3.Distance(player.transform.position, enemy.transform.position);
+        if (target)
+            distanceFromPlayer = Vector3.Distance(target.position, transform.position);
+        else
+            distanceFromPlayer = Mathf.Infinity;
+
         timer += Time.deltaTime;
         if (timer >= chargeTimer && distanceFromPlayer <= chargeRange)
         {
-            {
-                Charge();
-                timer = 0;
-               // charging = false;
-            }
+            Charge();
+            charging = true;
+            timer = 0;
         }
-                timer2 += Time.deltaTime;
-                if(timer2 >= chargingTimer)
-                {
-                   charging = false;
-                }
+
+        timer2 += Time.deltaTime;
+        if(timer2 >= chargingTimer)
+        {
+            charging = false;
+        }
     }
 
+    public void SetTarget()
+    {
+        target = transform.GetComponent<EnemyAI>().target;
+    }
 
     void Charge()
     {
         timer2 = 0;
-        charging = true;
-        
-        
-        enemyAim = player.transform.position;
-        enemyRB = enemy.GetComponent<Rigidbody>();
+        enemyAim = target.transform.position;
         enemyRB.transform.LookAt(enemyAim);
         enemyRB.AddForce(enemyRB.transform.forward * chargeSpeed, ForceMode.Impulse);
-
     }
 
     private void OnCollisionEnter(Collision collision)
@@ -72,6 +72,4 @@ public class EnemyCharge : MonoBehaviour
             }
         }
     }
-
-
 }

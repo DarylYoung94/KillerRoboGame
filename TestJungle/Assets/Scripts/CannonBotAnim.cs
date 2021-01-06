@@ -22,7 +22,7 @@ public class CannonBotAnim : MonoBehaviour
         moving = this.gameObject.transform.parent.gameObject.GetComponent<EnemyAI>().moving;
         if (moving)
         {
-         anim.SetBool ("moving" , true);    
+            anim.SetBool ("moving" , true);    
         }
         else
         {

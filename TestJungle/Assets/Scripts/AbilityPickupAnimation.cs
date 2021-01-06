@@ -8,8 +8,9 @@ public class AbilityPickupAnimation : MonoBehaviour
     [SerializeField] private float bobSpeed = 1.0f;
     [SerializeField] private float bobHeight = 1.0f;
     [SerializeField] private float waitTime = 0.3f;
-
     [SerializeField] private Vector3 botPosition, topPosition;
+
+    Vector3 direction = Vector3.up;
 
     void Start()
     {
@@ -28,7 +29,15 @@ public class AbilityPickupAnimation : MonoBehaviour
     {
         while (Mathf.Abs((target - transform.position).y) > 0.01f)
         {
-            Vector3 direction = target.y == topPosition.y ? Vector3.up : Vector3.down;
+            if (transform.position.y > target.y && direction == Vector3.up)
+            {
+                direction = Vector3.down;
+            }
+            else if (transform.position.y < target.y && direction == Vector3.down)
+            {
+                direction = Vector3.up;
+            }
+
             transform.position += direction * bobSpeed * Time.deltaTime;
 
             yield return null;

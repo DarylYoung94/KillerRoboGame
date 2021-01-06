@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class AnimationDrivenAttack : MonoBehaviour
 {
-    public GameObject target;
+    public Transform target;
     public GameObject enemyBulletPrefab;
     public GameObject muzzlePrefab;
     public Transform firePoint;
@@ -18,7 +18,6 @@ public class AnimationDrivenAttack : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        target = GameManager.instance.player;
         animator = GetComponent<Animator>();
     }
 
@@ -39,12 +38,17 @@ public class AnimationDrivenAttack : MonoBehaviour
         }
     }
 
+    public void SetTarget()
+    {
+        target = transform.GetComponent<EnemyAI>().target;
+    }
+
     void ShootAtTarget()
     {
         GameObject enemyBulletInstance = Instantiate(enemyBulletPrefab, firePoint.transform.position, Quaternion.identity);
         
         Rigidbody bulletRB = enemyBulletInstance.GetComponent<Rigidbody>();
-        bulletRB.transform.LookAt(target.transform.position);
+        bulletRB.transform.LookAt(target.position);
         bulletRB.AddForce(bulletRB.transform.forward * bulletSpeed, ForceMode.Impulse);
 
         TriggerVFX();
@@ -53,6 +57,6 @@ public class AnimationDrivenAttack : MonoBehaviour
     public void TriggerVFX()
     {
         GameObject muzzleVFX = Instantiate(muzzlePrefab, firePoint.transform.position, Quaternion.identity);
-        muzzleVFX.transform.LookAt(target.transform.position);
+        muzzleVFX.transform.LookAt(target.position);
     }
 }

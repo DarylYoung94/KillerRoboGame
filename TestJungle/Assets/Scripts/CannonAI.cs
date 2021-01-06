@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class CannonAI : MonoBehaviour
 {
-    GameObject player;
+    Transform target;
     public GameObject bombPrefab;
     public Transform firepoint;
     public Transform cannon;
@@ -25,17 +25,19 @@ public class CannonAI : MonoBehaviour
 
     void Start() 
     {
-        player = GameManager.instance.player; 
         lookRadius = GetComponent<EnemyAI>().lookRadius;
         cannon = this.transform.Find("CannonBase/Cannon");
         cannonBase = this.transform.Find("CannonBase");
     }
+
     private void Update() 
     {
+        float distance = Mathf.Infinity;
 
-        float distance = Vector3.Distance(this.transform.position, player.transform.position);
+        if (target)
+            distance = Vector3.Distance(this.transform.position, target.position);
 
-         if (nextAttackTime > 0)
+        if (nextAttackTime > 0)
         {
             nextAttackTime -= Time.deltaTime;
         }
@@ -44,40 +46,48 @@ public class CannonAI : MonoBehaviour
         {
             nextAttackTime = 0;
         }
-        if(distance<= shootDistance && nextAttackTime == 0)
+
+        if (distance <= shootDistance && nextAttackTime == 0)
         { 
             ShootBomb();
             nextAttackTime = attackTime;
         }
-        if(distance >shootDistance)
+
+        if (distance > shootDistance)
         {
             nextAttackTime = attackTime;
         }
 
 
-        if(distance<= lookRadius )
+        if (distance <= lookRadius)
         {  
-            Vector3 targetDir = player.transform.position - transform.position;
+            Vector3 targetDir = target.position - transform.position;
             Vector3 newDir = Vector3.RotateTowards(transform.forward,targetDir, rotSpeed * Time.deltaTime, 100f);
             cannonBase.rotation = Quaternion.LookRotation(newDir);
             cannonBase.transform.eulerAngles = new Vector3(0f,  cannonBase.transform.eulerAngles.y, 0f);
         }
         else
         {
-          Vector3 restRot = new Vector3 (this.transform.eulerAngles.x, this.transform.eulerAngles.y ,this.transform.eulerAngles.z);
+          Vector3 restRot = new Vector3(this.transform.eulerAngles.x, this.transform.eulerAngles.y ,this.transform.eulerAngles.z);
           cannonBase.transform.eulerAngles = Vector3.Lerp(cannonBase.transform.eulerAngles, restRot, Time.deltaTime);
         }
 
-        if(distance <=shootDistance)
+        if (distance <= shootDistance)
         {
             Vector3 arcDestination = new Vector3(45, cannon.transform.eulerAngles.y, cannon.transform.eulerAngles.z);
             cannon.transform.eulerAngles = Vector3.Lerp(cannon.transform.rotation.eulerAngles, arcDestination, Time.deltaTime);   
-        }else
+        }
+        else
         {
             Vector3 arcDestination = new Vector3(90, cannon.transform.eulerAngles.y, cannon.transform.eulerAngles.z);
             cannon.transform.eulerAngles = Vector3.Lerp(cannon.transform.rotation.eulerAngles, arcDestination, Time.deltaTime);
         }
        
+    }
+
+    public void SetTarget()
+    {
+        target = transform.GetComponent<EnemyAI>().target;
     }
 
     void ShootBomb()
@@ -87,6 +97,6 @@ public class CannonAI : MonoBehaviour
         GameObject bombInstance = Instantiate(bombPrefab, firepoint.position, cannon.transform.rotation);
         Rigidbody bombRB = bombInstance.GetComponent<Rigidbody>();
         
-        bombRB.AddForce(bombRB.transform.up *power, ForceMode.Impulse);
+        bombRB.AddForce(bombRB.transform.up * power, ForceMode.Impulse);
     }
 }
