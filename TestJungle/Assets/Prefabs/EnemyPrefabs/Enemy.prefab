@@ -487,6 +487,7 @@ MonoBehaviour:
   nut: {fileID: 4617804490400431508, guid: 2525ed1c724bfd043aee443a57426105, type: 3}
   canDropMoney: 1
   killedByPlayer: 1
+  _lastHit: {fileID: 0}
 --- !u!114 &6833896156814601291
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -502,6 +503,9 @@ MonoBehaviour:
   lookRadius: 10
   target: {fileID: 0}
   moving: 0
+  faction: 0
+  closestEnemy: 0
+  thisFaction: 0
   foundEnemyEvent:
     m_PersistentCalls:
       m_Calls:
@@ -549,7 +553,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6960cb202a78f1540a209c9d54c8d647, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  activeEnemySettings: {fileID: 11400000, guid: f636284ff7bf2454fa9ea9a578968f36,
+  activeEnemySettings: {fileID: 11400000, guid: 44bea1c412041fe4591e0995ea0727fb,
     type: 2}
   alive: 1
   level: 1

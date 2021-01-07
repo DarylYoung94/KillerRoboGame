@@ -49,8 +49,11 @@ public class Enemy : MonoBehaviour
                 {
                     TransferData(lastHit);
                 }
-
-                GameManager.instance.player.GetComponent<PlayerXP>().AddExp(enemyStats.GetExperience());  
+                if(lastHit == GameManager.instance.player.transform )
+                {
+                   GameManager.instance.player.GetComponent<PlayerXP>().AddExp(enemyStats.GetExperience()); 
+                }
+                  
                 Destroy(this.gameObject);
             }
         }
