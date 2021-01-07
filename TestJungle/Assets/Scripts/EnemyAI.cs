@@ -35,11 +35,6 @@ public class EnemyAI : MonoBehaviour
         Collider[] colliders = Physics.OverlapSphere(transform.position, lookRadius);
         closestEnemy = Mathf.Infinity;
 
-        
-
-
-        
-
         foreach(Collider hit in colliders)
         {
             if(hit != null && hit.GetComponent<Enemy>() || hit.GetComponent<PlayerManager>())
@@ -57,8 +52,9 @@ public class EnemyAI : MonoBehaviour
                             closestEnemy = distToEnemy;
                             bestTarget = hit.transform;
                         }
+
                         target = bestTarget;
-                        Debug.Log("bestTarget");
+                        //Debug.Log("bestTarget");
                         
                     }
                 }
