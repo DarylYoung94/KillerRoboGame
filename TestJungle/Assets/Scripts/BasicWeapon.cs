@@ -6,7 +6,6 @@ public class BasicWeapon : RBWeapon {
 
     public GameObject pelletPrefab;
     public float despawnTimer = 5f;
-    private Transform barrelExit;
 
     private BasicAttackTriggerable basicAttackTrigger;
     
@@ -17,7 +16,8 @@ public class BasicWeapon : RBWeapon {
         basicAttackTrigger.despawnTimer = despawnTimer;
         basicAttackTrigger.force = force;
         
-        barrelExit = GameObject.Find("Player/firePoint").transform;
+        if (!barrelExit)
+            barrelExit = GameObject.Find("Player/firePoint").transform;
         basicAttackTrigger.barrelExit = barrelExit;
 
         pelletPrefab.GetComponent<BulletCollider>().Damage = damage;

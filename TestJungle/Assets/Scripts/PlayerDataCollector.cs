@@ -43,7 +43,7 @@ public class PlayerDataCollector : MonoBehaviour
                         {
                             collectTime = 0.0f;
                             data.CollectData(1);
-                            Debug.Log("CollectData");
+                           // Debug.Log("CollectData");
                         }
 
                    

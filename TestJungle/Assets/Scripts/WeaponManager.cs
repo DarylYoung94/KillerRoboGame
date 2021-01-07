@@ -7,7 +7,10 @@ public class WeaponManager : MonoBehaviour
 {
     public IconManager iconManager;
     GameObject currentWeaponIcon;
+    [SerializeField] Transform weaponPrefabHolder;
+    [SerializeField] Transform secondHand;
 
+    public List<GameObject> weaponPrefabs;
     public List<AbstractWeapon> weapons;
     public List<AbstractAbilityCooldown> weaponHolders;
     public List<int> activeWeaponList = new List<int> { 0, 1, 4 };
@@ -53,6 +56,8 @@ public class WeaponManager : MonoBehaviour
                 weaponHolders.Add(this.transform.gameObject.AddComponent<QuickCastAbilityCooldown>());
             }
 
+            CreateWeaponGameObject(weapons[i]);
+
             weaponHolders[i].Initialise(weapons[i], this.transform.gameObject);
             weaponHolders[i].SetKeyCode(KeyCode.Mouse0);
             weaponHolders[i].enabled = false;
@@ -85,6 +90,10 @@ public class WeaponManager : MonoBehaviour
                 weaponHolders.Add(this.transform.gameObject.AddComponent<QuickCastAbilityCooldown>());
             }
 
+            CreateWeaponGameObject(weapon);
+
+            weaponHolders[weaponHolders.Count-1].Initialise(weapon, this.transform.gameObject);
+            weaponHolders[weaponHolders.Count-1].SetKeyCode(KeyCode.Mouse0);
             weaponHolders[weaponHolders.Count-1].enabled = false;
         }
     }
@@ -94,12 +103,50 @@ public class WeaponManager : MonoBehaviour
         weaponHolders[activeWeaponList[activeWeaponIndex]].enabled = false;
         weaponHolders[activeWeaponList[index]].enabled = true;
 
+
         activeWeaponIndex = index;
         iconManager.SetWeaponIcon(GetCurrentWeapon().abilityIcon);
+        SetWeaponGameObject(activeWeaponIndex);
+    }
+
+    private void SetWeaponGameObject(int index)
+    {
+        if (weaponPrefabHolder)
+        {
+            for (int i = 0; i < weaponPrefabHolder.transform.childCount; i++)
+            {
+                weaponPrefabHolder.GetChild(i).gameObject.SetActive(false);
+            }
+        }
+
+        weaponPrefabs[activeWeaponList[index]].SetActive(true);
+    }
+
+    private void CreateWeaponGameObject(AbstractWeapon weapon)
+    {
+        if (weapon.weaponPrefab && weaponPrefabHolder)
+        {
+            GameObject newWeaponPrefab = Instantiate(weapon.weaponPrefab,
+                                                     weaponPrefabHolder.transform.position,
+                                                     Quaternion.identity,
+                                                     weaponPrefabHolder.transform);
+            
+            newWeaponPrefab.transform.rotation = weaponPrefabHolder.transform.rotation;
+            weaponPrefabs.Add(newWeaponPrefab);
+
+            foreach (Transform t in newWeaponPrefab.GetComponentsInChildren<Transform>())
+            {
+                if (t.tag == "Firepoint")
+                {
+                    weapon.barrelExit = t;
+                    break;
+                }
+            }
+        }
     }
 
     public GameObject GetWeaponGameObject()
     {
-        return this.transform.Find("Weapon").gameObject;
+        return weaponPrefabHolder.gameObject;
     }
 }

@@ -165,13 +165,15 @@ public class FactionWaveManager : MonoBehaviour
         }
         else if( totalData >=175 && totalData <=225)
         {
-            Debug.Log("175-225");
+           // Debug.Log("175-200");
             factionWaveIndex =1;
             
         }
         else if (totalData >225 && totalData <=300)
         {
-            Debug.Log("225-300");
+
+           // Debug.Log("200-300");
+
             factionWaveIndex = 2;
         }
         else if (totalData >300 && totalData <=400)
@@ -241,7 +243,7 @@ public class FactionWaveManager : MonoBehaviour
                 break;
 
             case WaveBehaviour.Scout:
-                Debug.Log("Scouting");
+               // Debug.Log("Scouting");
                 scouting = true;
                 if(scouting)
                 {
@@ -250,7 +252,7 @@ public class FactionWaveManager : MonoBehaviour
                 break;
 
             case WaveBehaviour.Patrol:
-                Debug.Log("Patrolling");
+               // Debug.Log("Patrolling");
                 patrolling = true;  
                 if(patrolling)
                 {
@@ -259,11 +261,11 @@ public class FactionWaveManager : MonoBehaviour
                 break;
 
             case WaveBehaviour.Attack:
-                Debug.Log("Attacking");
+               // Debug.Log("Attacking");
                 break;
 
             case WaveBehaviour.Defend:
-                Debug.Log("Defending");
+               // Debug.Log("Defending");
                 break;
 
         }
@@ -284,13 +286,13 @@ public class FactionWaveManager : MonoBehaviour
     {
         if(availableBehaviours.Count == 1 )
         {
-            Debug.Log("1 available behaviour");
+           // Debug.Log("1 available behaviour");
             waveBehaviour = availableBehaviours[0];
         }
 
         else if(availableBehaviours.Count == 2 )
         {
-            Debug.Log("2 available behaviours");
+           // Debug.Log("2 available behaviours");
             //choose between available behaviours
             float randomNum;
             randomNum = Random.Range(0f,1f) ;

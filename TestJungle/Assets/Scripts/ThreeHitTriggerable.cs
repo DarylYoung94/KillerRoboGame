@@ -23,13 +23,13 @@ public class ThreeHitTriggerable : MonoBehaviour
                  i++; 
             if (i < 3)
             {
-                Debug.Log("shoot");
+               // Debug.Log("shoot");
                 Fire(bulletPrefab);
                 
             }
             else
             {
-                Debug.Log("HEAL");
+               // Debug.Log("HEAL");
                 
                 Fire(healingBulletPrefab);
                 i = 0;

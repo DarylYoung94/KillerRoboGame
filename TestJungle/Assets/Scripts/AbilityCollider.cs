@@ -23,7 +23,7 @@ public class AbilityCollider :MonoBehaviour
     {
         if(collision.gameObject.tag == "Wall")
         {
-            Debug.Log("Wall hit with bomb.");
+           // Debug.Log("Wall hit with bomb.");
             radius = 20f;
             collision.gameObject.GetComponent<WallOnCollision>().ShatterWall();
             Detonate();

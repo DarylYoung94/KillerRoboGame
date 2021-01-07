@@ -10,7 +10,6 @@ public class LightningWeapon : RayCastWeapon {
     public float chainRange = 4.0f;
     public bool applyChains = false;
 
-    private Transform barrelExit;
     private LightningTriggerable lightningTrigger;
     
     public override void Initialise(GameObject obj)
@@ -24,7 +23,8 @@ public class LightningWeapon : RayCastWeapon {
         lightningTrigger.applyChains = applyChains;
         lightningTrigger.chainLightningPrefab = chainLightningPrefab;
         
-        barrelExit = GameObject.Find("Player/firePoint").transform;
+        if (!barrelExit)
+            barrelExit = GameObject.Find("Player/firePoint").transform;
         lightningTrigger.barrelExit = barrelExit;
 
         triggerable = lightningTrigger;

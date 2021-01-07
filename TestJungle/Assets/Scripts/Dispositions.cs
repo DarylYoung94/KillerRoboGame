@@ -66,7 +66,7 @@ public class Dispositions : MonoBehaviour
             }
             msg += "\n";
         }
-        Debug.Log(msg);
+       // Debug.Log(msg);
     }
 
     void CreateDispositionArray()

@@ -78,13 +78,13 @@ public class MineAbilityTriggerable : MonoBehaviour
     IEnumerator spotlightTimer(float mineTime, GameObject mineInstance)
     {
         //add audio
-        Debug.Log("here" + mineTime);
+       // Debug.Log("here" + mineTime);
         //TODO
         GameObject Spotlight = mineInstance.transform.Find("Spotlight").gameObject;
        //GameObject.Find("Mine/Spotlight");
         Spotlight.SetActive(true);
        
-        Debug.Log(GameObject.Find("Mine/Spotlight"));
+       // Debug.Log(GameObject.Find("Mine/Spotlight"));
         yield return new WaitForSeconds(mineTime);
         Spotlight.SetActive(false);
 
