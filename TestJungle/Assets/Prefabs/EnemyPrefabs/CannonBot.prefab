@@ -2904,6 +2904,7 @@ GameObject:
   - component: {fileID: 8023920570194959104}
   - component: {fileID: 5383340095926581024}
   - component: {fileID: -2920938386855458506}
+  - component: {fileID: 569538831569333980}
   m_Layer: 0
   m_Name: CannonBot
   m_TagString: Untagged
@@ -2984,6 +2985,9 @@ MonoBehaviour:
   lookRadius: 20
   target: {fileID: 0}
   moving: 0
+  faction: 0
+  closestEnemy: 0
+  thisFaction: 0
   foundEnemyEvent:
     m_PersistentCalls:
       m_Calls:
@@ -3123,6 +3127,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   timerForNewpath: 2
   campLocation: {fileID: 5305157931708629537}
+--- !u!114 &569538831569333980
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5305157931708629537}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f02e8eb1fb67ac548ad24175a6851b3d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  faction: 0
 --- !u!1 &5305157931924532020
 GameObject:
   m_ObjectHideFlags: 0

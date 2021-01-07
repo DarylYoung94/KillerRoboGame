@@ -27,7 +27,7 @@ public class LaserProjectileCollider : MonoBehaviour
             Enemy enemyHit = hit.transform.GetComponent<Enemy>();
             if (enemyHit != null)
             {
-                enemyHit.TakeDamage(damage);
+                enemyHit.TakeDamage(damage, this.transform);
             }
 
             PlayerManager pm = hit.transform.GetComponent<PlayerManager>();

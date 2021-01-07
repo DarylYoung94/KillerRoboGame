@@ -48,7 +48,7 @@ public class BulletCollider : MonoBehaviour
             }
             else
             {
-                enemyHit.TakeDamage(autoDamage);
+                enemyHit.TakeDamage(autoDamage, player.transform);
             }
 
 
@@ -82,7 +82,7 @@ public class BulletCollider : MonoBehaviour
         }
         else
         {
-            enemy.TakeDamage(autoDamage);
+            enemy.TakeDamage(autoDamage, player.transform);
             GO.GetComponent<Mark>().ResetMark();
         }
     }

@@ -11,6 +11,11 @@ public class EnemyAI : MonoBehaviour
     NavMeshAgent agent;
     public bool moving = false;
 
+    public FactionType.Faction faction;
+    public float closestEnemy;
+    Transform bestTarget = null;
+    public FactionType.Faction thisFaction;
+
     [SerializeField] UnityEvent foundEnemyEvent = new UnityEvent();
 
     void Start()
@@ -19,17 +24,57 @@ public class EnemyAI : MonoBehaviour
 
         target = GameManager.instance.player.transform;
         agent = GetComponent<NavMeshAgent>();
+        thisFaction = GetComponent<FactionType>().faction;
     }
 
     // Update is called once per frame
     void Update()
     {
-        float distance = Vector3.Distance(target.position, transform.position);
+        
+        thisFaction = GetComponent<FactionType>().faction;
+        Collider[] colliders = Physics.OverlapSphere(transform.position, lookRadius);
+        closestEnemy = Mathf.Infinity;
 
+        
+
+
+        
+
+        foreach(Collider hit in colliders)
+        {
+            if(hit != null && hit.GetComponent<Enemy>() || hit.GetComponent<PlayerManager>())
+            {
+                FactionType tempFactionType = hit.transform.GetComponent<FactionType>();
+
+                if(tempFactionType )
+                {
+                    //faction = tempFactionType.faction;
+                    if(thisFaction != hit.GetComponent<FactionType>().faction)
+                    {
+                        float distToEnemy = Vector3.Distance(transform.position, hit.transform.position);
+                        if(distToEnemy < closestEnemy)
+                        {
+                            closestEnemy = distToEnemy;
+                            bestTarget = hit.transform;
+                        }
+                        target = bestTarget;
+                        Debug.Log("bestTarget");
+                        
+                    }
+                }
+            }
+        }
+
+        
+        float distance = Vector3.Distance(target.position, transform.position);
         if (distance <= lookRadius)
         {
             foundEnemyEvent.Invoke(); 
         }
+
+
+
+        
     }
 
     void OnDrawGizmosSelected()

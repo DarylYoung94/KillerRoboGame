@@ -119,7 +119,7 @@ public class FactionWaveManager : MonoBehaviour
         
         globalSpawn = true;
         GameObject group = new GameObject ("Group");
-        group.AddComponent<FactionFunctions>();
+        //group.AddComponent<FactionFunctions>();
         group.transform.parent = this.transform;
         groups.Add(group);
 
@@ -142,7 +142,7 @@ public class FactionWaveManager : MonoBehaviour
             index++;
         }
         ChooseBehaviour();
-        group.GetComponent<FactionFunctions>().Initialise(enemies, faction);
+        //group.GetComponent<FactionFunctions>().Initialise(enemies, faction);
     }
 
     void CheckForDeadEnemies()

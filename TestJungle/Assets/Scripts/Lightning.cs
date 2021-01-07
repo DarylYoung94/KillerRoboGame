@@ -82,7 +82,7 @@ public class Lightning : MonoBehaviour
                 Enemy enemyHit = hit.transform.GetComponent<Enemy>();
                 if (enemyHit != null)
                 {
-                    enemyHit.TakeDamage(damage);
+                    enemyHit.TakeDamage(damage, GameManager.instance.player.transform);
                     hit.transform.GetComponent<Mark>().Electrocuted();
                 }
 

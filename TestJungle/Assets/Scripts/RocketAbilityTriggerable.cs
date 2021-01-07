@@ -80,7 +80,7 @@ public class RocketAbilityTriggerable : MonoBehaviour
                 Enemy enemyHit = hit.transform.GetComponent<Enemy>();
                 if (enemyHit != null)
                 {
-                    enemyHit.TakeDamage(Damage);
+                    enemyHit.TakeDamage(Damage, this.transform);
                     Destroy(rocketInstance);
                 }
                 Rigidbody rb = hit.GetComponent<Rigidbody>();

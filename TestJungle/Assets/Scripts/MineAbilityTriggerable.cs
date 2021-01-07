@@ -114,7 +114,7 @@ public class MineAbilityTriggerable : MonoBehaviour
                 Enemy enemyHit = hit.transform.GetComponent<Enemy>();
                 if (enemyHit != null)
                 {
-                    enemyHit.TakeDamage(Damage);
+                    enemyHit.TakeDamage(Damage, this.transform);
                     
                 }
                 Rigidbody rb = hit.GetComponent<Rigidbody>();

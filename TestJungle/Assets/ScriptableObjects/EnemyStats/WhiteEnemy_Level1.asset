@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: WhiteEnemy_Level1
   m_EditorClassIdentifier: 
   level: 1
-  health: 10
+  health: 50
   expReward: 100
   dropRate: 0.3

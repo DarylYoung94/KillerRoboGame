@@ -24,7 +24,7 @@ public class LSBasicCollider : MonoBehaviour
         Enemy enemyHit = collision.transform.GetComponent<Enemy>();
         if (enemyHit != null)
         {
-            enemyHit.TakeDamage(autoDamage);
+            enemyHit.TakeDamage(autoDamage, player.transform);
             player.GetComponent<PlayerManager>().health +=lifestealamount;
 
             Destroy(this.gameObject);

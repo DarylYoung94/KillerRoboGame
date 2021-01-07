@@ -1671,6 +1671,7 @@ GameObject:
   - component: {fileID: 2135626195435766577}
   - component: {fileID: 5888651779480263138}
   - component: {fileID: 6465641598034803882}
+  - component: {fileID: -4101398927980332613}
   m_Layer: 0
   m_Name: MechSuit
   m_TagString: Enemy
@@ -1739,15 +1740,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 75f37a539030a19468a9e4a13114ea90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  attackTime: 1
-  nextAttackTime: 0
-  attackSpeed: 1
-  attackDamage: 10
   lookRadius: 10
-  attackRange: 5
-  attackParticles: {fileID: 7986742393934304454, guid: 462d384f4fa6e494f9c46e98fdb4040b,
-    type: 3}
-  allowAttack: 1
+  target: {fileID: 0}
+  moving: 0
+  faction: 0
+  closestEnemy: 0
+  thisFaction: 0
   foundEnemyEvent:
     m_PersistentCalls:
       m_Calls: []
@@ -1856,6 +1854,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dataCollected: 0
+  unitCost: 0
+--- !u!114 &-4101398927980332613
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2798668409923851973}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f02e8eb1fb67ac548ad24175a6851b3d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  faction: 0
 --- !u!1 &2824930202592515702
 GameObject:
   m_ObjectHideFlags: 0

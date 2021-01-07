@@ -10,6 +10,7 @@ public class Enemy : MonoBehaviour
     public GameObject nut;
     public bool canDropMoney = true;
     public bool killedByPlayer = true;
+    public Transform _lastHit;
     
     // Necessary Components
     private EnemyUI enemyUI;
@@ -22,8 +23,9 @@ public class Enemy : MonoBehaviour
         enemyUI = this.GetComponent<EnemyUI>();
     }
 
-    public void TakeDamage(float amount)
+    public void TakeDamage(float amount, Transform lastHit)
     {
+        _lastHit = lastHit;
         if (enemyUI)
             enemyUI.EnemyDamaged(amount);
         
@@ -47,7 +49,7 @@ public class Enemy : MonoBehaviour
 
                 if (killedByPlayer)
                 {
-                    TransferData();
+                    TransferData(lastHit);
                 }
 
                 GameManager.instance.player.GetComponent<PlayerXP>().AddExp(enemyStats.GetExperience());  
@@ -76,9 +78,17 @@ public class Enemy : MonoBehaviour
         }
     }
 
-    public void TransferData()
+    public void TransferData(Transform dataReceiver)
     {
         int tempData = this.gameObject.GetComponent<DataManager>().GetData();
-        GameManager.instance.player.GetComponent<DataManager>().AddToDataCollected(tempData);
+        if(dataReceiver.GetComponent<DataManager>())
+        {
+            dataReceiver.GetComponent<DataManager>().AddToDataCollected(tempData);
+        }
+        //GameManager.instance.player.GetComponent<DataManager>().AddToDataCollected(tempData);
+    }
+    public void DetectLastHit()
+    {
+        
     }
 }

@@ -12,6 +12,7 @@ public class BasicEnemyAttack : MonoBehaviour
     public float attackRange = 5f;
     public GameObject attackParticles;
     public bool allowAttack = true;
+    
 
 
     // Start is called before the first frame update
@@ -24,6 +25,7 @@ public class BasicEnemyAttack : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        SetTarget();
         float distance = Mathf.Infinity;
         if (target)
             distance = Vector3.Distance(target.position, transform.position);
@@ -40,6 +42,7 @@ public class BasicEnemyAttack : MonoBehaviour
 
         if (distance <= attackRange && nextAttackTime == 0 && allowAttack == true) 
         {
+            
             Attack();
             nextAttackTime = attackTime;
 
@@ -69,12 +72,21 @@ public class BasicEnemyAttack : MonoBehaviour
 
             foreach (Collider hit in collider)
             {
-                
+                if(hit.transform == target)
+                {
+                    Enemy enemyHit = hit.transform.GetComponent<Enemy>(); 
+                    if(enemyHit !=null)
+                    {
+                        enemyHit.TakeDamage(attackDamage, this.transform);
+                    }
+                }
+                    
                 PlayerManager playerHit = hit.transform.GetComponent<PlayerManager>();
                 if (playerHit!= null)
                 {
                     playerHit.TakeDamage(attackDamage);
                 }
+                
             }
         }
     }
