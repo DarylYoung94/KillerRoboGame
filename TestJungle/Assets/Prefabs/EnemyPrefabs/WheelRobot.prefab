@@ -74,6 +74,7 @@ MonoBehaviour:
   nut: {fileID: 4617804490400431508, guid: 2525ed1c724bfd043aee443a57426105, type: 3}
   canDropMoney: 1
   killedByPlayer: 1
+  _lastHit: {fileID: 0}
 --- !u!114 &4605086053764796231
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -123,7 +124,7 @@ NavMeshAgent:
   m_GameObject: {fileID: 710487540040468503}
   m_Enabled: 1
   m_AgentTypeID: 0
-  m_Radius: 2.32
+  m_Radius: 1
   m_Speed: 5
   m_Acceleration: 23
   avoidancePriority: 50

@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: RoboLlama_Level1
   m_EditorClassIdentifier: 
   level: 1
-  health: 10
+  health: 70
   expReward: 100
   dropRate: 0.3

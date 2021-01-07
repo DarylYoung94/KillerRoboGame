@@ -39,6 +39,11 @@ public class EnemyBombCollider : MonoBehaviour
                     playerHit.TakeDamage(Damage);
                     Destroy(this.gameObject);
                 }
+                Enemy enemyHit = hit.transform.GetComponent<Enemy>();
+                if (enemyHit != null)
+                {
+                    enemyHit.TakeDamage(Damage, this.transform.parent);
+                }
                 Rigidbody rb = hit.GetComponent<Rigidbody>();
                 if (rb != null)
                 {

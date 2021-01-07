@@ -839,7 +839,7 @@ GameObject:
   - component: {fileID: 1993832616919608243}
   - component: {fileID: 5202395562153742030}
   - component: {fileID: 5331119955954882050}
-  - component: {fileID: 1723606833282332414}
+  - component: {fileID: 1862099165}
   m_Layer: 0
   m_Name: Turret
   m_TagString: Untagged
@@ -953,6 +953,7 @@ MonoBehaviour:
   nut: {fileID: 4617804490400431508, guid: 2525ed1c724bfd043aee443a57426105, type: 3}
   canDropMoney: 1
   killedByPlayer: 1
+  _lastHit: {fileID: 0}
 --- !u!114 &3777540764662554323
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1037,9 +1038,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 75f37a539030a19468a9e4a13114ea90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  lookRadius: 15
+  lookRadius: 25
   target: {fileID: 0}
   moving: 0
+  faction: 0
+  closestEnemy: 0
+  thisFaction: 0
   foundEnemyEvent:
     m_PersistentCalls:
       m_Calls:
@@ -1081,7 +1085,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   target: {fileID: 0}
   firepoint: {fileID: 8101778362228235528}
-  range: 10
+  range: 20
   chargeTime: 3
   cooldownTime: 10
   widthFactor: 3
@@ -1163,7 +1167,7 @@ MonoBehaviour:
   maxHealth: 0
   experience: 100
   dropRate: 0.3
---- !u!114 &1723606833282332414
+--- !u!114 &1862099165
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1172,16 +1176,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 3777540764662554324}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6960cb202a78f1540a209c9d54c8d647, type: 3}
+  m_Script: {fileID: 11500000, guid: f02e8eb1fb67ac548ad24175a6851b3d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  activeEnemySettings: {fileID: 0}
-  alive: 1
-  level: 1
-  currentHealth: 10
-  maxHealth: 0
-  experience: 100
-  dropRate: 0.3
+  faction: 0
 --- !u!1 &3777540764737286162
 GameObject:
   m_ObjectHideFlags: 0

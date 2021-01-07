@@ -8,9 +8,36 @@ public class EnemyBulletCollider : MonoBehaviour
     public float autoDamage;
     public GameObject player;
     public GameObject hitVfx;
+    public FactionType.Faction thisFaction;
+
+    private void Start()
+    {
+            thisFaction = this.GetComponent<FactionType>().faction;
+    }
 
     private void OnCollisionEnter(Collision collision)
     {
+        if(collision.transform.gameObject.GetComponent<FactionType>().faction != thisFaction)
+        {
+            Debug.Log("faction isnt my faction");
+            if(collision.transform.GetComponent<Enemy>())
+            {
+                Enemy enemyHit = collision.transform.GetComponent<Enemy>();
+                enemyHit.TakeDamage(autoDamage, this.transform);
+                TriggerHitVFX(collision);
+                Destroy(this.gameObject);
+            }
+            if(collision.transform.GetComponent<PlayerManager>())
+            {
+                PlayerManager playerHit = collision.transform.GetComponent<PlayerManager>();
+                playerHit.TakeDamage(autoDamage);
+                TriggerHitVFX(collision);
+                Destroy(this.gameObject);
+            }
+
+        }
+
+/*
         if (collision.gameObject.tag == "Player")
         {
             PlayerManager playerHit = collision.transform.GetComponent<PlayerManager>();
@@ -28,6 +55,7 @@ public class EnemyBulletCollider : MonoBehaviour
             TriggerHitVFX(collision);
             Destroy(this.gameObject);
         }
+        */
     }
 
     private void TriggerHitVFX(Collision collision)

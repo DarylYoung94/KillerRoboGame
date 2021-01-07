@@ -80,7 +80,7 @@ public class FactionWaveManager : MonoBehaviour
                 timer = 0;
             }
 
-            if (spawn == true)
+            if (spawn == true && totalData>=100)
             {
                 SetFactionWave();
                 index = 0;
@@ -163,20 +163,30 @@ public class FactionWaveManager : MonoBehaviour
         {
             factionWaveIndex = 0;
         }
-        else if( totalData >=175 && totalData <=200)
+        else if( totalData >=175 && totalData <=225)
         {
-            Debug.Log("175-200");
+            Debug.Log("175-225");
             factionWaveIndex =1;
             
         }
-        else if (totalData >200 && totalData <=300)
+        else if (totalData >225 && totalData <=300)
         {
-            Debug.Log("200-300");
+            Debug.Log("225-300");
             factionWaveIndex = 2;
+        }
+        else if (totalData >300 && totalData <=400)
+        {
+            Debug.Log("300-400");
+            factionWaveIndex = 3;
+        }
+        else if (totalData >400 && totalData <=500)
+        {
+            Debug.Log("400-500");
+            factionWaveIndex = 3;
         }
         else if(totalData <100)
         {
-            //cannot spawn another wave unless player funds it
+            spawn = false;//cannot spawn another wave unless player funds it
         }
     
         GetWaveInfo(factionWaveIndex);
@@ -203,6 +213,7 @@ public class FactionWaveManager : MonoBehaviour
             
             agent = enemy.GetComponent<NavMeshAgent>();
             agent.SetDestination(spawnPoint.transform.position);
+            agent.stoppingDistance = 1f;
             
             float distanceFromSpawn = Vector3.Distance(enemy.transform.position , spawnPoint.transform.position);
             if (distanceFromSpawn <= rangeFromSpawn)

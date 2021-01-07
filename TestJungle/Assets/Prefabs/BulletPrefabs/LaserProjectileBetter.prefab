@@ -14629,7 +14629,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   explosionVFX: {fileID: 2496617399248297364, guid: b14e618bc0313784caf2ad6d11048ec7,
     type: 3}
-  radius: 10
+  radius: 5
   power: 10
   upForce: 2
   damage: 10

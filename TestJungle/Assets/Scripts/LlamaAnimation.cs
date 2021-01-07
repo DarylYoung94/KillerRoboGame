@@ -11,6 +11,7 @@ public class LlamaAnimation : MonoBehaviour
     public float curveTolerance = 0.01f;
     public float longAutoRange = 10f;
     public float shortAutoRange = 5f;
+    public Transform target;
 
     // Start is called before the first frame update
     void Start()
@@ -22,6 +23,9 @@ public class LlamaAnimation : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        target = GetComponent<EnemyAI>().target;
+
+
         if (animator != null)
         {
             float animCurve = animator.GetFloat("JumpCurve");
@@ -34,11 +38,11 @@ public class LlamaAnimation : MonoBehaviour
                 navMeshAgent.speed = 0f;
             }
         }
-
-        float distanceFromPlayer = Vector3.Distance(GameManager.instance.player.transform.position,
+        //GameManager.instance.player
+        float distanceFromPlayer = Vector3.Distance(target.transform.position,
                                                     this.transform.position);
 
-        if (GameManager.instance.player == null)
+        if (target == null)
         {
             animator.SetInteger("AutoRange", (int)AutoRange.OUT_OF_RANGE);
         }

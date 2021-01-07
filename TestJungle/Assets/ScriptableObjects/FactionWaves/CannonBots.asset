@@ -16,6 +16,6 @@ MonoBehaviour:
   totalData: 0
   typeOfEnemy:
   - {fileID: 5305157931708629537, guid: 824c2ff4075d4884295d11d4d07db175, type: 3}
-  enemyIndex: 0000000000000000
+  enemyIndex: 000000000000000000000000
   spawnTimer: 10
   behaviours: 02000000

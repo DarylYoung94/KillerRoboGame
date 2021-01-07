@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.AI;
 
 public class CannonAI : MonoBehaviour
 {
@@ -9,7 +10,7 @@ public class CannonAI : MonoBehaviour
     public Transform firepoint;
     public Transform cannon;
     public Transform cannonBase;
-    
+    public NavMeshAgent agent;
 
     public float lookRadius = 25f;
     public float shootDistance = 15f;
@@ -30,9 +31,22 @@ public class CannonAI : MonoBehaviour
         cannonBase = this.transform.Find("CannonBase");
     }
 
-    private void Update() 
+    public void Update() 
     {
         float distance = Mathf.Infinity;
+
+        if(target)
+        {
+            if(target.GetComponent<Enemy>())
+            {
+                agent = GetComponent<NavMeshAgent>();
+                agent.stoppingDistance = 15f;
+            }
+            else if (!target.GetComponent<Enemy>())
+            {
+                agent.stoppingDistance = 1f;
+            }
+        }
 
         if (target)
             distance = Vector3.Distance(this.transform.position, target.position);
@@ -95,6 +109,7 @@ public class CannonAI : MonoBehaviour
         Transform firepoint = this.transform.Find("CannonBase/Cannon/CannonExit");
         firepoint.transform.rotation = cannon.transform.rotation;
         GameObject bombInstance = Instantiate(bombPrefab, firepoint.position, cannon.transform.rotation);
+        bombInstance.transform.parent = this.transform;
         Rigidbody bombRB = bombInstance.GetComponent<Rigidbody>();
         
         bombRB.AddForce(bombRB.transform.up * power, ForceMode.Impulse);

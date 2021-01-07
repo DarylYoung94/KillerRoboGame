@@ -46,7 +46,7 @@ public class AnimationDrivenAttack : MonoBehaviour
     void ShootAtTarget()
     {
         GameObject enemyBulletInstance = Instantiate(enemyBulletPrefab, firePoint.transform.position, Quaternion.identity);
-        
+        enemyBulletInstance.GetComponent<FactionType>().faction = this.GetComponent<FactionType>().faction;
         Rigidbody bulletRB = enemyBulletInstance.GetComponent<Rigidbody>();
         bulletRB.transform.LookAt(target.position);
         bulletRB.AddForce(bulletRB.transform.forward * bulletSpeed, ForceMode.Impulse);
