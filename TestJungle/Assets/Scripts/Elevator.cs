@@ -88,7 +88,7 @@ public class Elevator : MonoBehaviour
             go.GetComponent<Doors>().OpenDoor();
         }
 
-        Debug.Log("Arrived at: " + this.transform.position.ToString());
+       // Debug.Log("Arrived at: " + this.transform.position.ToString());
     }
 
     void OnStartMoving()
@@ -103,7 +103,7 @@ public class Elevator : MonoBehaviour
 
         desiredPosition = positionQueue[0];
         positionQueue.RemoveAt(0); 
-        Debug.Log("Moving to: " + desiredPosition.ToString());
+       // Debug.Log("Moving to: " + desiredPosition.ToString());
     }
 
     void AddDestination(Vector3 destination) { positionQueue.Add(destination); }

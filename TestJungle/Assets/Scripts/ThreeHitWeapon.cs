@@ -6,7 +6,6 @@ public class ThreeHitWeapon : RBWeapon
 {
    public GameObject bulletPrefab;
    public GameObject healingBulletPrefab;
-   private Transform barrelExit;
    public float despawnTimer = 5f;
    private ThreeHitTriggerable threeHitTrigger;
    // float force = 20f;
@@ -14,17 +13,19 @@ public class ThreeHitWeapon : RBWeapon
 
    public override void Initialise(GameObject Obj)
    {
-       threeHitTrigger  = Obj.AddComponent<ThreeHitTriggerable>();
+        threeHitTrigger  = Obj.AddComponent<ThreeHitTriggerable>();
         threeHitTrigger.bulletPrefab = bulletPrefab;
         threeHitTrigger.healingBulletPrefab = healingBulletPrefab;
         threeHitTrigger.despawnTimer = despawnTimer;
         threeHitTrigger.force = force;
 
-       barrelExit = GameObject.Find("Player/firePoint").transform;
-       threeHitTrigger.barrelExit = barrelExit;
-       bulletPrefab.GetComponent<BulletCollider>().Damage = damage;
+        if (!barrelExit)
+            barrelExit = GameObject.Find("Player/firePoint").transform;
 
-       triggerable = threeHitTrigger;
+        threeHitTrigger.barrelExit = barrelExit;
+        bulletPrefab.GetComponent<BulletCollider>().Damage = damage;
+
+        triggerable = threeHitTrigger;
    }
 
     public override void ButtonDown()

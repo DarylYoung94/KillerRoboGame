@@ -36,7 +36,7 @@ public class Turret : MonoBehaviour
             {
                 turretGun.transform.LookAt(bestTarget);
                 TurretShot();
-                Debug.Log(bestTarget.name);
+               // Debug.Log(bestTarget.name);
                 
             }
           timer = turretAttackSpeed;

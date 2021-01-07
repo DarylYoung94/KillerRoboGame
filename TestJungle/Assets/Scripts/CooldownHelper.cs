@@ -19,7 +19,7 @@ public class CooldownHelper
                 cooldownType = typeof(OnReleaseAbilityCooldown);
                 break;                
             default:
-                Debug.Log("Defaulting cooldown type to quick cast");
+               // Debug.Log("Defaulting cooldown type to quick cast");
                 cooldownType = typeof(QuickCastAbilityCooldown);
                 break;
         }

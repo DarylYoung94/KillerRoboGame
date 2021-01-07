@@ -21,6 +21,8 @@ MonoBehaviour:
   holding: 0
   damage: 10
   weaponType: 1
+  weaponPrefab: {fileID: 3744152110679025471, guid: baa37c67097dbd34ca155f40d7646c97,
+    type: 3}
   force: 50
   pelletPrefab: {fileID: 1318197578036205983, guid: c7167629e20234e4fbf1ee3046ec5615,
     type: 3}

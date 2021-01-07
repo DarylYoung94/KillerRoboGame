@@ -7,7 +7,6 @@ public class TwoHitAttack : RBWeapon
 {
     public GameObject pelletPrefab;
     public float despawnTimer = 5f;
-    private Transform barrelExit;
     private TwoHitAttackTriggerable twoHitAttackTrigger;
 
     public override void Initialise(GameObject obj)
@@ -17,7 +16,8 @@ public class TwoHitAttack : RBWeapon
         twoHitAttackTrigger.despawnTimer = despawnTimer;
         twoHitAttackTrigger.force = force;
         
-        barrelExit = GameObject.Find("Player/firePoint").transform;
+        if (!barrelExit)
+            barrelExit = GameObject.Find("Player/firePoint").transform;
         twoHitAttackTrigger.barrelExit = barrelExit;
 
         pelletPrefab.GetComponent<BulletCollider>().Damage = damage;

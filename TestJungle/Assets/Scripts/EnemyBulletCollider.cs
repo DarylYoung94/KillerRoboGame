@@ -16,7 +16,7 @@ public class EnemyBulletCollider : MonoBehaviour
             PlayerManager playerHit = collision.transform.GetComponent<PlayerManager>();
             if (playerHit != null)
             {
-                Debug.Log("take damage");
+               // Debug.Log("take damage");
                 playerHit.TakeDamage(autoDamage);
             }
             

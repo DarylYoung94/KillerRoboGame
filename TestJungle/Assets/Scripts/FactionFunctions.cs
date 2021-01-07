@@ -53,7 +53,7 @@ public class FactionFunctions : MonoBehaviour
                                 }   
                     
                             enemy.GetComponent<EnemyAI>().target = bestTarget;
-                            Debug.Log("TargetFound");
+                           // Debug.Log("TargetFound");
                         }
                     }
                }

@@ -10,8 +10,6 @@ public class ShotgunWeapon : RBWeapon {
     public float verticalSpread;
     public float horizontalSpread;
 
-    private Transform barrelExit;
-
     private ShotgunTriggerable sgTrigger;
     
     public override void Initialise(GameObject obj)
@@ -24,7 +22,8 @@ public class ShotgunWeapon : RBWeapon {
         sgTrigger.horizontalSpread = horizontalSpread;
         sgTrigger.force = force;
         
-        barrelExit = GameObject.Find("Player/firePoint").transform;
+        if (!barrelExit)
+            barrelExit = GameObject.Find("Player/firePoint").transform;
         sgTrigger.barrelExit = barrelExit;
 
         pelletPrefab.GetComponent<BulletCollider>().Damage = damage;

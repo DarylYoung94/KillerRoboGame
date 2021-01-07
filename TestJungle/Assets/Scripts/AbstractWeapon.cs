@@ -9,6 +9,8 @@ public abstract class AbstractWeapon : AbstractAbility {
 
     public float damage = 1.0f;
     public WeaponType weaponType = WeaponType.ONE_HANDED;
+    public GameObject weaponPrefab;
+    public Transform barrelExit;
 
     public static AbstractAbilityCooldown GetWeaponCooldownHolder (GameObject player)
     {

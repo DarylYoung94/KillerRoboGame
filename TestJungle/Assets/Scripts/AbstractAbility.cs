@@ -1,7 +1,6 @@
 using System.Collections;
 using static System.Type;
 using UnityEngine;
-using UnityEngine.UI;
 
 
 public abstract class AbstractAbility : ScriptableObject {
