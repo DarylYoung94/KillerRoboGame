@@ -37,12 +37,12 @@ public class CannonAI : MonoBehaviour
 
         if(target)
         {
-            if(target.GetComponent<Enemy>())
+            if(target.GetComponent<Enemy>() || target.GetComponent<PlayerManager>())
             {
                 agent = GetComponent<NavMeshAgent>();
-                agent.stoppingDistance = 15f;
+                agent.stoppingDistance = 20f;
             }
-            else if (!target.GetComponent<Enemy>())
+            else if (!target.GetComponent<Enemy>() || target.GetComponent<PlayerManager>() )
             {
                 agent.stoppingDistance = 1f;
             }
@@ -109,7 +109,7 @@ public class CannonAI : MonoBehaviour
         Transform firepoint = this.transform.Find("CannonBase/Cannon/CannonExit");
         firepoint.transform.rotation = cannon.transform.rotation;
         GameObject bombInstance = Instantiate(bombPrefab, firepoint.position, cannon.transform.rotation);
-        bombInstance.transform.parent = this.transform;
+        bombInstance.GetComponent<EnemyBombCollider>().bombFaction = this.transform;
         Rigidbody bombRB = bombInstance.GetComponent<Rigidbody>();
         
         bombRB.AddForce(bombRB.transform.up * power, ForceMode.Impulse);

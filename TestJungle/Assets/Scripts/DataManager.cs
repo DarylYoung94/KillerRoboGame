@@ -7,6 +7,11 @@ public class DataManager : MonoBehaviour
     public int dataCollected = 0;
     public int unitCost;
 
+    public void RemoveData(int amount)
+    {
+        dataCollected -= amount;
+    }
+
     public void CollectData(int amount)
     {
         dataCollected += amount;

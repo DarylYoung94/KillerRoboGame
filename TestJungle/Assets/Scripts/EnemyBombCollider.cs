@@ -10,10 +10,12 @@ public class EnemyBombCollider : MonoBehaviour
     public float power = 10f;
     public float Damage = 10f;
     public float upForce = 2f;
+    public Transform bombFaction;
     // Start is called before the first frame update
     void Start()
     {
         player = GameManager.instance.player;
+
     }
 
     // Update is called once per frame
@@ -42,7 +44,7 @@ public class EnemyBombCollider : MonoBehaviour
                 Enemy enemyHit = hit.transform.GetComponent<Enemy>();
                 if (enemyHit != null)
                 {
-                    enemyHit.TakeDamage(Damage, this.transform.parent);
+                    enemyHit.TakeDamage(Damage, bombFaction.transform);
                 }
                 Rigidbody rb = hit.GetComponent<Rigidbody>();
                 if (rb != null)

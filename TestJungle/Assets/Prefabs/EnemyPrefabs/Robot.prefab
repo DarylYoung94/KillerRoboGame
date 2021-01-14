@@ -1133,6 +1133,7 @@ MonoBehaviour:
   nut: {fileID: 4617804490400431508, guid: 2525ed1c724bfd043aee443a57426105, type: 3}
   canDropMoney: 1
   killedByPlayer: 1
+  _lastHit: {fileID: 0}
 --- !u!114 &2983082249911765740
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1148,6 +1149,9 @@ MonoBehaviour:
   lookRadius: 10
   target: {fileID: 0}
   moving: 0
+  faction: 0
+  closestEnemy: 0
+  thisFaction: 0
   foundEnemyEvent:
     m_PersistentCalls:
       m_Calls:

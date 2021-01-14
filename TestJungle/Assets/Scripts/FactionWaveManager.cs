@@ -31,7 +31,7 @@ public class FactionWaveManager : MonoBehaviour
 
 
     public float globalSpawnTimer = 20f;
-    public float globalTimer =0.0f;
+    public float globalTimer =0.1f;
     private bool globalSpawn = true;
     public float rangeFromSpawn = 5f;
 
@@ -197,6 +197,11 @@ public class FactionWaveManager : MonoBehaviour
     void GetFactionData(GameObject unit)
     {
         totalData = totalData + unit.GetComponent<DataManager>().GetData();
+    }
+
+    public void GetDonation(int amount)
+    {
+        totalData = totalData + amount;
     }
 
     void RecallWave()
