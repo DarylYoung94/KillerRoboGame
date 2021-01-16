@@ -11,6 +11,7 @@ public class AnimationDrivenAttack : MonoBehaviour
     public float bulletSpeed;
     public float shootTolerance = 0.01f;
     public float rotSpeed = 1.0f;
+    
 
     private bool shotReady = true;
     Animator animator;
@@ -47,6 +48,7 @@ public class AnimationDrivenAttack : MonoBehaviour
     {
         GameObject enemyBulletInstance = Instantiate(enemyBulletPrefab, firePoint.transform.position, Quaternion.identity);
         enemyBulletInstance.GetComponent<FactionType>().faction = this.GetComponent<FactionType>().faction;
+        enemyBulletInstance.GetComponent<EnemyBulletCollider>().enemy = this.gameObject;
         Rigidbody bulletRB = enemyBulletInstance.GetComponent<Rigidbody>();
         bulletRB.transform.LookAt(target.position);
         bulletRB.AddForce(bulletRB.transform.forward * bulletSpeed, ForceMode.Impulse);

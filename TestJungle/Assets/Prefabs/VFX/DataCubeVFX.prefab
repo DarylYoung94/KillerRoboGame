@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 3179243166958385056}
   - component: {fileID: 3179243166958385057}
   - component: {fileID: 8901378101313352568}
+  - component: {fileID: 8072328462998779754}
   m_Layer: 0
   m_Name: DataCubeVFX
   m_TagString: Untagged
@@ -111,3 +112,15 @@ MonoBehaviour:
   speed: 10
   rotateSpeed: 10
   target: {fileID: 0}
+--- !u!114 &8072328462998779754
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3179243166958385058}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b2218dc5424a8ab45b70a585119ec296, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

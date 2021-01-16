@@ -53,6 +53,7 @@ MonoBehaviour:
   turretBulletSpeed: 30
   turretAttackSpeed: 1
   turretGun: {fileID: 544047212914717183}
+  atkMultiplier: 0.5
 --- !u!54 &2414168763168005635
 Rigidbody:
   m_ObjectHideFlags: 0

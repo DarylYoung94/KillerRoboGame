@@ -24,7 +24,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1900889793152820325}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -259.10425, y: 5.25, z: -26.99961}
+  m_LocalPosition: {x: 1.39, y: 5.25, z: 1.35}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 8279709793334303990}
@@ -128,7 +128,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 25f8ef97e2480b04d8da264d9b0d124b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  data: 20
+  data: 200
   collectionPoint: {fileID: 8716320581256525144}
   vfxSpawnPoint: {fileID: 6751674729663362705}
   dataCubePrefab: {fileID: 3179243166958385058, guid: 969a0469b85acdf48941cdddb50ec6a8,

@@ -38,9 +38,9 @@ public class LlamaAnimation : MonoBehaviour
                 navMeshAgent.speed = 0f;
             }
         }
-        //GameManager.instance.player
-        float distanceFromPlayer = Vector3.Distance(target.transform.position,
-                                                    this.transform.position);
+
+        float distanceFromPlayer = target ? Vector3.Distance(target.transform.position, this.transform.position) : Mathf.Infinity;
+        
 
         if (target == null)
         {

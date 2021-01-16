@@ -62,7 +62,7 @@ public class EnemyAI : MonoBehaviour
         }
 
         
-        float distance = Vector3.Distance(target.position, transform.position);
+        float distance = target ? Vector3.Distance(target.position, transform.position) : Mathf.Infinity;
         if (distance <= lookRadius)
         {
             foundEnemyEvent.Invoke(); 

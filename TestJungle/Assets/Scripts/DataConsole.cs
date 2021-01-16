@@ -17,9 +17,19 @@ public class DataConsole : MonoBehaviour
 
     void Update()
     {
+
         for (int i=0; i<targets.Count; i++)
         {
-            dataStreams[i].GetComponent<VisualEffect>().SetVector3("Target Vector3", targets[i].position);
+            if (targets[i] == null)
+            {
+                Destroy(dataStreams[i]);
+                targets.RemoveAt(i);
+                dataStreams.RemoveAt(i);  
+            }
+            else
+            {
+                dataStreams[i].GetComponent<VisualEffect>().SetVector3("Target Vector3", targets[i].position);
+            }          
         }
     }
 

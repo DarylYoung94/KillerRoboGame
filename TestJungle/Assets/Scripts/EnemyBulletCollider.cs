@@ -9,6 +9,7 @@ public class EnemyBulletCollider : MonoBehaviour
     public GameObject player;
     public GameObject hitVfx;
     public FactionType.Faction thisFaction;
+    public GameObject enemy;
 
     private void Start()
     {
@@ -17,25 +18,39 @@ public class EnemyBulletCollider : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
-        if(collision.transform.gameObject.GetComponent<FactionType>().faction != thisFaction)
+        if (collision.transform.gameObject.GetComponent<FactionType>())
         {
-            Debug.Log("faction isnt my faction");
-            if(collision.transform.GetComponent<Enemy>())
+            if(collision.transform.gameObject.GetComponent<FactionType>().faction != thisFaction )
             {
-                Enemy enemyHit = collision.transform.GetComponent<Enemy>();
-                enemyHit.TakeDamage(autoDamage, this.transform);
-                TriggerHitVFX(collision);
-                Destroy(this.gameObject);
-            }
-            if(collision.transform.GetComponent<PlayerManager>())
-            {
-                PlayerManager playerHit = collision.transform.GetComponent<PlayerManager>();
-                playerHit.TakeDamage(autoDamage);
-                TriggerHitVFX(collision);
-                Destroy(this.gameObject);
-            }
+                Debug.Log("faction isnt my faction");
+                if(collision.transform.GetComponent<Enemy>())
+                {
+                    Enemy enemyHit = collision.transform.GetComponent<Enemy>();
+                    enemyHit.TakeDamage(autoDamage, this.transform);
+                    TriggerHitVFX(collision);
+                    Destroy(this.gameObject);
+                }
+                if(collision.transform.GetComponent<PlayerManager>())
+                {
+                    PlayerManager playerHit = collision.transform.GetComponent<PlayerManager>();
+                    playerHit.TakeDamage(autoDamage);
+                    TriggerHitVFX(collision);
+                    Destroy(this.gameObject);
+                }
+            
 
+            }
         }
+        if(collision.transform.gameObject != enemy)
+        {
+           Destroy(this.gameObject);  
+        }
+        
+        
+        
+          
+        
+        
 
 /*
         if (collision.gameObject.tag == "Player")

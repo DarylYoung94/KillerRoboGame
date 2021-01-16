@@ -218,9 +218,16 @@ public class FactionWaveManager : MonoBehaviour
                 }
             }
             
-            agent = enemy.GetComponent<NavMeshAgent>();
-            agent.SetDestination(spawnPoint.transform.position);
-            agent.stoppingDistance = 1f;
+            if (enemy.GetComponent<DataCollector>())
+            {
+                enemy.GetComponent<DataCollector>().SetTarget(spawnPoint.transform);
+            }
+            else
+            {
+                agent = enemy.GetComponent<NavMeshAgent>();
+                agent.SetDestination(spawnPoint.transform.position);
+                agent.stoppingDistance = 1f;
+            }
             
             float distanceFromSpawn = Vector3.Distance(enemy.transform.position , spawnPoint.transform.position);
             if (distanceFromSpawn <= rangeFromSpawn)
@@ -278,11 +285,14 @@ public class FactionWaveManager : MonoBehaviour
 
     void RemoveGroups()
     {
-        foreach(GameObject group in groups )
+
+        for (int i = 0; i < groups.Count; i++)
         {
-            if(group.transform.childCount == 0)
+            if(groups[i].transform.childCount == 0)
             {
-                Destroy(group);
+                Destroy(groups[i]);
+                groups.RemoveAt(i);
+                
             }
         }  
     }

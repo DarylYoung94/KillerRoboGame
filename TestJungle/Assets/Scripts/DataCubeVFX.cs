@@ -12,12 +12,14 @@ public class DataCubeVFX : MonoBehaviour
 
     private void Update()
     {
-        if (Vector3.Distance(target.position, this.transform.position) < 0.1f)
+        if (target ==null || Vector3.Distance(target.position, this.transform.position) < 0.1f )
         {
             Destroy(this.gameObject);
         }
-
+        if(target)
+        {
         this.transform.position += (target.position - this.transform.position).normalized * speed * Time.deltaTime;
         this.transform.Rotate(Vector3.left, rotateSpeed * Time.deltaTime);
+        }
     }
 }

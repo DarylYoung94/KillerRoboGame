@@ -62,12 +62,28 @@ public class DataCollector : MonoBehaviour
             {
                 collecting = true;
                 collectDataEvent.Invoke();
-                target.GetComponent<DataConsole>().StartStream(antennaTransform);
+                if(target.GetComponent<DataConsole>())
+                {
+                    target.GetComponent<DataConsole>().StartStream(antennaTransform);   
+                }
+                
             }
         }
         else
         {
             this.transform.LookAt(target);
+        }
+        if (collecting && target && Vector3.Distance(target.position, this.transform.position) > collectRange)
+        {
+            DataConsole dc = target.GetComponent<DataConsole>();
+            collecting = false;
+
+            if(dc)
+            {
+                dc.CloseStream(antennaTransform);
+            }
+            
+            
         }
 
         collectTime += Time.deltaTime;
@@ -76,6 +92,19 @@ public class DataCollector : MonoBehaviour
     public void FoundTarget()
     {
         agent.SetDestination(collectionPoint.position);
+    }
+
+    public void SetTarget(Transform newTarget)
+    {
+        DataConsole dc = target.GetComponent<DataConsole>();
+        if(dc)
+        {
+            dc.CloseStream(antennaTransform);
+        }
+        target = newTarget;
+        collectionPoint = newTarget;
+        foundTargetEvent.Invoke();
+
     }
 
     public void CollectDataFromConsole()

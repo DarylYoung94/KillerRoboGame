@@ -30,7 +30,7 @@ public class RandomMovement : MonoBehaviour
 
         float x = Random.Range(-10, 10);
         float z = Random.Range(-10, 10);
-        Vector3 pos = new Vector3(campLocation.transform.position.x + x, 0, campLocation.transform.position.z + z);
+        Vector3 pos =  campLocation ? new Vector3(campLocation.transform.position.x + x, 0, campLocation.transform.position.z + z) : this.transform.position;
         return pos;
     }
 
