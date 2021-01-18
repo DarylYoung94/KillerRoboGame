@@ -2127,6 +2127,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7adbe923fffe8cc4b9223a770021c0bd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  cost: 40
   player: {fileID: 0}
   ability: {fileID: 11400000, guid: be5fd92f213efc9498662d533a2084d1, type: 2}
   timeToDespawn: 10

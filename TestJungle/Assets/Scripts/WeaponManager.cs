@@ -39,6 +39,18 @@ public class WeaponManager : MonoBehaviour
         return weapons[activeWeaponList[activeWeaponIndex]];
     }
 
+    public void DisableWeapon()
+    {
+        weaponHolders[activeWeaponList[activeWeaponIndex]].enabled = false;
+    }
+
+    public void EnableWeapon()
+    {
+        weaponHolders[activeWeaponList[activeWeaponIndex]].enabled = true;
+    }
+
+
+
     void CreateWeaponHolders()
     {
         for (int i=0; i<weapons.Count; i++)

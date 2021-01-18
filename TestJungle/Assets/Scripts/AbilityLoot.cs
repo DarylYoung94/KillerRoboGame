@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class AbilityLoot : MonoBehaviour
 {
+    public int cost;
     public GameObject player;
     public AbstractAbility ability;
     
